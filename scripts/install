@@ -48,7 +48,7 @@ sudo su -c "cd $final_path && php mud.php db set" -s /bin/sh www-data
 
 # Copy init script if Wheezy
 sudo cp ../conf/movim.init /etc/init.d/movim
-sudo sed -i "s/YHDIR/$final_path/g" /etc/init.d/movim
+sudo sed -i "s@YHDIR@$final_path@g" /etc/init.d/movim
 
 # Copy systemd service if Jessie
 # todo
