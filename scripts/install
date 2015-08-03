@@ -72,3 +72,4 @@ sudo yunohost app ssowatconf
 
 # Start Movim
 sudo /etc/init.d/movim start
+sudo service nginx reload

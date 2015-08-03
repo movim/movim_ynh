@@ -32,7 +32,7 @@
                 "name": "admin",
 		"type": "user",
                 "ask": {
-                    "en": "Pod administrator ? ?"
+                    "en": "Pod administrator"
                 },
 		"example": "homer"
             },
