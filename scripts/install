@@ -43,7 +43,7 @@ sudo sed -i "s/yhpwd/$db_pwd/g" $final_path/config/db.inc.php
 sudo sed -i "s/yhdb/$db_user/g" $final_path/config/db.inc.php
 
 # Populate Movim database
-sudo su -c "php mud.php db set" -s /bin/sh www-data
+sudo su -c "cd $final_path && php mud.php db set" -s /bin/sh www-data
 #sudo yunohost app addaccess movim -u $admin
 
 # Copy init script if Wheezy
