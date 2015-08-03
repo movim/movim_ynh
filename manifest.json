@@ -29,6 +29,14 @@
                 "default": "/movim"
             },
 	    {
+                "name": "admin",
+		"type": "user",
+                "ask": {
+                    "en": "Pod administrator ? ?"
+                },
+		"example": "homer"
+            },
+	    {
                 "name": "public_site",
                 "ask": {
                     "en": "Public pod ?"
