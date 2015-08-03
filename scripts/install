@@ -33,8 +33,8 @@ sudo cp -a ../sources/* $final_path
 sudo chown -R www-data: $final_path
 
 # Install PHP dependencies
-sudo su -c "curl -sS https://getcomposer.org/installer | php" -s /bin/sh www-data
-sudo su -c "php composer.phar install" -s /bin/sh www-data
+sudo su -c "curl -sS https://getcomposer.org/installer | php -- --install-dir=$final_path" -s /bin/sh www-data
+sudo su -c "cd $final_path && php composer.phar install" -s /bin/sh www-data
 
 # Movim configuration
 sudo cp $final_path/config/db.example.inc.php $final_path/config/db.inc.php
@@ -48,7 +48,7 @@ sudo su -c "php mud.php db set" -s /bin/sh www-data
 
 # Copy init script if Wheezy
 sudo cp ../conf/movim.init /etc/init.d/movim
-sed -i "s/YHDIR/$final_path/g" /etc/init.d/movim
+sudo sed -i "s/YHDIR/$final_path/g" /etc/init.d/movim
 
 # Copy systemd service if Jessie
 # todo
