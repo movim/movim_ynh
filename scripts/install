@@ -33,7 +33,6 @@ sudo cp -a ../sources/* $final_path
 sudo chown -R www-data: $final_path
 
 # Install PHP dependencies
-cd $final_path
 sudo su -c "curl -sS https://getcomposer.org/installer | php" -s /bin/sh www-data
 sudo su -c "php composer.phar install" -s /bin/sh www-data
 
@@ -45,7 +44,7 @@ sudo sed -i "s/yhdb/$db_user/g" $final_path/config/db.inc.php
 
 # Populate Movim database
 sudo su -c "php mud.php db set" -s /bin/sh www-data
-sudo yunohost app addaccess movim -u $admin
+#sudo yunohost app addaccess movim -u $admin
 
 # Copy init script if Wheezy
 sudo cp ../conf/movim.init /etc/init.d/movim
