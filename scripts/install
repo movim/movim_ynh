@@ -3,7 +3,8 @@
 # Retrieve arguments
 domain=$1
 path=$2
-public_site=$3
+admin=$3
+public_site=$4
 
 # Check domain/path availability
 sudo yunohost app checkurl $domain$path -a movim
@@ -11,6 +12,7 @@ if [[ ! $? -eq 0 ]]; then
 exit 1
 fi
 
+sudo yunohost app setting movim admin -v $admin
 sudo yunohost app setting movim public_site -v $public_site
 
 # Generate random password
@@ -44,7 +46,7 @@ sudo sed -i "s/yhdb/$db_user/g" $final_path/config/db.inc.php
 
 # Populate Movim database
 sudo su -c "cd $final_path && php mud.php db set" -s /bin/sh www-data
-#sudo yunohost app addaccess movim -u $admin
+sudo yunohost app addaccess movim -u $admin
 
 # Copy init script if Wheezy
 sudo cp ../conf/movim.init /etc/init.d/movim
@@ -64,7 +66,7 @@ if [ $public_site = "No" ];
 then              
 	sudo yunohost app setting movim protected_uris -v "/admin,/index.php" 
 else              
-	sudo yunohost app setting movim protected_uris -v "/admin/index.php,/admin/logs_studs.txt,/scripts"
+	sudo yunohost app setting movim protected_uris -v "/admin,/index.php,?q=admin"
 fi
 sudo yunohost app ssowatconf
 
