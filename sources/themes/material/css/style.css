@@ -1,0 +1,968 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+input, select, option,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
+    list-style-type: none;
+}
+
+* {
+ -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+:focus {
+    outline: 0;
+}
+
+html {
+    font-size: 8px;
+}
+
+body {
+    font-family: 'OpenSans', sans-serif;
+    background-color: black;
+    overflow: hidden;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.clear {
+    clear: both;
+}
+
+.clear.padded {
+    height: 2rem;
+}
+
+body > * {
+    display: block;
+    height: 100%;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Open Sans', sans-serif;
+    color: rgba(0, 0, 0, 0.87);
+}
+
+body > script {
+    display: none;
+}
+
+a, a:link, a:visited {
+    text-decoration: none;
+}
+
+/* Titles */
+
+h1 { /* Display 1 */
+    font-size: 4.25rem;
+    line-height: 7rem;
+}
+
+h2 { /* Headline */
+    font-size: 3rem;
+    line-height: 7rem;
+}
+
+h2.thin {
+    line-height: 5rem;
+}
+
+h3 { /* Title */
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+h4, input, textarea, select { /* Headline */
+    font-size: 2rem;
+    line-height: 3rem;
+}
+
+h4 {
+    font-weight: 400;
+}
+
+h4.gray {
+    color: rgba(0, 0, 0, 0.54);
+}
+
+article section content ul li, /* Body 1 */
+article section content p {
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+.snackbar, /* Body 2 */
+.toast {
+    font-size: 1.75rem;
+    font-weight: 500;
+}
+
+label, span.info { /* Caption */
+    font-size: 1.5rem;
+    color: rgba(0, 0, 0, 0.54);
+}
+label, span.info b { /* Caption */
+    font-weight: 600;
+}
+
+/* Navigation bar */
+
+body > nav {
+    background-color: #fefefe;
+    width: 7rem;
+    max-width: 95%;
+    -webkit-transition: width 0.2s ease;
+    transition: width 0.2s ease;
+    z-index: 2;
+    position: relative;
+}
+
+body > nav:before {
+    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.3), transparent);
+    pointer-events:none;
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1rem;
+    height: 100%;
+}
+
+body > nav header {
+    padding: 0.5rem;
+}
+
+body > nav.active {
+    width: 45rem;
+}
+
+body > div.dialog:not(:empty) ~ main,
+body > div.dialog:not(:empty) ~ nav,
+body > nav.active + main {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+body > nav li { /* Little hack for the navbar */
+    overflow: hidden;
+}
+
+@media screen and (max-width: 1024px) {
+    body > nav:not(.active) {
+        width: 45rem;
+        -webkit-transition: -webkit-transform .2s ease-in-out;
+        transition: transform .2s ease-in-out;
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+    }
+
+    body > nav.active {
+        -webkit-transition: -webkit-transform .2s ease-in-out;
+        transition: transform .2s ease-in-out;
+        -webkit-transform: translateX(0%);
+        transform: translateX(0%);
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    body > nav:hover {
+        width: 45rem;
+        box-shadow: 0 2.5rem 5rem rgba(0,0,0,0.30), 0 2rem 1.5rem rgba(0,0,0,0.22);
+    }
+
+    body > nav:hover + main {
+        opacity: 0.5;
+        pointer-events: none;
+    }
+
+    body > nav:not(:hover) li span.counter {
+        left: 3.5rem;
+        top: calc(50% - 1.25rem);
+        right: auto;
+        font-size: 1.75rem;
+        padding: 0.25rem;
+    }
+}
+
+body > nav.active:before,
+body > nav:hover:before {
+    display: none;
+}
+
+/* Main */
+
+main {
+    width: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: white;
+    -webkit-transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.3s ease-in-out;
+}
+
+nav + main {
+    width: calc(100% - 7rem);
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+}
+
+main > header {
+    position: relative;
+    height: 7rem;
+    /*overflow: hidden;*/
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.2);
+    z-index: 2;
+}
+
+main > header > div {
+    padding-left: 9rem;
+    position: relative;
+    width: 30%;
+    display: inline-block;
+    /*overflow: hidden;*/
+    box-sizing: border-box;
+    padding-right: 1rem;
+}
+
+main > header > div > .return > * {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+main > header > div > ul.active:not(.context_menu) {
+    float: right;
+    margin-right: -1rem;
+}
+
+main > header > div > ul.active:not(.context_menu) li {
+    float: left;
+    height: 7rem;
+    min-width: 0;
+    line-height: 7rem;
+    width: 7rem;
+    padding: 0;
+    font-size: 4rem;
+}
+
+main > header > div > ul.active:not(.context_menu) li.thin {
+    width: 5rem;
+}
+
+main > header > div > ul.active:not(.context_menu) li span.icon {
+    left: 1rem;
+}
+
+main > header > div > ul.active:not(.context_menu) li.thin span.icon {
+    width: 3rem;
+}
+
+main > header > div:first-child:nth-last-child(2) ~ div {
+    width: 70%;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+main > header > div > span.icon {
+    line-height: 7rem;
+    left: 0;
+    width: 8rem;
+    height: 7rem;
+    top: 0;
+    margin: 0;
+}
+
+main > header > div > .return {
+    padding-left: 8rem;
+    margin-left: -9rem;
+    display: inline-block;
+    padding-right: 2rem;
+    max-width: calc(100% + 10rem);
+    height: 7rem;
+    box-sizing: border-box;
+}
+
+main > header > div > form.return {
+    display: block;
+    padding-right: 0;
+    padding-left: 9rem;
+}
+
+/* Not very beautiful… */
+main > header > div > .return.condensed > h2 {
+    line-height: 3.5rem;
+    font-size: 2.75rem;
+    margin-top: 0.7rem;
+    margin-bottom: -0.5rem;
+}
+
+main > header > div > .return > h4 {
+    line-height: 2.5rem;
+    font-size: 1.75rem;
+}
+
+main > header > div > .return.r1 { max-width: calc(100% + 3rem); }
+main > header > div > .return.r2 { max-width: calc(100% - 5rem); }
+main > header > div > .return.r3 { max-width: calc(100% - 12rem); }
+
+main > header > div > .return.active:hover,
+main > header > div > span.active:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1024px) {
+    main > header > div,
+    main > header > div:first-child:nth-last-child(2) ~ div {
+        width: 100%;
+    }
+
+    main > header > div:first-child:nth-last-child(2) {
+        display: none;
+    }
+}
+
+main > section {
+    height: 100%;
+    position: relative;
+}
+
+main > header + section {
+    height: calc(100% - 7rem);
+}
+
+main > section > div {
+    overflow-y: auto;
+    display: block;
+    /*position: relative;*/
+    float: left;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+main > section > div:not(:last-child) {
+    border-right: 1px solid #DDDDDD;
+}
+
+main > section > div > * {
+    max-width: 100rem;
+    margin: 0 auto;
+}
+
+/* Two blocks*/
+main > section > div:first-child:nth-last-child(2) {
+    width: 30%;
+}
+main > section > div:first-child:nth-last-child(2) ~ div {
+    width: 70%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    /*transition: right 0.2s ease;*/
+    -webkit-transition: -webkit-transform .2s ease-in-out;
+    transition: transform .2s ease-in-out;
+    background-color: #EEE;
+}
+
+main > section > div > div.contained { /* Specific behaviour when the scroll need to be inside the block */
+    height: calc(100% - 7rem);
+    overflow-y: scroll;
+    position: absolute;
+    max-width: 100%;
+    width: 100%;
+}
+
+main > section > div > div.contained > * {
+    max-width: 100rem;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 1024px) {
+    /* Two blocks*/
+    main > section > div:first-child:nth-last-child(2) {
+        width: 100%;
+    }
+    main > section > div:first-child:nth-last-child(2) ~ div {
+        width: 100%;
+        -webkit-transform: translateX(100%);
+        transform: translateX(100%);
+        z-index: 1;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.23), 0 0 10px rgba(0, 0, 0, 0.16);
+    }
+
+    main > section > div:first-child:nth-last-child(2) ~ div.enabled {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+
+    main,
+    nav + main {
+        width: 100%;
+    }
+
+    body > nav {
+        width: 0;
+    }
+}
+
+main footer {
+    font-size: 2rem;
+}
+
+/* Icon */
+span.icon {
+    width: 5rem;
+    height: 5rem;
+    position: absolute;
+    font-size: 3rem;
+    line-height: 5rem;
+    top: 50%;
+    left: 2rem;
+    text-align: center;
+    margin-top: -2.5rem;
+    background-size: cover;
+    background-position: center;
+}
+
+span.icon img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+span.icon.thumb {
+    left: 0;
+    width: 7rem;
+    top: 0;
+    height: 100%;
+    margin: 0;
+    line-height: 7.5rem;
+}
+
+li.oppose span.icon {
+    left: auto;
+    right: 2rem;
+}
+
+span.icon.bubble {
+    border-radius: 5rem;
+    color: white;
+    font-size: 0;
+    font-size: 2.5rem;
+}
+
+span.icon.bubble img {
+    border-radius: 5rem;
+}
+
+span.icon.bubble i {
+    font-size: 3rem;
+    line-height: 5rem;
+}
+
+span.icon.small {
+    width: 3rem;
+    height: 3rem;
+    line-height: 3rem;
+    margin-top: -1.5rem;
+}
+
+span.icon.tiny {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+span.icon.large {
+    width: 7rem;
+    height: 7rem;
+    line-height: 7rem;
+    margin-top: -3.5rem;
+}
+
+span.icon.small.bubble:first-letter,
+span.icon.small.bubble i {
+    font-size: 2rem;
+    line-height: 0;
+    vertical-align: text-top;
+}
+
+span.icon.status:after {
+    content: '';
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    left: 3.25rem;
+    top: 3.25rem;
+    position: absolute;
+
+    border-radius: 2em;
+    background-color: #DDD;
+}
+
+main ul li .control > i {
+    margin-left: 0;
+}
+
+/* Card */
+
+.card {
+    padding: 1rem;
+}
+
+.card > .block:not(.subheader) {
+    background-color: white;
+    border-radius: 2px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.card > form.block {
+    padding: 2rem;
+    padding-top: 0;
+    box-sizing: border-box;
+}
+
+.card.shadow > .block:not(.subheader) {
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 2px rgba(0, 0, 0, 0.24);
+    border: none;
+}
+
+/* Header */
+
+header.big {
+    background-size: cover, cover;
+    background-position: center center;
+    width: 100%;
+    max-width: 100%;
+    color: white;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+header.big p {
+    color: white;
+}
+
+/* Dialog */
+
+.dialog {
+    position: fixed;
+    top: 5%;
+    left: 50%;
+    background-color: white;
+    height: initial;
+    max-height: 90%;
+    width: 50rem;
+    margin-left: -25rem;
+
+    overflow: hidden;
+
+    box-shadow: 0 2.5rem 5rem rgba(0,0,0,0.30), 0 2rem 1.5rem rgba(0,0,0,0.22);
+    border-radius: 0.25rem;
+    z-index: 3;
+    box-sizing: border-box;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+}
+
+.dialog:empty {
+    display: none;
+}
+
+.dialog.scroll {
+    height: 90%;
+}
+
+.dialog > section {
+    height: 100%;
+    overflow-y: auto;
+    position: relative;
+}
+
+.dialog > section > *:first-child {
+    margin-top: 2rem;
+}
+
+.dialog > section > *:last-child {
+    margin-bottom: 2rem;
+}
+
+.dialog > section > *:not(ul) {
+    padding: 0 2rem;
+}
+
+.dialog > section > form > ul > li {
+    padding: 0;
+}
+
+@media screen and (max-width: 600px) {
+    .dialog {
+        width: 90%;
+        height: 90%;
+        min-height: 0;
+        min-width: 0;
+        max-height: 90%;
+        margin-left: -45%;
+        margin-top: 0;
+        top: 5%;
+    }
+}
+
+/* Actions bar */
+
+.actions {
+    padding-bottom: 7rem;
+}
+
+.actions > div:last-child {
+    background-color: white;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: right;
+    bottom: 0;
+    padding: 0.5rem 2rem;
+    position: absolute;
+    border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.actions > div.no_bar:last-child {
+    border-top: none;
+}
+
+.actions.fixed > div:last-child {
+    position: fixed;
+    min-height: 7rem;
+    max-width: calc(100% - 5rem);
+    width: 100%;
+    padding: 0;
+}
+
+.actions.scroll > section {
+    margin-bottom: 1rem;
+}
+
+.actions.scroll > section > article > section {
+    padding: 0;
+}
+
+main section > div:first-child:nth-last-child(2) ~ div .actions.fixed > div:last-child  {
+    max-width: calc(75% - 5rem);
+}
+
+.actions.fixed > div:last-child > * { /* Little hack to fake the 100% width that overflow the parent */
+    max-width: 100rem;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 1024px) { /* Known bug, on some intermediary resolution, the content is cropped */
+    main section > div:first-child:nth-last-child(2) ~ div .actions.fixed > div:last-child {
+        max-width: 100%;
+    }
+}
+
+
+/* Snackbar - Toast */
+
+.snackbar,
+.toast {
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.23), 0px 3px 10px rgba(0, 0, 0, 0.16);
+    position: fixed;
+    z-index: 4;
+    min-height: 6rem;
+    max-height: 11rem;
+    height: auto;
+    color: white;
+    padding: 2rem 3rem;
+    box-sizing: border-box;
+    width: 40rem;
+    pointer-events: none;
+    transition: opacity 0.2s ease, bottom 0.4s ease;
+}
+
+.snackbar p,
+.toast p {
+    color: white;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.snackbar {
+    background-color: #333333;
+    bottom: 3rem;
+    left: 3rem;
+    border-radius: 0.25rem;
+    opacity: 1;
+    padding: 2rem 1rem;
+}
+
+.toast {
+    background-color: #323232;
+    border-radius: 3rem;
+    left: 50%;
+    bottom: 3rem;
+    line-height: 2.5rem;
+    margin-left: -20rem;
+}
+
+.snackbar:empty,
+.toast:empty {
+    opacity: 0;
+}
+
+@media screen and (max-width: 22rem) {
+    .snackbar {
+        width: 100%;
+        top: 0;
+        left: 0;
+        bottom: auto;
+        border-radius: 0;
+    }
+
+    .toast {
+        max-width: 90%;
+        left: 5%;
+        margin-left: 0;
+    }
+}
+
+
+/* Placeholder */
+
+.placeholder {
+    text-align: center;
+    font-size: 1.2em;
+    max-width: 400px;
+    padding: 0 2rem;
+    padding-bottom: 2rem;
+    margin: 0 auto;
+}
+
+.placeholder h1 {
+    color: #888;
+}
+
+.placeholder h4 {
+    color: #AAA;
+}
+
+.placeholder p {
+    text-align: center;
+}
+
+.placeholder.icon {
+    background-image: url(../img/icons/chat.svg);
+    background-size: 25rem;
+    padding-top: 30rem;
+    background-repeat: no-repeat;
+    background-position: center 4em;
+}
+
+.icon.news      { background-image: url(../img/icons/receipt.svg); }
+.icon.forum     { background-image: url(../img/icons/forum.svg); }
+.icon.contacts  { background-image: url(../img/icons/group.svg); }
+.icon.media     { background-image: url(../img/placeholder/media.png); }
+.icon.explore   { background-image: url(../img/placeholder/explore.png); }
+.icon.plane     { background-image: url(../img/placeholder/plane.png); }
+.icon.file      { background-image: url(../img/placeholder/file.png); }
+.icon.pages     { background-image: url(../img/icons/pages.svg); }
+.icon.clipboard { background-image: url(../img/icons/assignment_turned_in.svg); }
+
+/* Definition list */
+
+dl dt,
+dl dd {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    padding: 0 1rem;
+    display: inline-block;
+    line-height: 2rem;
+    vertical-align: middle;
+}
+
+dl di {
+    border-bottom: 1px solid #DDD;
+    display: block;
+    padding: 1em 0;
+}
+
+dl dt {
+    text-align: right;
+    font-weight: bold;
+    width: 25%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+dl dd {
+    text-align: left;
+    width: 74%;
+}
+
+/* Padded */
+
+@media screen and (max-width: 800px) {
+    .padded {
+        padding: 2rem;
+        box-sizing: border-box;
+    }
+
+    .padded_right {
+        padding-right: 2rem;
+        box-sizing: border-box;
+    }
+
+    .padded_top_bottom {
+        padding: 0 2rem;
+        box-sizing: border-box;
+    }
+}
+
+/* Divided */
+
+*.divided:not(.spaced) > *:not(:last-child),
+*.divided.spaced > *:not(:last-child).subheader,
+*.divided.spaced > *:not(:last-child):not(.subheader):after {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+}
+
+*.divided.spaced > *:not(:last-child):after {
+    position: absolute;
+    right: 0;
+    bottom: 0rem;
+    content: "";
+    display: block;
+    width: calc(100% - 9rem);
+}
+
+/* Spinner */
+.spinner {
+    position: relative;
+}
+
+.spinner:before,
+.spinner:after {
+    transition: top .3s ease-in-out;
+    content: '';
+    position: absolute;
+    left: calc(50% - 3.5rem);
+    border-radius: 50%;
+    top: -10rem;
+}
+
+.spinner.on:before,
+.spinner.on:after {
+    top: 3rem;
+}
+
+.spinner.on:before {
+    animation: spinner 1s linear infinite;
+    -webkit-animation: spinner 1s linear infinite;
+}
+
+.spinner:before {
+    z-index: 2;
+    width: 3.5rem;
+    height: 3.5rem;
+    margin: 1rem;
+}
+
+.spinner:not(:required):before {
+    content: '';
+    border: 0.75rem solid transparent;
+    border-top: 0.75rem solid #ddd;
+}
+
+.spinner:after {
+    box-shadow: 0px 0.5rem 1.25rem rgba(0, 0, 0, 0.23), 0px 0.5rem 1.25rem rgba(0, 0, 0, 0.16);
+    background-color: white;
+
+    width: 7rem;
+    height: 7rem;
+}
+
+@keyframes spinner {
+    to {transform: rotate(360deg);}
+}
+
+@-webkit-keyframes spinner {
+    to {-webkit-transform: rotate(360deg);}
+}
+
+/* Display/hide */
+
+.on_mobile {
+    display: none !important;
+}
+
+@media screen and (max-width: 1024px) {
+
+.on_mobile {
+    display: inherit !important;
+}
+
+.on_desktop {
+    display: none !important;
+}
+
+}
+
+/* Disabled */
+.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+/* Animation */
+.background_fade {
+    background-color: #CCC;
+    animation: fadeout 1s forwards;
+    -moz-animation: fadeout 1s forwards;
+    -webkit-animation: fadeout 1s forwards;
+    -o-animation: fadeout 1s forwards;
+}
+
+
+@keyframes fadeout {
+    to {
+        background-color:#fff;
+    }
+
+}
+@-moz-keyframes fadeout {
+    to {
+        background-color: #ffffff;
+    }
+}
+@-webkit-keyframes fadeout {
+    to {
+        background-color: #ffffff;
+    }
+}
+@-o-keyframes fadeout {
+    to {
+        background-color: #ffffff;
+    }
+}

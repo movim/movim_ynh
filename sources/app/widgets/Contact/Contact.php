@@ -1,0 +1,314 @@
+<?php
+
+use Moxl\Xec\Action\Roster\UpdateItem;
+use Moxl\Xec\Action\Vcard4\Get;
+use Respect\Validation\Validator;
+use Moxl\Xec\Action\Pubsub\GetItems;
+
+class Contact extends WidgetBase
+{
+    private $_paging = 10;
+
+    function load()
+    {
+        $this->registerEvent('roster_updateitem_handle', 'onContactEdited', 'contacts');
+        $this->registerEvent('vcard_get_handle', 'onVcardReceived', 'contacts');
+        $this->registerEvent('vcard4_get_handle', 'onVcardReceived', 'contacts');
+    }
+
+    public function onVcardReceived($packet)
+    {
+        $contact = $packet->content;
+        $this->ajaxGetContact($contact->jid);
+    }
+
+    public function onContactEdited($packet)
+    {
+        Notification::append(null, $this->__('edit.updated'));
+    }
+
+    function ajaxClear()
+    {
+        $html = $this->prepareEmpty();
+        RPC::call('movim_fill', 'contact_widget', $html);
+    }
+
+    function ajaxGetContact($jid)
+    {
+        if(!$this->validateJid($jid)) return;
+
+        $html = $this->prepareContact($jid);
+        $header = $this->prepareHeader($jid);
+
+        Header::fill($header);
+        RPC::call('movim_fill', 'contact_widget', $html);
+        RPC::call('MovimTpl.showPanel');
+    }
+
+    function ajaxEditSubmit($form)
+    {
+        $rd = new UpdateItem;
+        $rd->setTo(echapJid($form->jid->value))
+           ->setFrom($this->user->getLogin())
+           ->setName($form->alias->value)
+           ->setGroup($form->group->value)
+           ->request();
+    }
+
+    function ajaxRefreshFeed($jid)
+    {
+        if(!$this->validateJid($jid)) return;
+
+        $r = new GetItems;
+        $r->setTo($jid)
+          ->setNode('urn:xmpp:microblog:0')
+          ->request();
+    }
+
+    function ajaxRefreshVcard($jid)
+    {
+        if(!$this->validateJid($jid)) return;
+
+        $a = new Moxl\Xec\Action\Avatar\Get;
+        $a->setTo(echapJid($jid))->request();
+
+        $r = new Get;
+        $r->setTo(echapJid($jid))->request();
+    }
+
+    function ajaxEditContact($jid)
+    {
+        if(!$this->validateJid($jid)) return;
+
+        $rd = new \Modl\RosterLinkDAO();
+        $groups = $rd->getGroups();
+        $rl     = $rd->get($jid);
+
+        $view = $this->tpl();
+
+        if(isset($rl)) {
+            $view->assign('submit',
+                $this->call(
+                    'ajaxEditSubmit',
+                    "movim_form_to_json('manage')"));
+            $view->assign('contact', $rl);
+            $view->assign('groups', $groups);
+        }
+
+        Dialog::fill($view->draw('_contact_edit', true));
+    }
+
+    function ajaxChat($jid)
+    {
+        if(!$this->validateJid($jid)) return;
+
+        $c = new Chats;
+        $c->ajaxOpen($jid);
+
+        RPC::call('movim_redirect', $this->route('chat', $jid));
+    }
+
+    function ajaxDeleteContact($jid)
+    {
+        if(!$this->validateJid($jid)) return;
+
+        $view = $this->tpl();
+
+        $view->assign('jid', $jid);
+
+        Dialog::fill($view->draw('_contact_delete', true));
+    }
+
+    function prepareHeader($jid)
+    {
+        if(!$this->validateJid($jid)) return;
+
+        $cd = new \Modl\ContactDAO;
+        $cr  = $cd->getRosterItem($jid);
+
+        $view = $this->tpl();
+
+        $view->assign('jid', echapJS($jid));
+
+        if(isset($cr)) {
+            $view->assign('contactr', $cr);
+            $view->assign('edit',
+                $this->call(
+                    'ajaxEditContact',
+                    "'".echapJS($cr->jid)."'"));
+            $view->assign('delete',
+                $this->call(
+                    'ajaxDeleteContact',
+                    "'".echapJS($cr->jid)."'"));
+        } else {
+            $view->assign('contactr', null);
+            $c  = $cd->get($jid);
+            if(isset($c)) {
+                $view->assign('contact', $c);
+            } else {
+                $view->assign('contact', null);
+            }
+        }
+
+        return $view->draw('_contact_header', true);
+    }
+
+    function prepareEmpty($jid = null)
+    {
+        if($jid == null) {
+            $cd = new \modl\ContactDAO();
+            $count = $cd->countAllPublic();
+            if($count != 0){
+                $view = $this->tpl();
+                $view->assign('users', $this->preparePublic());
+                return $view->draw('_contact_explore', true);
+            } else {
+                return '';
+            }
+        } else {
+            $view = $this->tpl();
+            $view->assign('jid', $jid);
+            return $view->draw('_contact_empty', true);
+        }
+    }
+
+    function ajaxPublic($page = 0)
+    {
+        $validate_page = Validator::int();
+        if(!$validate_page->validate($page)) return;
+
+        RPC::call('MovimTpl.fill', '#public_list', $this->preparePublic($page));
+    }
+
+    private function preparePublic($page = 0)
+    {
+        $cd = new \modl\ContactDAO();
+        $users = $cd->getAllPublic($page*$this->_paging, $this->_paging);
+        $count = $cd->countAllPublic();
+        if($users != null){
+            $view = $this->tpl();
+            $view->assign('pages', array_fill(0, (int)($count/$this->_paging), 'p'));
+            $view->assign('users', array_reverse($users));
+            $view->assign('page', $page);
+            return $view->draw('_contact_public', true);
+        }
+    }
+
+    function prepareContact($jid)
+    {
+        if(!$this->validateJid($jid)) return;
+
+        $cd = new \Modl\ContactDAO;
+        $c  = $cd->get($jid, true);
+
+        if($c == null
+        || $c->created == null
+        || $c->isEmpty()
+        || $c->isOld()) {
+            $c = new \Modl\Contact;
+            $c->jid = $jid;
+            $this->ajaxRefreshVcard($jid);
+        }
+
+        $cr = $cd->getRosterItem($jid);
+
+        $view = $this->tpl();
+
+        $pd = new \Modl\PostnDAO;
+        $gallery = $pd->getGallery($jid);
+        $blog    = $pd->getPublic($jid, 'urn:xmpp:microblog:0', 1, 0);
+
+        if(isset($c)) {
+            $view->assign('mood', getMood());
+
+            $view->assign('contact', $c);
+            $view->assign('contactr', $cr);
+
+            if( $cr->node != null
+                && $cr->ver != null
+                && $cr->node
+                && $cr->ver) {
+                $node = $cr->node.'#'.$cr->ver;
+
+                $cad = new \Modl\CapsDAO();
+                $caps = $cad->get($node);
+
+                if(
+                    isset($caps)
+                    && $caps->name != ''
+                    && $caps->type != '' ) {
+                    $clienttype = getClientTypes();
+
+                    $view->assign('caps', $caps);
+                    $view->assign('clienttype', $clienttype);
+                }
+            } else {
+                $view->assign('caps', null);
+            }
+
+            $view->assign('gallery', $gallery);
+            $view->assign('blog', $blog);
+
+            $view->assign('chat',
+                $this->call(
+                    'ajaxChat',
+                    "'".echapJS($c->jid)."'"));
+
+            return $view->draw('_contact', true);
+        } elseif(isset($cr)) {
+            $view->assign('contact', null);
+            $view->assign('contactr', $cr);
+
+            $view->assign('chat',
+                $this->call(
+                    'ajaxChat',
+                    "'".echapJS($cr->jid)."'"));
+
+            return $view->draw('_contact', true);
+        } else {
+            return $this->prepareEmpty($jid);
+        }
+    }
+
+    function getLastFM($contact)
+    {
+        $uri = str_replace(
+            ' ',
+            '%20',
+            'http://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=80c1aa3abfa9e3d06f404a2e781e38f9&artist='.
+                $contact->tuneartist.
+                '&album='.
+                $contact->tunesource.
+                '&format=json'
+            );
+
+        $json = json_decode(requestURL($uri, 2));
+
+        $img = $json->album->image[2]->{'#text'};
+        $url = $json->album->url;
+
+        return array($img, $url);
+    }
+
+    /**
+     * @brief Validate the jid
+     *
+     * @param string $jid
+     */
+    private function validateJid($jid)
+    {
+        $validate_jid = Validator::string()->noWhitespace()->length(6, 60);
+        if(!$validate_jid->validate($jid)) return false;
+        else return true;
+    }
+
+    function display()
+    {
+        $validate_jid = Validator::email()->length(6, 40);
+
+        $this->view->assign('jid', false);
+        if($validate_jid->validate($this->get('f'))) {
+            $this->view->assign('jid', $this->get('f'));
+        }
+    }
+}

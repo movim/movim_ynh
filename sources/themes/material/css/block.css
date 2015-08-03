@@ -1,0 +1,37 @@
+.flex {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.flex .block {
+    flex: 1 50%;
+}
+
+.flex .block.large,
+.flex.card .block.large {
+    flex: 1 100%;
+}
+
+.flex.card {
+    padding: 0;
+}
+
+.flex.card .block {
+    margin: 1rem;
+    flex: 1 calc(50% - 2rem);
+    min-height: 8rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.flex.stacked .block {
+    margin-bottom: 0;
+}
+
+@media screen and (max-width: 1024px) {
+    .flex.card .block,
+    .flex .block {
+        margin-bottom: 0;
+        flex: 1 100%;
+    }
+}

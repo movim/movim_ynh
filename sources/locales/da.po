@@ -1,0 +1,2743 @@
+# Danish translations for Movim  package.
+# This file is distributed under the same license as the Movim  package.
+# This file was translated from CodingTeam at <http://codingteam.net/>.
+msgid ""
+msgstr ""
+"Project-Id-Version: Movim\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-06-08 22:06+0200\n"
+"PO-Revision-Date: 2015-05-18 08:45+0000\n"
+"Last-Translator: Filip Kemuel Dam Bartholdy <filip@kemuel.dk>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2015-06-18 21:08+0000\n"
+"X-Generator: Launchpad (build 17570)\n"
+"Language: \n"
+
+#: ../cache/locales.php:2
+msgid "Thanks"
+msgstr "Tak"
+
+#: ../cache/locales.php:3
+msgid "Developers"
+msgstr "Udviklere"
+
+#: ../cache/locales.php:4
+msgid "Translators"
+msgstr "Oversættere"
+
+#: ../cache/locales.php:5
+msgid "Software"
+msgstr "Software"
+
+#: ../cache/locales.php:6
+msgid "Resources"
+msgstr "Ressourcer"
+
+#: ../cache/locales.php:7 ../cache/locales.php:83 ../cache/locales.php:85
+msgid "API"
+msgstr "API"
+
+#: ../cache/locales.php:8
+msgid ""
+"Movim is an XMPP-based communication platform. All the project, except the "
+"following software and resources, is under"
+msgstr ""
+"Movim er en XMPP-baseret kommunikationsplatform. Hele projektet, med "
+"undtagelse af den følgende software og ressourcer er udgivet under"
+
+#: ../cache/locales.php:9
+msgid "Account"
+msgstr "Konto"
+
+#: ../cache/locales.php:10
+msgid "The password has been updated"
+msgstr "Kodeordet er opdateret"
+
+#: ../cache/locales.php:11
+msgid "Please provide a valid password (6 characters minimum)"
+msgstr "Skriv venligst et gyldigt kodeord (minimun 6 tegn)"
+
+#: ../cache/locales.php:12
+msgid "The provided passwords are not the same"
+msgstr "De givnde kodeord er ikke ens"
+
+#: ../cache/locales.php:13
+msgid "Delete my account"
+msgstr "Slet min konto"
+
+#: ../cache/locales.php:14
+msgid ""
+"You will delete your XMPP account and all the relative information linked to "
+"it (profile, contacts and publications)."
+msgstr ""
+"Du sletter hermed din XMPP konto og alle de relative informationer knyttet "
+"til den (profil, kontakter og udgivelser)."
+
+#: ../cache/locales.php:15
+msgid "Are you sure that you want to delete it ?"
+msgstr "Er du sikker på at du vil slette den ?"
+
+#: ../cache/locales.php:16 ../cache/locales.php:411
+msgid "Create a new account"
+msgstr "Opret en ny konto"
+
+#: ../cache/locales.php:17
+msgid "No account creation form found on the server"
+msgstr "Ingen konto-oprettelses-formular fundet på serveren"
+
+#: ../cache/locales.php:18 ../cache/locales.php:172
+msgid "on"
+msgstr "på"
+
+#: ../cache/locales.php:19
+msgid "Your acccount has been successfully registered"
+msgstr "Success! Din konto er registreret"
+
+#: ../cache/locales.php:20
+msgid "Loading"
+msgstr "Indlæser"
+
+#: ../cache/locales.php:21
+msgid "Not Acceptable"
+msgstr "Ikke accepteret"
+
+#: ../cache/locales.php:22
+msgid "The registration system of this server is currently unavailable"
+msgstr "Registreringssystemet på denne server er i øjeblikket utilgængeligt"
+
+#: ../cache/locales.php:23
+msgid ""
+"This server use an external system for the registration, please click on the "
+"following URL."
+msgstr ""
+"Denne server bruger et eksternt system til registrering, klik venligst på "
+"følgende link."
+
+#: ../cache/locales.php:24
+msgid "Actions"
+msgstr "Handlinger"
+
+#: ../cache/locales.php:25 ../cache/locales.php:82
+msgid "Database"
+msgstr "Database"
+
+#: ../cache/locales.php:26
+msgid "Modl wasn't able to connect to the database"
+msgstr "Modl kunne ikke forbinde til databasen"
+
+#: ../cache/locales.php:27
+msgid "Movim is connected to the database"
+msgstr "Moovim er forbundet til databasen"
+
+#: ../cache/locales.php:28
+msgid "The database need to be updated"
+msgstr "Databasen bør opdateres"
+
+#: ../cache/locales.php:29
+msgid "Movim database is up to date"
+msgstr "Movim database er i nyeste version"
+
+#: ../cache/locales.php:30
+msgid "Database Type"
+msgstr "Databasetype"
+
+#: ../cache/locales.php:31 ../cache/locales.php:50 ../cache/locales.php:540
+msgid "Username"
+msgstr "Brugernavn"
+
+#: ../cache/locales.php:32 ../cache/locales.php:51 ../cache/locales.php:282
+#: ../cache/locales.php:541
+msgid "Password"
+msgstr "Kodeord"
+
+#: ../cache/locales.php:33
+msgid "Host"
+msgstr "Vært"
+
+#: ../cache/locales.php:34
+msgid "Port"
+msgstr "Port"
+
+#: ../cache/locales.php:35
+msgid "Database Name"
+msgstr "Databasenavn"
+
+#: ../cache/locales.php:36
+msgid "General Settings"
+msgstr "Generelle indstillinger"
+
+#: ../cache/locales.php:37
+msgid "Theme"
+msgstr "Tema"
+
+#: ../cache/locales.php:38
+msgid "Default language"
+msgstr "Standardsprog"
+
+#: ../cache/locales.php:39
+msgid "Environment"
+msgstr "Miljø"
+
+#: ../cache/locales.php:40
+msgid "Log verbosity"
+msgstr "Log detaljerethed"
+
+#: ../cache/locales.php:41
+msgid "Server Timezone"
+msgstr "Server tidszone"
+
+#: ../cache/locales.php:42
+msgid "User folder size limit (in bytes)"
+msgstr "Brugermappes maks-størrelse (i bytes)"
+
+#: ../cache/locales.php:43
+msgid "WebSocket Configuration"
+msgstr "WebSocket opsætning"
+
+#: ../cache/locales.php:44
+msgid "Enter here a valid WebSocket URI in the form"
+msgstr "Skriv her en gyldig WebSocket URI i formularen"
+
+#: ../cache/locales.php:45
+msgid "WebSocket URI"
+msgstr "WebSocket URI"
+
+#: ../cache/locales.php:46
+msgid ""
+"If you change the URI, please restart the daemon to reload the configuration"
+msgstr ""
+"Genstart venligst daemon'en for at genindlæse opsætningen, hvis du ændrer "
+"URI'en"
+
+#: ../cache/locales.php:47
+msgid "Public WebSockets"
+msgstr "Offentlige WebSockets"
+
+#: ../cache/locales.php:48
+msgid "Administration Credential"
+msgstr "Administrations legitimationsstyring"
+
+#: ../cache/locales.php:49
+msgid "Change the default credentials admin/password"
+msgstr "Ændre standard legitimationen admin/kodeord"
+
+#: ../cache/locales.php:52
+msgid "Retype password"
+msgstr "Gentag adgangskode"
+
+#: ../cache/locales.php:53
+msgid "Whitelist - XMPP Server"
+msgstr "Hvidliste - XMPP server"
+
+#: ../cache/locales.php:54
+msgid ""
+"If you want to specify a list of authorized XMPP servers on your Movim pod "
+"and forbid the connection on all the others please put their domain name "
+"here, with comma (ex: movim.eu,jabber.fr)"
+msgstr ""
+"Hvis du vil specificere en liste af autoriserede XMPP servere på din Movim "
+"pod og forbyde forbindelser på alle andre, skriv da venligst deres "
+"domænenavne her, separeret med komma (f.eks: movim.eu,jabber.dk)"
+
+#: ../cache/locales.php:55
+msgid ""
+"Leave this field blank if you allow the access to all the XMPP accounts."
+msgstr ""
+"Efterlad dette felt tomt hvis du vil tillade adgang til alle XMPP konti."
+
+#: ../cache/locales.php:56
+msgid "List of whitelisted XMPP servers"
+msgstr "Liste over hvidlistede XMPP servere"
+
+#: ../cache/locales.php:57 ../cache/locales.php:61
+msgid "Information Message"
+msgstr "Informationsbesked"
+
+#: ../cache/locales.php:58
+msgid "Description"
+msgstr "Beskrivelse"
+
+#: ../cache/locales.php:59
+msgid "This message will be displayed on the login page"
+msgstr "Denne meddelselse vil blive vist på logind siden"
+
+#: ../cache/locales.php:60
+msgid "Leave this field blank if you don't want to show any message."
+msgstr "Efterlad feltet tomt hvis du ikke vil vise nogen beskedl"
+
+#: ../cache/locales.php:62
+msgid "Empty"
+msgstr "Tomt"
+
+#: ../cache/locales.php:63
+msgid "Syslog"
+msgstr "Syslog"
+
+#: ../cache/locales.php:64
+msgid "Syslog and files"
+msgstr "Syslog og filer"
+
+#: ../cache/locales.php:65
+msgid "URL Rewriting"
+msgstr "URL omskrivning"
+
+#: ../cache/locales.php:66
+msgid "The URL Rewriting can be enabled"
+msgstr "URL omskrivning kan slås til"
+
+#: ../cache/locales.php:67
+msgid "General Overview"
+msgstr "Generel oversigt"
+
+#: ../cache/locales.php:68
+msgid ""
+"Movim has found some issues or things that need to be fixed or improved"
+msgstr ""
+"Movim har fundet nogle problemer, eller ting der har brug for at blive "
+"ordnet eller forbedret"
+
+#: ../cache/locales.php:69
+#, php-format
+msgid "Update your PHP-Version: %s"
+msgstr "Opdater din PHP-version: %s"
+
+#: ../cache/locales.php:70
+msgid "Required: 5.3.0"
+msgstr "Kræver: 5.3.0"
+
+#: ../cache/locales.php:71
+msgid "Install the php5-curl library"
+msgstr "Installer php5-curl biblioteket"
+
+#: ../cache/locales.php:72
+msgid "Install the php5-imagick library"
+msgstr "Installer php5-imagick biblioteket"
+
+#: ../cache/locales.php:73
+msgid "Install the php5-gd library"
+msgstr ""
+
+#: ../cache/locales.php:74
+msgid "Read and write rights for the webserver in Movim's root directory"
+msgstr "Læse og skrive rettigheder på webserveren i Movim's rodmappe"
+
+#: ../cache/locales.php:75
+msgid "The URL Rewriting support is currently disabled"
+msgstr "URL omskrivnings understøttelse er i øjeblikket slået fra"
+
+#: ../cache/locales.php:76
+msgid "The database need to be updated, go to the database panel to fix this"
+msgstr ""
+
+#: ../cache/locales.php:77
+msgid ""
+"WebSocket connection error, check if the Movim Daemon is running and is "
+"reacheable"
+msgstr ""
+
+#: ../cache/locales.php:78
+msgid ""
+"XMPP Websocket connection error, please check the validity of the URL given "
+"in the General Configuration"
+msgstr ""
+
+#: ../cache/locales.php:79
+msgid "Browser"
+msgstr ""
+
+#: ../cache/locales.php:80
+msgid "Movim Core"
+msgstr ""
+
+#: ../cache/locales.php:81
+msgid "Movim Daemon"
+msgstr ""
+
+#: ../cache/locales.php:84
+msgid "XMPP"
+msgstr ""
+
+#: ../cache/locales.php:86
+#, php-format
+msgid ""
+"Here you can register your pod on the official %sMovim API%s and be listed "
+"on %sthe pods page%s."
+msgstr ""
+"Her kan du registrere din pod på den officielle %sMovim API%s og blive "
+"listet på %spod siden%s."
+
+#: ../cache/locales.php:87
+msgid "Your pod is not registered on the API"
+msgstr "Din pod er ikke registreret på API'en"
+
+#: ../cache/locales.php:88
+msgid "Your pod is registered on the API"
+msgstr "Din pod er registreret på API'en"
+
+#: ../cache/locales.php:89
+msgid "Your pod is not yet validated"
+msgstr "Din pod er ikke valideret endnu"
+
+#: ../cache/locales.php:90
+msgid "Your pod is validated"
+msgstr "Din pod er valideret"
+
+#: ../cache/locales.php:91
+msgid ""
+"You asked to be removed from the API, this request will be processed in a "
+"couple of hours"
+msgstr ""
+"Du har spurgt om at blive fjernet fra API'en, denne forespørgsel vil blive "
+"behandlet i løbet af et par timer"
+
+#: ../cache/locales.php:92 ../cache/locales.php:147
+msgid "Configuration updated"
+msgstr "Opsætning opdateret"
+
+#: ../cache/locales.php:93
+msgid "File"
+msgstr "Fil"
+
+#: ../cache/locales.php:94
+msgid "Use it"
+msgstr "Brug den"
+
+#: ../cache/locales.php:95
+msgid "Webcam"
+msgstr "Webkamera"
+
+#: ../cache/locales.php:96
+msgid "Cheese !"
+msgstr "Smiil !"
+
+#: ../cache/locales.php:97
+msgid "Take a webcam snapshot"
+msgstr "Tag et webcam billede"
+
+#: ../cache/locales.php:98
+msgid "Avatar Updated"
+msgstr "Avatar opdateret"
+
+#: ../cache/locales.php:99
+msgid "Avatar Not Updated"
+msgstr "Avatar ikke opdateret"
+
+#: ../cache/locales.php:100 ../cache/locales.php:415
+#, php-format
+msgid "%s's feed"
+msgstr "%s's feed"
+
+#: ../cache/locales.php:101
+msgid "This user has not posted anything right now"
+msgstr "Denne bruger har ikke postet noget endnu"
+
+#: ../cache/locales.php:102
+msgid "Conferences"
+msgstr "Konferencer"
+
+#: ../cache/locales.php:103 ../cache/locales.php:193 ../cache/locales.php:217
+#: ../cache/locales.php:468
+msgid "Groups"
+msgstr "Grupper"
+
+#: ../cache/locales.php:104
+msgid "Add a new Chat Room"
+msgstr "Tilføj et nyt chatroom"
+
+#: ../cache/locales.php:105 ../cache/locales.php:368
+msgid "Chat Room ID"
+msgstr "Chat Room ID"
+
+#: ../cache/locales.php:106 ../cache/locales.php:116 ../cache/locales.php:156
+#: ../cache/locales.php:361 ../cache/locales.php:369 ../cache/locales.php:424
+msgid "Name"
+msgstr "Navn"
+
+#: ../cache/locales.php:107 ../cache/locales.php:157 ../cache/locales.php:371
+#: ../cache/locales.php:425
+msgid "Nickname"
+msgstr "Kaldenavn"
+
+#: ../cache/locales.php:108
+msgid "Do you want do join automaticaly this Chat Room ?"
+msgstr "Vil du automatisk joine dette Chatroom"
+
+#: ../cache/locales.php:109 ../cache/locales.php:372
+msgid "Bad Chatroom ID"
+msgstr "Dårligt Chatroom ID"
+
+#: ../cache/locales.php:110 ../cache/locales.php:373
+msgid "Empty name"
+msgstr "Tomt navn"
+
+#: ../cache/locales.php:111 ../cache/locales.php:380
+msgid "Bookmarks updated"
+msgstr "Bogmærker opdateret"
+
+#: ../cache/locales.php:112
+msgid "An error occured : "
+msgstr "En fejl er sket: "
+
+#: ../cache/locales.php:113
+msgid "Configure"
+msgstr "Indstil"
+
+#: ../cache/locales.php:114
+msgid "Add a new URL"
+msgstr "Tilføj en ny URL"
+
+#: ../cache/locales.php:115
+msgid "URL"
+msgstr "URL"
+
+#: ../cache/locales.php:117
+msgid "Message Published"
+msgstr "Besked publiceret"
+
+#: ../cache/locales.php:118 ../cache/locales.php:138
+msgid "Encrypted message"
+msgstr "Krypteret meddelelse"
+
+#: ../cache/locales.php:119
+msgid "Composing..."
+msgstr "Sammensætter..."
+
+#: ../cache/locales.php:120
+msgid "Paused..."
+msgstr "Sat i pause..."
+
+#: ../cache/locales.php:121
+msgid "Contact gone"
+msgstr "Kontakt er væk"
+
+#: ../cache/locales.php:122
+#, php-format
+msgid "%s needs your attention"
+msgstr "%s har brug for din opmærksomhed"
+
+#: ../cache/locales.php:123
+msgid "Your message here..."
+msgstr "Din besked her..."
+
+#: ../cache/locales.php:124
+msgid "Smileys"
+msgstr "Smileyer"
+
+#: ../cache/locales.php:125 ../cache/locales.php:139
+msgid "Chat"
+msgstr "Chat"
+
+#: ../cache/locales.php:126
+msgid "Discuss with your contacts"
+msgstr "Snak med dine kontakter"
+
+#: ../cache/locales.php:127
+msgid "Members"
+msgstr "Medlemmer"
+
+#: ../cache/locales.php:128 ../cache/locales.php:376
+msgid "Connected to the chatroom"
+msgstr "Forbundet til chatroom'et"
+
+#: ../cache/locales.php:129 ../cache/locales.php:377
+msgid "Disconnected from the chatroom"
+msgstr "Afkoblet fra chatroom'et"
+
+#: ../cache/locales.php:130 ../cache/locales.php:200 ../cache/locales.php:469
+msgid "Configuration"
+msgstr "Opsætning"
+
+#: ../cache/locales.php:131
+msgid "Configuration saved"
+msgstr "Opsætning gemt"
+
+#: ../cache/locales.php:132
+msgid "Subject"
+msgstr "Emne"
+
+#: ../cache/locales.php:133
+msgid "Subject changed"
+msgstr "Emnet er ændret"
+
+#: ../cache/locales.php:134
+msgid "Open a new conversation by clicking on the plus button bellow"
+msgstr "Åbn en ny samtale ved at klikke på plus knappen herunder"
+
+#: ../cache/locales.php:135
+msgid "Chat with a contact"
+msgstr "Snak med en kontakt"
+
+#: ../cache/locales.php:136
+msgid "Frequent contacts"
+msgstr "Ofte brugte kontakter"
+
+#: ../cache/locales.php:137
+msgid "Load more contacts"
+msgstr "Indlæs flere kontakter"
+
+#: ../cache/locales.php:140
+msgid "General"
+msgstr "Generelt"
+
+#: ../cache/locales.php:141
+msgid "Language"
+msgstr "Sprog"
+
+#: ../cache/locales.php:142
+msgid "Roster display"
+msgstr ""
+
+#: ../cache/locales.php:143
+msgid "Show the offline contacts"
+msgstr "Vis offline kontakter"
+
+#: ../cache/locales.php:144
+msgid "Hide the offline contacts"
+msgstr "Skjul offline kontakter"
+
+#: ../cache/locales.php:145
+msgid "Appearence"
+msgstr "Udseende"
+
+#: ../cache/locales.php:146
+msgid "This configuration is shared wherever you are connected !"
+msgstr "Denne opsætning er delt hver gang du er forbundet !"
+
+#: ../cache/locales.php:148
+msgid "Notify on incoming message"
+msgstr "Giv besked om indkomne beskeder"
+
+#: ../cache/locales.php:149
+msgid "Use desktop notifications"
+msgstr "Brug skrivebordsmeddelelser"
+
+#: ../cache/locales.php:150
+msgid "Data"
+msgstr "Data"
+
+#: ../cache/locales.php:151
+msgid "Cache"
+msgstr ""
+
+#: ../cache/locales.php:152 ../cache/locales.php:218 ../cache/locales.php:466
+msgid "Contacts"
+msgstr ""
+
+#: ../cache/locales.php:153 ../cache/locales.php:480
+msgid "Posts"
+msgstr ""
+
+#: ../cache/locales.php:154
+msgid "Messages"
+msgstr ""
+
+#: ../cache/locales.php:155 ../cache/locales.php:423
+msgid "General Informations"
+msgstr "Generelle informationer"
+
+#: ../cache/locales.php:158 ../cache/locales.php:427
+msgid "Date of Birth"
+msgstr "Fødselsdag"
+
+#: ../cache/locales.php:159 ../cache/locales.php:428
+msgid "Gender"
+msgstr ""
+
+#: ../cache/locales.php:160 ../cache/locales.php:429
+msgid "Marital Status"
+msgstr ""
+
+#: ../cache/locales.php:161 ../cache/locales.php:426
+msgid "Email"
+msgstr "E-mail"
+
+#: ../cache/locales.php:162 ../cache/locales.php:430
+msgid "Website"
+msgstr "Internetside"
+
+#: ../cache/locales.php:163 ../cache/locales.php:431
+msgid "About Me"
+msgstr "Om mig"
+
+#: ../cache/locales.php:164
+msgid "Other Accounts"
+msgstr "Andre konti"
+
+#: ../cache/locales.php:165
+msgid "Is Listening"
+msgstr "Lytter"
+
+#: ../cache/locales.php:166 ../cache/locales.php:432
+msgid "Geographic Position"
+msgstr "Geografisk placering"
+
+#: ../cache/locales.php:167 ../cache/locales.php:433
+msgid "Locality"
+msgstr "Lokalitet"
+
+#: ../cache/locales.php:168 ../cache/locales.php:434
+msgid "Country"
+msgstr "Land"
+
+#: ../cache/locales.php:169
+msgid "Mood"
+msgstr "Humør"
+
+#: ../cache/locales.php:170
+msgid "I'm "
+msgstr "Jeg "
+
+#: ../cache/locales.php:171
+msgid "Listening"
+msgstr "Lytter"
+
+#: ../cache/locales.php:173
+msgid "Last seen"
+msgstr "Sidst set"
+
+#: ../cache/locales.php:174
+msgid "Client Informations"
+msgstr "Klient infomatiner"
+
+#: ../cache/locales.php:175
+msgid "Last registered"
+msgstr "Sidst registreret"
+
+#: ../cache/locales.php:176
+msgid "Find some new friends"
+msgstr "Find nogle nye venner"
+
+#: ../cache/locales.php:177 ../cache/locales.php:533
+msgid "Edit"
+msgstr "Redigér"
+
+#: ../cache/locales.php:178
+msgid "Alias"
+msgstr "Alias"
+
+#: ../cache/locales.php:179
+msgid "Group"
+msgstr "Gruppe"
+
+#: ../cache/locales.php:180 ../cache/locales.php:400
+msgid "Contact updated"
+msgstr "Kontakt opdateret"
+
+#: ../cache/locales.php:181
+msgid "Are you sure?"
+msgstr "Er du sikker?"
+
+#: ../cache/locales.php:182
+msgid ""
+"You are going to delete one of your contacts, please confirm your action"
+msgstr ""
+"Du er ved at slette en af dine kontakter, bekræft venligts din handling"
+
+#: ../cache/locales.php:183
+#, php-format
+msgid "%s years"
+msgstr "%s år"
+
+#: ../cache/locales.php:184
+msgid "Last public post"
+msgstr "Sidste offentige indlæg"
+
+#: ../cache/locales.php:185
+msgid "Subscribe"
+msgstr "Abonnér"
+
+#: ../cache/locales.php:186
+msgid "Subscribed"
+msgstr "Tilmeldt"
+
+#: ../cache/locales.php:187
+msgid "Unsubscribe"
+msgstr "Afmeld"
+
+#: ../cache/locales.php:188
+msgid "You are going to unsubscribe from this Group"
+msgstr "Du er ved at afmelde dig fra denne gruppe"
+
+#: ../cache/locales.php:189
+msgid "Unsubscribed"
+msgstr "Afmeldt"
+
+#: ../cache/locales.php:190
+msgid "Make your membership to this group public to your friends"
+msgstr "Gør dit mnedlemskab af denne fruppe offentligt for dine venner"
+
+#: ../cache/locales.php:191
+msgid "Give a label for this group"
+msgstr "Giv denne gruppe en label"
+
+#: ../cache/locales.php:192
+msgid "Are you sure ?"
+msgstr "Er du sikker ?"
+
+#: ../cache/locales.php:194
+msgid "Discover, follow and share"
+msgstr "Opdag, følg og del"
+
+#: ../cache/locales.php:195
+msgid "Something bad happened to this group"
+msgstr "Noget skidt er sket med denne gruppe"
+
+#: ../cache/locales.php:196
+msgid "Group configuration saved"
+msgstr "Gruppe opsætning gemt"
+
+#: ../cache/locales.php:197
+msgid "Delete the group"
+msgstr "Slet denne gruppe"
+
+#: ../cache/locales.php:198
+msgid ""
+"You are going to delete the following group. Please confirm your action."
+msgstr "Du er ved at slette følgende gruppe. Bekræft venligst din handling."
+
+#: ../cache/locales.php:199
+msgid ""
+"It seems that this group doesn't exists anymore. Do you want to remove it "
+"from your subscriptions?"
+msgstr ""
+"Det ser ud til at denne gruppe ikke eksisterer mere. Vil du fjerne den fra "
+"dine tilmeldinger?"
+
+#: ../cache/locales.php:201 ../cache/locales.php:408
+msgid "Subscriptions"
+msgstr "Tilmeldinger"
+
+#: ../cache/locales.php:202 ../cache/locales.php:290
+msgid "Hello"
+msgstr "Hej"
+
+#: ../cache/locales.php:203 ../cache/locales.php:225 ../cache/locales.php:291
+msgid "Contact post"
+msgstr "Kontakt indlæg"
+
+#: ../cache/locales.php:204
+msgid ""
+"You don't have any subscriptions yet, select a group server above to start "
+"exploring."
+msgstr ""
+"Du har ingen abonnementer endnu, vælg en gruppe server herover for at "
+"begynde at gå på opdagelse."
+
+#: ../cache/locales.php:205
+msgid "Subscribe to your favorite feeds by bookmarking them."
+msgstr "Tilmled dig til dine favorit feeds ved at bogmærke dem."
+
+#: ../cache/locales.php:206
+msgid "My Subscriptions"
+msgstr "Mine tilmeldinger"
+
+#: ../cache/locales.php:207
+msgid "Create a new Group"
+msgstr "Opret en ny gruppe"
+
+#: ../cache/locales.php:208
+msgid "Group name"
+msgstr "Gruppenavn"
+
+#: ../cache/locales.php:209
+msgid "My Little Pony - Fan Club"
+msgstr "My Little Pony - Fan Klub"
+
+#: ../cache/locales.php:210
+msgid "Group created successfully"
+msgstr "Gruppe er oprettet"
+
+#: ../cache/locales.php:211
+msgid "Group deleted successfully"
+msgstr "Gruppe er slettet"
+
+#: ../cache/locales.php:212
+msgid "Please provide a valid group name (4 characters minimum)"
+msgstr ""
+
+#: ../cache/locales.php:213
+msgid "You cannot create a new Group on this server"
+msgstr ""
+
+#: ../cache/locales.php:214
+#, php-format
+msgid "%s subscribers"
+msgstr "%s tilmeldte"
+
+#: ../cache/locales.php:215
+#, php-format
+msgid "%s posts"
+msgstr "%s indlæg"
+
+#: ../cache/locales.php:216
+msgid "All"
+msgstr "Alle"
+
+#: ../cache/locales.php:219
+msgid "Refresh all the streams"
+msgstr "Genopfrisk alle strømmene"
+
+#: ../cache/locales.php:220 ../cache/locales.php:402
+msgid "Search"
+msgstr "Søg"
+
+#: ../cache/locales.php:221
+msgid "Go on the Chat page"
+msgstr "Gå til Chat siden"
+
+#: ../cache/locales.php:222
+msgid "Read all theses articles on the News page"
+msgstr "Læs alle disse artikler på nyhedssiden"
+
+#: ../cache/locales.php:223
+msgid "Visit your public blog"
+msgstr "Besøg din offentlig blog"
+
+#: ../cache/locales.php:224
+msgid "See your public posts and share them with all your contacts"
+msgstr "Se dine offentlig indlæg og del dem med alle dine kontakter"
+
+#: ../cache/locales.php:226
+msgid "Universal share button"
+msgstr "Universel dele-knap"
+
+#: ../cache/locales.php:227
+msgid ""
+"Bookmark or drag and drop the following button in your toolbar and use it on "
+"all the pages you want to share on Movim"
+msgstr ""
+"Bogmærk eller træk og slip følgende knap ind på din værktøjslinje og brug "
+"den på alle de sider du gerne vil dele på Movim"
+
+#: ../cache/locales.php:228
+msgid "Share on Movim"
+msgstr "Del på Movim"
+
+#: ../cache/locales.php:229
+msgid "Frequently Asked Questions"
+msgstr "Ofte stillede spørgsmål"
+
+#: ../cache/locales.php:230
+msgid "What do the little banners refer to ?"
+msgstr "Hvad refererer de små bannere til ?"
+
+#: ../cache/locales.php:231
+msgid ""
+"Thanks to these five little banners, you can quickly identitfy the level of "
+"confdentiality applied to the information you provide."
+msgstr ""
+"Takket være disse fem små bannere, kan du hurtigt identificere niveauet af "
+"fortrolighed der tillæges den information du giver."
+
+#: ../cache/locales.php:232
+msgid "White, only you can see the information"
+msgstr "Hvid, kun du kan se denne information"
+
+#: ../cache/locales.php:233
+msgid "Green, you have chosen some contacts who can see your information"
+msgstr "Grøn, du har valgt nogle kontakter der kan se din information"
+
+#: ../cache/locales.php:234
+msgid "Orange, all your contact list can see your information"
+msgstr "Orange, alle dine kontakter kan se din information"
+
+#: ../cache/locales.php:235
+msgid "Red, everybody in the XMPP network can see your information"
+msgstr "Rød, alle på XMPP-netværket kan se din information"
+
+#: ../cache/locales.php:236
+msgid "Black, the whole Internet can see your information"
+msgstr "Sort, hele internettet kan se din information"
+
+#: ../cache/locales.php:237
+msgid "Looking for some documentation ?"
+msgstr "Leder du efter dokumentation ?"
+
+#: ../cache/locales.php:238
+msgid "Read the Wiki"
+msgstr "Læs Wiki'en"
+
+#: ../cache/locales.php:239
+msgid "Talk with us by email ?"
+msgstr "Skriv til os på email ?"
+
+#: ../cache/locales.php:240
+msgid "Join the Mailing List"
+msgstr "Tilmeld dig maillisten"
+
+#: ../cache/locales.php:241
+msgid "Chat with the team ?"
+msgstr "Chat med teamet ?"
+
+#: ../cache/locales.php:242
+msgid "Join the Chatroom"
+msgstr "Gå ind i chatrummet"
+
+#: ../cache/locales.php:243
+msgid "Location node created"
+msgstr "Placerings node oprettet"
+
+#: ../cache/locales.php:244
+msgid "Bookmark node created"
+msgstr "Bogmærke node oprettet"
+
+#: ../cache/locales.php:245
+msgid "Profile node created"
+msgstr "Profil node oprettet"
+
+#: ../cache/locales.php:246
+msgid "Avatar node created"
+msgstr "Avatar node oprettet"
+
+#: ../cache/locales.php:247
+msgid "Subscriptions node created"
+msgstr "Tilmeldings node oprettet"
+
+#: ../cache/locales.php:248
+msgid "Microblog node created"
+msgstr "Mikroblog node oprettet"
+
+#: ../cache/locales.php:249
+msgid "Location"
+msgstr "Placering"
+
+#: ../cache/locales.php:250
+msgid "Wrong position"
+msgstr "Forkert placering"
+
+#: ../cache/locales.php:251
+msgid "Location updated"
+msgstr "Placering opdateret"
+
+#: ../cache/locales.php:252
+msgid "Update my position"
+msgstr "Opdater min placering"
+
+#: ../cache/locales.php:253
+msgid "Wrong username"
+msgstr "Forkert brugernavn"
+
+#: ../cache/locales.php:254
+msgid "Invalid JID"
+msgstr "Ugyldig JID"
+
+#: ../cache/locales.php:255
+msgid "Empty Challenge from the server"
+msgstr "Tom Challenge fra serveren"
+
+#: ../cache/locales.php:256
+msgid "XMPP Domain error, your account is not a correct Jabber ID"
+msgstr "XMPP domænefejl, din konto er ikke et rigtigt Jabber ID"
+
+#: ../cache/locales.php:257
+msgid "Some data are missing !"
+msgstr "Nogle data manger !"
+
+#: ../cache/locales.php:258
+msgid "Wrong password"
+msgstr "Forkert adgangskode"
+
+#: ../cache/locales.php:259
+msgid "Internal server error"
+msgstr "Intern serverfejl"
+
+#: ../cache/locales.php:260
+msgid "Session error"
+msgstr "Sessionsfejl"
+
+#: ../cache/locales.php:261
+msgid "Account successfully created"
+msgstr "Konto er oprettet"
+
+#: ../cache/locales.php:262 ../cache/locales.php:271
+msgid "Your XMPP server is unauthorized"
+msgstr "Din XMPP server er ikke tilladt"
+
+#: ../cache/locales.php:263
+msgid "The server takes too much time to respond"
+msgstr "Serveren er for lang tid om at svare"
+
+#: ../cache/locales.php:264
+msgid "Your web browser is too old to use with Movim."
+msgstr "Din internet browser er for gammel til at bruge Movim."
+
+#: ../cache/locales.php:265
+msgid ""
+"Movim cannot talk with the server, please try again later (Websocket "
+"connection error)"
+msgstr ""
+"Movim kan ikke kommunikere med serveren, prøv venligst igen senere "
+"(Websocket forbindelsesfejl)"
+
+#: ../cache/locales.php:266
+msgid "Impossible login"
+msgstr "Login ikke muligt"
+
+#: ../cache/locales.php:267
+msgid "Oops!"
+msgstr "Uups!"
+
+#: ../cache/locales.php:268 ../cache/locales.php:449 ../cache/locales.php:455
+msgid "Unknown error"
+msgstr "Ukendt fejl"
+
+#: ../cache/locales.php:269
+msgid "Invalid username format"
+msgstr "Ugyldigt brugernavn"
+
+#: ../cache/locales.php:270
+msgid "Invalid password format"
+msgstr "Ugyldigt kodeord"
+
+#: ../cache/locales.php:272
+msgid "A Movim session is already open on an other device"
+msgstr "En Movim session er allerede åben på en anden enhed"
+
+#: ../cache/locales.php:273
+msgid "Movim failed to authenticate. You entered wrong data"
+msgstr "Movim kunne ikke autentificere sig. Du indtastede forkert data"
+
+#: ../cache/locales.php:274
+msgid "Authentication mechanism not supported by Movim"
+msgstr "Autentificerings mekanismen er ikke understøttet af Movim"
+
+#: ../cache/locales.php:275
+msgid "The XMPP authentification failed"
+msgstr "XMMP autetifikationen fejlede"
+
+#: ../cache/locales.php:276
+#, php-format
+msgid ""
+"You can login with Facebook (chat only) using %syour.id@chat.facebook.com%s "
+"and your password"
+msgstr ""
+"Du kan logge ind med Facebook (kun chat) med %sdin.id@chat.facebook.com%s og "
+"dit kodeord"
+
+#: ../cache/locales.php:277
+#, php-format
+msgid "%sGmail accounts are also compatible%s but are not fully supported"
+msgstr "%sGmail konti er også kompatible%s men ikke fuldt understøttede"
+
+#: ../cache/locales.php:278
+msgid "You can login using your favorite Jabber account"
+msgstr "Du kan logge ind med din favorit Jabber konto"
+
+#: ../cache/locales.php:279
+msgid "or with our demonstration account"
+msgstr "eller med vores demonstrations konto"
+
+#: ../cache/locales.php:280 ../cache/locales.php:435
+msgid "Accounts"
+msgstr "Konti"
+
+#: ../cache/locales.php:281
+msgid "My address"
+msgstr "Min adresse"
+
+#: ../cache/locales.php:283
+msgid "Create one !"
+msgstr "Opret en !"
+
+#: ../cache/locales.php:284
+msgid "No account yet ?"
+msgstr "Ingen konto endnu ?"
+
+#: ../cache/locales.php:285
+msgid "Another account"
+msgstr "En anden konto"
+
+#: ../cache/locales.php:286
+msgid "You can login with accounts from theses servers"
+msgstr "Du kan logge ind med konti fra disse servere"
+
+#: ../cache/locales.php:287
+msgid "Connected"
+msgstr "Forbundet"
+
+#: ../cache/locales.php:288
+msgid "Population"
+msgstr "Befolkning"
+
+#: ../cache/locales.php:289
+msgid "Bad nickname (between 4 and 40 characters)"
+msgstr ""
+
+#: ../cache/locales.php:292
+msgid ""
+"Welcome on your news feed, here you will see all the posts published in the "
+"groups you have subscribed."
+msgstr ""
+"Velkommen til din egen nyhedsfeed, her kan du se alle de indlæg der er "
+"publiceret i de grupper du er tilmeldt."
+
+#: ../cache/locales.php:293
+msgid "Refreshing all the streams"
+msgstr "Genopfriksker alle strømmende"
+
+#: ../cache/locales.php:294
+msgid "This post is public"
+msgstr "Dette indlæg er offentligt"
+
+#: ../cache/locales.php:295
+msgid "Manage your members"
+msgstr "Administrér dine medlemmer"
+
+#: ../cache/locales.php:296
+msgid "Get the members"
+msgstr "Hent medlemmerne"
+
+#: ../cache/locales.php:297
+msgid "Affiliations saved"
+msgstr "Tilknytninger gemt"
+
+#: ../cache/locales.php:298
+msgid "Manage your subscriptions"
+msgstr "Administrér dine tilmeldinger"
+
+#: ../cache/locales.php:299
+msgid "Manage the subscriptions"
+msgstr "Administrér tilmeldingerne"
+
+#: ../cache/locales.php:300
+msgid "Get the subscriptions"
+msgstr "Hent tilmeldingerne"
+
+#: ../cache/locales.php:301
+msgid "Subscriptions saved"
+msgstr "Tilmeding gemt"
+
+#: ../cache/locales.php:302
+msgid "Pending Invitations"
+msgstr "Ventende invitationer"
+
+#: ../cache/locales.php:303
+#, php-format
+msgid "%s wants to talk with you"
+msgstr "%s vil gerne snakke med dig"
+
+#: ../cache/locales.php:304
+msgid "Manage"
+msgstr "Administrér"
+
+#: ../cache/locales.php:305 ../cache/locales.php:338
+msgid "News Feed"
+msgstr "Nyhedsfeed"
+
+#: ../cache/locales.php:306 ../cache/locales.php:339
+msgid "Discover and register to the groups you are interested in"
+msgstr "Opdag og tilmeld gig til de grupper du er interreseret i"
+
+#: ../cache/locales.php:307 ../cache/locales.php:340 ../cache/locales.php:482
+msgid "Preview"
+msgstr "Forhåndsvisning"
+
+#: ../cache/locales.php:308 ../cache/locales.php:341 ../cache/locales.php:478
+msgid "Help"
+msgstr "Hjælp"
+
+#: ../cache/locales.php:309 ../cache/locales.php:342
+msgid "More help"
+msgstr "Mere hjælp"
+
+#: ../cache/locales.php:310 ../cache/locales.php:343
+msgid "Markdown syntax manual"
+msgstr "Markdown syntaks manual"
+
+#: ../cache/locales.php:311 ../cache/locales.php:344 ../cache/locales.php:681
+msgid "Title"
+msgstr "Titel"
+
+#: ../cache/locales.php:312 ../cache/locales.php:345
+msgid "Content"
+msgstr "Indhold"
+
+#: ../cache/locales.php:313 ../cache/locales.php:346
+msgid "Link"
+msgstr "Link"
+
+#: ../cache/locales.php:314 ../cache/locales.php:347
+msgid "Tags"
+msgstr "Tags"
+
+#: ../cache/locales.php:315 ../cache/locales.php:348
+msgid "Please enter a valid url"
+msgstr "Skriv venligst en gyldig url"
+
+#: ../cache/locales.php:316 ../cache/locales.php:349
+msgid "No content to preview"
+msgstr "Intet indhold at forhåndsvise"
+
+#: ../cache/locales.php:317 ../cache/locales.php:350 ../cache/locales.php:687
+msgid "No content"
+msgstr "Intet indhold"
+
+#: ../cache/locales.php:318 ../cache/locales.php:351
+msgid "Post published"
+msgstr "Indlæg udgivet"
+
+#: ../cache/locales.php:319 ../cache/locales.php:352
+msgid "Post deleted"
+msgstr "Indlæg slettet"
+
+#: ../cache/locales.php:320 ../cache/locales.php:353
+msgid "This picture will be added to your gallery"
+msgstr "Dette billede vil blive tilføjet til dit galleri"
+
+#: ../cache/locales.php:321 ../cache/locales.php:354
+msgid "What's Hot"
+msgstr "Hvad er hot"
+
+#: ../cache/locales.php:322 ../cache/locales.php:355
+msgid "New post"
+msgstr "Nyt indlæg"
+
+#: ../cache/locales.php:323 ../cache/locales.php:357
+msgid ""
+"You can also use services like Imgur or Flickr to host your picture and "
+"paste the link here."
+msgstr ""
+"Du kan også bruge tjenester som Imgur eller Flickr til at hoste dit billede "
+"og så indsætte et link her."
+
+#: ../cache/locales.php:324
+#, php-format
+msgid "This is a re-post from %s"
+msgstr ""
+
+#: ../cache/locales.php:325
+#, php-format
+msgid "See %s profile"
+msgstr ""
+
+#: ../cache/locales.php:326
+msgid "Publish this post on your public feed?"
+msgstr "Udgiv dette indlæg i dit offentlige feed?"
+
+#: ../cache/locales.php:327
+msgid "Post published on your blog"
+msgstr "Indlæg udgivet på din blog"
+
+#: ../cache/locales.php:328
+msgid "Post removed from your blog"
+msgstr "Indlæg fjernet fra din blog"
+
+#: ../cache/locales.php:329 ../cache/locales.php:701
+msgid "Delete this post"
+msgstr "Slet dette indlæg"
+
+#: ../cache/locales.php:330
+msgid "You are going to delete this post, please confirm your action"
+msgstr "Du er ved at slette dette indlæg, bekræft venligst din handling"
+
+#: ../cache/locales.php:331
+msgid "Comments disabled"
+msgstr "Kommentarer slået fra"
+
+#: ../cache/locales.php:332
+msgid "Comment published"
+msgstr "Kommentar udgivet"
+
+#: ../cache/locales.php:333
+msgid "Disconnect"
+msgstr "Afbryd"
+
+#: ../cache/locales.php:334
+msgid "Your status here !"
+msgstr "Din status her !"
+
+#: ../cache/locales.php:335
+msgid "Status updated"
+msgstr "Status opdateret"
+
+#: ../cache/locales.php:336
+msgid "Status"
+msgstr "Status"
+
+#: ../cache/locales.php:337
+msgid "Presence"
+msgstr "Tilstedeværelse"
+
+#: ../cache/locales.php:356
+msgid "Publish"
+msgstr ""
+
+#: ../cache/locales.php:358
+msgid "You cannot publish a post on this Group"
+msgstr ""
+
+#: ../cache/locales.php:359
+msgid ""
+"Some fields have been filled in. Do you still want to go back and loose "
+"their content?"
+msgstr ""
+
+#: ../cache/locales.php:360
+msgid "Shared"
+msgstr "Delt"
+
+#: ../cache/locales.php:362
+#, php-format
+msgid "%s has been added to your public groups"
+msgstr "%s er blevet tilføjet til dine offentlige grupper"
+
+#: ../cache/locales.php:363
+#, php-format
+msgid "%s has been removed from your public groups"
+msgstr "%s er blevet fjernet fra dine offentlige grupper"
+
+#: ../cache/locales.php:364
+msgid "Add a chatroom"
+msgstr "Tilføj et chatrum"
+
+#: ../cache/locales.php:365
+msgid "You don't have any chatroom yet."
+msgstr "Du har ikke nogen chatrum endnu."
+
+#: ../cache/locales.php:366
+msgid "Add one by clicking on the add button in the header."
+msgstr "Tilføj et ved at klikke på tilføj knappen i headeren."
+
+#: ../cache/locales.php:367
+msgid "Chatrooms"
+msgstr "Chatrum"
+
+#: ../cache/locales.php:370
+msgid "My Favorite Room"
+msgstr "Mit favoritrum"
+
+#: ../cache/locales.php:374
+msgid "Remove a chatroom"
+msgstr "Fjern et chatrum"
+
+#: ../cache/locales.php:375
+msgid ""
+"You are going to remove the following chatroom. Please confirm your action."
+msgstr "Du er ved at fjerne følgende chatrum. Bekræft venligst din handling."
+
+#: ../cache/locales.php:378
+msgid "Users in the room"
+msgstr "Brugere i rummet"
+
+#: ../cache/locales.php:379
+msgid "Please enter a correct nickname (6 to 40 characters)"
+msgstr ""
+
+#: ../cache/locales.php:381
+msgid "Public chatroom"
+msgstr ""
+
+#: ../cache/locales.php:382
+msgid "Please provide a room address"
+msgstr ""
+
+#: ../cache/locales.php:383
+msgid "You are currently logued as an anonymous user."
+msgstr ""
+
+#: ../cache/locales.php:384
+msgid ""
+"You can join using your own account or create one on the login page by "
+"loging out using the cross in the top-right corner."
+msgstr ""
+
+#: ../cache/locales.php:385
+#, php-format
+msgid "Login on %s"
+msgstr ""
+
+#: ../cache/locales.php:386
+msgid "Your nickname"
+msgstr ""
+
+#: ../cache/locales.php:387
+msgid "Ungrouped"
+msgstr "Ikke grupperet"
+
+#: ../cache/locales.php:388
+msgid "Show disconnected contacts"
+msgstr "Vis offline kontakter"
+
+#: ../cache/locales.php:389
+msgid "Hide disconnected contacts"
+msgstr "Skjul offline kontaker"
+
+#: ../cache/locales.php:390
+#, php-format
+msgid "Show group %s"
+msgstr "Vis gruppen %s"
+
+#: ../cache/locales.php:391
+#, php-format
+msgid "Hide group %s"
+msgstr "Skjul gruppen %s"
+
+#: ../cache/locales.php:392
+msgid "Please enter a valid Jabber ID"
+msgstr "Skriv venligst et gyldigt Jabber ID"
+
+#: ../cache/locales.php:393
+msgid ""
+"No contacts ? You can add one using the + button bellow or going to the "
+"Explore page"
+msgstr ""
+"Inken kontakter ? Du kan tilføje nogen med + knappen herunder eller via "
+"Opdag siden"
+
+#: ../cache/locales.php:394
+msgid "Show/Hide"
+msgstr "Vis/skjul"
+
+#: ../cache/locales.php:395
+msgid "Enter the Jabber ID of your contact."
+msgstr "Skriv Jabber ID'et på din kontakt."
+
+#: ../cache/locales.php:396
+msgid "Press enter to validate."
+msgstr "Tryk enter vor at validere."
+
+#: ../cache/locales.php:397
+msgid "JID"
+msgstr "JID"
+
+#: ../cache/locales.php:398
+msgid "Results"
+msgstr "Resultater"
+
+#: ../cache/locales.php:399
+msgid "Contact added"
+msgstr "Kontakt tilføjet"
+
+#: ../cache/locales.php:401
+msgid "Contact deleted"
+msgstr "Kontakt slettet"
+
+#: ../cache/locales.php:403
+msgid "This is not a valid url"
+msgstr "Dette er ikke en gyldig url"
+
+#: ../cache/locales.php:404
+msgid "Sharing the URL"
+msgstr "Dele URL'en"
+
+#: ../cache/locales.php:405
+msgid "Statistics"
+msgstr "Statistikker"
+
+#: ../cache/locales.php:406
+msgid "Since"
+msgstr "Siden"
+
+#: ../cache/locales.php:407
+msgid "Sessions"
+msgstr "Sessioner"
+
+#: ../cache/locales.php:409
+msgid "Monthly Subscriptions"
+msgstr "Månedlige tilmeldinger"
+
+#: ../cache/locales.php:410
+msgid "Monthly Subscriptions Cumulated"
+msgstr "Måndelige tilmeldinger akkumuleret"
+
+#: ../cache/locales.php:412
+msgid ""
+"Movim is a decentralized social network, before creating a new account you "
+"need to choose a server to register."
+msgstr ""
+"Movim er et decentraliseret socialt netværk, før du opretter en ny konto "
+"skal du vælge en server"
+
+#: ../cache/locales.php:413
+msgid "Your server here ?"
+msgstr "Din server her ?"
+
+#: ../cache/locales.php:414
+msgid "Contact us to add yours to the officially supported servers list"
+msgstr ""
+"Kontakt os for at tilføje din til den officielt understøttede serverliste"
+
+#: ../cache/locales.php:416
+msgid "No public feed for this contact"
+msgstr "Intet offentligt feed for kontakt"
+
+#: ../cache/locales.php:417
+msgid "No contact specified"
+msgstr "Ingen kontakt specificeret"
+
+#: ../cache/locales.php:418 ../cache/locales.php:473
+msgid "Profile"
+msgstr "Profil"
+
+#: ../cache/locales.php:419
+msgid "Profile Updated"
+msgstr "Profil opdateret"
+
+#: ../cache/locales.php:420
+msgid "Profile Not Updated"
+msgstr "Profil ikke opdateret"
+
+#: ../cache/locales.php:421
+msgid "Your profile is now public"
+msgstr "Din profil er nu offentlig"
+
+#: ../cache/locales.php:422
+msgid "Your profile is now restricted"
+msgstr "Din profil er nu begrænset"
+
+#: ../cache/locales.php:436
+msgid "Twitter"
+msgstr "Twitter"
+
+#: ../cache/locales.php:437
+msgid "Skype"
+msgstr "Skype"
+
+#: ../cache/locales.php:438
+msgid "Yahoo"
+msgstr "Yahoo"
+
+#: ../cache/locales.php:439
+msgid "Privacy Level"
+msgstr "Privatlivs niveau"
+
+#: ../cache/locales.php:440
+msgid "Is this profile public ?"
+msgstr "Er denne profil offentlig ?"
+
+#: ../cache/locales.php:441
+msgid ""
+"Please pay attention ! By making your profile public, all the information "
+"listed above will be available for all the Movim users and on the whole "
+"Internet."
+msgstr ""
+"Overvej venligst ! Ved at gøre din profil offentlig, bliver al information "
+"herunder tilgængelig for alle Movim brugere og på hele internettet."
+
+#: ../cache/locales.php:442
+msgid "Call"
+msgstr "Ring op"
+
+#: ../cache/locales.php:443
+msgid "Hang up"
+msgstr "Læg på"
+
+#: ../cache/locales.php:444
+msgid "Connection"
+msgstr "Forbindelse"
+
+#: ../cache/locales.php:445 ../cache/locales.php:451
+msgid "Hung up"
+msgstr "Lagde på"
+
+#: ../cache/locales.php:446 ../cache/locales.php:452
+msgid "Your contact is busy"
+msgstr "Din kontakt er optaget"
+
+#: ../cache/locales.php:447 ../cache/locales.php:453
+msgid "Declined"
+msgstr "Afslået"
+
+#: ../cache/locales.php:448 ../cache/locales.php:454
+msgid "Remote application incompatible"
+msgstr "Programmet i den anden ende er ikke kompatibel"
+
+#: ../cache/locales.php:450 ../cache/locales.php:456
+msgid "Is calling you"
+msgstr "ringer til dig"
+
+#: ../cache/locales.php:457
+msgid "You don't have javascript enabled.  Good luck with that."
+msgstr "Du har ikke Javascript slået til. Held og lykke med det."
+
+#: ../cache/locales.php:458
+msgid ""
+"Movim is a kickass distributed social networking platform that protect your "
+"privacy an comes with a set of awesome features."
+msgstr ""
+"Movim er en brandgod distribueret socialt netværks-platform, der beskytter "
+"dit privatliv og kommer med et sæt af ærefrygtindgydende features."
+
+#: ../cache/locales.php:459
+msgid "Administration"
+msgstr "Administration"
+
+#: ../cache/locales.php:460
+msgid "Home"
+msgstr "Start"
+
+#: ../cache/locales.php:461
+msgid "Discover"
+msgstr "Opdag"
+
+#: ../cache/locales.php:462
+msgid "Explore"
+msgstr "Udforsk"
+
+#: ../cache/locales.php:463
+msgid "Account Creation"
+msgstr "Konto oprettelse"
+
+#: ../cache/locales.php:464
+msgid "News"
+msgstr "Nyheder"
+
+#: ../cache/locales.php:465
+msgid "Avatar"
+msgstr "Profilbillede"
+
+#: ../cache/locales.php:467
+msgid "Chats"
+msgstr "Chats"
+
+#: ../cache/locales.php:470
+msgid "Server"
+msgstr "Server"
+
+#: ../cache/locales.php:471
+msgid "Public Groups"
+msgstr "Offentlige grupper"
+
+#: ../cache/locales.php:472
+msgid "Viewer"
+msgstr "Fremviser"
+
+#: ../cache/locales.php:474
+msgid "Media"
+msgstr "Medier"
+
+#: ../cache/locales.php:475
+msgid "Blog"
+msgstr "Blog"
+
+#: ../cache/locales.php:476
+msgid "About"
+msgstr "Om"
+
+#: ../cache/locales.php:477
+msgid "Login"
+msgstr "Log ind"
+
+#: ../cache/locales.php:479
+msgid "Feed"
+msgstr "Kilde"
+
+#: ../cache/locales.php:481
+msgid "Gallery"
+msgstr "Galleri"
+
+#: ../cache/locales.php:483
+msgid "Visio-conference"
+msgstr "Visio-konference"
+
+#: ../cache/locales.php:484
+msgid "Pods"
+msgstr "Pods"
+
+#: ../cache/locales.php:485
+msgid "Share"
+msgstr "Del"
+
+#: ../cache/locales.php:486
+msgid "Room"
+msgstr ""
+
+#: ../cache/locales.php:487
+#, php-format
+msgid "Error: %s"
+msgstr "Fejl: '%s'"
+
+#: ../cache/locales.php:488
+#, php-format
+msgid "Cannot load file '%s'"
+msgstr "Kan ikke indlæse fil '%s'"
+
+#: ../cache/locales.php:489
+#, php-format
+msgid "Route error, please set all the parameters for the page %s"
+msgstr "Rutefejl, sæt venligst alle parametre for siden %s"
+
+#: ../cache/locales.php:490
+#, php-format
+msgid "Requested widget '%s' doesn't exist."
+msgstr "Efterspurgte widget '%s' eksisterer ikke."
+
+#: ../cache/locales.php:491
+#, php-format
+msgid "Requested event '%s' not registered."
+msgstr "Efterspurgte event '%s' er ikke registreret"
+
+#: ../cache/locales.php:492
+msgid "Whoops!"
+msgstr "Hovsa!"
+
+#: ../cache/locales.php:493
+msgid "It seem that you don't have any pictures here?"
+msgstr "Det ser ud til at du ikke har noget billede her?"
+
+#: ../cache/locales.php:494
+msgid "You can try to upload a couple by going to the Media page"
+msgstr "Du kan prøve at uploade et par stykker på Medie siden"
+
+#: ../cache/locales.php:495
+#, php-format
+msgid "%s - About"
+msgstr "%s - Om"
+
+#: ../cache/locales.php:496
+#, php-format
+msgid "%s - Account"
+msgstr "%s - Konto"
+
+#: ../cache/locales.php:497
+#, php-format
+msgid "%s - Administration Panel"
+msgstr "%s - Adminstrationspanel"
+
+#: ../cache/locales.php:498
+#, php-format
+msgid "%s - Blog"
+msgstr "%s - Blog"
+
+#: ../cache/locales.php:499
+#, php-format
+msgid "%s - Configuration"
+msgstr "%s - Konfiguration"
+
+#: ../cache/locales.php:500
+#, php-format
+msgid "%s - Discover"
+msgstr "%s - Opdag"
+
+#: ../cache/locales.php:501
+#, php-format
+msgid "%s - Explore"
+msgstr "%s - Udforsk"
+
+#: ../cache/locales.php:502
+#, php-format
+msgid "%s - Help Page"
+msgstr "%s - Hjælp side"
+
+#: ../cache/locales.php:503
+#, php-format
+msgid "%s - Login to Movim"
+msgstr "%s - Log Ind til Movim"
+
+#: ../cache/locales.php:504
+#, php-format
+msgid "%s - Welcome to Movim"
+msgstr "%s - Velkommen til Movim"
+
+#: ../cache/locales.php:505
+#, php-format
+msgid "%s - Media"
+msgstr "%s - Medier"
+
+#: ../cache/locales.php:506
+#, php-format
+msgid "%s - News"
+msgstr "%s - Nyheder"
+
+#: ../cache/locales.php:507
+#, php-format
+msgid "%s - Group Configuration"
+msgstr "%s - Guppe opsætning"
+
+#: ../cache/locales.php:508
+#, php-format
+msgid "%s - Group"
+msgstr "%s - Gruppe"
+
+#: ../cache/locales.php:509
+#, php-format
+msgid "%s - 404"
+msgstr "%s - 404"
+
+#: ../cache/locales.php:510
+#, php-format
+msgid "%s - Profile"
+msgstr "%s - Profil"
+
+#: ../cache/locales.php:511
+#, php-format
+msgid "%s - Server"
+msgstr "%s - Server"
+
+#: ../cache/locales.php:512
+msgid "Validate"
+msgstr "Validér"
+
+#: ../cache/locales.php:513
+msgid "Refresh"
+msgstr "Genopfrisk"
+
+#: ../cache/locales.php:514
+msgid "Add"
+msgstr "Tilføj"
+
+#: ../cache/locales.php:515
+msgid "Delete"
+msgstr "Slet"
+
+#: ../cache/locales.php:516
+msgid "Remove"
+msgstr "Fjern"
+
+#: ../cache/locales.php:517
+msgid "Cancel"
+msgstr "Annullér"
+
+#: ../cache/locales.php:518
+msgid "Close"
+msgstr "Luk"
+
+#: ../cache/locales.php:519
+msgid "Update"
+msgstr "Opdatér"
+
+#: ../cache/locales.php:520
+msgid "Updating"
+msgstr "Opdatérer"
+
+#: ../cache/locales.php:521
+msgid "Submit"
+msgstr "Indsend"
+
+#: ../cache/locales.php:522
+msgid "Submitting"
+msgstr "Indsender"
+
+#: ../cache/locales.php:523
+msgid "Reset"
+msgstr "Nulstil"
+
+#: ../cache/locales.php:524
+msgid "Register"
+msgstr "Registrér"
+
+#: ../cache/locales.php:525
+msgid "Unregister"
+msgstr "Afmeld"
+
+#: ../cache/locales.php:526
+msgid "Save"
+msgstr "Gem"
+
+#: ../cache/locales.php:527
+msgid "Clear"
+msgstr "Rens"
+
+#: ../cache/locales.php:528
+msgid "Upload"
+msgstr "Upload"
+
+#: ../cache/locales.php:529
+msgid "Come in!"
+msgstr "Kom Ind!"
+
+#: ../cache/locales.php:530
+msgid "Connecting"
+msgstr "Forbinder"
+
+#: ../cache/locales.php:531
+msgid "Yes"
+msgstr "Ja"
+
+#: ../cache/locales.php:532
+msgid "No"
+msgstr "Nej"
+
+#: ../cache/locales.php:534
+msgid "Return"
+msgstr "Returnér"
+
+#: ../cache/locales.php:535
+msgid "Accept"
+msgstr "Godkend"
+
+#: ../cache/locales.php:536
+msgid "Refuse"
+msgstr "Afvis"
+
+#: ../cache/locales.php:537
+msgid "Next"
+msgstr "Næste"
+
+#: ../cache/locales.php:538
+msgid "Previous"
+msgstr "Forrige"
+
+#: ../cache/locales.php:539
+#, php-format
+msgid "Step %s"
+msgstr "Skridt %s"
+
+#: ../cache/locales.php:542
+msgid "Day"
+msgstr "Dag"
+
+#: ../cache/locales.php:543
+msgid "Monday"
+msgstr "Mandag"
+
+#: ../cache/locales.php:544
+msgid "Tuesday"
+msgstr "Tirsdag"
+
+#: ../cache/locales.php:545
+msgid "Wednesday"
+msgstr "Onsdag"
+
+#: ../cache/locales.php:546
+msgid "Thursday"
+msgstr "Torsdag"
+
+#: ../cache/locales.php:547
+msgid "Friday"
+msgstr "Fredag"
+
+#: ../cache/locales.php:548
+msgid "Saturday"
+msgstr "Lørdag"
+
+#: ../cache/locales.php:549
+msgid "Sunday"
+msgstr "Søndag"
+
+#: ../cache/locales.php:550 ../cache/locales.php:559
+msgid "None"
+msgstr "Ingen"
+
+#: ../cache/locales.php:551
+msgid "Male"
+msgstr "Mand"
+
+#: ../cache/locales.php:552
+msgid "Female"
+msgstr "Kvinde"
+
+#: ../cache/locales.php:553
+msgid "Other"
+msgstr "Andet"
+
+#: ../cache/locales.php:554
+msgid "Bot"
+msgstr "Bot"
+
+#: ../cache/locales.php:555
+msgid "Desktop"
+msgstr "Skrivebord"
+
+#: ../cache/locales.php:556
+msgid "Phone"
+msgstr "Telefon"
+
+#: ../cache/locales.php:557
+msgid "Web"
+msgstr "Web"
+
+#: ../cache/locales.php:558
+msgid "Registered"
+msgstr "Registreret"
+
+#: ../cache/locales.php:560
+msgid "Single"
+msgstr "Single"
+
+#: ../cache/locales.php:561
+msgid "In a relationship"
+msgstr "I forhold"
+
+#: ../cache/locales.php:562
+msgid "Married"
+msgstr "Gift"
+
+#: ../cache/locales.php:563
+msgid "Divorced"
+msgstr "Fraskilt"
+
+#: ../cache/locales.php:564
+msgid "Widowed"
+msgstr "Enke eller enkemand"
+
+#: ../cache/locales.php:565
+msgid "Cohabiting"
+msgstr "Samboende"
+
+#: ../cache/locales.php:566
+msgid "Civil Union"
+msgstr "Borgerlig Vielse"
+
+#: ../cache/locales.php:567
+msgid "Not shared"
+msgstr "Ikke delt"
+
+#: ../cache/locales.php:568
+msgid "Shared with one contact"
+msgstr "Delt med en kontakt"
+
+#: ../cache/locales.php:569
+msgid "Shared with all contacts"
+msgstr "Delt med alle kontakter"
+
+#: ../cache/locales.php:570
+msgid "Shared with the XMPP network"
+msgstr "Delt med XMPP netværket"
+
+#: ../cache/locales.php:571
+msgid "Shared with the whole Internet"
+msgstr "Delt med hele internettet"
+
+#: ../cache/locales.php:572
+msgid "Online"
+msgstr "Online"
+
+#: ../cache/locales.php:573
+msgid "Away"
+msgstr "Ikke tilstede"
+
+#: ../cache/locales.php:574
+msgid "Do Not Disturb"
+msgstr "Vil ikke forstyrres"
+
+#: ../cache/locales.php:575
+msgid "Extended Away"
+msgstr "Væk i længere tid"
+
+#: ../cache/locales.php:576
+msgid "Offline"
+msgstr "Offline"
+
+#: ../cache/locales.php:577
+msgid "Error"
+msgstr "Fejl"
+
+#: ../cache/locales.php:578
+msgid "afraid"
+msgstr "bange"
+
+#: ../cache/locales.php:579
+msgid "amazed"
+msgstr "forbløffet"
+
+#: ../cache/locales.php:580
+msgid "amorous"
+msgstr "kælen"
+
+#: ../cache/locales.php:581
+msgid "angry"
+msgstr "vred"
+
+#: ../cache/locales.php:582
+msgid "annoyed"
+msgstr "irriteret"
+
+#: ../cache/locales.php:583
+msgid "anxious"
+msgstr "nervøs"
+
+#: ../cache/locales.php:584
+msgid "aroused"
+msgstr "opstemt"
+
+#: ../cache/locales.php:585
+msgid "ashamed"
+msgstr "skamfuld"
+
+#: ../cache/locales.php:586
+msgid "bored"
+msgstr "kedsom"
+
+#: ../cache/locales.php:587
+msgid "brave"
+msgstr "modig"
+
+#: ../cache/locales.php:588
+msgid "calm"
+msgstr "fedfyldt"
+
+#: ../cache/locales.php:589
+msgid "cautious"
+msgstr "forsigtig"
+
+#: ../cache/locales.php:590
+msgid "cold"
+msgstr "kold"
+
+#: ../cache/locales.php:591
+msgid "confident"
+msgstr "selvsikker"
+
+#: ../cache/locales.php:592
+msgid "confused"
+msgstr "forvirret"
+
+#: ../cache/locales.php:593
+msgid "contemplative"
+msgstr "eftertænksom"
+
+#: ../cache/locales.php:594
+msgid "contented"
+msgstr "tilfreds"
+
+#: ../cache/locales.php:595
+msgid "cranky"
+msgstr "småsur"
+
+#: ../cache/locales.php:596
+msgid "crazy"
+msgstr "skør"
+
+#: ../cache/locales.php:597
+msgid "creative"
+msgstr "kreativ"
+
+#: ../cache/locales.php:598
+msgid "curious"
+msgstr "nysgerrig"
+
+#: ../cache/locales.php:599
+msgid "dejected"
+msgstr "modløs"
+
+#: ../cache/locales.php:600
+msgid "depressed"
+msgstr "deppresiv"
+
+#: ../cache/locales.php:601
+msgid "disappointed"
+msgstr "skuffet"
+
+#: ../cache/locales.php:602
+msgid "disgusted"
+msgstr "væmmet"
+
+#: ../cache/locales.php:603
+msgid "dismayed"
+msgstr "forfærdet"
+
+#: ../cache/locales.php:604
+msgid "distracted"
+msgstr "distraheret"
+
+#: ../cache/locales.php:605
+msgid "embarrassed"
+msgstr "flov"
+
+#: ../cache/locales.php:606
+msgid "envious"
+msgstr "misundelig"
+
+#: ../cache/locales.php:607
+msgid "excited"
+msgstr "begejstret"
+
+#: ../cache/locales.php:608
+msgid "flirtatious"
+msgstr "flirtende"
+
+#: ../cache/locales.php:609
+msgid "frustated"
+msgstr "frustreret"
+
+#: ../cache/locales.php:610
+msgid "grateful"
+msgstr "taknemlig"
+
+#: ../cache/locales.php:611
+msgid "grieving"
+msgstr "sørgende"
+
+#: ../cache/locales.php:612
+msgid "grumpy"
+msgstr "gnaven"
+
+#: ../cache/locales.php:613
+msgid "guilty"
+msgstr "skyldig"
+
+#: ../cache/locales.php:614
+msgid "happy"
+msgstr "glad"
+
+#: ../cache/locales.php:615
+msgid "hopeful"
+msgstr "håbefuld"
+
+#: ../cache/locales.php:616
+msgid "hot"
+msgstr "hot"
+
+#: ../cache/locales.php:617
+msgid "humbled"
+msgstr "ydmyg"
+
+#: ../cache/locales.php:618
+msgid "humiliated"
+msgstr "ydmyget"
+
+#: ../cache/locales.php:619
+msgid "hungry"
+msgstr "sulten"
+
+#: ../cache/locales.php:620
+msgid "hurt"
+msgstr "såret"
+
+#: ../cache/locales.php:621
+msgid "impressed"
+msgstr "imponeret"
+
+#: ../cache/locales.php:622
+msgid "in awe"
+msgstr "i ærefrygt"
+
+#: ../cache/locales.php:623
+msgid "in love"
+msgstr "forelsket"
+
+#: ../cache/locales.php:624
+msgid "indignant"
+msgstr "indigneret"
+
+#: ../cache/locales.php:625
+msgid "interested"
+msgstr "interreseret"
+
+#: ../cache/locales.php:626
+msgid "intoxicated"
+msgstr "beruset"
+
+#: ../cache/locales.php:627
+msgid "invincible"
+msgstr "uovervindelig"
+
+#: ../cache/locales.php:628
+msgid "jealous"
+msgstr "jaloux"
+
+#: ../cache/locales.php:629
+msgid "lonely"
+msgstr "ensom"
+
+#: ../cache/locales.php:630
+msgid "lost"
+msgstr "fortabt"
+
+#: ../cache/locales.php:631
+msgid "lucky"
+msgstr "heldig"
+
+#: ../cache/locales.php:632
+msgid "mean"
+msgstr "ondskabfuld"
+
+#: ../cache/locales.php:633
+msgid "moody"
+msgstr "humørsyg"
+
+#: ../cache/locales.php:634
+msgid "nervous"
+msgstr "nervøs"
+
+#: ../cache/locales.php:635
+msgid "neutral"
+msgstr "neutral"
+
+#: ../cache/locales.php:636
+msgid "offended"
+msgstr "forarget"
+
+#: ../cache/locales.php:637
+msgid "outraged"
+msgstr "rasende"
+
+#: ../cache/locales.php:638
+msgid "playful"
+msgstr "legesyg"
+
+#: ../cache/locales.php:639
+msgid "proud"
+msgstr "stolt"
+
+#: ../cache/locales.php:640
+msgid "relaxed"
+msgstr "afslappet"
+
+#: ../cache/locales.php:641
+msgid "relieved"
+msgstr "lettet"
+
+#: ../cache/locales.php:642
+msgid "remorseful"
+msgstr "angrende"
+
+#: ../cache/locales.php:643
+msgid "restless"
+msgstr "rastløs"
+
+#: ../cache/locales.php:644
+msgid "sad"
+msgstr "ked af det"
+
+#: ../cache/locales.php:645
+msgid "sarcastic"
+msgstr "sarkastisk"
+
+#: ../cache/locales.php:646
+msgid "satisfied"
+msgstr "tilfredsstillet"
+
+#: ../cache/locales.php:647
+msgid "serious"
+msgstr "seriøs"
+
+#: ../cache/locales.php:648
+msgid "shocked"
+msgstr "chokeret"
+
+#: ../cache/locales.php:649
+msgid "shy"
+msgstr "genert"
+
+#: ../cache/locales.php:650
+msgid "sick"
+msgstr "syg"
+
+#: ../cache/locales.php:651
+msgid "sleepy"
+msgstr "søvnig"
+
+#: ../cache/locales.php:652
+msgid "spontaneous"
+msgstr "spontan"
+
+#: ../cache/locales.php:653
+msgid "stressed"
+msgstr "stresset"
+
+#: ../cache/locales.php:654
+msgid "strong"
+msgstr "stærk"
+
+#: ../cache/locales.php:655
+msgid "surprised"
+msgstr "ovverasket"
+
+#: ../cache/locales.php:656
+msgid "thankful"
+msgstr "taknemlig"
+
+#: ../cache/locales.php:657
+msgid "thirsty"
+msgstr "tøstig"
+
+#: ../cache/locales.php:658
+msgid "tired"
+msgstr "træt"
+
+#: ../cache/locales.php:659
+msgid "undefined"
+msgstr "udefineret"
+
+#: ../cache/locales.php:660
+msgid "weak"
+msgstr "svag"
+
+#: ../cache/locales.php:661
+msgid "worried"
+msgstr "bekymret"
+
+#: ../cache/locales.php:662
+msgid "Month"
+msgstr "Måned"
+
+#: ../cache/locales.php:663
+msgid "January"
+msgstr "Januar"
+
+#: ../cache/locales.php:664
+msgid "February"
+msgstr "Februar"
+
+#: ../cache/locales.php:665
+msgid "March"
+msgstr "Marts"
+
+#: ../cache/locales.php:666
+msgid "April"
+msgstr "April"
+
+#: ../cache/locales.php:667
+msgid "May"
+msgstr "Maj"
+
+#: ../cache/locales.php:668
+msgid "June"
+msgstr "Juni"
+
+#: ../cache/locales.php:669
+msgid "July"
+msgstr "Juli"
+
+#: ../cache/locales.php:670
+msgid "August"
+msgstr "August"
+
+#: ../cache/locales.php:671
+msgid "September"
+msgstr "September"
+
+#: ../cache/locales.php:672
+msgid "October"
+msgstr "Oktober"
+
+#: ../cache/locales.php:673
+msgid "November"
+msgstr "November"
+
+#: ../cache/locales.php:674
+msgid "December"
+msgstr "December"
+
+#: ../cache/locales.php:675
+msgid "Year"
+msgstr "År"
+
+#: ../cache/locales.php:676
+msgid "Today"
+msgstr "Idag"
+
+#: ../cache/locales.php:677
+msgid "Tomorrow"
+msgstr "I morgen"
+
+#: ../cache/locales.php:678
+msgid "Yesterday"
+msgstr "I går"
+
+#: ../cache/locales.php:679
+#, php-format
+msgid " %d days ago"
+msgstr " for %d dage siden"
+
+#: ../cache/locales.php:680
+msgid "day"
+msgstr "dag"
+
+#: ../cache/locales.php:682
+msgid "What's new ?"
+msgstr "Hvad er nyt ?"
+
+#: ../cache/locales.php:683
+msgid "Place"
+msgstr "Sted"
+
+#: ../cache/locales.php:684
+msgid "by"
+msgstr "af"
+
+#: ../cache/locales.php:685
+msgid "Geolocalisation"
+msgstr "Geolokalisering"
+
+#: ../cache/locales.php:686
+msgid "email"
+msgstr "e-mail"
+
+#: ../cache/locales.php:688
+msgid "No comments yet"
+msgstr "Ingen kommentarer endnu"
+
+#: ../cache/locales.php:689
+msgid "No comments stream"
+msgstr "Innegn kommentarstrøm"
+
+#: ../cache/locales.php:690
+msgid "Your feed cannot be loaded."
+msgstr "Dit feed kan ikken indlæses"
+
+#: ../cache/locales.php:691
+msgid "Get older posts"
+msgstr "Hent ældre indlæg"
+
+#: ../cache/locales.php:692
+#, php-format
+msgid "%s new items"
+msgstr "%s nye indlægeolocalisation"
+
+#: ../cache/locales.php:693
+msgid "Comment publication error"
+msgstr "Kommentar udgivelsesfejl"
+
+#: ../cache/locales.php:694
+msgid "Show the older comments"
+msgstr "Vis de ældre kommentarer"
+
+#: ../cache/locales.php:695
+msgid "Loading comments ..."
+msgstr "Indlæser kommentarer ..."
+
+#: ../cache/locales.php:696
+msgid "Get the comments"
+msgstr "Hent kommentarerne"
+
+#: ../cache/locales.php:697
+msgid "Add a comment"
+msgstr "Tilføj en kommentar"
+
+#: ../cache/locales.php:698
+msgid "Share with"
+msgstr "Del med"
+
+#: ../cache/locales.php:699
+msgid "Everyone"
+msgstr "Alle"
+
+#: ../cache/locales.php:700
+msgid "Your contacts"
+msgstr "Dine kontakter"
+
+#: ../cache/locales.php:702
+msgid "Updated"
+msgstr "Opdateret"
+
+#: ../cache/locales.php:703
+msgid "Content not found"
+msgstr "Indhold ikke fundet"
+
+#: ../cache/locales.php:704
+msgid "Contact publication"
+msgstr "Kontakt udgivelse"
+
+#: ../cache/locales.php:705
+msgid "Comments"
+msgstr "Kommentarer"
+
+#: ../cache/locales.php:706
+msgid "The API is not reachable, try again later"
+msgstr "API'en kan ikke nåes, prøv igen senere"
+
+#: ../cache/locales.php:707
+msgid "Type here"
+msgstr "Skriv her"
+
+#~ msgid "PHP version mismatch. Movim requires PHP 5.3 minimum."
+#~ msgstr "PHP version passer ikke. Movim kræver PHP 5.3 eller højere."
+
+#, php-format
+#~ msgid "Movim requires the %s extension."
+#~ msgstr "Movim kræver %s udvidelsen."
+
+#~ msgid "Movim's folder must be writable."
+#~ msgstr "Movim's mapper skal være skrivbare."
+
+#~ msgid "Movim Installer"
+#~ msgstr "Movim installeringspakke"
+
+#, php-format
+#~ msgid "Couldn't create directory '%s'."
+#~ msgstr "Kunne ikke oprette bibliotek '%s'."
+
+#, php-format
+#~ msgid "Couldn't create configuration file '%s'."
+#~ msgstr "Kunne ikke oprette konfigurationfil '%s'."
+
+#~ msgid "Compatibility Test"
+#~ msgstr "Kompabilitetstest"
+
+#~ msgid ""
+#~ "The following requirements were not met. Please make sure they are all "
+#~ "satisfied in order to install Movim."
+#~ msgstr ""
+#~ "De følgende krav blev ikke opfyldt. Sikre dig venligst de alle er dækket for "
+#~ "at kunne installere Movim."
+
+#~ msgid "User not logged in."
+#~ msgstr "Bruger er ikke logget ind."
+
+#~ msgid "JID not provided."
+#~ msgstr "JID ikke givet."
+
+#, php-format
+#~ msgid "jid '%s' is incorrect"
+#~ msgstr "jid '%s' er ikke korrekt"
+
+#, php-format
+#~ msgid "Cannot open log file '%s'"
+#~ msgstr "Kan ikke åbne log fil '%s'"
+
+#, php-format
+#~ msgid "%s - Account Creation"
+#~ msgstr "%s - Konto oprettelse"
+
+#~ msgid "Remove this contact"
+#~ msgstr "Fjern denne kontakt"
+
+#~ msgid "Debug console"
+#~ msgstr "Fejlsøgningskonsol"
+
+#~ msgid "Logout"
+#~ msgstr "Log ud"
+
+#~ msgid "wants to talk with you"
+#~ msgstr "ønsker at snakke med dig"
+
+#~ msgid "Decline"
+#~ msgstr "Afvis"
+
+#~ msgid "Loading the contact feed ..."
+#~ msgstr "Indlæse kontakt kilde..."
+
+#~ msgid "or"
+#~ msgstr "eller"
+
+#~ msgid "XMPP Connection Preferences"
+#~ msgstr "XMPP forbindelse indstillinger"
+
+#~ msgid "ultimate"
+#~ msgstr "ultimativ"
+
+#~ msgid "talkative"
+#~ msgstr "snakkesalig"
+
+#~ msgid "normal"
+#~ msgstr "normal"
+
+#~ msgid "terse"
+#~ msgstr "kort"
+
+#~ msgid "empty"
+#~ msgstr "tom"
+
+#~ msgid "Connecting..."
+#~ msgstr "Forbinder..."
+
+#~ msgid "Success !"
+#~ msgstr "Fuldført!"
+
+#, php-format
+#~ msgid "Cannot load element value '%s'"
+#~ msgstr "Kan ikke indlæse elementværdi '%s'"
+
+#~ msgid "Invalid name"
+#~ msgstr "Ugyldigt navn"
+
+#~ msgid "You entered different passwords"
+#~ msgstr "Du skrev forskellige koderord"
+
+#~ msgid "Username already taken"
+#~ msgstr "Brugernavnet er allerede taget"
+
+#~ msgid "Wrong ID"
+#~ msgstr "Forkert ID"
+
+#~ msgid "Could not communicate with the XMPP server"
+#~ msgstr "Kunne ikke kommunikere med XMPP server"
+
+#~ msgid "Could not connect to the XMPP server"
+#~ msgstr "Kunne ikke forbinde til XMPP server"

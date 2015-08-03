@@ -1,0 +1,2966 @@
+# Russian translations for Movim  package.
+# This file is distributed under the same license as the Movim  package.
+# This file was translated from CodingTeam at <http://codingteam.net/>.
+msgid ""
+msgstr ""
+"Project-Id-Version: Movim\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-06-08 22:06+0200\n"
+"PO-Revision-Date: 2015-06-09 12:19+0000\n"
+"Last-Translator: Paul <jadjer@mail.ru>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2015-06-18 21:08+0000\n"
+"X-Generator: Launchpad (build 17570)\n"
+"Language: \n"
+
+#: ../cache/locales.php:2
+msgid "Thanks"
+msgstr "Спасибо"
+
+#: ../cache/locales.php:3
+msgid "Developers"
+msgstr "Разработчики"
+
+#: ../cache/locales.php:4
+msgid "Translators"
+msgstr "Переводчики"
+
+#: ../cache/locales.php:5
+msgid "Software"
+msgstr "Программа"
+
+#: ../cache/locales.php:6
+msgid "Resources"
+msgstr "Ресурсы"
+
+#: ../cache/locales.php:7 ../cache/locales.php:83 ../cache/locales.php:85
+msgid "API"
+msgstr "API"
+
+#: ../cache/locales.php:8
+msgid ""
+"Movim is an XMPP-based communication platform. All the project, except the "
+"following software and resources, is under"
+msgstr ""
+"Movim — основанная на XMPP платформа для коммуникаций. Весь проект, кроме "
+"следующих программ, находится под"
+
+#: ../cache/locales.php:9
+msgid "Account"
+msgstr ""
+
+#: ../cache/locales.php:10
+msgid "The password has been updated"
+msgstr ""
+
+#: ../cache/locales.php:11
+msgid "Please provide a valid password (6 characters minimum)"
+msgstr ""
+
+#: ../cache/locales.php:12
+msgid "The provided passwords are not the same"
+msgstr ""
+
+#: ../cache/locales.php:13
+msgid "Delete my account"
+msgstr ""
+
+#: ../cache/locales.php:14
+msgid ""
+"You will delete your XMPP account and all the relative information linked to "
+"it (profile, contacts and publications)."
+msgstr ""
+
+#: ../cache/locales.php:15
+msgid "Are you sure that you want to delete it ?"
+msgstr ""
+
+#: ../cache/locales.php:16 ../cache/locales.php:411
+msgid "Create a new account"
+msgstr "Создать новую учётную запись"
+
+#: ../cache/locales.php:17
+msgid "No account creation form found on the server"
+msgstr "На сервере не найдена форма создания учетной записи"
+
+#: ../cache/locales.php:18 ../cache/locales.php:172
+msgid "on"
+msgstr "на"
+
+#: ../cache/locales.php:19
+msgid "Your acccount has been successfully registered"
+msgstr "Ваша учётная запись была успешно зарегистрирована"
+
+#: ../cache/locales.php:20
+msgid "Loading"
+msgstr "Идёт загрузка"
+
+#: ../cache/locales.php:21
+msgid "Not Acceptable"
+msgstr "Неприменимо"
+
+#: ../cache/locales.php:22
+msgid "The registration system of this server is currently unavailable"
+msgstr "Регистрация на этом сервере в данный момент недоступна"
+
+#: ../cache/locales.php:23
+msgid ""
+"This server use an external system for the registration, please click on the "
+"following URL."
+msgstr ""
+"Серве использует внешнюю систему регистрации, пожалуйста, проследуйте по "
+"этому адресу."
+
+#: ../cache/locales.php:24
+msgid "Actions"
+msgstr "Действия"
+
+#: ../cache/locales.php:25 ../cache/locales.php:82
+msgid "Database"
+msgstr "База данных"
+
+#: ../cache/locales.php:26
+msgid "Modl wasn't able to connect to the database"
+msgstr "Modl не смог подключиться к базе данных"
+
+#: ../cache/locales.php:27
+msgid "Movim is connected to the database"
+msgstr "Movim подключился к базе данных"
+
+#: ../cache/locales.php:28
+msgid "The database need to be updated"
+msgstr "База данных нуждается в обновление"
+
+#: ../cache/locales.php:29
+msgid "Movim database is up to date"
+msgstr "База данных Movim обновлена"
+
+#: ../cache/locales.php:30
+msgid "Database Type"
+msgstr "Тип базы данных"
+
+#: ../cache/locales.php:31 ../cache/locales.php:50 ../cache/locales.php:540
+msgid "Username"
+msgstr "Имя пользователя"
+
+#: ../cache/locales.php:32 ../cache/locales.php:51 ../cache/locales.php:282
+#: ../cache/locales.php:541
+msgid "Password"
+msgstr "Пароль"
+
+#: ../cache/locales.php:33
+msgid "Host"
+msgstr "Сервер"
+
+#: ../cache/locales.php:34
+msgid "Port"
+msgstr "Порт"
+
+#: ../cache/locales.php:35
+msgid "Database Name"
+msgstr "Имя базы данных"
+
+#: ../cache/locales.php:36
+msgid "General Settings"
+msgstr "Общие параметры"
+
+#: ../cache/locales.php:37
+msgid "Theme"
+msgstr "Тема"
+
+#: ../cache/locales.php:38
+msgid "Default language"
+msgstr "Язык по-умолчанию"
+
+#: ../cache/locales.php:39
+msgid "Environment"
+msgstr "Окружение"
+
+#: ../cache/locales.php:40
+msgid "Log verbosity"
+msgstr "Детализация лога"
+
+#: ../cache/locales.php:41
+msgid "Server Timezone"
+msgstr "Часовой пояс сервера"
+
+#: ../cache/locales.php:42
+msgid "User folder size limit (in bytes)"
+msgstr "Предельный размер папки пользователя (в байтах)"
+
+#: ../cache/locales.php:43
+msgid "WebSocket Configuration"
+msgstr "Конфигурация WebSocket"
+
+#: ../cache/locales.php:44
+msgid "Enter here a valid WebSocket URI in the form"
+msgstr "Введите верный WebSocket URI в форму"
+
+#: ../cache/locales.php:45
+msgid "WebSocket URI"
+msgstr "WebSocket URI"
+
+#: ../cache/locales.php:46
+msgid ""
+"If you change the URI, please restart the daemon to reload the configuration"
+msgstr ""
+"Если вы изменили URI, пожалуйста, перезапустите демон для перезагрузки "
+"конфигурации"
+
+#: ../cache/locales.php:47
+msgid "Public WebSockets"
+msgstr "Публичные WebSockets"
+
+#: ../cache/locales.php:48
+msgid "Administration Credential"
+msgstr "Управление учетными данными"
+
+#: ../cache/locales.php:49
+msgid "Change the default credentials admin/password"
+msgstr "Изменение учетных данных по умолчанию admin/password"
+
+#: ../cache/locales.php:52
+msgid "Retype password"
+msgstr "Введите пароль ещё раз"
+
+#: ../cache/locales.php:53
+msgid "Whitelist - XMPP Server"
+msgstr "Белый список - XMPP Сервер"
+
+#: ../cache/locales.php:54
+msgid ""
+"If you want to specify a list of authorized XMPP servers on your Movim pod "
+"and forbid the connection on all the others please put their domain name "
+"here, with comma (ex: movim.eu,jabber.fr)"
+msgstr ""
+"Если вы хотите задать список авторизованных XMPP серверов в вашей Movim "
+"модуле и запретить подключение всех остальных поставьте их доменное имя "
+"здесь, с запятой (например: movim.eu, jabber.fr)"
+
+#: ../cache/locales.php:55
+msgid ""
+"Leave this field blank if you allow the access to all the XMPP accounts."
+msgstr ""
+"Оставьте это поле пустым, если вы позволите доступ ко всем XMPP аккаунтам."
+
+#: ../cache/locales.php:56
+msgid "List of whitelisted XMPP servers"
+msgstr "Белый список серверов XMPP"
+
+#: ../cache/locales.php:57 ../cache/locales.php:61
+msgid "Information Message"
+msgstr "Информационное сообщение"
+
+#: ../cache/locales.php:58
+msgid "Description"
+msgstr "Описание"
+
+#: ../cache/locales.php:59
+msgid "This message will be displayed on the login page"
+msgstr "Это сообщение будет отображаться на странице входа"
+
+#: ../cache/locales.php:60
+msgid "Leave this field blank if you don't want to show any message."
+msgstr ""
+"Оставьте это поле пустым, если ты не хочешь показывать любое сообщение."
+
+#: ../cache/locales.php:62
+msgid "Empty"
+msgstr "Пусто"
+
+#: ../cache/locales.php:63
+msgid "Syslog"
+msgstr "Syslog"
+
+#: ../cache/locales.php:64
+msgid "Syslog and files"
+msgstr "Syslog и файлы"
+
+#: ../cache/locales.php:65
+msgid "URL Rewriting"
+msgstr ""
+
+#: ../cache/locales.php:66
+msgid "The URL Rewriting can be enabled"
+msgstr ""
+
+#: ../cache/locales.php:67
+msgid "General Overview"
+msgstr "Общие сведения"
+
+#: ../cache/locales.php:68
+msgid ""
+"Movim has found some issues or things that need to be fixed or improved"
+msgstr ""
+"Movim обнаружил проблемы или вещи, которые должны быть исправлены или "
+"улучшены"
+
+#: ../cache/locales.php:69
+#, php-format
+msgid "Update your PHP-Version: %s"
+msgstr "Обновите вашу версию PHP: %s"
+
+#: ../cache/locales.php:70
+msgid "Required: 5.3.0"
+msgstr "Необходима: 5.3.0"
+
+#: ../cache/locales.php:71
+msgid "Install the php5-curl library"
+msgstr "Установите библиотеку php5-curl"
+
+#: ../cache/locales.php:72
+msgid "Install the php5-imagick library"
+msgstr ""
+
+#: ../cache/locales.php:73
+msgid "Install the php5-gd library"
+msgstr ""
+
+#: ../cache/locales.php:74
+msgid "Read and write rights for the webserver in Movim's root directory"
+msgstr "Права на чтение и запись на веб-сервере для корневого каталога Movim"
+
+#: ../cache/locales.php:75
+msgid "The URL Rewriting support is currently disabled"
+msgstr "Поддержка URL Rewrite, на текущий момент, отключена"
+
+#: ../cache/locales.php:76
+msgid "The database need to be updated, go to the database panel to fix this"
+msgstr ""
+
+#: ../cache/locales.php:77
+msgid ""
+"WebSocket connection error, check if the Movim Daemon is running and is "
+"reacheable"
+msgstr ""
+
+#: ../cache/locales.php:78
+msgid ""
+"XMPP Websocket connection error, please check the validity of the URL given "
+"in the General Configuration"
+msgstr ""
+
+#: ../cache/locales.php:79
+msgid "Browser"
+msgstr ""
+
+#: ../cache/locales.php:80
+msgid "Movim Core"
+msgstr ""
+
+#: ../cache/locales.php:81
+msgid "Movim Daemon"
+msgstr ""
+
+#: ../cache/locales.php:84
+msgid "XMPP"
+msgstr ""
+
+#: ../cache/locales.php:86
+#, php-format
+msgid ""
+"Here you can register your pod on the official %sMovim API%s and be listed "
+"on %sthe pods page%s."
+msgstr ""
+"Здесь Вы можете зарегистрировать свою установку Movim в %sMovim API%s с "
+"упомянанием на %sстранице установок%s."
+
+#: ../cache/locales.php:87
+msgid "Your pod is not registered on the API"
+msgstr "Ваша установка не зарегистрирована в API"
+
+#: ../cache/locales.php:88
+msgid "Your pod is registered on the API"
+msgstr "Ваша установка зарегистрирована в API"
+
+#: ../cache/locales.php:89
+msgid "Your pod is not yet validated"
+msgstr "Ваша установка не прошла проверку"
+
+#: ../cache/locales.php:90
+msgid "Your pod is validated"
+msgstr "Ваша установка прошла проверку"
+
+#: ../cache/locales.php:91
+msgid ""
+"You asked to be removed from the API, this request will be processed in a "
+"couple of hours"
+msgstr ""
+"Вы запросили удаление из API, данный запрос будет выполнен в течение "
+"нескольких часов"
+
+#: ../cache/locales.php:92 ../cache/locales.php:147
+msgid "Configuration updated"
+msgstr "Конфигурация обновлена"
+
+#: ../cache/locales.php:93
+msgid "File"
+msgstr ""
+
+#: ../cache/locales.php:94
+msgid "Use it"
+msgstr ""
+
+#: ../cache/locales.php:95
+msgid "Webcam"
+msgstr "Веб-камера"
+
+#: ../cache/locales.php:96
+msgid "Cheese !"
+msgstr "Сыыр!"
+
+#: ../cache/locales.php:97
+msgid "Take a webcam snapshot"
+msgstr "Сделать фотографиюс помощью веб-камеры"
+
+#: ../cache/locales.php:98
+msgid "Avatar Updated"
+msgstr "Аватара обновлена"
+
+#: ../cache/locales.php:99
+msgid "Avatar Not Updated"
+msgstr "Аватара не обновлена"
+
+#: ../cache/locales.php:100 ../cache/locales.php:415
+#, php-format
+msgid "%s's feed"
+msgstr "лента пользователя %s"
+
+#: ../cache/locales.php:101
+msgid "This user has not posted anything right now"
+msgstr ""
+
+#: ../cache/locales.php:102
+msgid "Conferences"
+msgstr "Конференции"
+
+#: ../cache/locales.php:103 ../cache/locales.php:193 ../cache/locales.php:217
+#: ../cache/locales.php:468
+msgid "Groups"
+msgstr "Группы"
+
+#: ../cache/locales.php:104
+msgid "Add a new Chat Room"
+msgstr "Создать Беседку"
+
+#: ../cache/locales.php:105 ../cache/locales.php:368
+msgid "Chat Room ID"
+msgstr "ID Беседки"
+
+#: ../cache/locales.php:106 ../cache/locales.php:116 ../cache/locales.php:156
+#: ../cache/locales.php:361 ../cache/locales.php:369 ../cache/locales.php:424
+msgid "Name"
+msgstr "Имя"
+
+#: ../cache/locales.php:107 ../cache/locales.php:157 ../cache/locales.php:371
+#: ../cache/locales.php:425
+msgid "Nickname"
+msgstr "Псевдоним"
+
+#: ../cache/locales.php:108
+msgid "Do you want do join automaticaly this Chat Room ?"
+msgstr "Хотите автоматически войти в эту Беседку?"
+
+#: ../cache/locales.php:109 ../cache/locales.php:372
+msgid "Bad Chatroom ID"
+msgstr "Неверный ID Беседки"
+
+#: ../cache/locales.php:110 ../cache/locales.php:373
+msgid "Empty name"
+msgstr "Имя не задано"
+
+#: ../cache/locales.php:111 ../cache/locales.php:380
+msgid "Bookmarks updated"
+msgstr "Закладки обновлены"
+
+#: ../cache/locales.php:112
+msgid "An error occured : "
+msgstr "Произошла ошибка: "
+
+#: ../cache/locales.php:113
+msgid "Configure"
+msgstr "Настройка"
+
+#: ../cache/locales.php:114
+msgid "Add a new URL"
+msgstr "Добавить новый URL"
+
+#: ../cache/locales.php:115
+msgid "URL"
+msgstr "URL"
+
+#: ../cache/locales.php:117
+msgid "Message Published"
+msgstr "Сообщение опубликовано"
+
+#: ../cache/locales.php:118 ../cache/locales.php:138
+msgid "Encrypted message"
+msgstr "Зашифрованное сообщение"
+
+#: ../cache/locales.php:119
+msgid "Composing..."
+msgstr "Печатает..."
+
+#: ../cache/locales.php:120
+msgid "Paused..."
+msgstr "Пауза..."
+
+#: ../cache/locales.php:121
+msgid "Contact gone"
+msgstr ""
+
+#: ../cache/locales.php:122
+#, php-format
+msgid "%s needs your attention"
+msgstr "%s нуждается в Вашем внимании"
+
+#: ../cache/locales.php:123
+msgid "Your message here..."
+msgstr "Введите ваше сообщение здесь..."
+
+#: ../cache/locales.php:124
+msgid "Smileys"
+msgstr "Смайлики"
+
+#: ../cache/locales.php:125 ../cache/locales.php:139
+msgid "Chat"
+msgstr "Чат"
+
+#: ../cache/locales.php:126
+msgid "Discuss with your contacts"
+msgstr "Обсудить с вашими контактами"
+
+#: ../cache/locales.php:127
+msgid "Members"
+msgstr ""
+
+#: ../cache/locales.php:128 ../cache/locales.php:376
+msgid "Connected to the chatroom"
+msgstr "Подключились к Беседке"
+
+#: ../cache/locales.php:129 ../cache/locales.php:377
+msgid "Disconnected from the chatroom"
+msgstr "Отключились от Беседки"
+
+#: ../cache/locales.php:130 ../cache/locales.php:200 ../cache/locales.php:469
+msgid "Configuration"
+msgstr "Настройки"
+
+#: ../cache/locales.php:131
+msgid "Configuration saved"
+msgstr ""
+
+#: ../cache/locales.php:132
+msgid "Subject"
+msgstr ""
+
+#: ../cache/locales.php:133
+msgid "Subject changed"
+msgstr ""
+
+#: ../cache/locales.php:134
+msgid "Open a new conversation by clicking on the plus button bellow"
+msgstr ""
+
+#: ../cache/locales.php:135
+msgid "Chat with a contact"
+msgstr "Пообщаться с контактом"
+
+#: ../cache/locales.php:136
+msgid "Frequent contacts"
+msgstr ""
+
+#: ../cache/locales.php:137
+msgid "Load more contacts"
+msgstr ""
+
+#: ../cache/locales.php:140
+msgid "General"
+msgstr "Общие"
+
+#: ../cache/locales.php:141
+msgid "Language"
+msgstr "Язык"
+
+#: ../cache/locales.php:142
+msgid "Roster display"
+msgstr ""
+
+#: ../cache/locales.php:143
+msgid "Show the offline contacts"
+msgstr ""
+
+#: ../cache/locales.php:144
+msgid "Hide the offline contacts"
+msgstr ""
+
+#: ../cache/locales.php:145
+msgid "Appearence"
+msgstr "Внешний вид"
+
+#: ../cache/locales.php:146
+msgid "This configuration is shared wherever you are connected !"
+msgstr "Эта конфигурация действительна откуда бы Вы не подключились"
+
+#: ../cache/locales.php:148
+msgid "Notify on incoming message"
+msgstr "Оповещать о входящих сообщениях"
+
+#: ../cache/locales.php:149
+msgid "Use desktop notifications"
+msgstr "Использовать оповещения ОС"
+
+#: ../cache/locales.php:150
+msgid "Data"
+msgstr "Данные"
+
+#: ../cache/locales.php:151
+msgid "Cache"
+msgstr "Кэш"
+
+#: ../cache/locales.php:152 ../cache/locales.php:218 ../cache/locales.php:466
+msgid "Contacts"
+msgstr "Контакты"
+
+#: ../cache/locales.php:153 ../cache/locales.php:480
+msgid "Posts"
+msgstr "Записи"
+
+#: ../cache/locales.php:154
+msgid "Messages"
+msgstr "Сообщения"
+
+#: ../cache/locales.php:155 ../cache/locales.php:423
+msgid "General Informations"
+msgstr "Общая информация"
+
+#: ../cache/locales.php:158 ../cache/locales.php:427
+msgid "Date of Birth"
+msgstr "Дата рождения"
+
+#: ../cache/locales.php:159 ../cache/locales.php:428
+msgid "Gender"
+msgstr "Пол"
+
+#: ../cache/locales.php:160 ../cache/locales.php:429
+msgid "Marital Status"
+msgstr "Семейное положение"
+
+#: ../cache/locales.php:161 ../cache/locales.php:426
+msgid "Email"
+msgstr "Эл. почта"
+
+#: ../cache/locales.php:162 ../cache/locales.php:430
+msgid "Website"
+msgstr "Веб-сайт"
+
+#: ../cache/locales.php:163 ../cache/locales.php:431
+msgid "About Me"
+msgstr "О себе"
+
+#: ../cache/locales.php:164
+msgid "Other Accounts"
+msgstr "Другие учётные записи"
+
+#: ../cache/locales.php:165
+msgid "Is Listening"
+msgstr ""
+
+#: ../cache/locales.php:166 ../cache/locales.php:432
+msgid "Geographic Position"
+msgstr "Географическое расположение"
+
+#: ../cache/locales.php:167 ../cache/locales.php:433
+msgid "Locality"
+msgstr "Местоположение"
+
+#: ../cache/locales.php:168 ../cache/locales.php:434
+msgid "Country"
+msgstr "Страна"
+
+#: ../cache/locales.php:169
+msgid "Mood"
+msgstr "Настроение"
+
+#: ../cache/locales.php:170
+msgid "I'm "
+msgstr "Я "
+
+#: ../cache/locales.php:171
+msgid "Listening"
+msgstr "Слушаю"
+
+#: ../cache/locales.php:173
+msgid "Last seen"
+msgstr "Последнее посещение"
+
+#: ../cache/locales.php:174
+msgid "Client Informations"
+msgstr "Информация о клиенте"
+
+#: ../cache/locales.php:175
+msgid "Last registered"
+msgstr "Последний зарегестрированый"
+
+#: ../cache/locales.php:176
+msgid "Find some new friends"
+msgstr ""
+
+#: ../cache/locales.php:177 ../cache/locales.php:533
+msgid "Edit"
+msgstr "Редактировать"
+
+#: ../cache/locales.php:178
+msgid "Alias"
+msgstr "привязка"
+
+#: ../cache/locales.php:179
+msgid "Group"
+msgstr "Группа"
+
+#: ../cache/locales.php:180 ../cache/locales.php:400
+msgid "Contact updated"
+msgstr "Контакты обновлены"
+
+#: ../cache/locales.php:181
+msgid "Are you sure?"
+msgstr "Вы уверены?"
+
+#: ../cache/locales.php:182
+msgid ""
+"You are going to delete one of your contacts, please confirm your action"
+msgstr ""
+"Вы собираетесь удалить один из ваших контактов. Пожалуйста, подтвердите это."
+
+#: ../cache/locales.php:183
+#, php-format
+msgid "%s years"
+msgstr ""
+
+#: ../cache/locales.php:184
+msgid "Last public post"
+msgstr ""
+
+#: ../cache/locales.php:185
+msgid "Subscribe"
+msgstr "Подписаться"
+
+#: ../cache/locales.php:186
+msgid "Subscribed"
+msgstr "Подписано"
+
+#: ../cache/locales.php:187
+msgid "Unsubscribe"
+msgstr "Отписаться"
+
+#: ../cache/locales.php:188
+msgid "You are going to unsubscribe from this Group"
+msgstr ""
+
+#: ../cache/locales.php:189
+msgid "Unsubscribed"
+msgstr ""
+
+#: ../cache/locales.php:190
+msgid "Make your membership to this group public to your friends"
+msgstr "Раскрыть ваше членство в данной группе вашим друзьям"
+
+#: ../cache/locales.php:191
+msgid "Give a label for this group"
+msgstr ""
+
+#: ../cache/locales.php:192
+msgid "Are you sure ?"
+msgstr "Вы уверены?"
+
+#: ../cache/locales.php:194
+msgid "Discover, follow and share"
+msgstr ""
+
+#: ../cache/locales.php:195
+msgid "Something bad happened to this group"
+msgstr ""
+
+#: ../cache/locales.php:196
+msgid "Group configuration saved"
+msgstr "Настройки группы сохранены"
+
+#: ../cache/locales.php:197
+msgid "Delete the group"
+msgstr ""
+
+#: ../cache/locales.php:198
+msgid ""
+"You are going to delete the following group. Please confirm your action."
+msgstr ""
+
+#: ../cache/locales.php:199
+msgid ""
+"It seems that this group doesn't exists anymore. Do you want to remove it "
+"from your subscriptions?"
+msgstr ""
+
+#: ../cache/locales.php:201 ../cache/locales.php:408
+msgid "Subscriptions"
+msgstr "Подписки"
+
+#: ../cache/locales.php:202 ../cache/locales.php:290
+msgid "Hello"
+msgstr "Здравствуйте"
+
+#: ../cache/locales.php:203 ../cache/locales.php:225 ../cache/locales.php:291
+msgid "Contact post"
+msgstr "Для связи"
+
+#: ../cache/locales.php:204
+msgid ""
+"You don't have any subscriptions yet, select a group server above to start "
+"exploring."
+msgstr ""
+
+#: ../cache/locales.php:205
+msgid "Subscribe to your favorite feeds by bookmarking them."
+msgstr ""
+
+#: ../cache/locales.php:206
+msgid "My Subscriptions"
+msgstr ""
+
+#: ../cache/locales.php:207
+msgid "Create a new Group"
+msgstr ""
+
+#: ../cache/locales.php:208
+msgid "Group name"
+msgstr ""
+
+#: ../cache/locales.php:209
+msgid "My Little Pony - Fan Club"
+msgstr "My Little Pony -Фан Клуб"
+
+#: ../cache/locales.php:210
+msgid "Group created successfully"
+msgstr ""
+
+#: ../cache/locales.php:211
+msgid "Group deleted successfully"
+msgstr ""
+
+#: ../cache/locales.php:212
+msgid "Please provide a valid group name (4 characters minimum)"
+msgstr ""
+
+#: ../cache/locales.php:213
+msgid "You cannot create a new Group on this server"
+msgstr ""
+
+#: ../cache/locales.php:214
+#, php-format
+msgid "%s subscribers"
+msgstr ""
+
+#: ../cache/locales.php:215
+#, php-format
+msgid "%s posts"
+msgstr ""
+
+#: ../cache/locales.php:216
+msgid "All"
+msgstr "Все"
+
+#: ../cache/locales.php:219
+msgid "Refresh all the streams"
+msgstr "Обновить все потоки"
+
+#: ../cache/locales.php:220 ../cache/locales.php:402
+msgid "Search"
+msgstr "Поиск"
+
+#: ../cache/locales.php:221
+msgid "Go on the Chat page"
+msgstr ""
+
+#: ../cache/locales.php:222
+msgid "Read all theses articles on the News page"
+msgstr ""
+
+#: ../cache/locales.php:223
+msgid "Visit your public blog"
+msgstr ""
+
+#: ../cache/locales.php:224
+msgid "See your public posts and share them with all your contacts"
+msgstr ""
+
+#: ../cache/locales.php:226
+msgid "Universal share button"
+msgstr ""
+
+#: ../cache/locales.php:227
+msgid ""
+"Bookmark or drag and drop the following button in your toolbar and use it on "
+"all the pages you want to share on Movim"
+msgstr ""
+
+#: ../cache/locales.php:228
+msgid "Share on Movim"
+msgstr ""
+
+#: ../cache/locales.php:229
+msgid "Frequently Asked Questions"
+msgstr "Часто Задаваемые Вопросы (FAQ)"
+
+#: ../cache/locales.php:230
+msgid "What do the little banners refer to ?"
+msgstr "Зачем нужны небольшие баннеры?"
+
+#: ../cache/locales.php:231
+msgid ""
+"Thanks to these five little banners, you can quickly identitfy the level of "
+"confdentiality applied to the information you provide."
+msgstr ""
+"при помощи этих пяти небольших баннеров Вы можете быстро определить уровень "
+"конфиденциальности информации, которую вы представляете"
+
+#: ../cache/locales.php:232
+msgid "White, only you can see the information"
+msgstr "Белый: только вы можете видеть эту информацию"
+
+#: ../cache/locales.php:233
+msgid "Green, you have chosen some contacts who can see your information"
+msgstr ""
+"Зеленый: вы выбрали несколько своих контактов, которые увидят эту информацию"
+
+#: ../cache/locales.php:234
+msgid "Orange, all your contact list can see your information"
+msgstr ""
+"Оранжевый: все из вашего контактного листа могут видеть эту информацию"
+
+#: ../cache/locales.php:235
+msgid "Red, everybody in the XMPP network can see your information"
+msgstr "Красный: любой в сети ХМРР может видеть вашу информацию"
+
+#: ../cache/locales.php:236
+msgid "Black, the whole Internet can see your information"
+msgstr "Черный: весь Интернет может видеть вашу информацию"
+
+#: ../cache/locales.php:237
+msgid "Looking for some documentation ?"
+msgstr "Ищите документацию?"
+
+#: ../cache/locales.php:238
+msgid "Read the Wiki"
+msgstr "Почитать Wiki"
+
+#: ../cache/locales.php:239
+msgid "Talk with us by email ?"
+msgstr "Желаете связаться с нами по email?"
+
+#: ../cache/locales.php:240
+msgid "Join the Mailing List"
+msgstr "Присоединиться к списку рассылки"
+
+#: ../cache/locales.php:241
+msgid "Chat with the team ?"
+msgstr "Желаете пообщаться с нашей командой?"
+
+#: ../cache/locales.php:242
+msgid "Join the Chatroom"
+msgstr "Присоединиться к конференции"
+
+#: ../cache/locales.php:243
+msgid "Location node created"
+msgstr "Создан узел геолокации"
+
+#: ../cache/locales.php:244
+msgid "Bookmark node created"
+msgstr "Создан узел закладок"
+
+#: ../cache/locales.php:245
+msgid "Profile node created"
+msgstr "Создан узел профиля"
+
+#: ../cache/locales.php:246
+msgid "Avatar node created"
+msgstr "Создан узел аватара"
+
+#: ../cache/locales.php:247
+msgid "Subscriptions node created"
+msgstr "Создан узел подписок"
+
+#: ../cache/locales.php:248
+msgid "Microblog node created"
+msgstr "Создан узел микроблога"
+
+#: ../cache/locales.php:249
+msgid "Location"
+msgstr "Местоположение"
+
+#: ../cache/locales.php:250
+msgid "Wrong position"
+msgstr "Неправильная позиция"
+
+#: ../cache/locales.php:251
+msgid "Location updated"
+msgstr "Местонахождение обновлено"
+
+#: ../cache/locales.php:252
+msgid "Update my position"
+msgstr "Обновить моё местоположение"
+
+#: ../cache/locales.php:253
+msgid "Wrong username"
+msgstr "Неверное имя пользователя"
+
+#: ../cache/locales.php:254
+msgid "Invalid JID"
+msgstr "Недействительный JID"
+
+#: ../cache/locales.php:255
+msgid "Empty Challenge from the server"
+msgstr "Пустая Соль пришла с сервера"
+
+#: ../cache/locales.php:256
+msgid "XMPP Domain error, your account is not a correct Jabber ID"
+msgstr "Ошибочный  XMPP домен, недопустимый JID в вашей учетной записи"
+
+#: ../cache/locales.php:257
+msgid "Some data are missing !"
+msgstr "Некоторые данные утеряны !"
+
+#: ../cache/locales.php:258
+msgid "Wrong password"
+msgstr "Неверный пароль"
+
+#: ../cache/locales.php:259
+msgid "Internal server error"
+msgstr "Внутренняя ошибка сервера"
+
+#: ../cache/locales.php:260
+msgid "Session error"
+msgstr "Ошибка сеанса"
+
+#: ../cache/locales.php:261
+msgid "Account successfully created"
+msgstr "Учётная запись успешно создана"
+
+#: ../cache/locales.php:262 ../cache/locales.php:271
+msgid "Your XMPP server is unauthorized"
+msgstr "Ваш XMPP-сервер не авторизован"
+
+#: ../cache/locales.php:263
+msgid "The server takes too much time to respond"
+msgstr "Сервер потребовал слишком много времени на ответ"
+
+#: ../cache/locales.php:264
+msgid "Your web browser is too old to use with Movim."
+msgstr "Версия вашего браузера устарела для использования с Movin"
+
+#: ../cache/locales.php:265
+msgid ""
+"Movim cannot talk with the server, please try again later (Websocket "
+"connection error)"
+msgstr ""
+"Movim не может связаться с сервером, пожалуйста, попробуйте снова попозже "
+"(Ошибка соединения с Websocket)"
+
+#: ../cache/locales.php:266
+msgid "Impossible login"
+msgstr ""
+
+#: ../cache/locales.php:267
+msgid "Oops!"
+msgstr "Упс!"
+
+#: ../cache/locales.php:268 ../cache/locales.php:449 ../cache/locales.php:455
+msgid "Unknown error"
+msgstr "Неизвестная ошибка"
+
+#: ../cache/locales.php:269
+msgid "Invalid username format"
+msgstr ""
+
+#: ../cache/locales.php:270
+msgid "Invalid password format"
+msgstr ""
+
+#: ../cache/locales.php:272
+msgid "A Movim session is already open on an other device"
+msgstr ""
+
+#: ../cache/locales.php:273
+msgid "Movim failed to authenticate. You entered wrong data"
+msgstr "Идентификация в Movim неудалась. Вы ввели неверные данные."
+
+#: ../cache/locales.php:274
+msgid "Authentication mechanism not supported by Movim"
+msgstr "Данный механизм аутентификации не поддерживается Movim"
+
+#: ../cache/locales.php:275
+msgid "The XMPP authentification failed"
+msgstr "XMPP-аутентификация не прошла"
+
+#: ../cache/locales.php:276
+#, php-format
+msgid ""
+"You can login with Facebook (chat only) using %syour.id@chat.facebook.com%s "
+"and your password"
+msgstr ""
+"Вы можете войти в Facebook (только чат), используя "
+"%syour.id@chat.facebook.com%s и Ваш пароль"
+
+#: ../cache/locales.php:277
+#, php-format
+msgid "%sGmail accounts are also compatible%s but are not fully supported"
+msgstr ""
+"%sУчетные записи Gmail%s также совместимы, но поддерживаются не полностью"
+
+#: ../cache/locales.php:278
+msgid "You can login using your favorite Jabber account"
+msgstr "Вы можете войти используя ваш любимый Jabber"
+
+#: ../cache/locales.php:279
+msgid "or with our demonstration account"
+msgstr "или с помощью нашей демо учетной записи"
+
+#: ../cache/locales.php:280 ../cache/locales.php:435
+msgid "Accounts"
+msgstr "Учётные записи"
+
+#: ../cache/locales.php:281
+msgid "My address"
+msgstr "Мой адрес"
+
+#: ../cache/locales.php:283
+msgid "Create one !"
+msgstr "Создайте учетную запись!"
+
+#: ../cache/locales.php:284
+msgid "No account yet ?"
+msgstr "Еще нет учетной записи?"
+
+#: ../cache/locales.php:285
+msgid "Another account"
+msgstr "Другая учётная запись"
+
+#: ../cache/locales.php:286
+msgid "You can login with accounts from theses servers"
+msgstr ""
+
+#: ../cache/locales.php:287
+msgid "Connected"
+msgstr "Соединение установлено"
+
+#: ../cache/locales.php:288
+msgid "Population"
+msgstr "Население"
+
+#: ../cache/locales.php:289
+msgid "Bad nickname (between 4 and 40 characters)"
+msgstr ""
+
+#: ../cache/locales.php:292
+msgid ""
+"Welcome on your news feed, here you will see all the posts published in the "
+"groups you have subscribed."
+msgstr ""
+"Добро пожаловать в вашу новостную ленту, здесь вы увидите все записи, "
+"опубликованные в группах, на которые вы подписаны"
+
+#: ../cache/locales.php:293
+msgid "Refreshing all the streams"
+msgstr "Обновляются все потоки"
+
+#: ../cache/locales.php:294
+msgid "This post is public"
+msgstr ""
+
+#: ../cache/locales.php:295
+msgid "Manage your members"
+msgstr "Управление позицией пользователей"
+
+#: ../cache/locales.php:296
+msgid "Get the members"
+msgstr "Получить членство"
+
+#: ../cache/locales.php:297
+msgid "Affiliations saved"
+msgstr "Принадлежность сохраняется"
+
+#: ../cache/locales.php:298
+msgid "Manage your subscriptions"
+msgstr "Управлять моими подписками"
+
+#: ../cache/locales.php:299
+msgid "Manage the subscriptions"
+msgstr "Управлять подписками"
+
+#: ../cache/locales.php:300
+msgid "Get the subscriptions"
+msgstr "Получить подписки"
+
+#: ../cache/locales.php:301
+msgid "Subscriptions saved"
+msgstr "Подписки сохранены"
+
+#: ../cache/locales.php:302
+msgid "Pending Invitations"
+msgstr "Ожидающие решения приглашения"
+
+#: ../cache/locales.php:303
+#, php-format
+msgid "%s wants to talk with you"
+msgstr "%s хочет поговорить с Вами"
+
+#: ../cache/locales.php:304
+msgid "Manage"
+msgstr "Управлять"
+
+#: ../cache/locales.php:305 ../cache/locales.php:338
+msgid "News Feed"
+msgstr "Новостная лента"
+
+#: ../cache/locales.php:306 ../cache/locales.php:339
+msgid "Discover and register to the groups you are interested in"
+msgstr "Найдите и зарегистрируйтесь в интересных вам группах"
+
+#: ../cache/locales.php:307 ../cache/locales.php:340 ../cache/locales.php:482
+msgid "Preview"
+msgstr "Предпросмотр"
+
+#: ../cache/locales.php:308 ../cache/locales.php:341 ../cache/locales.php:478
+msgid "Help"
+msgstr "Помощь"
+
+#: ../cache/locales.php:309 ../cache/locales.php:342
+msgid "More help"
+msgstr ""
+
+#: ../cache/locales.php:310 ../cache/locales.php:343
+msgid "Markdown syntax manual"
+msgstr ""
+
+#: ../cache/locales.php:311 ../cache/locales.php:344 ../cache/locales.php:681
+msgid "Title"
+msgstr "Название"
+
+#: ../cache/locales.php:312 ../cache/locales.php:345
+msgid "Content"
+msgstr ""
+
+#: ../cache/locales.php:313 ../cache/locales.php:346
+msgid "Link"
+msgstr "Ссылка"
+
+#: ../cache/locales.php:314 ../cache/locales.php:347
+msgid "Tags"
+msgstr ""
+
+#: ../cache/locales.php:315 ../cache/locales.php:348
+msgid "Please enter a valid url"
+msgstr ""
+
+#: ../cache/locales.php:316 ../cache/locales.php:349
+msgid "No content to preview"
+msgstr ""
+
+#: ../cache/locales.php:317 ../cache/locales.php:350 ../cache/locales.php:687
+msgid "No content"
+msgstr "Нет данных"
+
+#: ../cache/locales.php:318 ../cache/locales.php:351
+msgid "Post published"
+msgstr ""
+
+#: ../cache/locales.php:319 ../cache/locales.php:352
+msgid "Post deleted"
+msgstr ""
+
+#: ../cache/locales.php:320 ../cache/locales.php:353
+msgid "This picture will be added to your gallery"
+msgstr ""
+
+#: ../cache/locales.php:321 ../cache/locales.php:354
+msgid "What's Hot"
+msgstr "Что актуально"
+
+#: ../cache/locales.php:322 ../cache/locales.php:355
+msgid "New post"
+msgstr ""
+
+#: ../cache/locales.php:323 ../cache/locales.php:357
+msgid ""
+"You can also use services like Imgur or Flickr to host your picture and "
+"paste the link here."
+msgstr ""
+
+#: ../cache/locales.php:324
+#, php-format
+msgid "This is a re-post from %s"
+msgstr ""
+
+#: ../cache/locales.php:325
+#, php-format
+msgid "See %s profile"
+msgstr ""
+
+#: ../cache/locales.php:326
+msgid "Publish this post on your public feed?"
+msgstr ""
+
+#: ../cache/locales.php:327
+msgid "Post published on your blog"
+msgstr ""
+
+#: ../cache/locales.php:328
+msgid "Post removed from your blog"
+msgstr ""
+
+#: ../cache/locales.php:329 ../cache/locales.php:701
+msgid "Delete this post"
+msgstr "Удалить этот пост"
+
+#: ../cache/locales.php:330
+msgid "You are going to delete this post, please confirm your action"
+msgstr ""
+
+#: ../cache/locales.php:331
+msgid "Comments disabled"
+msgstr ""
+
+#: ../cache/locales.php:332
+msgid "Comment published"
+msgstr ""
+
+#: ../cache/locales.php:333
+msgid "Disconnect"
+msgstr "Отсоединиться"
+
+#: ../cache/locales.php:334
+msgid "Your status here !"
+msgstr "Ваш статус здесь !"
+
+#: ../cache/locales.php:335
+msgid "Status updated"
+msgstr "Статус обновлен"
+
+#: ../cache/locales.php:336
+msgid "Status"
+msgstr "Состояние"
+
+#: ../cache/locales.php:337
+msgid "Presence"
+msgstr "Присутствие"
+
+#: ../cache/locales.php:356
+msgid "Publish"
+msgstr ""
+
+#: ../cache/locales.php:358
+msgid "You cannot publish a post on this Group"
+msgstr ""
+
+#: ../cache/locales.php:359
+msgid ""
+"Some fields have been filled in. Do you still want to go back and loose "
+"their content?"
+msgstr ""
+
+#: ../cache/locales.php:360
+msgid "Shared"
+msgstr "Общее"
+
+#: ../cache/locales.php:362
+#, php-format
+msgid "%s has been added to your public groups"
+msgstr "Группа %s была добавлена в список ваших публичных групп"
+
+#: ../cache/locales.php:363
+#, php-format
+msgid "%s has been removed from your public groups"
+msgstr "Группа %s была удалена из списка ваших публичных групп"
+
+#: ../cache/locales.php:364
+msgid "Add a chatroom"
+msgstr "Добавить комнату"
+
+#: ../cache/locales.php:365
+msgid "You don't have any chatroom yet."
+msgstr ""
+
+#: ../cache/locales.php:366
+msgid "Add one by clicking on the add button in the header."
+msgstr ""
+
+#: ../cache/locales.php:367
+msgid "Chatrooms"
+msgstr "Беседки"
+
+#: ../cache/locales.php:370
+msgid "My Favorite Room"
+msgstr "Мои любимые комнаты"
+
+#: ../cache/locales.php:374
+msgid "Remove a chatroom"
+msgstr "Удалить комнату"
+
+#: ../cache/locales.php:375
+msgid ""
+"You are going to remove the following chatroom. Please confirm your action."
+msgstr ""
+"Вы собирается удалить комнату, на которую вы подписаны. Пожулуйста, "
+"подтвердите это."
+
+#: ../cache/locales.php:378
+msgid "Users in the room"
+msgstr "Пользователи в комнате"
+
+#: ../cache/locales.php:379
+msgid "Please enter a correct nickname (6 to 40 characters)"
+msgstr ""
+
+#: ../cache/locales.php:381
+msgid "Public chatroom"
+msgstr ""
+
+#: ../cache/locales.php:382
+msgid "Please provide a room address"
+msgstr ""
+
+#: ../cache/locales.php:383
+msgid "You are currently logued as an anonymous user."
+msgstr ""
+
+#: ../cache/locales.php:384
+msgid ""
+"You can join using your own account or create one on the login page by "
+"loging out using the cross in the top-right corner."
+msgstr ""
+
+#: ../cache/locales.php:385
+#, php-format
+msgid "Login on %s"
+msgstr ""
+
+#: ../cache/locales.php:386
+msgid "Your nickname"
+msgstr ""
+
+#: ../cache/locales.php:387
+msgid "Ungrouped"
+msgstr "Разное"
+
+#: ../cache/locales.php:388
+msgid "Show disconnected contacts"
+msgstr "Показать отключенные контакты"
+
+#: ../cache/locales.php:389
+msgid "Hide disconnected contacts"
+msgstr "Скрыть отключенные контакты"
+
+#: ../cache/locales.php:390
+#, php-format
+msgid "Show group %s"
+msgstr "Показать группу %s"
+
+#: ../cache/locales.php:391
+#, php-format
+msgid "Hide group %s"
+msgstr "Скрыть группу %s"
+
+#: ../cache/locales.php:392
+msgid "Please enter a valid Jabber ID"
+msgstr "Пожалуйста, введи правильный Jabber ID"
+
+#: ../cache/locales.php:393
+msgid ""
+"No contacts ? You can add one using the + button bellow or going to the "
+"Explore page"
+msgstr ""
+"Нет контактов? Вы можете добавить их с помощью кнопки + ниже или перейдя на "
+"страничку Обозревателя."
+
+#: ../cache/locales.php:394
+msgid "Show/Hide"
+msgstr "Показать/Скрыть"
+
+#: ../cache/locales.php:395
+msgid "Enter the Jabber ID of your contact."
+msgstr "Введите Jabber ID"
+
+#: ../cache/locales.php:396
+msgid "Press enter to validate."
+msgstr "Нажмите Enter для проверки."
+
+#: ../cache/locales.php:397
+msgid "JID"
+msgstr "JID"
+
+#: ../cache/locales.php:398
+msgid "Results"
+msgstr "Результаты"
+
+#: ../cache/locales.php:399
+msgid "Contact added"
+msgstr "Контакт добавлен"
+
+#: ../cache/locales.php:401
+msgid "Contact deleted"
+msgstr "Контакт удалён"
+
+#: ../cache/locales.php:403
+msgid "This is not a valid url"
+msgstr ""
+
+#: ../cache/locales.php:404
+msgid "Sharing the URL"
+msgstr ""
+
+#: ../cache/locales.php:405
+msgid "Statistics"
+msgstr "Статистика"
+
+#: ../cache/locales.php:406
+msgid "Since"
+msgstr "С"
+
+#: ../cache/locales.php:407
+msgid "Sessions"
+msgstr "Сеансы"
+
+#: ../cache/locales.php:409
+msgid "Monthly Subscriptions"
+msgstr "Ежемесячные подписки"
+
+#: ../cache/locales.php:410
+msgid "Monthly Subscriptions Cumulated"
+msgstr "Аккумулирующие ежемесячные подписки"
+
+#: ../cache/locales.php:412
+msgid ""
+"Movim is a decentralized social network, before creating a new account you "
+"need to choose a server to register."
+msgstr ""
+"Movim — это децентрализованная социальная сеть. Перед созданием учетной "
+"записи нужно выбрать сервер."
+
+#: ../cache/locales.php:413
+msgid "Your server here ?"
+msgstr "Ваш сервер здесь ?"
+
+#: ../cache/locales.php:414
+msgid "Contact us to add yours to the officially supported servers list"
+msgstr ""
+"Свяжитесь с нами чтобы добавить свой сервер в список официальных серверов"
+
+#: ../cache/locales.php:416
+msgid "No public feed for this contact"
+msgstr "Нет публичной ленты для этого контакта"
+
+#: ../cache/locales.php:417
+msgid "No contact specified"
+msgstr "Контакт не задан"
+
+#: ../cache/locales.php:418 ../cache/locales.php:473
+msgid "Profile"
+msgstr "Профиль"
+
+#: ../cache/locales.php:419
+msgid "Profile Updated"
+msgstr "Профиль обновлён"
+
+#: ../cache/locales.php:420
+msgid "Profile Not Updated"
+msgstr "Профиль не обновлён"
+
+#: ../cache/locales.php:421
+msgid "Your profile is now public"
+msgstr "Ваш профиль теперь общедоступен"
+
+#: ../cache/locales.php:422
+msgid "Your profile is now restricted"
+msgstr "Ваш профиль теперь скрыт"
+
+#: ../cache/locales.php:436
+msgid "Twitter"
+msgstr "Твиттер"
+
+#: ../cache/locales.php:437
+msgid "Skype"
+msgstr "Skype"
+
+#: ../cache/locales.php:438
+msgid "Yahoo"
+msgstr "Yahoo"
+
+#: ../cache/locales.php:439
+msgid "Privacy Level"
+msgstr "Уровень приватности"
+
+#: ../cache/locales.php:440
+msgid "Is this profile public ?"
+msgstr "Этот профиль общедоступен?"
+
+#: ../cache/locales.php:441
+msgid ""
+"Please pay attention ! By making your profile public, all the information "
+"listed above will be available for all the Movim users and on the whole "
+"Internet."
+msgstr ""
+"Внимание! Делая свой профиль общедоступным, вы соглашаетесь с тем, что вся "
+"нижеперечисленная информация станет доступна всем пользователям Movim и "
+"всему Интернету."
+
+#: ../cache/locales.php:442
+msgid "Call"
+msgstr "Вызов"
+
+#: ../cache/locales.php:443
+msgid "Hang up"
+msgstr "Повесить трубку"
+
+#: ../cache/locales.php:444
+msgid "Connection"
+msgstr "Соединение"
+
+#: ../cache/locales.php:445 ../cache/locales.php:451
+msgid "Hung up"
+msgstr "Вызов завершен"
+
+#: ../cache/locales.php:446 ../cache/locales.php:452
+msgid "Your contact is busy"
+msgstr "Ваш контакт занят"
+
+#: ../cache/locales.php:447 ../cache/locales.php:453
+msgid "Declined"
+msgstr "Отклонено"
+
+#: ../cache/locales.php:448 ../cache/locales.php:454
+msgid "Remote application incompatible"
+msgstr "Удаленное приложение несовместимо"
+
+#: ../cache/locales.php:450 ../cache/locales.php:456
+msgid "Is calling you"
+msgstr "Звонит вам"
+
+#: ../cache/locales.php:457
+msgid "You don't have javascript enabled.  Good luck with that."
+msgstr "У вас не активирован javascript. Удачи вам в этом."
+
+#: ../cache/locales.php:458
+msgid ""
+"Movim is a kickass distributed social networking platform that protect your "
+"privacy an comes with a set of awesome features."
+msgstr ""
+"Movim — пацанская распределенная платформа социальная активности, которая "
+"защищает вашу приватность и имеет много классных фишек."
+
+#: ../cache/locales.php:459
+msgid "Administration"
+msgstr "Администрирование"
+
+#: ../cache/locales.php:460
+msgid "Home"
+msgstr "Домой"
+
+#: ../cache/locales.php:461
+msgid "Discover"
+msgstr "Открытие"
+
+#: ../cache/locales.php:462
+msgid "Explore"
+msgstr "Обзор"
+
+#: ../cache/locales.php:463
+msgid "Account Creation"
+msgstr "Создание учётной записи"
+
+#: ../cache/locales.php:464
+msgid "News"
+msgstr "Новости"
+
+#: ../cache/locales.php:465
+msgid "Avatar"
+msgstr "Фотография"
+
+#: ../cache/locales.php:467
+msgid "Chats"
+msgstr "Чаты"
+
+#: ../cache/locales.php:470
+msgid "Server"
+msgstr "Сервер"
+
+#: ../cache/locales.php:471
+msgid "Public Groups"
+msgstr "Открытые Группы"
+
+#: ../cache/locales.php:472
+msgid "Viewer"
+msgstr "Зритель"
+
+#: ../cache/locales.php:474
+msgid "Media"
+msgstr "Мультимедиа"
+
+#: ../cache/locales.php:475
+msgid "Blog"
+msgstr "Блог"
+
+#: ../cache/locales.php:476
+msgid "About"
+msgstr "О"
+
+#: ../cache/locales.php:477
+msgid "Login"
+msgstr "Имя пользователя"
+
+#: ../cache/locales.php:479
+msgid "Feed"
+msgstr "Лента"
+
+#: ../cache/locales.php:481
+msgid "Gallery"
+msgstr "Галерея"
+
+#: ../cache/locales.php:483
+msgid "Visio-conference"
+msgstr "Visio-конференция"
+
+#: ../cache/locales.php:484
+msgid "Pods"
+msgstr "Поды"
+
+#: ../cache/locales.php:485
+msgid "Share"
+msgstr ""
+
+#: ../cache/locales.php:486
+msgid "Room"
+msgstr ""
+
+#: ../cache/locales.php:487
+#, php-format
+msgid "Error: %s"
+msgstr "Ошибка: %s"
+
+#: ../cache/locales.php:488
+#, php-format
+msgid "Cannot load file '%s'"
+msgstr "Не удаётся получить файл '%s'"
+
+#: ../cache/locales.php:489
+#, php-format
+msgid "Route error, please set all the parameters for the page %s"
+msgstr "Ошибка маршрута, пожалуйста, настройте все параметры на странице %s"
+
+#: ../cache/locales.php:490
+#, php-format
+msgid "Requested widget '%s' doesn't exist."
+msgstr "Запрашиваемый виджет '%s' не существует."
+
+#: ../cache/locales.php:491
+#, php-format
+msgid "Requested event '%s' not registered."
+msgstr "Запрашиваемое событие '%s' не зарегистрировано."
+
+#: ../cache/locales.php:492
+msgid "Whoops!"
+msgstr "Ой-ой!"
+
+#: ../cache/locales.php:493
+msgid "It seem that you don't have any pictures here?"
+msgstr "Кажется, у вас нет никаких изображений здесь?"
+
+#: ../cache/locales.php:494
+msgid "You can try to upload a couple by going to the Media page"
+msgstr ""
+"Вы можете попытаться загрузить парочку, перейдя на страницу \"Медиа\""
+
+#: ../cache/locales.php:495
+#, php-format
+msgid "%s - About"
+msgstr "%s - об"
+
+#: ../cache/locales.php:496
+#, php-format
+msgid "%s - Account"
+msgstr "%s - Аккаунт"
+
+#: ../cache/locales.php:497
+#, php-format
+msgid "%s - Administration Panel"
+msgstr "%s - Панель управления"
+
+#: ../cache/locales.php:498
+#, php-format
+msgid "%s - Blog"
+msgstr "%s - Блог"
+
+#: ../cache/locales.php:499
+#, php-format
+msgid "%s - Configuration"
+msgstr "%s - настройки"
+
+#: ../cache/locales.php:500
+#, php-format
+msgid "%s - Discover"
+msgstr "%s - Открытия"
+
+#: ../cache/locales.php:501
+#, php-format
+msgid "%s - Explore"
+msgstr "%s - Обзор"
+
+#: ../cache/locales.php:502
+#, php-format
+msgid "%s - Help Page"
+msgstr "%s - Страница помощи"
+
+#: ../cache/locales.php:503
+#, php-format
+msgid "%s - Login to Movim"
+msgstr "%s - Вход в MOVIM"
+
+#: ../cache/locales.php:504
+#, php-format
+msgid "%s - Welcome to Movim"
+msgstr "%s - Добро пожаловать в MOVIM"
+
+#: ../cache/locales.php:505
+#, php-format
+msgid "%s - Media"
+msgstr "%s - Медиа"
+
+#: ../cache/locales.php:506
+#, php-format
+msgid "%s - News"
+msgstr "%s - Новости"
+
+#: ../cache/locales.php:507
+#, php-format
+msgid "%s - Group Configuration"
+msgstr "%s - Настройки группы"
+
+#: ../cache/locales.php:508
+#, php-format
+msgid "%s - Group"
+msgstr "%s - Группа"
+
+#: ../cache/locales.php:509
+#, php-format
+msgid "%s - 404"
+msgstr "%s - 404"
+
+#: ../cache/locales.php:510
+#, php-format
+msgid "%s - Profile"
+msgstr "%s - Профиль"
+
+#: ../cache/locales.php:511
+#, php-format
+msgid "%s - Server"
+msgstr "%s - Сервер"
+
+#: ../cache/locales.php:512
+msgid "Validate"
+msgstr "Проверить"
+
+#: ../cache/locales.php:513
+msgid "Refresh"
+msgstr "Обновить"
+
+#: ../cache/locales.php:514
+msgid "Add"
+msgstr "Добавить"
+
+#: ../cache/locales.php:515
+msgid "Delete"
+msgstr "Удалить"
+
+#: ../cache/locales.php:516
+msgid "Remove"
+msgstr "Удалить"
+
+#: ../cache/locales.php:517
+msgid "Cancel"
+msgstr "Отменить"
+
+#: ../cache/locales.php:518
+msgid "Close"
+msgstr "Закрыть"
+
+#: ../cache/locales.php:519
+msgid "Update"
+msgstr "Обновить"
+
+#: ../cache/locales.php:520
+msgid "Updating"
+msgstr "Идёт обновление"
+
+#: ../cache/locales.php:521
+msgid "Submit"
+msgstr "Отправить"
+
+#: ../cache/locales.php:522
+msgid "Submitting"
+msgstr "Отправление"
+
+#: ../cache/locales.php:523
+msgid "Reset"
+msgstr "Сброс"
+
+#: ../cache/locales.php:524
+msgid "Register"
+msgstr "Зарегистрировать"
+
+#: ../cache/locales.php:525
+msgid "Unregister"
+msgstr "Отменить регистрацию"
+
+#: ../cache/locales.php:526
+msgid "Save"
+msgstr "Сохранить"
+
+#: ../cache/locales.php:527
+msgid "Clear"
+msgstr "Очистить"
+
+#: ../cache/locales.php:528
+msgid "Upload"
+msgstr "Загрузить"
+
+#: ../cache/locales.php:529
+msgid "Come in!"
+msgstr "Войти!"
+
+#: ../cache/locales.php:530
+msgid "Connecting"
+msgstr "Идет подключение"
+
+#: ../cache/locales.php:531
+msgid "Yes"
+msgstr "Да"
+
+#: ../cache/locales.php:532
+msgid "No"
+msgstr "Нет"
+
+#: ../cache/locales.php:534
+msgid "Return"
+msgstr "Назад"
+
+#: ../cache/locales.php:535
+msgid "Accept"
+msgstr "Принять"
+
+#: ../cache/locales.php:536
+msgid "Refuse"
+msgstr ""
+
+#: ../cache/locales.php:537
+msgid "Next"
+msgstr ""
+
+#: ../cache/locales.php:538
+msgid "Previous"
+msgstr ""
+
+#: ../cache/locales.php:539
+#, php-format
+msgid "Step %s"
+msgstr "Шаг %s"
+
+#: ../cache/locales.php:542
+msgid "Day"
+msgstr "День"
+
+#: ../cache/locales.php:543
+msgid "Monday"
+msgstr "Понедельник"
+
+#: ../cache/locales.php:544
+msgid "Tuesday"
+msgstr "Вторник"
+
+#: ../cache/locales.php:545
+msgid "Wednesday"
+msgstr "Среда"
+
+#: ../cache/locales.php:546
+msgid "Thursday"
+msgstr "Четверг"
+
+#: ../cache/locales.php:547
+msgid "Friday"
+msgstr "Пятница"
+
+#: ../cache/locales.php:548
+msgid "Saturday"
+msgstr "Суббота"
+
+#: ../cache/locales.php:549
+msgid "Sunday"
+msgstr "Воскресенье"
+
+#: ../cache/locales.php:550 ../cache/locales.php:559
+msgid "None"
+msgstr "Нет"
+
+#: ../cache/locales.php:551
+msgid "Male"
+msgstr "Мужчина"
+
+#: ../cache/locales.php:552
+msgid "Female"
+msgstr "Женщина"
+
+#: ../cache/locales.php:553
+msgid "Other"
+msgstr "Прочее"
+
+#: ../cache/locales.php:554
+msgid "Bot"
+msgstr "Бот"
+
+#: ../cache/locales.php:555
+msgid "Desktop"
+msgstr "Настольный компьютер"
+
+#: ../cache/locales.php:556
+msgid "Phone"
+msgstr "Телефон"
+
+#: ../cache/locales.php:557
+msgid "Web"
+msgstr "Веб"
+
+#: ../cache/locales.php:558
+msgid "Registered"
+msgstr "Зарегистрировано"
+
+#: ../cache/locales.php:560
+msgid "Single"
+msgstr "Холост(не замужем)"
+
+#: ../cache/locales.php:561
+msgid "In a relationship"
+msgstr "В отношениях"
+
+#: ../cache/locales.php:562
+msgid "Married"
+msgstr "В браке"
+
+#: ../cache/locales.php:563
+msgid "Divorced"
+msgstr "Разведён (разведена)"
+
+#: ../cache/locales.php:564
+msgid "Widowed"
+msgstr "Вдовец (вдова)"
+
+#: ../cache/locales.php:565
+msgid "Cohabiting"
+msgstr "Живём вместе"
+
+#: ../cache/locales.php:566
+msgid "Civil Union"
+msgstr "В гражданском браке"
+
+#: ../cache/locales.php:567
+msgid "Not shared"
+msgstr "Не является общим"
+
+#: ../cache/locales.php:568
+msgid "Shared with one contact"
+msgstr "Общий с одним контактом"
+
+#: ../cache/locales.php:569
+msgid "Shared with all contacts"
+msgstr "Общий со всеми контактами"
+
+#: ../cache/locales.php:570
+msgid "Shared with the XMPP network"
+msgstr "Общий с сетью XMPP"
+
+#: ../cache/locales.php:571
+msgid "Shared with the whole Internet"
+msgstr "Общий со всей Интернете"
+
+#: ../cache/locales.php:572
+msgid "Online"
+msgstr "В сети"
+
+#: ../cache/locales.php:573
+msgid "Away"
+msgstr "В отсутствии"
+
+#: ../cache/locales.php:574
+msgid "Do Not Disturb"
+msgstr "Не беспокоить"
+
+#: ../cache/locales.php:575
+msgid "Extended Away"
+msgstr "Давно нет на месте"
+
+#: ../cache/locales.php:576
+msgid "Offline"
+msgstr "Не в сети"
+
+#: ../cache/locales.php:577
+msgid "Error"
+msgstr "Ошибка"
+
+#: ../cache/locales.php:578
+msgid "afraid"
+msgstr "боятся"
+
+#: ../cache/locales.php:579
+msgid "amazed"
+msgstr "пораженный"
+
+#: ../cache/locales.php:580
+msgid "amorous"
+msgstr "влюбчивый"
+
+#: ../cache/locales.php:581
+msgid "angry"
+msgstr "злой"
+
+#: ../cache/locales.php:582
+msgid "annoyed"
+msgstr "раздраженный"
+
+#: ../cache/locales.php:583
+msgid "anxious"
+msgstr "тревожный"
+
+#: ../cache/locales.php:584
+msgid "aroused"
+msgstr "вызвал"
+
+#: ../cache/locales.php:585
+msgid "ashamed"
+msgstr "стыдно"
+
+#: ../cache/locales.php:586
+msgid "bored"
+msgstr "скучающий"
+
+#: ../cache/locales.php:587
+msgid "brave"
+msgstr "храбрый"
+
+#: ../cache/locales.php:588
+msgid "calm"
+msgstr "спокойно"
+
+#: ../cache/locales.php:589
+msgid "cautious"
+msgstr "осторожный"
+
+#: ../cache/locales.php:590
+msgid "cold"
+msgstr "холод"
+
+#: ../cache/locales.php:591
+msgid "confident"
+msgstr "уверенный"
+
+#: ../cache/locales.php:592
+msgid "confused"
+msgstr "смущен"
+
+#: ../cache/locales.php:593
+msgid "contemplative"
+msgstr "созерцательный"
+
+#: ../cache/locales.php:594
+msgid "contented"
+msgstr "довольный"
+
+#: ../cache/locales.php:595
+msgid "cranky"
+msgstr "капризный"
+
+#: ../cache/locales.php:596
+msgid "crazy"
+msgstr "сумасшедший"
+
+#: ../cache/locales.php:597
+msgid "creative"
+msgstr "творческий"
+
+#: ../cache/locales.php:598
+msgid "curious"
+msgstr "любопытный"
+
+#: ../cache/locales.php:599
+msgid "dejected"
+msgstr "удрученный"
+
+#: ../cache/locales.php:600
+msgid "depressed"
+msgstr "подавленный"
+
+#: ../cache/locales.php:601
+msgid "disappointed"
+msgstr "разочарованный"
+
+#: ../cache/locales.php:602
+msgid "disgusted"
+msgstr "отвращение"
+
+#: ../cache/locales.php:603
+msgid "dismayed"
+msgstr "встревоженный"
+
+#: ../cache/locales.php:604
+msgid "distracted"
+msgstr "рассеянный"
+
+#: ../cache/locales.php:605
+msgid "embarrassed"
+msgstr "смущенный"
+
+#: ../cache/locales.php:606
+msgid "envious"
+msgstr "завистливый"
+
+#: ../cache/locales.php:607
+msgid "excited"
+msgstr "возбужденный"
+
+#: ../cache/locales.php:608
+msgid "flirtatious"
+msgstr "кокетливый"
+
+#: ../cache/locales.php:609
+msgid "frustated"
+msgstr "испуган"
+
+#: ../cache/locales.php:610
+msgid "grateful"
+msgstr "благодарный"
+
+#: ../cache/locales.php:611
+msgid "grieving"
+msgstr "горевать"
+
+#: ../cache/locales.php:612
+msgid "grumpy"
+msgstr "раздражительный"
+
+#: ../cache/locales.php:613
+msgid "guilty"
+msgstr "виновный"
+
+#: ../cache/locales.php:614
+msgid "happy"
+msgstr "счастливый"
+
+#: ../cache/locales.php:615
+msgid "hopeful"
+msgstr "многообещающий"
+
+#: ../cache/locales.php:616
+msgid "hot"
+msgstr "горячий"
+
+#: ../cache/locales.php:617
+msgid "humbled"
+msgstr "приниженный"
+
+#: ../cache/locales.php:618
+msgid "humiliated"
+msgstr "униженный"
+
+#: ../cache/locales.php:619
+msgid "hungry"
+msgstr "голодный"
+
+#: ../cache/locales.php:620
+msgid "hurt"
+msgstr "больной"
+
+#: ../cache/locales.php:621
+msgid "impressed"
+msgstr "впечатленный"
+
+#: ../cache/locales.php:622
+msgid "in awe"
+msgstr "в страхе"
+
+#: ../cache/locales.php:623
+msgid "in love"
+msgstr "влюбленный"
+
+#: ../cache/locales.php:624
+msgid "indignant"
+msgstr "негодует"
+
+#: ../cache/locales.php:625
+msgid "interested"
+msgstr "заинтересованный"
+
+#: ../cache/locales.php:626
+msgid "intoxicated"
+msgstr "пьяный"
+
+#: ../cache/locales.php:627
+msgid "invincible"
+msgstr "непобедимый"
+
+#: ../cache/locales.php:628
+msgid "jealous"
+msgstr "ревнивый"
+
+#: ../cache/locales.php:629
+msgid "lonely"
+msgstr "одинокий"
+
+#: ../cache/locales.php:630
+msgid "lost"
+msgstr "потерян"
+
+#: ../cache/locales.php:631
+msgid "lucky"
+msgstr "счастливый"
+
+#: ../cache/locales.php:632
+msgid "mean"
+msgstr "имею в виду"
+
+#: ../cache/locales.php:633
+msgid "moody"
+msgstr "угрюмый"
+
+#: ../cache/locales.php:634
+msgid "nervous"
+msgstr "нервный"
+
+#: ../cache/locales.php:635
+msgid "neutral"
+msgstr "нейтрален"
+
+#: ../cache/locales.php:636
+msgid "offended"
+msgstr "обидел"
+
+#: ../cache/locales.php:637
+msgid "outraged"
+msgstr "возмущен"
+
+#: ../cache/locales.php:638
+msgid "playful"
+msgstr "игривый"
+
+#: ../cache/locales.php:639
+msgid "proud"
+msgstr "гордый"
+
+#: ../cache/locales.php:640
+msgid "relaxed"
+msgstr "расслабленный"
+
+#: ../cache/locales.php:641
+msgid "relieved"
+msgstr "уволен"
+
+#: ../cache/locales.php:642
+msgid "remorseful"
+msgstr "полный раскаяния"
+
+#: ../cache/locales.php:643
+msgid "restless"
+msgstr "беспокойный"
+
+#: ../cache/locales.php:644
+msgid "sad"
+msgstr "печальный"
+
+#: ../cache/locales.php:645
+msgid "sarcastic"
+msgstr "саркастический"
+
+#: ../cache/locales.php:646
+msgid "satisfied"
+msgstr "удовлетворенный"
+
+#: ../cache/locales.php:647
+msgid "serious"
+msgstr "серьезный"
+
+#: ../cache/locales.php:648
+msgid "shocked"
+msgstr "потрясенный"
+
+#: ../cache/locales.php:649
+msgid "shy"
+msgstr "застенчивый"
+
+#: ../cache/locales.php:650
+msgid "sick"
+msgstr "больной"
+
+#: ../cache/locales.php:651
+msgid "sleepy"
+msgstr "сонный"
+
+#: ../cache/locales.php:652
+msgid "spontaneous"
+msgstr "спонтанный"
+
+#: ../cache/locales.php:653
+msgid "stressed"
+msgstr "подчеркнул"
+
+#: ../cache/locales.php:654
+msgid "strong"
+msgstr "сильный"
+
+#: ../cache/locales.php:655
+msgid "surprised"
+msgstr "удивленный"
+
+#: ../cache/locales.php:656
+msgid "thankful"
+msgstr "благодарный"
+
+#: ../cache/locales.php:657
+msgid "thirsty"
+msgstr "жаждущий"
+
+#: ../cache/locales.php:658
+msgid "tired"
+msgstr "устал"
+
+#: ../cache/locales.php:659
+msgid "undefined"
+msgstr "не определено"
+
+#: ../cache/locales.php:660
+msgid "weak"
+msgstr "слаб"
+
+#: ../cache/locales.php:661
+msgid "worried"
+msgstr "тревожный"
+
+#: ../cache/locales.php:662
+msgid "Month"
+msgstr "Месяц"
+
+#: ../cache/locales.php:663
+msgid "January"
+msgstr "Январь"
+
+#: ../cache/locales.php:664
+msgid "February"
+msgstr "Февраль"
+
+#: ../cache/locales.php:665
+msgid "March"
+msgstr "Март"
+
+#: ../cache/locales.php:666
+msgid "April"
+msgstr "Апрель"
+
+#: ../cache/locales.php:667
+msgid "May"
+msgstr "Май"
+
+#: ../cache/locales.php:668
+msgid "June"
+msgstr "Июнь"
+
+#: ../cache/locales.php:669
+msgid "July"
+msgstr "Июль"
+
+#: ../cache/locales.php:670
+msgid "August"
+msgstr "Август"
+
+#: ../cache/locales.php:671
+msgid "September"
+msgstr "Сентябрь"
+
+#: ../cache/locales.php:672
+msgid "October"
+msgstr "Октябрь"
+
+#: ../cache/locales.php:673
+msgid "November"
+msgstr "Ноябрь"
+
+#: ../cache/locales.php:674
+msgid "December"
+msgstr "Декабрь"
+
+#: ../cache/locales.php:675
+msgid "Year"
+msgstr "Год"
+
+#: ../cache/locales.php:676
+msgid "Today"
+msgstr "Сегодня"
+
+#: ../cache/locales.php:677
+msgid "Tomorrow"
+msgstr "Завтра"
+
+#: ../cache/locales.php:678
+msgid "Yesterday"
+msgstr "Вчера"
+
+#: ../cache/locales.php:679
+#, php-format
+msgid " %d days ago"
+msgstr " %d дней назад"
+
+#: ../cache/locales.php:680
+msgid "day"
+msgstr "день"
+
+#: ../cache/locales.php:682
+msgid "What's new ?"
+msgstr "Что нового?"
+
+#: ../cache/locales.php:683
+msgid "Place"
+msgstr "Место"
+
+#: ../cache/locales.php:684
+msgid "by"
+msgstr "по"
+
+#: ../cache/locales.php:685
+msgid "Geolocalisation"
+msgstr "Геолокация"
+
+#: ../cache/locales.php:686
+msgid "email"
+msgstr "электронная почта"
+
+#: ../cache/locales.php:688
+msgid "No comments yet"
+msgstr ""
+
+#: ../cache/locales.php:689
+msgid "No comments stream"
+msgstr "Нет потока с комментариями"
+
+#: ../cache/locales.php:690
+msgid "Your feed cannot be loaded."
+msgstr "Ваша лента не может быть загружена."
+
+#: ../cache/locales.php:691
+msgid "Get older posts"
+msgstr "Получить предыдущие сообщения"
+
+#: ../cache/locales.php:692
+#, php-format
+msgid "%s new items"
+msgstr "%s новых записей"
+
+#: ../cache/locales.php:693
+msgid "Comment publication error"
+msgstr "Ошибка добавления комментария"
+
+#: ../cache/locales.php:694
+msgid "Show the older comments"
+msgstr "Показать более старые комментарии"
+
+#: ../cache/locales.php:695
+msgid "Loading comments ..."
+msgstr "Идет загрузка комментариев..."
+
+#: ../cache/locales.php:696
+msgid "Get the comments"
+msgstr "Загрузить комментарии"
+
+#: ../cache/locales.php:697
+msgid "Add a comment"
+msgstr "Добавить комментарий"
+
+#: ../cache/locales.php:698
+msgid "Share with"
+msgstr "Поделиться с"
+
+#: ../cache/locales.php:699
+msgid "Everyone"
+msgstr "Все"
+
+#: ../cache/locales.php:700
+msgid "Your contacts"
+msgstr "Ваши контакты"
+
+#: ../cache/locales.php:702
+msgid "Updated"
+msgstr "Обновлено"
+
+#: ../cache/locales.php:703
+msgid "Content not found"
+msgstr "Содержание не найдено"
+
+#: ../cache/locales.php:704
+msgid "Contact publication"
+msgstr "Публикация контакта"
+
+#: ../cache/locales.php:705
+msgid "Comments"
+msgstr ""
+
+#: ../cache/locales.php:706
+msgid "The API is not reachable, try again later"
+msgstr "API недоступен, попробуйте позже"
+
+#: ../cache/locales.php:707
+msgid "Type here"
+msgstr ""
+
+#, php-format
+#~ msgid "%s - Account Creation"
+#~ msgstr "%s - создание учётной записи"
+
+#~ msgid "Logout"
+#~ msgstr "Выход"
+
+#~ msgid "Movim Installer"
+#~ msgstr "Установщик Movim"
+
+#, php-format
+#~ msgid "Install the %s package"
+#~ msgstr "Установите пакет %s"
+
+#, php-format
+#~ msgid "Movim requires the %s extension."
+#~ msgstr "Movim требует расширение %s."
+
+#~ msgid "or"
+#~ msgstr "или"
+
+#~ msgid "Actual version : "
+#~ msgstr "Актуальная версия : "
+
+#~ msgid "PHP version mismatch. Movim requires PHP 5.3 minimum."
+#~ msgstr ""
+#~ "Версии интерпретатора PHP не совпадают. Movim требует версию PHP 5.3 или "
+#~ "выше."
+
+#~ msgid "Update your PHP version or contact your server administrator"
+#~ msgstr "Обновите Вашу версию PHP или обратитесь к системному администратору"
+
+#~ msgid "Enable read and write rights on Movim's root folder"
+#~ msgstr "Включите права на запись и чтение для корневой папки Movim"
+
+#~ msgid "Movim's folder must be writable."
+#~ msgstr "Папка с Movim должна быть доступна для записи."
+
+#, php-format
+#~ msgid "Install %s and %s packages"
+#~ msgstr "установите пакеты %s и %s"
+
+#~ msgid "XMPP Connection Preferences"
+#~ msgstr "Настройки соединения XMPP"
+
+#, php-format
+#~ msgid "Couldn't create directory '%s'."
+#~ msgstr "Невозможно создать папку '%s'."
+
+#~ msgid ""
+#~ "The following requirements were not met. Please make sure they are all "
+#~ "satisfied in order to install Movim."
+#~ msgstr ""
+#~ "Следующие требования не были удовлетворены. Пожалуйста, удостоверьтесь, что "
+#~ "у Вас есть разрешения на установку Movim."
+
+#~ msgid "Compatibility Test"
+#~ msgstr "Тест совместимости"
+
+#~ msgid "Valid Bosh"
+#~ msgstr "Правильный Bosh"
+
+#~ msgid "Success !"
+#~ msgstr "Успешно !"
+
+#~ msgid "BOSH Connection Preferences"
+#~ msgstr "Настройки соединения BOSH"
+
+#, php-format
+#~ msgid "Couldn't create configuration file '%s'."
+#~ msgstr "Невозможно создать файл конфигурации '%s'."
+
+#~ msgid "Database Movim schema installed"
+#~ msgstr "Схема базы данных Movim установлена"
+
+#~ msgid "Database Detected"
+#~ msgstr "База данных обнаружена"
+
+#~ msgid "User not logged in."
+#~ msgstr "Пользователь не выполнил вход."
+
+#, php-format
+#~ msgid "Cannot open log file '%s'"
+#~ msgstr "Невозможно открыть файл отчета '%s'"
+
+#, php-format
+#~ msgid "Please remove the %s folder in order to complete the installation"
+#~ msgstr "Пожалуйста, удалите папку %s для завершения установки"
+
+#~ msgid "Invalid name"
+#~ msgstr "Недопустимое имя"
+
+#~ msgid "Could not connect to the XMPP server"
+#~ msgstr "Невозможно подключиться к XMPP серверу"
+
+#~ msgid "Username already taken"
+#~ msgstr "Такое имя пользователя уже используется"
+
+#~ msgid "Wrong ID"
+#~ msgstr "Неверный ID"
+
+#~ msgid "Example :"
+#~ msgstr "Пример:"
+
+#~ msgid "Remove this contact"
+#~ msgstr "Удалить этот контакт"
+
+#~ msgid "wants to talk with you"
+#~ msgstr "хочет пообщаться с вами"
+
+#~ msgid "Connecting..."
+#~ msgstr "Подключение…"
+
+#~ msgid "Proxy Preferences"
+#~ msgstr "Настройки прокси-сервера"
+
+#~ msgid "Make sure your password is safe :"
+#~ msgstr "Удостоверьтесь, что пароль является надежным:"
+
+#~ msgid "Could not communicate with the XMPP server"
+#~ msgstr "Невозможно установить соединение с XMPP сервером"
+
+#~ msgid "Pseudo"
+#~ msgstr "Псевдо"
+
+#~ msgid "Create"
+#~ msgstr "Создать"
+
+#~ msgid "8 characters"
+#~ msgstr "8 символов"
+
+#~ msgid "Thank you for downloading Movim!"
+#~ msgstr "Благодарим Вас за загрузку Movin!"
+
+#~ msgid "A capital letter, a digit and a special character are recommended"
+#~ msgstr "Рекомендуются прописные буквы, цифры и спецзнаки"
+
+#~ msgid "Add your login informations"
+#~ msgstr "Добавьте Вашу информацию для соединения"
+
+#, php-format
+#~ msgid "%s - Add An Account"
+#~ msgstr "%s - Добавить запись"
+
+#~ msgid "Address"
+#~ msgstr "Адрес"
+
+#~ msgid "Client Name"
+#~ msgstr "Имя клиента"
+
+#~ msgid "Client Type"
+#~ msgstr "Тип клиента"
+
+#~ msgid "My Posts"
+#~ msgstr "Мои сообщения"
+
+#, php-format
+#~ msgid ""
+#~ "Visit the page %s What is Movim ? %s to know more about the project, its "
+#~ "aims and understand how it works."
+#~ msgstr ""
+#~ "Посетите страницу %s Что такое Movin? %s чтобы узнать больше об этом "
+#~ "проектк, его целях и для понимания принципов его работы."
+
+#~ msgid "I can't find the answer to my question here"
+#~ msgstr "Я не нашёл здесь ответа на мой вопрос"
+
+#~ msgid "Decline"
+#~ msgstr "Отклонить"
+
+#~ msgid "No profile yet ?"
+#~ msgstr "Ещё нет профиля?"
+
+#~ msgid "Create my vCard"
+#~ msgstr "Создать мою vCard"
+
+#~ msgid "empty"
+#~ msgstr "пусто"
+
+#~ msgid "Edit my Profile"
+#~ msgstr "Редактировать мой Профиль"
+
+#~ msgid "Link my current account"
+#~ msgstr "Соединить с моим текущим счётом"
+
+#, php-format
+#~ msgid "Contacts (%s)"
+#~ msgstr "Контакты (%s)"
+
+#~ msgid "Follow"
+#~ msgstr "Следовать"
+
+#~ msgid "Show All"
+#~ msgstr "Показать всё"
+
+#~ msgid ""
+#~ "Some errors were detected. Please correct them for the installation to "
+#~ "proceed."
+#~ msgstr ""
+#~ "Обнаружены ошибки. Пожалуйста исправльте их, чтобы продолжить процесс "
+#~ "инсталляции."
+
+#~ msgid "Retype"
+#~ msgstr "Переписать"
+
+#~ msgid "Loading your feed ..."
+#~ msgstr "Загрузка Вашей ленты"
+
+#~ msgid ""
+#~ "Your server doesn't support post publication, you can only read contact's "
+#~ "feeds"
+#~ msgstr ""
+#~ "Ваш сервер не поддерживает публикацию сообщений, Вы можете только читать "
+#~ "контактные ленты"
+
+#~ msgid "Only alphanumerics elements are authorized"
+#~ msgstr "Использовать только буквы и цифры"
+
+#~ msgid "terse"
+#~ msgstr "кратко"
+
+#~ msgid ""
+#~ "Keep in mind that Movim is still under development and will handle many "
+#~ "personal details. Its use can potentially endanger your data. Always pay "
+#~ "attention to information that you submit."
+#~ msgstr ""
+#~ "Имейте в виду, что Movim только развивается и имеет дело с большим объёмом "
+#~ "персональной информации. Её использование потенциально угрожает Вашей "
+#~ "безопасности. Всегда будьте внимательны к информации, которую Вы "
+#~ "предоставляете."
+
+#~ msgid "Same here !"
+#~ msgstr "Я тоже!"
+
+#~ msgid "Loading the contact feed ..."
+#~ msgstr "Грузится лента контакта"
+
+#~ msgid ""
+#~ "Before you enjoy your social network, a few adjustements are required."
+#~ msgstr ""
+#~ "Прежде чем Вы насладитесь Вашей социальной сетью требуются некоторые поправки"
+
+#~ msgid "JID not provided."
+#~ msgstr "JID не предоставлен."
+
+#, php-format
+#~ msgid "jid '%s' is incorrect"
+#~ msgstr "jid '%s' некорректный"
+
+#, php-format
+#~ msgid "You can now access your shiny Movim instance %sJump In !%s"
+#~ msgstr "Вы имеет теперь доступ к Movin при помощи %sJump In !%s"
+
+#~ msgid ""
+#~ "Firstly fill in this blank with a brand new account ID, this address will "
+#~ "follow you on all the Movim network !"
+#~ msgstr ""
+#~ "Оставьте пустым это поле, этот адрес позволит Вам следовать за всей сетью "
+#~ "Movin !"
+
+#, php-format
+#~ msgid "This server hosts %s accounts"
+#~ msgstr "На этом сервере %s аккаунтов"
+
+#, php-format
+#~ msgid "Cannot load element value '%s'"
+#~ msgstr "Не удаётся загрузить элемент '%s'"
+
+#~ msgid "What is Movim?"
+#~ msgstr "Что такое Movim?"
+
+#~ msgid "Invite this user"
+#~ msgstr "пригласить этого пользователя"
+
+#, php-format
+#~ msgid "Bosh connection failed with error '%s'"
+#~ msgstr "Некорректное соединение с BOSH, ошибка '%s'"
+
+#, php-format
+#~ msgid "Database connection failed with error '%s'"
+#~ msgstr "Неудачное соединение с базой данных, ошибка '%s'"
+
+#, php-format
+#~ msgid "XMPP connection through Bosh failed with error '%s'"
+#~ msgstr "XMPP соединене через BOSH неудачно, ошибка '%s'"
+
+#~ msgid "Send request"
+#~ msgstr "Отправить запрос"
+
+#~ msgid "You entered different passwords"
+#~ msgstr "Введённые пароли не совпадают"
+
+#~ msgid "ultimate"
+#~ msgstr "полно"
+
+#~ msgid "normal"
+#~ msgstr "обычно"
+
+#~ msgid "talkative"
+#~ msgstr "подробно"
+
+#, php-format
+#~ msgid ""
+#~ "Although Movim is evolving fast, many (many) features are missing. Be "
+#~ "patient ;). You can have a look %s at next versions's roadmaps %s to know if "
+#~ "the one you want is on its way."
+#~ msgstr ""
+#~ "Хотя Movim быстро развивается, в нём (очень) много чего не хватает. Будьте "
+#~ "терпеливы ;). Вы можете посмотреть %s планы развития новых версий %s , чтобы "
+#~ "узнать, что из желаемого уже на подходе."
+
+#, php-format
+#~ msgid ""
+#~ "Don't forget that Movim is an open source project, a helping hand is always "
+#~ "welcome (see %s Can I participate %s)"
+#~ msgstr ""
+#~ "Не забывайте, что Movim - проект с открытым кодом, помощь всячески "
+#~ "приветствуется (смотри %s Могу ли я участвовать %s)"
+
+#~ msgid ""
+#~ "Some features are missing/I can't do everything I used to do on other social "
+#~ "networks"
+#~ msgstr ""
+#~ "Не хватает некоторых функций/Мне нельзя делать то же, что в других соцсетях"
+
+#, php-format
+#~ msgid ""
+#~ "Go to the %s to the Frequently Asked Questions %s or come ask your question "
+#~ "on the official chatroom %s or via our mailing-list (%s see the dedicated "
+#~ "page %s)."
+#~ msgstr ""
+#~ "Перейдите на %s Частые Вопросы (ЧаВо?) %s , или задайте свой вопрос в "
+#~ "конференции %s , или через нашу почтовую рассылку (%s смотри соответствующую "
+#~ "страницу %s)."
+
+#~ msgid "The current BOSH URL in invalid"
+#~ msgstr "Текущий BOSH URL недействителен"
+
+#~ msgid "Debug console"
+#~ msgstr "Консоль отладки"

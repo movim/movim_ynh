@@ -1,0 +1,134 @@
+/* Color */
+
+*.divided > *:not(:last-child),
+*.divided.spaced > *:not(:last-child):after {
+    border-color: rgba(0, 0, 0, 0.12);
+}
+
+.color {
+    background-color: #607D8B;
+    color: white;
+}
+
+.color.dark {
+    background-color: #212121;
+}
+
+.color.dark *.divided > *:not(:last-child) {
+    border-color: rgba(255, 255, 255, 0.05);
+}
+
+main > header a,
+.color input {
+    color: white;
+}
+
+/* Animations */
+
+@keyframes colorful {
+    0% { background-color: #9E9E9E; }
+    10% { background-color: #607D8B; }
+    20% { background-color: #F44336; }
+    30% { background-color: #9C27B0; }
+    40% { background-color: #3F51B5; }
+    50% { background-color: #2196F3; }
+    60% { background-color: #689F38; }
+    70% { background-color: #FF9800; }
+    80% { background-color: #FDD835; }
+    90% { background-color: #795548; }
+    100% { background-color: #9E9E9E; }
+}
+
+@-webkit-keyframes colorful {
+    0% { background-color: #9E9E9E; }
+    10% { background-color: #607D8B; }
+    20% { background-color: #F44336; }
+    30% { background-color: #9C27B0; }
+    40% { background-color: #3F51B5; }
+    50% { background-color: #2196F3; }
+    60% { background-color: #689F38; }
+    70% { background-color: #FF9800; }
+    80% { background-color: #FDD835; }
+    90% { background-color: #795548; }
+    100% { background-color: #9E9E9E; }
+}
+
+/* Elements */
+
+.bubble.color       , .icon.color          { color: white; background-color: #607D8B; border-color: #607D8B }
+span.icon.status.dnd:after,
+.bubble.color.red   , .icon.color.red      { color: white; background-color: #F44336; border-color: #F44336 }
+span.icon.status.xa:after,
+.bubble.color.purple, .icon.color.purple   { color: white; background-color: #9C27B0; border-color: #9C27B0 }
+.bubble.color.indigo, .icon.color.indigo   { color: white; background-color: #3F51B5; border-color: #3F51B5 }
+.bubble.color.blue  , .icon.color.blue     { color: white; background-color: #2196F3; border-color: #2196F3 }
+span.icon.status.chat:after,
+span.icon.status.online:after,
+.bubble.color.green , .icon.color.green    { color: white; background-color: #689F38; border-color: #689F38 }
+.bubble.color.orange, .icon.color.orange   { color: white; background-color: #FF9800; border-color: #FF9800 }
+span.icon.status.away:after,
+.bubble.color.yellow, .icon.color.yellow   { color: white; background-color: #FDD835; border-color: #FDD835 }
+.bubble.color.brown , .icon.color.brown    { color: white; background-color: #795548; border-color: #795548 }
+.bubble.color.gray  , .icon.color.gray     { color: white; background-color: #9E9E9E; border-color: #9E9E9E }
+.bubble.color.black , .icon.color.black    { color: white; background-color: #000;    border-color: #000 }
+
+label.red   , .icon.red   , span.user.red      { color: #F44336; }
+label.purple, .icon.purple, span.user.purple   { color: #9C27B0; }
+label.indigo, .icon.indigo, span.user.indigo   { color: #3F51B5; }
+label.blue  , .icon.blue  , span.user.blue     { color: #2196F3; }
+label.green , .icon.green , span.user.green    { color: #689F38; }
+label.orange, .icon.orange, span.user.orange   { color: #FF9800; }
+label.yellow, .icon.yellow, span.user.yellow   { color: #FBC02D; }
+label.brown , .icon.brown , span.user.brown    { color: #795548; }
+ul li.action > div.action,
+ul li.action > form > div.action,
+label.gray  , .icon.gray  , span.user.gray     { color: #9E9E9E; }
+label.black , .icon.black , span.user.black    { color: #000; }
+
+form input:focus:invalid,
+form textarea:focus:invalid {
+    border-bottom-color: #F44336;
+}
+form input:focus:invalid + label,
+form textarea:focus:invalid + label {
+    color: #F44336;
+}
+
+/* Default color : violet */
+
+.button.color,
+input[type=button].color,
+ul li span.counter,
+main > header { background-color: #3F51B5; color: white; border-color: #3F51B5; }
+
+.tabs,
+.tabs a:not(.classic) {
+    border-color: #3F51B5;
+    color: #3F51B5;
+}
+
+/* Gray accent : orange */
+
+.button,
+input[type=button],
+a:not(.classic) { color: #FF5722; border-color: #FF5722; }
+
+form > div .checkbox:before { background-color: #FFE0B2; }
+form > div .checkbox > input[type="checkbox"]:checked + label { background-color: #FF5722; }
+
+.button.color,
+ul li span.counter,
+form > div .radio > input[type="radio"]:checked + label {
+    border-color: #FF5722;
+    background-color: #FF5722;
+}
+
+form input:focus:not(:invalid) + label,
+form textarea:focus:not(:invalid) + label {
+    color: #FF5722;
+}
+
+form input:focus:not(:invalid),
+form textarea:focus:not(:invalid) {
+    border-bottom-color: #FF5722;
+}

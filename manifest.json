@@ -1,0 +1,33 @@
+{
+    "name": "Movim",
+    "id": "movim",
+    "description": {
+        "en": "The Kickass Social Network",
+    },
+    "license": "AGPL-3",
+    "maintainer": {
+        "name": "src386",
+        "email": "maniatux@gmail.com",
+        "url": "http://127.0.0.1"
+    },
+    "multi_instance": "true",
+    "arguments": {
+        "install" : [
+            {
+                "name": "domain",
+                "ask": {
+                    "en": "Choose a domain for Movim"
+                },
+                "example": "domain.org"
+            },
+            {
+                "name": "path",
+                "ask": {
+                    "en": "Choose a path for Movim"
+                },
+                "example": "/movim",
+                "default": "/movim"
+            }
+        ]
+    }
+}
