@@ -7,10 +7,10 @@
     "license": "AGPL-3",
     "maintainer": {
         "name": "src386",
-        "email": "maniatux@gmail.com",
-        "url": "http://127.0.0.1"
+        "email": "soyouz@src386.org",
+        "url": "http://https://github.com/src386"
     },
-    "multi_instance": "true",
+    "multi_instance": "false",
     "arguments": {
         "install" : [
             {
@@ -27,6 +27,14 @@
                 },
                 "example": "/movim",
                 "default": "/movim"
+            }
+	    {
+                "name": "public_site",
+                "ask": {
+                    "en": "Public pod ?",
+                },
+                "choices": ["Yes", "No"],
+                "default": "No"
             }
         ]
     }

@@ -3,8 +3,7 @@
 # Retrieve arguments
 domain=$1
 path=$2
-language=$3
-public_site=$4
+public_site=$3
 
 # Check domain/path availability
 sudo yunohost app checkurl $domain$path -a movim
