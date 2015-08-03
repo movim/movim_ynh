@@ -11,6 +11,9 @@ domain=$(sudo yunohost app setting movim domain)
 sudo rm -f /etc/nginx/conf.d/$domain.d/movim.conf
 
 #REMOVE INIT
+sudo /etc/init.d/movim stop
+sudo service movim stop
+sudo rm /etc/init.d/movim
 
 # Restarting services
 sudo service nginx reload
