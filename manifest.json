@@ -27,7 +27,7 @@
                 },
                 "example": "/movim",
                 "default": "/movim"
-            }
+            },
 	    {
                 "name": "public_site",
                 "ask": {
