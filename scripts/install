@@ -48,7 +48,7 @@ sudo su -c "php mud.php db set" -s /bin/sh www-data
 sudo yunohost app addaccess movim -u $admin
 
 # Copy init script if Wheezy
-sudo cp -a ../conf/movim.init /etc/init.d/movim
+sudo cp ../conf/movim.init /etc/init.d/movim
 sed -i "s/YHDIR/$final_path/g" /etc/init.d/movim
 
 # Copy systemd service if Jessie
@@ -70,4 +70,4 @@ fi
 sudo yunohost app ssowatconf
 
 # Start Movim
-/etc/init.d/movim start
+sudo /etc/init.d/movim start
