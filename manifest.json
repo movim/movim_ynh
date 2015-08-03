@@ -31,7 +31,7 @@
 	    {
                 "name": "public_site",
                 "ask": {
-                    "en": "Public pod ?",
+                    "en": "Public pod ?"
                 },
                 "choices": ["Yes", "No"],
                 "default": "No"
