@@ -48,13 +48,20 @@ sudo sed -i "s/yhdb/$db_user/g" $final_path/config/db.inc.php
 sudo su -c "cd $final_path && php mud.php db set" -s /bin/sh www-data
 sudo yunohost app addaccess movim -u $admin
 
-# Copy init script if Wheezy
-sudo cp ../conf/movim.init /etc/init.d/movim
-sudo sed -i "s@YHURL@$domain$path@g" /etc/init.d/movim
-sudo sed -i "s@YHDIR@$final_path@g" /etc/init.d/movim
-
-# Copy systemd service if Jessie
-# todo
+# Copy init script or systemd service
+sudo sed -i "s@YHURL@$domain$path@g" ../conf/movim.{service,init}
+sudo sed -i "s@YHDIR@$final_path@g" ../conf/movim.{service,init}
+if [ `pgrep -ox systemd` = "1" ];
+then
+	sudo cp ../conf/movim.service /usr/lib/systemd/system/
+	sudo systemctl enable movim.service
+	sudo systemctl start movim.service
+else
+	sudo cp ../conf/movim.init /etc/init.d/movim
+	sudo chmod 755 /etc/init.d/movim
+	sudo update-rc.d movim defaults
+	sudo /etc/init.d/movim start
+fi
 
 # Nginx configuration
 sed -i "s@PATHTOCHANGE@$path@g" ../conf/nginx.conf

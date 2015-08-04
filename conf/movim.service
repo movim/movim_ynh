@@ -5,8 +5,8 @@ After=nginx.service network.target local-fs.target
 [Service]
 User=www-data
 Type=simple
-ExecStart=/usr/bin/php daemon.php https://localhost/movim/ 8080
-WorkingDirectory=/usr/share/movim/
+ExecStart=/usr/bin/php daemon.php https://YHURL 8080
+WorkingDirectory=YHDIR
 
 [Install]
 WantedBy=multi-user.target
