@@ -53,7 +53,7 @@ sudo sed -i "s@YHURL@$domain$path@g" ../conf/movim.{service,init}
 sudo sed -i "s@YHDIR@$final_path@g" ../conf/movim.{service,init}
 if [ `pgrep -ox systemd` = "1" ];
 then
-	sudo cp ../conf/movim.service /usr/lib/systemd/system/
+	sudo cp ../conf/movim.service /lib/systemd/system/
 	sudo systemctl enable movim.service
 	sudo systemctl start movim.service
 else
