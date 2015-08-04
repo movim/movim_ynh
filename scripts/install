@@ -50,6 +50,7 @@ sudo yunohost app addaccess movim -u $admin
 
 # Copy init script if Wheezy
 sudo cp ../conf/movim.init /etc/init.d/movim
+sudo sed -i "s@YHURL@$domain$path@g" /etc/init.d/movim
 sudo sed -i "s@YHDIR@$final_path@g" /etc/init.d/movim
 
 # Copy systemd service if Jessie

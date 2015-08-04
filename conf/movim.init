@@ -10,7 +10,7 @@
 ### END INIT INFO
 
 dir="YHDIR"
-cmd="php daemon.php http://localhost 8081"
+cmd="php daemon.php YHURL 8080"
 user="www-data"
 
 name=`basename $0`
