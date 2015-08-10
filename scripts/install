@@ -15,6 +15,13 @@ if [[ ! $? -eq 0 ]]; then
 exit 1
 fi
 
+# Check port availability
+sudo yunohost app checkport $port;
+if [[ ! $? -eq 0 ]]; then
+echo -e "Port already in used";
+exit 1
+fi
+
 sudo yunohost app setting movim admin -v $admin
 sudo yunohost app setting movim public_site -v $public_site
 
