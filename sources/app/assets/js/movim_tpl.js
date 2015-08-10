@@ -1,6 +1,6 @@
 /**
  * Movim Javascript Template functions
- * 
+ *
  * These are the default callback functions that users may (or may not) use.
  *
  * Note that all of them take only one parameter. Don't be fooled by this, the
@@ -86,6 +86,13 @@ var MovimTpl = {
             return false;
         }
     },
+    isPanelScrolled : function() {
+         var selector = document.querySelector('main section > div:first-child:nth-last-child(2) ~ div div');
+
+        if(selector != null) {
+            return (selector.scrollHeight - selector.scrollTop === selector.clientHeight);
+        }
+    },
     scrollPanel : function() {
         var selector = document.querySelector('main section > div:first-child:nth-last-child(2) ~ div div');
 
@@ -116,8 +123,11 @@ var MovimTpl = {
             return;
         }
 
-        //if(!document.querySelector(element).contains(e.target)) 
+        //if(!document.querySelector(element).contains(e.target))
         movim_remove_class(element, classname);
+    },
+    toggleActionButton : function() {
+        movim_toggle_class('.button.action', 'active');
     },
     hideContextMenu : function() {
         movim_remove_class('ul.context_menu', 'shown');

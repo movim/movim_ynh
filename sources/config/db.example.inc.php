@@ -5,13 +5,13 @@ $conf = array(
     # The type can be 'pgsql' or 'mysql'
     'type'        => 'mysql',
     # The database username
-    'username'    => 'yhuser',
+    'username'    => 'username',
     # The password
-    'password'    => 'yhpwd',
+    'password'    => 'password',
     # Where can we find the database ?
     'host'        => 'localhost',
     # The port number, 3306 for MySQL and 5432 for PostGreSQL
     'port'        => 3306,
     # The database name
-    'database'    => 'yhdb'
+    'database'    => 'movim'
 );

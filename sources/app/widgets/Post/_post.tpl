@@ -47,6 +47,7 @@
                         </a> –
                     {/if}
                     {if="$post->node != 'urn:xmpp:microblog:0'"}
+                        {$post->origin} /
                         <a href="{$c->route('group', array($post->origin, $post->node))}">
                             <i class="zmdi zmdi-pages"></i> {$post->node}
                         </a> –
@@ -58,7 +59,9 @@
     </header>
 
     <section>
-        {$post->contentcleaned}
+        <content>
+            {$post->contentcleaned}
+        </content>
     </section>
 
     <footer>
@@ -127,7 +130,7 @@
                         </div>
                     </form>
                     <span class="icon gray">
-                        <i class="zmdi zmdi-public"></i>
+                        <i class="zmdi zmdi-portable-wifi"></i>
                     </span>
                     <span>
                         <a target="_blank" href="{$c->route('blog', array($post->origin))}">

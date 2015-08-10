@@ -8,4 +8,4 @@ DO NOT USE
 
 **Changelog**
 
-Current Movim version : 20150731.
+Current Movim version : 20150810.

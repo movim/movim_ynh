@@ -1,0 +1,8 @@
+/vendor
+/log
+/users
+/cache
+*~
+/config/db.inc.php
+/composer.lock
+/composer.phar

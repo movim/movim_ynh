@@ -1,0 +1,14 @@
+*~
+*#*
+cache.tmp
+log/*
+locales/files.list
+*.pdf
+*.swp
+
+./cache
+./config/*
+./lib/Modl
+./lib/Moxl
+./users/*
+./log
