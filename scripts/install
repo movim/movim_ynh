@@ -4,9 +4,9 @@
 domain=$1
 path=$2
 admin=$3
-public_site=$4
+password=$4
 language=$5
-password=$6
+public_site=$6
 
 # Check domain/path availability
 sudo yunohost app checkurl $domain$path -a movim

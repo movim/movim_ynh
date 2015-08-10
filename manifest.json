@@ -15,36 +15,42 @@
         "install" : [
             {
                 "name": "domain",
+		"type": "domain",
                 "ask": {
-                    "en": "Choose a domain for Movim"
+                    "en": "Pod domain"
+		    "fr": "Domaine du pod"
                 },
                 "example": "domain.org"
-            },
-            {
+            },           
+ 		{
                 "name": "path",
+		"type": "path",
                 "ask": {
-                    "en": "Choose a path for Movim"
+                    "en": "Path"
+		    "fr": "Chemin du pod"
                 },
                 "example": "/movim",
                 "default": "/movim"
             },
-	    {
+            {
                 "name": "admin",
-		"type": "user",
+                "type": "user",
                 "ask": {
                     "en": "Pod administrator"
+		    "fr": "Administrateur du pod"
                 },
-		"example": "homer"
+                "example": "homer"
             },
-	    {
-                "name": "public_site",
+            {
+                "name": "password",
+		"type": "password",
                 "ask": {
-                    "en": "Public pod ?"
+                    "en": "Administrator password",
+                    "fr": "Mot de passe administrateur"
                 },
-                "choices": ["Yes", "No"],
-                "default": "No"
-            },
-	    {
+                "example" : "password"
+            }
+{
                 "name": "language",
                 "ask": {
                     "en": "Pod language",
@@ -53,13 +59,13 @@
                 "choices" : ["en", "fr"],
                 "default" : "en"
             },
-	    {
-                "name": "password",
+            {
+                "name": "public_site",
                 "ask": {
-                    "en": "Administrator password",
-                    "fr": "Mot de passe pour l'administrateur"
+                    "en": "Public pod ?"
                 },
-                "example" : "password"
+                "choices": ["Yes", "No"],
+                "default": "No"
             }
         ]
     }
