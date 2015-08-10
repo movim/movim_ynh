@@ -43,7 +43,7 @@ sudo cp $final_path/config/db.example.inc.php $final_path/config/db.inc.php
 sudo sed -i "s/yhuser/$db_user/g" $final_path/config/db.inc.php
 sudo sed -i "s/yhpwd/$db_pwd/g" $final_path/config/db.inc.php
 sudo sed -i "s/yhdb/$db_user/g" $final_path/config/db.inc.php
-sudo sed -i "s@YHDIR@$path@g" $final_path/app/assets/js/movim_websocket.js
+sudo sed -i "s@PATHTOCHANGE@$path@g" $final_path/app/assets/js/movim_websocket.js
 
 # Populate Movim database
 sudo su -c "cd $final_path && php mud.php db set" -s /bin/sh www-data

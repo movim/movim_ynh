@@ -41,9 +41,9 @@ var MovimWebsocket = {
 
     init : function() {
         if(SECURE_WEBSOCKET) {
-            var uri = 'wss://' + BASE_HOST + '/YHDIR/ws/';
+            var uri = 'wss://' + BASE_HOST + 'PATHTOCHANGE/ws/';
         } else {
-            var uri = 'ws://' + BASE_HOST + '/YHDIR/ws/';
+            var uri = 'ws://' + BASE_HOST + 'PATHTOCHANGE/ws/';
         }
 
         this.connection = new WebSocket(uri);
