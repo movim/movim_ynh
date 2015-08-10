@@ -49,8 +49,8 @@
                     "fr": "Mot de passe administrateur"
                 },
                 "example" : "password"
-            }
-{
+            },
+	    {
                 "name": "language",
                 "ask": {
                     "en": "Pod language",
