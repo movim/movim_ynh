@@ -59,7 +59,7 @@ sudo su -c "cd $final_path && php mud.php config loglevel:1"
 sudo su -c "cd $final_path && php mud.php config environment:production"
 sudo su -c "cd $final_path && php mud.php config timezone:`cat /etc/timezone`"
 sudo su -c "cd $final_path && php mud.php config username:$admin"
-sudo su -c "cd $final_path && php mud.php config password:$password"
+sudo su -c "cd $final_path && php mud.php config password:`echo -n $password | sha1sum | awk '{print $1}'`"
 sudo yunohost app addaccess movim -u $admin
 
 # Copy init script or systemd service
