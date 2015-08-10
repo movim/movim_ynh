@@ -5,6 +5,8 @@ domain=$1
 path=$2
 admin=$3
 public_site=$4
+language=$5
+password=$6
 
 # Check domain/path availability
 sudo yunohost app checkurl $domain$path -a movim
@@ -44,6 +46,12 @@ sudo sed -i "s/yhuser/$db_user/g" $final_path/config/db.inc.php
 sudo sed -i "s/yhpwd/$db_pwd/g" $final_path/config/db.inc.php
 sudo sed -i "s/yhdb/$db_user/g" $final_path/config/db.inc.php
 sudo sed -i "s@PATHTOCHANGE@$path@g" $final_path/app/assets/js/movim_websocket.js
+sudo su -c "cd $final_path && php mud.php config locale:$language"
+sudo su -c "cd $final_path && php mud.php config loglevel:1"
+sudo su -c "cd $final_path && php mud.php config environment:production"
+sudo su -c "cd $final_path && php mud.php config timezone:`cat /etc/timezone`"
+sudo su -c "cd $final_path && php mud.php config username:$admin"
+sudo su -c "cd $final_path && php mud.php config password:$password"
 
 # Populate Movim database
 sudo su -c "cd $final_path && php mud.php db set" -s /bin/sh www-data

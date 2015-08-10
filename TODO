@@ -1,3 +1,5 @@
 - SSO / no SSO distinction
 - ?q=admin support
 - URL rewriting
+- Improve security (chown root / www-data)
+- Static cache 

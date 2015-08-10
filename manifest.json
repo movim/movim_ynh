@@ -43,6 +43,23 @@
                 },
                 "choices": ["Yes", "No"],
                 "default": "No"
+            },
+	    {
+                "name": "language",
+                "ask": {
+                    "en": "Pod language",
+                    "fr": "Langue du pod"
+                },
+                "choices" : ["en", "fr"],
+                "default" : "en"
+            },
+	    {
+                "name": "password",
+                "ask": {
+                    "en": "Administrator password",
+                    "fr": "Mot de passe pour l'administrateur"
+                },
+                "example" : "password"
             }
         ]
     }
