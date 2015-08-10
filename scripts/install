@@ -79,7 +79,7 @@ sudo cp ../conf/nginx.conf /etc/nginx/conf.d/$domain.d/movim.conf
 sudo yunohost app setting movim skipped_uris -v "/"  
 if [ $public_site = "No" ];
 then              
-	sudo yunohost app setting movim protected_uris -v "/index.php,/?q=admin,/ws" 
+	sudo yunohost app setting movim protected_uris -v "/" 
 else              
 	sudo yunohost app setting movim protected_uris -v "/?q=admin"
 fi
