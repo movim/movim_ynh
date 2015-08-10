@@ -17,7 +17,7 @@
                 "name": "domain",
 		"type": "domain",
                 "ask": {
-                    "en": "Pod domain"
+                    "en": "Pod domain",
 		    "fr": "Domaine du pod"
                 },
                 "example": "domain.org"
@@ -26,7 +26,7 @@
                 "name": "path",
 		"type": "path",
                 "ask": {
-                    "en": "Path"
+                    "en": "Path",
 		    "fr": "Chemin du pod"
                 },
                 "example": "/movim",
@@ -36,10 +36,10 @@
                 "name": "admin",
                 "type": "user",
                 "ask": {
-                    "en": "Pod administrator"
-		    "fr": "Administrateur du pod"
+                    "en": "Pod administrator",
+		    "fr": "Administrateur du pod",
                 },
-                "example": "homer"
+                "example": "homer",
             },
             {
                 "name": "password",
