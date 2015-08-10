@@ -5,7 +5,7 @@ After=nginx.service network.target local-fs.target
 [Service]
 User=www-data
 Type=simple
-ExecStart=/usr/bin/php daemon.php https://YHURL 8080
+ExecStart=/usr/bin/php daemon.php https://YHURL YHPORT
 WorkingDirectory=YHDIR
 
 [Install]

@@ -7,6 +7,7 @@ admin=$3
 password=$4
 language=$5
 public_site=$6
+port=$7
 
 # Check domain/path availability
 sudo yunohost app checkurl $domain$path -a movim
@@ -58,6 +59,7 @@ sudo yunohost app addaccess movim -u $admin
 # Copy init script or systemd service
 sudo sed -i "s@YHURL@$domain$path@g" ../conf/movim.{service,init}
 sudo sed -i "s@YHDIR@$final_path@g" ../conf/movim.{service,init}
+sudo sed -i "s@YHPORT@$port@g" ../conf/movim.{service,init}
 if [ `pgrep -ox systemd` = "1" ];
 then
 	sudo cp ../conf/movim.service /lib/systemd/system/
@@ -73,6 +75,7 @@ fi
 # Nginx configuration
 sed -i "s@PATHTOCHANGE@$path@g" ../conf/nginx.conf
 sed -i "s@ALIASTOCHANGE@$final_path/@g" ../conf/nginx.conf
+sed -i "s@YHPORT@$port@g" ../conf/nginx.conf
 sudo cp ../conf/nginx.conf /etc/nginx/conf.d/$domain.d/movim.conf
 
 # SSOwat Configuration

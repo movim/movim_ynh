@@ -66,7 +66,15 @@
                 },
                 "choices": ["Yes", "No"],
                 "default": "No"
-            }
+            },
+	    {
+                "name": "port",
+                "ask": {
+                    "en": "Movim daemon port ? (internal only)",
+		    "fr": "Port privé pour Movim ? (interne uniquement)"
+                },
+                "example": "9537"
+            },
         ]
     }
 }

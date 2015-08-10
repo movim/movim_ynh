@@ -10,7 +10,7 @@
 ### END INIT INFO
 
 dir="YHDIR"
-cmd="php daemon.php https://YHURL 8080"
+cmd="php daemon.php https://YHURL YHPORT"
 user="www-data"
 
 name=`basename $0`
