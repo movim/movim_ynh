@@ -39,7 +39,7 @@
                     "en": "Pod administrator",
 		    "fr": "Administrateur du pod"
                 },
-                "example": "homer",
+                "example": "homer"
             },
             {
                 "name": "password",
