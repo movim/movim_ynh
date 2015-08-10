@@ -37,7 +37,7 @@
                 "type": "user",
                 "ask": {
                     "en": "Pod administrator",
-		    "fr": "Administrateur du pod",
+		    "fr": "Administrateur du pod"
                 },
                 "example": "homer",
             },
