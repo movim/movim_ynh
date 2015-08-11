@@ -16,13 +16,13 @@ Current Movim version : 20150810.
 
 **Options**
 
-*domain : Your domain name.
-*path : Path for you Movim pod (will be https://example.com/path).
-*admin : Who can access ?q=admin (pod options).
-*password : Password to access ?q=admin.
-*language : Pod language, currently en or fr.
-*public_site : Pod protected by Yunohost SSO portal or not.
-*port : Port for Movim daemon. Default is 9537, a check is performed before installation.
+* domain : Your domain name.
+* path : Path for you Movim pod (will be https://example.com/path).
+* admin : Who can access ?q=admin (pod options).
+* password : Password to access ?q=admin.
+* language : Pod language, currently en or fr.
+* public_site : Pod protected by Yunohost SSO portal or not.
+* port : Port for Movim daemon. Default is 9537, a check is performed before installation.
 
 **Pod configuration**
 
