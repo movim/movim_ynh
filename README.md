@@ -6,6 +6,22 @@ Movim is a decentralized social network, written in PHP and HTML5 and based on t
 PACKAGE NOT READY YET
 DO NOT USE
 
+Current Movim version : 20150810.
+
 **Changelog**
 
-Current Movim version : 20150810.
+**Installation**
+
+    yunohost app install https://github.com/src386/movim_ynh
+
+**Pod configuration**
+
+    https://example.com/movim/?q=admin
+
+**Upgrade**
+
+    yunohost app upgrade movim -u https://github.com/src386/movim_ynh
+
+**Remove**
+
+    yunohost app remove movim
