@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Retrieve arguments
+path=$(sudo yunohost app setting movim path)
+
+# Install Movim files
+final_path=/var/www/movim
+sudo cp -a ../sources/* $final_path
+sudo chown -R www-data: $final_path
+
+# Upgrade PHP dependencies
+#sudo su -c "curl -sS https://getcomposer.org/installer | php -- --install-dir=$final_path" -s /bin/sh www-data
+#sudo su -c "cd $final_path && php composer.phar install" -s /bin/sh www-data
+
+# Movim configuration
+sudo sed -i "s@/ws/@$path/ws/@g" $final_path/app/assets/js/movim_websocket.js
+
+# Reload
+sudo yunohost app ssowatconf
