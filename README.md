@@ -46,6 +46,10 @@ Username and password are definied during installation.
 
     yunohost app remove movim
 
+**Notes**
+
+* URL rewriting is disabled (experimental feature)
+
 **Help**
 
 support@conference.yunohost.org src386_
