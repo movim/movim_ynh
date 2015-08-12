@@ -10,6 +10,9 @@ Current Movim version : 20150810.
 
 **Changelog**
 
+0.1b 2015-08-12
+- Beta release
+
 **Installation**
 
     yunohost app install https://github.com/src386/movim_ynh
