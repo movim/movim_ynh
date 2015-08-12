@@ -16,8 +16,20 @@ exit 1
 fi
 
 # Check port availability
-sudo yunohost app checkport $port;
+sudo yunohost app checkport $port
 if [[ ! $? -eq 0 ]]; then
+exit 1
+fi
+
+# Check user availability
+sudo yunohost user info $admin
+if [[ ! $? -eq 0 ]]; then
+exit 1
+fi
+
+# Check password not empty
+if [[ -z "$password" ]]; then
+printf("Error empty admin password, aborting");
 exit 1
 fi
 
