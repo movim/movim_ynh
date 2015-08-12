@@ -13,6 +13,7 @@ Current Movim version : 20150810.
 0.2b 2015-08-12
 - Add php5-cli as required
 - Fixed a warning for sysvinit script installation
+- Fixed a LSB warning with movim sysvinit script
 
 0.1b 2015-08-12
 - Beta release
