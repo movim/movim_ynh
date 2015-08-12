@@ -36,7 +36,7 @@ sudo yunohost app initdb $db_user -p $db_pwd
 sudo yunohost app setting movim mysqlpwd -v $db_pwd
 
 # Install packages
-sudo apt-get install php5-gd php5-curl php5-imagick -y
+sudo apt-get install php5-gd php5-curl php5-imagick php5-cli -y
 
 # Install Movim files
 final_path=/var/www/movim
@@ -66,7 +66,8 @@ sudo yunohost app addaccess movim -u $admin
 sudo sed -i "s@YHURL@$domain$path@g" ../conf/movim.{service,init}
 sudo sed -i "s@YHDIR@$final_path@g" ../conf/movim.{service,init}
 sudo sed -i "s@YHPORT@$port@g" ../conf/movim.{service,init}
-if [ `pgrep -ox systemd` = "1" ];
+initcheck=`pgrep -ox systemd`
+if [ "$initcheck" = "1" ];
 then
 	sudo cp ../conf/movim.service /lib/systemd/system/
 	sudo systemctl enable movim.service
