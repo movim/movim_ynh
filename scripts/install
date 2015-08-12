@@ -36,7 +36,7 @@ sudo yunohost app initdb $db_user -p $db_pwd
 sudo yunohost app setting movim mysqlpwd -v $db_pwd
 
 # Install packages
-sudo apt-get install php5-gd php5-curl php5-imagick -y
+sudo apt-get install php5-gd php5-curl php5-imagick php5-cli -y
 
 # Install Movim files
 final_path=/var/www/movim
