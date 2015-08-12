@@ -66,7 +66,8 @@ sudo yunohost app addaccess movim -u $admin
 sudo sed -i "s@YHURL@$domain$path@g" ../conf/movim.{service,init}
 sudo sed -i "s@YHDIR@$final_path@g" ../conf/movim.{service,init}
 sudo sed -i "s@YHPORT@$port@g" ../conf/movim.{service,init}
-if [ `pgrep -ox systemd` = "1" ];
+initcheck=`pgrep -ox systemd`
+if [ "$initcheck" = "1" ];
 then
 	sudo cp ../conf/movim.service /lib/systemd/system/
 	sudo systemctl enable movim.service
