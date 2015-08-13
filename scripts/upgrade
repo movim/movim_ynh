@@ -17,3 +17,4 @@ sudo sed -i "s@/ws/@$path/ws/@g" $final_path/app/assets/js/movim_websocket.js
 
 # Reload
 sudo yunohost app ssowatconf
+sudo movim restart
