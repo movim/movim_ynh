@@ -9,6 +9,10 @@ Current Movim version : 20150810.
 
 **Changelog**
 
+0.4b 2015-08-14
+- Add restart command to movim daemon after upgrade
+- Add licence
+
 0.3b 2015-08-12
 - Check if admin exists
 - Check if admin password is not empty
@@ -52,6 +56,7 @@ Username and password are definied during installation.
 **Notes**
 
 * URL rewriting is disabled (experimental feature)
+* No SSO auto login
 
 **Help**
 
