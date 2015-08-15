@@ -9,6 +9,9 @@ Current Movim version : 20150810.
 
 **Changelog**
 
+0.5b ?
+- Add default port (9537)
+
 0.4b 2015-08-14
 - Add restart command to movim daemon after upgrade
 - Add licence

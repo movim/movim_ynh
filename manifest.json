@@ -73,7 +73,7 @@
                     "en": "Movim daemon port ? (internal only)",
 		    "fr": "Port privé pour Movim ? (interne uniquement)"
                 },
-                "example": "9537"
+                "default": "9537"
             }
         ]
     }
