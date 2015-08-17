@@ -9,7 +9,7 @@ Current Movim version : 20150810.
 
 **Changelog**
 
-0.5b ?
+0.5b 2015-08-17
 - Add default port (9537)
 
 0.4b 2015-08-14
