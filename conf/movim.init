@@ -11,7 +11,7 @@
 
 dir="YHDIR"
 cmd="php daemon.php https://YHURL YHPORT"
-user="www-data"
+user="movim"
 
 name=`basename $0`
 pid_file="/var/run/$name.pid"

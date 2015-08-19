@@ -9,7 +9,7 @@
         {/if}
         >
         <ul class="thick">
-            <li>
+            <li class="condensed">
                 {if="$url"}
                     <span class="icon bubble">
                         <img src="{$url}">
@@ -22,6 +22,7 @@
                 <span>
                     <h2>{$contact->getTrueName()}</h2>
                 </span>
+                <p>{$contact->jid}</p>
             </li>
             {if="$caps"}
                 <li>
@@ -152,7 +153,7 @@
     </ul>
 
     {if="$blog != null"}
-        <ul class="middle active">
+        <ul class="active">
             <li class="subheader">{$c->__('blog.last')}</li>
             <a href="{$c->route('blog', array($contact->jid))}" target="_blank">
                 <li class="block large condensed action">
