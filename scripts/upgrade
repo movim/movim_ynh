@@ -2,6 +2,8 @@
 
 # Retrieve arguments
 path=$(sudo yunohost app setting movim path)
+domain=$(sudo yunohost app setting movim domain)
+port=$(sudo yunohost app setting movim port)
 
 # Install Movim files
 final_path=/var/www/movim
@@ -26,6 +28,9 @@ sudo su -c "cd $final_path && php composer.phar install" movim
 sudo sed -i "s@/ws/@$path/ws/@g" $final_path/app/assets/js/movim_websocket.js
 
 # Update init scripts
+sudo sed -i "s@YHURL@$domain$path@g" ../conf/movim.{service,init}
+sudo sed -i "s@YHDIR@$final_path@g" ../conf/movim.{service,init}
+sudo sed -i "s@YHPORT@$port@g" ../conf/movim.{service,init}
 initcheck=`pgrep -ox systemd`
 if [ "$initcheck" = "1" ];
 then
