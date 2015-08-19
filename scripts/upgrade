@@ -44,4 +44,4 @@ fi
 
 # Reload
 sudo yunohost app ssowatconf
-sudo movim restart
+sudo service movim restart
