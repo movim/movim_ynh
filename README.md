@@ -9,6 +9,9 @@ Current Movim version : 20150810.
 
 **Changelog**
 
+0.6b 2015-08-19
+- Replace 'www-data' system user with 'movim'
+
 0.5b 2015-08-17
 - Add default port (9537)
 
