@@ -22,10 +22,10 @@ class User {
     private $config = array();
 
     public $caps;
-    
+
     public $userdir;
     public $useruri;
-    
+
     public $sizelimit;
 
     /**
@@ -35,11 +35,8 @@ class User {
     function __construct()
     {
         $session = \Sessionx::start();
-        if($session->active) {   
+        if($session->active) {
             $this->username = $session->user.'@'.$session->host;
-
-            //$this->reload();
-            //$this->sizelimit = (int)$config->sizelimit;
 
             $this->userdir = DOCUMENT_ROOT.'/users/'.$this->username.'/';
             $this->useruri = BASE_URI.'users/'.$this->username.'/';
@@ -64,7 +61,7 @@ class User {
             $this->caps = unserialize($caps->features);
         }
     }
-    
+
     /**
      * Get the current size in bytes of the user directory
      */
@@ -74,10 +71,10 @@ class User {
 
         foreach($this->getDir() as $s)
             $sum = $sum + filesize($this->userdir.$s);
-        
+
         return $sum;
     }
-    
+
     /**
      * Get a list of the files in the user dir with uri, dir and thumbs
      */
@@ -87,14 +84,14 @@ class User {
         if(is_dir($this->userdir))
             foreach(scandir($this->userdir) as $s) {
                 if(
-                    $s != '.' && 
-                    $s != '..' && 
+                    $s != '.' &&
+                    $s != '..' &&
                     $s != 'index.html') {
 
                     array_push($dir, $s);
                 }
             }
-        
+
         return $dir;
     }
 
@@ -119,7 +116,7 @@ class User {
 
         $s = \Sessionx::start();
         $s->destroy();
-            
+
         $sess = Session::start();
         Session::dispose();
     }
@@ -136,6 +133,18 @@ class User {
     function getLogin()
     {
         return $this->username;
+    }
+
+    function getServer()
+    {
+        $exp = explodeJid($this->username);
+        return $exp['server'];
+    }
+
+    function getUser()
+    {
+        $exp = explodeJid($this->username);
+        return $exp['username'];
     }
 
     function getPass()
@@ -166,6 +175,10 @@ class User {
             switch($key) {
                 case 'pubsub':
                     return in_array('http://jabber.org/protocol/pubsub#publish', $this->caps);
+                    break;
+                case 'upload':
+                    $id = new \Modl\ItemDAO;
+                    return ($id->getUpload($this->getServer()) != null);
                     break;
                 default:
                     return false;
