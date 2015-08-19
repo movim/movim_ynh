@@ -6,14 +6,39 @@ path=$(sudo yunohost app setting movim path)
 # Install Movim files
 final_path=/var/www/movim
 sudo cp -a ../sources/* $final_path
-sudo chown -R www-data: $final_path
+#sudo chown -R www-data: $final_path
 
-# Upgrade PHP dependencies
-#sudo su -c "curl -sS https://getcomposer.org/installer | php -- --install-dir=$final_path" -s /bin/sh www-data
-#sudo su -c "cd $final_path && php composer.phar install" -s /bin/sh www-data
+# Create movim user if not exists and set permissions
+if grep -q movim /etc/passwd; then
+	sudo chown -R movim:www-data /var/www/movim
+else
+	sudo useradd -s /bin/sh -d /var/www/movim movim
+	sudo chown -R movim:www-data /var/www/movim
+fi
+
+# Update PHP dependencies
+sudo su -c "curl -sS https://getcomposer.org/installer | php -- --install-dir=$final_path" movim
+sudo su -c "cd $final_path && php composer.phar install" movim
 
 # Movim configuration
 sudo sed -i "s@/ws/@$path/ws/@g" $final_path/app/assets/js/movim_websocket.js
+
+# Update init scripts
+initcheck=`pgrep -ox systemd`
+if [ "$initcheck" = "1" ];
+then
+	sudo systemctl stop movim.service
+	sudo systemctl disable movim.service
+	sudo cp ../conf/movim.service /lib/systemd/system/
+	sudo systemctl enable movim.service
+	sudo systemctl start movim.service
+else
+	sudo /etc/init.d/movim stop
+	sudo cp ../conf/movim.init /etc/init.d/movim
+	sudo chmod 755 /etc/init.d/movim
+	sudo update-rc.d movim defaults
+	sudo /etc/init.d/movim start
+fi
 
 # Reload
 sudo yunohost app ssowatconf
