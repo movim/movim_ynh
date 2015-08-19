@@ -13,11 +13,11 @@ sudo cp -a ../sources/* $final_path
 # Create movim user if not exists and set permissions
 if grep -q movim /etc/passwd; then
 	sudo chown -R movim:www-data $final_path
-	sudo chmod -R 750 $final_path
+	sudo chmod -R 770 $final_path
 else
 	sudo useradd -s /bin/sh -d $final_path movim
 	sudo chown -R movim:www-data $final_path
-	sudo chmod -R 750 $final_path
+	sudo chmod -R 770 $final_path
 fi
 
 # Update PHP dependencies
