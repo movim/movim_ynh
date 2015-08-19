@@ -5,7 +5,8 @@ db_name=movim
 root_pwd=$(sudo cat /etc/yunohost/mysql)
 mysql -u root -p$root_pwd -e "DROP DATABASE $db_name ; DROP USER $db_user@localhost ;"
 
-# Removing executable files
+# Removing executable files and user
+sudo userdel movim
 sudo rm -rf /var/www/movim
 domain=$(sudo yunohost app setting movim domain)
 sudo rm -f /etc/nginx/conf.d/$domain.d/movim.conf
