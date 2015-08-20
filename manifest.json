@@ -56,7 +56,7 @@
                     "en": "Pod language",
                     "fr": "Langue du pod"
                 },
-                "choices" : ["en", "fr"],
+                "choices" : ["de", "en", "es", "fr", "it", "nl"],
                 "default" : "en"
             },
             {
