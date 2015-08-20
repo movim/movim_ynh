@@ -13,8 +13,8 @@ sudo rm -f /etc/nginx/conf.d/$domain.d/movim.conf
 
 #REMOVE INIT
 sudo /etc/init.d/movim stop
-sudo systemctl stop movim
-sudo systemctl disable movim
+sudo systemctl stop movim.service
+sudo systemctl disable movim.service
 sudo update-rc.d -f movim remove
 sudo rm /etc/init.d/movim
 sudo rm /lib/systemd/system/movim.service
