@@ -38,7 +38,7 @@ sudo yunohost app setting movim public_site -v $public_site
 sudo yunohost app setting movim port -v $port
 
 # Generate random password
-db_pwd=$(dd if=/dev/urandom bs=1 count=200 2> /dev/null | tr -c -d '[A-Za-z0-9]' | sed -n 's/\(.\{24\}\).*/\1/p')
+db_pwd=$(strings /dev/urandom | grep -o '[[:alnum:]]' | head -n 24 | tr -d '\n'; echo)
 
 # Use 'movim' as database name and user
 db_user=movim
