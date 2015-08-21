@@ -58,7 +58,7 @@ sudo cp $final_path/config/db.example.inc.php $final_path/config/db.inc.php
 
 # Create movim system user and set permissions
 sudo useradd -d /var/www/movim -s /bin/sh movim
-sudo chown -R movim: $final_path
+sudo chown -R movim:www-data $final_path
 sudo chmod -R 750 $final_path
 
 # Install PHP dependencies
