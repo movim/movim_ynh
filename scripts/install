@@ -59,6 +59,7 @@ sudo cp -a ../sources/* $final_path
 sudo useradd -d /var/www/movim -s /bin/sh movim
 sudo chown -R movim:www-data $final_path
 sudo chmod -R 770 $final_path
+sudo chmod g+s $final_path
 
 # Install PHP dependencies
 sudo su -c "curl -sS https://getcomposer.org/installer | php -- --install-dir=$final_path" movim
