@@ -57,27 +57,28 @@ sudo cp -a ../sources/* $final_path
 sudo cp $final_path/config/db.example.inc.php $final_path/config/db.inc.php
 
 # Create movim system user and set permissions
-sudo chown -R www-data: $final_path
+sudo useradd -d /var/www/movim -s /bin/sh movim
+sudo chown -R movim: $final_path
 sudo chmod -R 750 $final_path
 
 # Install PHP dependencies
-sudo su -c "curl -sS https://getcomposer.org/installer | php -- --install-dir=$final_path" -s /bin/sh www-data
-sudo su -c "cd $final_path && php composer.phar install" -s /bin/sh www-data
+sudo su -c "curl -sS https://getcomposer.org/installer | php -- --install-dir=$final_path" movim
+sudo su -c "cd $final_path && php composer.phar install" movim
 
 # Movim configuration
 sudo sed -i "s@'username'    => 'username'@'username'    => '$db_user'@g" $final_path/config/db.inc.php
 sudo sed -i "s@'password'    => 'password'@'password'    => '$db_pwd'@g" $final_path/config/db.inc.php
 sudo sed -i "s@/ws/@$path/ws/@g" $final_path/app/assets/js/movim_websocket.js
-sudo su -c "cd $final_path && php mud.php db set" -s /bin/sh www-data
-sudo su -c "cd $final_path && php mud.php config locale:$language" -s /bin/sh www-data
-sudo su -c "cd $final_path && php mud.php config loglevel:1" -s /bin/sh www-data
-sudo su -c "cd $final_path && php mud.php config environment:production" -s /bin/sh www-data
-sudo su -c "cd $final_path && php mud.php config timezone:`cat /etc/timezone`" -s /bin/sh www-data
-sudo su -c "cd $final_path && php mud.php config username:$admin" -s /bin/sh www-data
-sudo su -c "cd $final_path && php mud.php config password:`echo -n $password | sha1sum | awk '{print $1}'`" -s /bin/sh www-data
+sudo su -c "cd $final_path && php mud.php db set" movim
+sudo su -c "cd $final_path && php mud.php config locale:$language" movim
+sudo su -c "cd $final_path && php mud.php config loglevel:1" movim
+sudo su -c "cd $final_path && php mud.php config environment:production" movim
+sudo su -c "cd $final_path && php mud.php config timezone:`cat /etc/timezone`" movim
+sudo su -c "cd $final_path && php mud.php config username:$admin" movim
+sudo su -c "cd $final_path && php mud.php config password:`echo -n $password | sha1sum | awk '{print $1}'`" movim
 if [ $public_site = "No" ]; 
 then
-        sudo su -c "cd $final_path && php mud.php config xmppwhitelist:$domain" -s /bin/sh www-data
+        sudo su -c "cd $final_path && php mud.php config xmppwhitelist:$domain" movim
 fi
 sudo yunohost app addaccess movim -u $admin
 
@@ -98,6 +99,9 @@ else
 	sudo /etc/init.d/movim start
 fi
 
+# php-fpm configuration
+sudo cp ../conf/php-fpm.conf /etc/php5/fpm/pool.d/movim.conf
+
 # Nginx configuration
 sed -i "s@PATHTOCHANGE@$path@g" ../conf/nginx.conf
 sed -i "s@ALIASTOCHANGE@$final_path/@g" ../conf/nginx.conf
@@ -110,5 +114,5 @@ sudo yunohost app setting movim skipped_uris -v "/"
 sudo yunohost app ssowatconf
 
 # Start Movim
-sudo service nginx reload
 sudo service php5-fpm restart
+sudo service nginx reload
