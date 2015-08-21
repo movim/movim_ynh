@@ -54,6 +54,7 @@ sudo apt-get install php5-gd php5-curl php5-imagick php5-cli -y
 final_path=/var/www/movim
 sudo mkdir -p $final_path
 sudo cp -a ../sources/* $final_path
+sudo cp $final_path/config/db.example.inc.php $final_path/config/db.inc.php
 
 # Create movim system user and set permissions
 sudo chown -R www-data: $final_path
@@ -64,7 +65,6 @@ sudo su -c "curl -sS https://getcomposer.org/installer | php -- --install-dir=$f
 sudo su -c "cd $final_path && php composer.phar install" -s /bin/sh www-data
 
 # Movim configuration
-sudo cp $final_path/config/db.example.inc.php $final_path/config/db.inc.php
 sudo sed -i "s@'username'    => 'username'@'username'    => '$db_user'@g" $final_path/config/db.inc.php
 sudo sed -i "s@'password'    => 'password'@'password'    => '$db_pwd'@g" $final_path/config/db.inc.php
 sudo sed -i "s@/ws/@$path/ws/@g" $final_path/app/assets/js/movim_websocket.js

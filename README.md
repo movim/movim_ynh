@@ -16,7 +16,7 @@ Current Movim version : 20150820.
 - Public/Private policy changed. The SSO portal is not used anymore
   But when a pod is marked as "private", only accounts with @yourdomain.com are able to connect.
   This change was necessary for public content (blog)
-- Add sticky bit to final_path
+- Revert to www-data system user
 
 0.7b 2015-08-20
 - Update to upstream Movim 20150820 to fix #5
