@@ -8,7 +8,8 @@ port=$(sudo yunohost app setting movim port)
 # Install Movim files
 final_path=/var/www/movim
 sudo cp -a ../sources/* $final_path
-#sudo chown -R www-data: $final_path
+sudo chown -R www-data: $final_path
+sudo chmod -R 750 $final_path
 
 # Update PHP dependencies
 sudo su -c "curl -sS https://getcomposer.org/installer | php -- --install-dir=$final_path" -s /bin/sh www-data
