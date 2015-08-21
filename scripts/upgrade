@@ -4,19 +4,34 @@
 path=$(sudo yunohost app setting movim path)
 domain=$(sudo yunohost app setting movim domain)
 port=$(sudo yunohost app setting movim port)
+public_site=$(sudo yunohost app setting movim public_site)
 
 # Install Movim files
 final_path=/var/www/movim
 sudo cp -a ../sources/* $final_path
-sudo chown -R www-data: $final_path
-sudo chmod -R 750 $final_path
+
+# Create movim user if not exists and set permissions
+if grep -q movim /etc/passwd; then
+	sudo chown -R movim:www-data $final_path
+	sudo chmod -R 750 $final_path
+else
+	sudo useradd -s /bin/sh -d $final_path movim
+	sudo chown -R movim:www-data $final_path
+	sudo chmod -R 750 $final_path
+fi
 
 # Update PHP dependencies
-sudo su -c "curl -sS https://getcomposer.org/installer | php -- --install-dir=$final_path" -s /bin/sh www-data
-sudo su -c "cd $final_path && php composer.phar install" -s /bin/sh www-data
+sudo su -c "curl -sS https://getcomposer.org/installer | php -- --install-dir=$final_path" movim
+sudo su -c "cd $final_path && php composer.phar install" movim
 
 # Movim configuration
 sudo sed -i "s@/ws/@$path/ws/@g" $final_path/app/assets/js/movim_websocket.js
+
+# Update xmppwhitelist if private
+if [ $public_site = "No" ];
+then
+        sudo su -c "cd $final_path && php mud.php config xmppwhitelist:$domain" movim
+fi
 
 # Update init scripts
 sudo sed -i "s@YHURL@$domain$path@g" ../conf/movim.{service,init}
@@ -38,6 +53,18 @@ else
 	sudo /etc/init.d/movim start
 fi
 
+# Update php-fpm configuration
+sudo cp ../conf/php-fpm.conf /etc/php5/fpm/pool.d/movim.conf
+
+# Nginx configuration
+sed -i "s@PATHTOCHANGE@$path@g" ../conf/nginx.conf
+sed -i "s@ALIASTOCHANGE@$final_path/@g" ../conf/nginx.conf
+sed -i "s@YHPORT@$port@g" ../conf/nginx.conf
+sed -i "s@//ws/@/ws/@g" ../conf/nginx.conf # Avoid duplicate /
+sudo cp ../conf/nginx.conf /etc/nginx/conf.d/$domain.d/movim.conf
+
 # Reload
 sudo yunohost app ssowatconf
 sudo service movim restart
+sudo service php5-fpm restart
+sudo service nginx reload
