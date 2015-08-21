@@ -12,13 +12,13 @@ port=$7
 # Check domain/path availability
 sudo yunohost app checkurl $domain$path -a movim
 if [[ ! $? -eq 0 ]]; then
-exit 1
+   exit 1
 fi
 
 # Check port availability
 sudo yunohost app checkport $port
 if [[ ! $? -eq 0 ]]; then
-exit 1
+   exit 1
 fi
 
 # Check user availability
@@ -30,7 +30,7 @@ fi
 # Check password not empty
 if [[ -z "$password" ]]; then
 printf "Error empty admin password, aborting"
-exit 1
+   exit 1
 fi
 
 sudo yunohost app setting movim admin -v $admin
@@ -104,6 +104,7 @@ fi
 sed -i "s@PATHTOCHANGE@$path@g" ../conf/nginx.conf
 sed -i "s@ALIASTOCHANGE@$final_path/@g" ../conf/nginx.conf
 sed -i "s@YHPORT@$port@g" ../conf/nginx.conf
+sed -i "s@//ws/@/ws/@g" ../conf/nginx # Avoid duplicate /
 sudo cp ../conf/nginx.conf /etc/nginx/conf.d/$domain.d/movim.conf
 
 # SSOwat Configuration
