@@ -76,6 +76,10 @@ sudo su -c "cd $final_path && php mud.php config environment:production" movim
 sudo su -c "cd $final_path && php mud.php config timezone:`cat /etc/timezone`" movim
 sudo su -c "cd $final_path && php mud.php config username:$admin" movim
 sudo su -c "cd $final_path && php mud.php config password:`echo -n $password | sha1sum | awk '{print $1}'`" movim
+if [ $public_site = "No" ]; 
+then
+        sudo su -c "cd $final_path && php mud.php config xmppwhitelist:$domain" movim
+fi
 sudo yunohost app addaccess movim -u $admin
 
 # Copy init script or systemd service
@@ -103,12 +107,6 @@ sudo cp ../conf/nginx.conf /etc/nginx/conf.d/$domain.d/movim.conf
 
 # SSOwat Configuration
 sudo yunohost app setting movim skipped_uris -v "/"  
-if [ $public_site = "No" ];
-then              
-	sudo yunohost app setting movim protected_uris -v "/" 
-else              
-	sudo yunohost app setting movim protected_uris -v "/?q=admin"
-fi
 sudo yunohost app ssowatconf
 
 # Start Movim
