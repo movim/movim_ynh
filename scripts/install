@@ -33,9 +33,11 @@ printf "Error empty admin password, aborting"
    exit 1
 fi
 
+# Save parameters
 sudo yunohost app setting movim admin -v $admin
 sudo yunohost app setting movim public_site -v $public_site
 sudo yunohost app setting movim port -v $port
+sudo yunohost app setting movim path -v $path
 
 # Generate random password
 db_pwd=$(dd if=/dev/urandom bs=1 count=200 2> /dev/null | tr -c -d '[[:alnum:]]')
