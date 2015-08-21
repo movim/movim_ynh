@@ -11,6 +11,7 @@ Current Movim version : 20150820.
 
 0.8b ?
 - Added to language selection : ar, de, es, it, ja, nl, ru
+- Fix URL in manifest.json (was https://https://...)
 
 0.7b 2015-08-20
 - Update to upstream Movim 20150820 to fix #5
