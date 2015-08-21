@@ -33,6 +33,9 @@ then
         sudo su -c "cd $final_path && php mud.php config xmppwhitelist:$domain" movim
 fi
 
+# Delete obsolete SSO conf
+sudo yunohost app setting movim protected_uris -d
+
 # Update init scripts
 sudo sed -i "s@YHURL@$domain$path@g" ../conf/movim.{service,init}
 sudo sed -i "s@YHDIR@$final_path@g" ../conf/movim.{service,init}
