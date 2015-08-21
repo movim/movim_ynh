@@ -3,7 +3,7 @@ Description=Movim daemon
 After=nginx.service network.target local-fs.target
 
 [Service]
-User=www-data
+User=movim
 Type=simple
 ExecStart=/usr/bin/php daemon.php https://YHURL YHPORT
 WorkingDirectory=YHDIR
