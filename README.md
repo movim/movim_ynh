@@ -12,7 +12,6 @@ Current Movim version : 20150820.
 0.8b ?
 - Added language selection : ar, de, es, it, ja, nl, ru
 - Fix URL in manifest.json (was https://https://...)
-- Modified mysql password generation (no special car)
 - Public/Private policy changed. The SSO portal is not used anymore
   But when a pod is marked as "private", only accounts with @yourdomain.com are able to connect.
   This change was necessary for public content (blog)
