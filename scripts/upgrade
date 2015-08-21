@@ -10,19 +10,9 @@ final_path=/var/www/movim
 sudo cp -a ../sources/* $final_path
 #sudo chown -R www-data: $final_path
 
-# Create movim user if not exists and set permissions
-if grep -q movim /etc/passwd; then
-	sudo chown -R movim:www-data $final_path
-	sudo chmod -R 770 $final_path
-else
-	sudo useradd -s /bin/sh -d $final_path movim
-	sudo chown -R movim:www-data $final_path
-	sudo chmod -R 770 $final_path
-fi
-
 # Update PHP dependencies
-sudo su -c "curl -sS https://getcomposer.org/installer | php -- --install-dir=$final_path" movim
-sudo su -c "cd $final_path && php composer.phar install" movim
+sudo su -c "curl -sS https://getcomposer.org/installer | php -- --install-dir=$final_path" -s /bin/sh www-data
+sudo su -c "cd $final_path && php composer.phar install" -s /bin/sh www-data
 
 # Movim configuration
 sudo sed -i "s@/ws/@$path/ws/@g" $final_path/app/assets/js/movim_websocket.js

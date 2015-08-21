@@ -38,7 +38,6 @@ sudo yunohost app setting movim public_site -v $public_site
 sudo yunohost app setting movim port -v $port
 
 # Generate random password
-#db_pwd=$(strings /dev/urandom | grep -o '[[:alnum:]]' | head -n 24 | tr -d '\n'; echo)
 db_pwd=$(dd if=/dev/urandom bs=1 count=200 2> /dev/null | tr -c -d '[[:alnum:]]' | sed -n 's/\(.\{24\}\).*/\1/p')
 
 # Use 'movim' as database name and user
@@ -57,30 +56,28 @@ sudo mkdir -p $final_path
 sudo cp -a ../sources/* $final_path
 
 # Create movim system user and set permissions
-sudo useradd -d /var/www/movim -s /bin/sh movim
-sudo chown -R movim:www-data $final_path
-sudo chmod -R 770 $final_path
-sudo chmod g+s $final_path
+sudo chown -R www-data: $final_path
+sudo chmod -R 750 $final_path
 
 # Install PHP dependencies
-sudo su -c "curl -sS https://getcomposer.org/installer | php -- --install-dir=$final_path" movim
-sudo su -c "cd $final_path && php composer.phar install" movim
+sudo su -c "curl -sS https://getcomposer.org/installer | php -- --install-dir=$final_path" -s /bin/sh www-data
+sudo su -c "cd $final_path && php composer.phar install" -s /bin/sh www-data
 
 # Movim configuration
 sudo cp $final_path/config/db.example.inc.php $final_path/config/db.inc.php
 sudo sed -i "s@'username'    => 'username'@'username'    => '$db_user'@g" $final_path/config/db.inc.php
 sudo sed -i "s@'password'    => 'password'@'password'    => '$db_pwd'@g" $final_path/config/db.inc.php
 sudo sed -i "s@/ws/@$path/ws/@g" $final_path/app/assets/js/movim_websocket.js
-sudo su -c "cd $final_path && php mud.php db set" movim
-sudo su -c "cd $final_path && php mud.php config locale:$language" movim
-sudo su -c "cd $final_path && php mud.php config loglevel:1" movim
-sudo su -c "cd $final_path && php mud.php config environment:production" movim
-sudo su -c "cd $final_path && php mud.php config timezone:`cat /etc/timezone`" movim
-sudo su -c "cd $final_path && php mud.php config username:$admin" movim
-sudo su -c "cd $final_path && php mud.php config password:`echo -n $password | sha1sum | awk '{print $1}'`" movim
+sudo su -c "cd $final_path && php mud.php db set" -s /bin/sh www-data
+sudo su -c "cd $final_path && php mud.php config locale:$language" -s /bin/sh www-data
+sudo su -c "cd $final_path && php mud.php config loglevel:1" -s /bin/sh www-data
+sudo su -c "cd $final_path && php mud.php config environment:production" -s /bin/sh www-data
+sudo su -c "cd $final_path && php mud.php config timezone:`cat /etc/timezone`" -s /bin/sh www-data
+sudo su -c "cd $final_path && php mud.php config username:$admin" -s /bin/sh www-data
+sudo su -c "cd $final_path && php mud.php config password:`echo -n $password | sha1sum | awk '{print $1}'`" -s /bin/sh www-data
 if [ $public_site = "No" ]; 
 then
-        sudo su -c "cd $final_path && php mud.php config xmppwhitelist:$domain" movim
+        sudo su -c "cd $final_path && php mud.php config xmppwhitelist:$domain" -s /bin/sh www-data
 fi
 sudo yunohost app addaccess movim -u $admin
 
@@ -105,7 +102,7 @@ fi
 sed -i "s@PATHTOCHANGE@$path@g" ../conf/nginx.conf
 sed -i "s@ALIASTOCHANGE@$final_path/@g" ../conf/nginx.conf
 sed -i "s@YHPORT@$port@g" ../conf/nginx.conf
-sed -i "s@//ws/@/ws/@g" ../conf/nginx # Avoid duplicate /
+sed -i "s@//ws/@/ws/@g" ../conf/nginx.conf # Avoid duplicate /
 sudo cp ../conf/nginx.conf /etc/nginx/conf.d/$domain.d/movim.conf
 
 # SSOwat Configuration
