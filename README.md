@@ -18,6 +18,7 @@ Current Movim version : 20150821.
 - Add dedicated php-fpm pool for Movim
 - Protect /log and /config properly
 - Update to upstream Movim 20150821
+- Fix #6 and #7
 
 0.7b 2015-08-20
 - Update to upstream Movim 20150820 to fix #5
