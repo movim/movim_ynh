@@ -10,7 +10,7 @@ Current Movim version : 20150820.
 **Changelog**
 
 0.8b ?
-- Add ar, de, es, it, ja, nl, ru
+- Added to language selection : ar, de, es, it, ja, nl, ru
 
 0.7b 2015-08-20
 - Update to upstream Movim 20150820 to fix #5
