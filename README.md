@@ -9,7 +9,7 @@ Current Movim version : 20150821.
 
 **Changelog**
 
-0.8b 2015-08-21
+0.8b 2015-08-23
 - Added language selection : ar, de, es, it, ja, nl, ru
 - Fix URL in manifest.json (was https://https://...)
 - Public/Private policy changed. The SSO portal is not used anymore
