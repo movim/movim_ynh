@@ -8,7 +8,7 @@
     "maintainer": {
         "name": "src386",
         "email": "soyouz@src386.org",
-        "url": "http://https://github.com/src386"
+        "url": "http://github.com/src386"
     },
     "multi_instance": "false",
     "arguments": {
@@ -56,7 +56,7 @@
                     "en": "Pod language",
                     "fr": "Langue du pod"
                 },
-                "choices" : ["en", "fr"],
+                "choices" : ["ar", "de", "en", "es", "fr", "it", "ja", "nl", "ru"],
                 "default" : "en"
             },
             {

@@ -5,9 +5,20 @@ Movim is a decentralized social network, written in PHP and HTML5 and based on t
 
 Warning: BETA.
 
-Current Movim version : 20150820.
+Current Movim version : 20150821.
 
 **Changelog**
+
+0.8b 2015-08-23
+- Added language selection : ar, de, es, it, ja, nl, ru
+- Fix URL in manifest.json (was https://https://...)
+- Public/Private policy changed. The SSO portal is not used anymore
+  But when a pod is marked as "private", only accounts with @yourdomain.com are able to connect.
+  This change was necessary for public content (blog)
+- Add dedicated php-fpm pool for Movim
+- Protect /log and /config properly
+- Update to upstream Movim 20150821
+- Fix #6 and #7
 
 0.7b 2015-08-20
 - Update to upstream Movim 20150820 to fix #5
