@@ -5,14 +5,11 @@ Movim is a decentralized social network, written in PHP and HTML5 and based on t
 
 Warning: BETA.
 
-Current Movim version : 20150818.
+Current Movim version : 20150824.
 
 **Changelog**
 
-0.8.1b 2015-08-24
-- Revert to Movim 20150818 to fix a bug (instant disconnect after login)
-
-0.8b 2015-08-23
+0.8b 2015-08-24
 - Added language selection : ar, de, es, it, ja, nl, ru
 - Fix URL in manifest.json (was https://https://...)
 - Public/Private policy changed. The SSO portal is not used anymore
@@ -20,7 +17,7 @@ Current Movim version : 20150818.
   This change was necessary for public content (blog)
 - Add dedicated php-fpm pool for Movim
 - Protect /log and /config properly
-- Update to upstream Movim 20150821
+- Update to upstream Movim 20150824
 - Fix #6 and #7
 
 0.7b 2015-08-20
