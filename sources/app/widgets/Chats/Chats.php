@@ -15,8 +15,6 @@ class Chats extends WidgetBase
         $this->registerEvent('carbons', 'onMessage');
         $this->registerEvent('message', 'onMessage');
         $this->registerEvent('presence', 'onPresence', 'chat');
-        $this->registerEvent('composing', 'onComposing');
-        $this->registerEvent('paused', 'onPaused');
     }
 
     function onMessage($packet)
@@ -58,29 +56,6 @@ class Chats extends WidgetBase
         }
     }
 
-    function onComposing($array)
-    {
-        $this->setState($array, $this->__('chats.composing'));
-    }
-
-    function onPaused($array)
-    {
-        $this->setState($array, $this->__('chats.paused'));
-    }
-
-    private function setState($array, $message)
-    {
-        list($from, $to) = $array;
-        if($from == $this->user->getLogin()) {
-            $jid = $to;
-        } else {
-            $jid = $from;
-        }
-
-        RPC::call('movim_replace', $jid.'_chat_item', $this->prepareChat($jid, $message));
-        RPC::call('Chats.refresh');
-    }
-
     /**
      * @brief Get history
      */
@@ -92,7 +67,7 @@ class Chats extends WidgetBase
         $messages = $md->getContact(echapJid($jid), 0, 1);
 
         $g = new \Moxl\Xec\Action\MAM\Get;
-        $g->setJid(echapJid($jid));
+        $g->setJid($jid);
 
         if(!empty($messages)) {
             $g->setStart(strtotime($messages[0]->published));
@@ -181,7 +156,7 @@ class Chats extends WidgetBase
         return $view->draw('_chats', true);
     }
 
-    function prepareChat($jid, $status = null)
+    function prepareChat($jid)
     {
         if(!$this->validateJid($jid)) return;
 
@@ -204,8 +179,6 @@ class Chats extends WidgetBase
             $view->assign('contact', $cd->get($jid));
             $view->assign('caps', null);
         }
-
-        $view->assign('status', $status);
 
         $m = $md->getContact($jid, 0, 1);
         if(isset($m)) {

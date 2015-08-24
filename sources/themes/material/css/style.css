@@ -180,7 +180,7 @@ body > nav li { /* Little hack for the navbar */
     }
 }
 
-@media screen and (min-width: 1024px) and (max-width: 1680px) {
+@media screen and (min-width: 1024px) {
     body > nav:hover {
         width: 45rem;
         box-shadow: 0 2.5rem 5rem rgba(0,0,0,0.30), 0 2rem 1.5rem rgba(0,0,0,0.22);
@@ -197,18 +197,6 @@ body > nav li { /* Little hack for the navbar */
         right: auto;
         font-size: 1.75rem;
         padding: 0.25rem;
-    }
-}
-
-@media screen and (min-width: 1680px) {
-    body > nav,
-    body > nav:hover {
-        width: 15%;
-    }
-
-    body > nav + main,
-    body > nav:hover + main {
-        width: 85%;
     }
 }
 
@@ -246,7 +234,7 @@ main > header {
 main > header > div {
     padding-left: 9rem;
     position: relative;
-    width: 35%;
+    width: 30%;
     display: inline-block;
     /*overflow: hidden;*/
     box-sizing: border-box;
@@ -287,7 +275,7 @@ main > header > div > ul.active:not(.context_menu) li.thin span.icon {
 }
 
 main > header > div:first-child:nth-last-child(2) ~ div {
-    width: 65%;
+    width: 70%;
     position: absolute;
     top: 0;
     right: 0;
@@ -382,10 +370,10 @@ main > section > div > * {
 
 /* Two blocks*/
 main > section > div:first-child:nth-last-child(2) {
-    width: 35%;
+    width: 30%;
 }
 main > section > div:first-child:nth-last-child(2) ~ div {
-    width: 65%;
+    width: 70%;
     position: absolute;
     top: 0;
     right: 0;
