@@ -1,5 +1,5 @@
 - proxy_read_timeout
 - proxy_send_timeout
 - check if path is not empty
-- revoir whitelist
+- whitelist
 - movim.service pid / syslog ?
