@@ -5,9 +5,12 @@ Movim is a decentralized social network, written in PHP and HTML5 and based on t
 
 Warning: BETA.
 
-Current Movim version : 20150821.
+Current Movim version : 20150818.
 
 **Changelog**
+
+0.8.1b 2015-08-24
+- Revert to Movim 20150818 to fix a bug (instant disconnect after login)
 
 0.8b 2015-08-23
 - Added language selection : ar, de, es, it, ja, nl, ru
