@@ -1,5 +1,4 @@
-- proxy_read_timeout
-- proxy_send_timeout
-- check if path is not empty
-- whitelist
-- movim.service pid / syslog ?
+- Edit proxy_read_timeout and proxy_send_timeout values
+- Check if path is not empty beforce install
+- Add and pid and syslog in movim.service (systemd)
+- In remove script delete user after shuting down Movim service
