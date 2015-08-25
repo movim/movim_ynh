@@ -2,3 +2,5 @@
 - Check if path is not empty beforce install
 - Add and pid and syslog in movim.service (systemd)
 - In remove script delete user after shuting down Movim service
+- In remove script delete php5-fpm pool
+- Set timezone in php5-fpm pool
