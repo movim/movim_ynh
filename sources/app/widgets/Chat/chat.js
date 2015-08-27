@@ -77,7 +77,6 @@ var Chat = {
             };
 
             bubble.querySelector('span.user').innerHTML = message.resource;
-
             var conversation = document.getElementById(id);
             if(conversation) {
 		conversation.appendChild(bubble);
@@ -110,6 +109,7 @@ var Chat = {
 
             if(bubble) {
                 bubble.querySelector('div.bubble div').innerHTML = message.body;
+
                 bubble.querySelector('div.bubble span.info').innerHTML = message.published;
 
                 movim_append(id, bubble.outerHTML);
