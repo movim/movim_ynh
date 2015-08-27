@@ -1,4 +1,0 @@
-* Public pod = Yes : anyone can connect in your Movim pod using its own JID
-* Public pod = No : Whitelist allows only JID from your Yunohost to login*
-
-If you want to allow more domains, connect to yourserver.yourdomain.org/movim/?q=admin then add domains in the whitelist.

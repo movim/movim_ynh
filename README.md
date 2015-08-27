@@ -11,7 +11,7 @@ Current Movim version : 0.9 git2015-08-27
 
 0.9b 2015-08-27
 - Update to Movim 0.9 git2015-08-27
-- Add whitelist.txt (about public access yes/no consequencies)
+- Add notes in README about public pods & whitelisting
 
 0.8b 2015-08-24
 - Added language selection : ar, de, es, it, ja, nl, ru
@@ -82,6 +82,13 @@ Username and password are definied during installation.
 
 * URL rewriting is disabled (experimental feature)
 * No SSO auto login
+
+**Public Pod & Whitelisting**
+
+* Public pod = Yes : anyone can connect in your Movim pod using its own JID
+* Public pod = No : Whitelist allows only JID from your Yunohost to login*
+
+If you want to allow more domains, connect to yourserver.yourdomain.org/movim/?q=admin then add domains in the whitelist.
 
 **Help**
 
