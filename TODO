@@ -1,3 +1,2 @@
-- Edit proxy_read_timeout and proxy_send_timeout values
 - Check if path is not empty beforce install
 - Set timezone in php5-fpm pool
