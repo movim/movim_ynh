@@ -1,4 +1,3 @@
 - Edit proxy_read_timeout and proxy_send_timeout values
 - Check if path is not empty beforce install
-- Add pid and syslog in movim.service (systemd)
 - Set timezone in php5-fpm pool
