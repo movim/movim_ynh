@@ -15,6 +15,7 @@ Current Movim version : 0.9 git2015-08-27
 - Remove script now delete Movim php5-fpm pool.
 - Remove script delete 'movim' user after shutting down Movim service.
 - Movim systemd service now has a PID and logs in syslog
+- Remove proxy_read_timeout and proxy_send_timeout in vhost configuration (default 60s is enough)
 
 0.8b 2015-08-24
 - Added language selection : ar, de, es, it, ja, nl, ru
