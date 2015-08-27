@@ -62,7 +62,8 @@
             {
                 "name": "public_site",
                 "ask": {
-                    "en": "Public pod ?"
+                    "en": "Public pod ? (see whitelist.txt on github)"
+		    "fr": "Pod public ? (voir whitelist.txt sur github)"
                 },
                 "choices": ["Yes", "No"],
                 "default": "No"
