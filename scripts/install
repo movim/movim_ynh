@@ -29,7 +29,13 @@ fi
 
 # Check password not empty
 if [[ -z "$password" ]]; then
-printf "Error empty admin password, aborting"
+printf "Error empty admin password, installation aborted"
+   exit 1
+fi
+
+# Check path not empty
+if [[ -z "$path" ]]; then
+printf "Error path is empty, installation aborted"
    exit 1
 fi
 
