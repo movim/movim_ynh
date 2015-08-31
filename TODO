@@ -2,4 +2,3 @@
 - Set timezone in php5-fpm pool
 - Movim init script should redirect to syslog
 - Upgrade php dependencies script
-- Upgrade systemd service script
