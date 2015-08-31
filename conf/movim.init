@@ -24,6 +24,8 @@ is_running() {
     [ -f "$pid_file" ] && ps `get_pid` > /dev/null 2>&1
 }
 
+. /lib/lsb/init-functions
+
 case "$1" in
     start)
     if is_running; then
@@ -32,13 +34,16 @@ case "$1" in
         echo "Starting $name"
         cd "$dir"
         if [ -z "$user" ]; then
-            sudo $cmd >> "$stdout_log" 2>> "$stderr_log" &
+            log_failure_msg "user \"$user\" does not exist"
         else
-            sudo -u "$user" $cmd >> "$stdout_log" 2>> "$stderr_log" &
+            sudo -u "$user" $cmd >> log_daemon_msg 2>> log_failure_msg 1 &
         fi
+     	status=$?
+	log_end_msg $status
+
         echo $! > "$pid_file"
         if ! is_running; then
-            echo "Unable to start, see $stdout_log and $stderr_log"
+            log_failure_msg "Unable to start, see syslog"
             exit 1
         fi
     fi
