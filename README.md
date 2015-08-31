@@ -5,12 +5,12 @@ Movim is a decentralized social network, written in PHP and HTML5 and based on t
 
 Warning: BETA.
 
-Current Movim version : 0.9 git2015-08-27
+Current Movim version : 0.9 git2015-08-31
 
 **Changelog**
 
-0.9b 2015-08-27
-- Update to Movim 0.9 git2015-08-27
+0.9b 2015-0
+- Update to Movim 0.9 git2015-08-31
 - Add notes in README about public pods & whitelisting
 - Remove script now delete Movim php5-fpm pool.
 - Remove script delete 'movim' user after shutting down Movim service.

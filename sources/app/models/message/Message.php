@@ -95,4 +95,15 @@ class Message extends Model {
             $this->delivered = gmdate('Y-m-d H:i:s');
         }
     }
+
+    public function convertEmojis()
+    {
+        $emoji = \MovimEmoji::getInstance();
+        $this->body = $emoji->replace($this->body);
+    }
+
+    public function addUrls()
+    {
+        $this->body = addUrls($this->body);
+    }
 }
