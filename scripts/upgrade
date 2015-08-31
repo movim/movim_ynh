@@ -21,8 +21,7 @@ else
 fi
 
 # Update PHP dependencies
-sudo su -c "curl -sS https://getcomposer.org/installer | php -- --install-dir=$final_path" movim
-sudo su -c "cd $final_path && php composer.phar install" movim
+sudo su -c "cd $final_path && php composer.phar update" movim
 
 # Movim configuration
 sudo sed -i "s@/ws/@$path/ws/@g" $final_path/app/assets/js/movim_websocket.js
