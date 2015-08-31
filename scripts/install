@@ -8,7 +8,7 @@ password=$4
 language=$5
 public_site=$6
 port=$7
-timzone=`cat /etc/timezone`
+timezone=`cat /etc/timezone`
 
 # Check domain/path availability
 sudo yunohost app checkurl $domain$path -a movim
