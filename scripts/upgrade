@@ -7,6 +7,14 @@ port=$(sudo yunohost app setting movim port)
 public_site=$(sudo yunohost app setting movim public_site)
 timezone=`cat /etc/timezone`
 
+# Check timezone
+if [[ -z "$timezone" ]]; then
+printf "Could not detect Timezone, please check /etc/timezone. Installation aborted"
+  exit 1
+else
+printf "Detected Timezone $timezone"
+fi
+
 # Install Movim files
 final_path=/var/www/movim
 sudo cp -a ../sources/* $final_path

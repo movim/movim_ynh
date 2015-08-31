@@ -34,6 +34,14 @@ printf "Error empty admin password, installation aborted"
    exit 1
 fi
 
+# Check timezone
+if [[ -z "$timezone" ]]; then
+printf "Could not detect Timezone, please check /etc/timezone. Installation aborted"
+  exit 1
+else
+printf "Detected Timezone $timezone"
+fi
+
 # Check path not empty
 if [[ -z "$path" ]]; then
 printf "Error path is empty, installation aborted"
