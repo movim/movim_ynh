@@ -8,6 +8,7 @@ password=$4
 language=$5
 public_site=$6
 port=$7
+timzone=`cat /etc/timezone`
 
 # Check domain/path availability
 sudo yunohost app checkurl $domain$path -a movim
@@ -81,7 +82,7 @@ sudo su -c "cd $final_path && php mud.php db set" movim
 sudo su -c "cd $final_path && php mud.php config locale:$language" movim
 sudo su -c "cd $final_path && php mud.php config loglevel:1" movim
 sudo su -c "cd $final_path && php mud.php config environment:production" movim
-sudo su -c "cd $final_path && php mud.php config timezone:`cat /etc/timezone`" movim
+sudo su -c "cd $final_path && php mud.php config timezone:$timezone" movim
 sudo su -c "cd $final_path && php mud.php config username:$admin" movim
 sudo su -c "cd $final_path && php mud.php config password:`echo -n $password | sha1sum | awk '{print $1}'`" movim
 if [ $public_site = "No" ]; 
@@ -108,6 +109,7 @@ else
 fi
 
 # php-fpm configuration
+sed -i "s@YHTZ@$timezone@g" ../conf/php-fpm.conf
 sudo cp ../conf/php-fpm.conf /etc/php5/fpm/pool.d/movim.conf
 
 # Nginx configuration

@@ -18,6 +18,7 @@ Current Movim version : 0.9 git2015-08-31
 - Remove proxy_read_timeout and proxy_send_timeout in vhost configuration (default 60s is enough)
 - Movim sysvinit script now uses syslog.
 - Installation script now checks if path is empty.
+- Add timezone in Movim php fpm conf.
 
 0.8b 2015-08-24
 - Added language selection : ar, de, es, it, ja, nl, ru
