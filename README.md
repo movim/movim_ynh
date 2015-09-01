@@ -13,7 +13,7 @@ Current Movim version : 0.9 git2015-08-31
 - Update to Movim 0.9 git2015-08-31
 - Add notes in README about public pods & whitelisting
 - script/install now check if path is empty.
-- script/remove now delete /etc/php/fpm/pool.d/movim.conf
+- script/remove now delete /etc/php/fpm/pool.d/movim.conf (fix #8).
 - script/remove now delete 'movim' user only after Movim service is stopped.
 - script/update now updates php dependancies (composer update).
 - conf/movim.service now has a PID and a syslog identifier.

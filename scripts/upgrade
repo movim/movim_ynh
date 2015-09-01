@@ -12,7 +12,7 @@ if [[ -z "$timezone" ]]; then
 printf "Could not detect Timezone, please check /etc/timezone. Installation aborted"
   exit 1
 else
-printf "Detected Timezone $timezone"
+printf "Detected Timezone $timezone \n"
 fi
 
 # Install Movim files
