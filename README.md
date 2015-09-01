@@ -12,13 +12,14 @@ Current Movim version : 0.9 git2015-08-31
 0.9b 2015-0
 - Update to Movim 0.9 git2015-08-31
 - Add notes in README about public pods & whitelisting
-- Remove script now delete Movim php5-fpm pool.
-- Remove script delete 'movim' user after shutting down Movim service.
-- Movim systemd service now has a PID and a syslog identifier.
-- Remove proxy_read_timeout and proxy_send_timeout in vhost configuration (default 60s is enough)
-- Movim sysvinit script now uses syslog.
-- Installation script now checks if path is empty.
-- Add timezone in Movim php fpm conf.
+- script/install now check if path is empty.
+- script/remove now delete /etc/php/fpm/pool.d/movim.conf
+- script/remove now delete 'movim' user only after Movim service is stopped.
+- script/update now updates php dependancies (composer update).
+- conf/movim.service now has a PID and a syslog identifier.
+- conf/movim.init now uses logger (syslog support) and is more reliable.
+- conf/nginx.conf : proxy_read_timeout and proxy_send_timeout removed (default is 60s)
+- conf/php-fpm.conf add timezone parameter.
 
 0.8b 2015-08-24
 - Added language selection : ar, de, es, it, ja, nl, ru
