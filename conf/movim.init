@@ -5,71 +5,94 @@
 # Required-Stop:     $remote_fs $syslog
 # Default-Start:     2 3 4 5
 # Default-Stop:      0 1 6
-# Short-Description: Movim
-# Description:       Kickass social network
+# Short-Description: Start daemon at boot time
+# Description:       Enable service provided by daemon.
 ### END INIT INFO
 
-PATH=/sbin:/bin:/usr/sbin:/usr/bin
+dir="YHDIR"
+cmd="php daemon.php https://YHURL YHPORT"
+user="movim"
 
-. /lib/lsb/init-functions
+name=`basename $0`
+pid_file="/var/run/$name.pid"
+stdout_log="/var/log/$name.log"
+stderr_log="/var/log/$name.err"
 
-NAME=movim
-DESC="Movim PHP Daemon"
-MOVIMPID=/var/run/movim.pid
+get_pid() {
+    cat "$pid_file"
+}
 
-check_status()
-{
-    if [ ! -r "$MOVIMPID" ]; then
-	test "$1" != -v || echo "$NAME is not running."
-	return 3
-    fi
-    if read pid < "$MOVIMPID" && ps -p "$pid" > /dev/null 2>&1; then
-	test "$1" != -v || echo "$NAME is running."
-	return 0
-    else
-	test "$1" != -v || echo "$NAME is not running but $MOVIMPID exists."
-	return 1
-    fi
+is_running() {
+    [ -f "$pid_file" ] && ps `get_pid` > /dev/null 2>&1
 }
 
 case "$1" in
-	start)
-		log_daemon_msg "Starting $DESC" "$NAME"
-		start-stop-daemon --start --quiet --pidfile $MOVIMPID \
-			--exec /usr/bin/php5 -- YHDIR/daemon.php YHURL YHPORT
-		sleep 2
+    start)
+    if is_running; then
+        echo "Already started"
+    else
+        echo "Starting $name"
+        cd "$dir"
+        if [ -z "$user" ]; then
+            sudo $cmd >> "$stdout_log" 2>> "$stderr_log" &
+        else
+            sudo -u "$user" $cmd >> "$stdout_log" 2>> "$stderr_log" &
+        fi
+        echo $! > "$pid_file"
+        if ! is_running; then
+            echo "Unable to start, see $stdout_log and $stderr_log"
+            exit 1
+        fi
+    fi
+    ;;
+    stop)
+    if is_running; then
+        echo -n "Stopping $name.."
+        kill `get_pid`
+        for i in {1..10}
+        do
+            if ! is_running; then
+                break
+            fi
 
-		if check_status -q; then
-			log_end_msg 0
-		else
-			log_failure_msg "check syslog for diagnostics."
-			log_end_msg 1
-			exit 1
-		fi
-		;;
-	stop)
-		log_daemon_msg "Stopping $DESC" "$NAME"
-		start-stop-daemon --stop --quiet --pidfile $MOVIMPID
-		log_end_msg $?
-		rm -f "$MOVIMPID"
-		;;
-	restart | force-reload)
-		test_config
-		$0 stop
-		sleep 2
-		$0 start
-		if [ "$?" != "0" ]; then
-			exit 1
-		fi
-		;;
-	status)
-		echo -n "Status of $DESC: "
-		check_status -v
-		exit "$?"
-		;;
-	*)
-		echo "Usage: $0 {start|stop|restart|force-reload|status}"
-		exit 1 
+            echo -n "."
+            sleep 1
+        done
+        echo
+
+        if is_running; then
+            echo "Not stopped; may still be shutting down or shutdown may have failed"
+            exit 1
+        else
+            echo "Stopped"
+            if [ -f "$pid_file" ]; then
+                rm "$pid_file"
+            fi
+        fi
+    else
+        echo "Not running"
+    fi
+    ;;
+    restart)
+    $0 stop
+    if is_running; then
+        echo "Unable to stop, will not attempt to start"
+        exit 1
+    fi
+    $0 start
+    ;;
+    status)
+    if is_running; then
+        echo "Running"
+    else
+        echo "Stopped"
+        exit 1
+    fi
+    ;;
+    *)
+    echo "Usage: $0 {start|stop|restart|status}"
+    exit 1
+    ;;
 esac
 
 exit 0

@@ -17,7 +17,6 @@ Current Movim version : 0.9 git2015-08-31
 - script/remove now delete 'movim' user only after Movim service is stopped.
 - script/update now updates php dependancies (composer update).
 - conf/movim.service now has a PID and a syslog identifier.
-- conf/movim.init now uses logger (syslog support) and is more reliable.
 - conf/nginx.conf : proxy_read_timeout and proxy_send_timeout removed (default is 60s)
 - conf/php-fpm.conf add timezone parameter.
 
