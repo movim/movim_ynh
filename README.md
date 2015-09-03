@@ -17,6 +17,7 @@ Current Movim version : 0.9 git2015-09-03
 - script/install now check if path is empty.
 - script/remove now delete /etc/php/fpm/pool.d/movim.conf (fix #8).
 - script/remove now delete 'movim' user only after Movim service is stopped.
+- script/remove now stop php5-fpm in order to remove Movim user
 - script/update now updates php dependancies (composer update).
 - conf/movim.service now has a PID and a syslog identifier.
 - conf/nginx.conf : proxy_read_timeout and proxy_send_timeout removed (default is 60s)

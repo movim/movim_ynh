@@ -5,6 +5,7 @@ db_name=movim
 root_pwd=$(sudo cat /etc/yunohost/mysql)
 
 #Stop service and remove init
+sudo service php5-fpm stop
 sudo /etc/init.d/movim stop
 sudo systemctl stop movim.service
 sudo systemctl disable movim.service
@@ -22,4 +23,4 @@ udo rm etc/php5/fpm/pool.d/movim.conf
 
 # Restarting services
 sudo service nginx reload
-sudo service php5-fpm restart
+sudo service php5-fpm start
