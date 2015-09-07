@@ -1,6 +1,6 @@
 [Unit]
 Description=Movim daemon
-After=nginx.service network.target local-fs.target
+After=nginx.service network.target local-fs.target mysql.service
 
 [Service]
 User=movim
