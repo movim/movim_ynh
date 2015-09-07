@@ -19,7 +19,7 @@ sudo userdel movim
 sudo rm -rf /var/www/movim
 domain=$(sudo yunohost app setting movim domain)
 sudo rm -f /etc/nginx/conf.d/$domain.d/movim.conf
-udo rm etc/php5/fpm/pool.d/movim.conf
+sudo rm etc/php5/fpm/pool.d/movim.conf
 
 # Restarting services
 sudo service nginx reload

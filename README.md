@@ -7,12 +7,12 @@ Warning: BETA.
 
 You need a valid SSL certificate to use Movim, auto-signed is not allowed.
 
-Current Movim version : 0.9 git2015-09-03
+Current Movim version : 0.9 git2015-09-07
 
 **Changelog**
 
 0.9b 2015-0
-- Update to Movim 0.9 git2015-09-03
+- Update to Movim 0.9 git2015-09-07
 - Add notes in README about public pods & whitelisting
 - script/install now check if path is empty.
 - script/remove now delete /etc/php/fpm/pool.d/movim.conf (fix #8).
