@@ -13,7 +13,6 @@ ul li {
 }
 
 ul > a {
-    max-width: 100%;
     display: block;
 }
 

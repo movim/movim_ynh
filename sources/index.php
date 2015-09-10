@@ -40,14 +40,9 @@
 define('DOCUMENT_ROOT', dirname(__FILE__));
 require_once(DOCUMENT_ROOT.'/bootstrap.php');
 
-try {
-    $bootstrap = new Bootstrap();
-    $bootstrap->boot();
-} catch(Exception $e) {
-    error_log($e->getMessage());
-    echo 'Oops, something went wrong, please check the log files';
-    return;
-}
+$bootstrap = new Bootstrap();
+
+$bootstrap->boot();
 
 $rqst = new FrontController();
 $rqst->handle();

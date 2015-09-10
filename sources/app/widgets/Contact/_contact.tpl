@@ -131,6 +131,14 @@
         </li>
         {/if}
 
+        {if="$contact->description != null && trim($contact->description) != ''"}
+        <li class="condensed block">
+            <span class="icon gray"><i class="zmdi zmdi-format-align-justify"></i></span>
+            <span>{$c->__('general.about')}</span>
+            <p class="all">{$contact->description}</p>
+        </li>
+        {/if}
+
         {if="$contact->mood != null"}
         {$moods = unserialize($contact->mood)}
         <li class="condensed block">
@@ -142,16 +150,7 @@
             </p>
         </li>
         {/if}
-
-        {if="$contact->description != null && trim($contact->description) != ''"}
-        <li class="condensed block large">
-            <span class="icon gray"><i class="zmdi zmdi-format-align-justify"></i></span>
-            <span>{$c->__('general.about')}</span>
-            <p class="all">{$contact->description}</p>
-        </li>
-        {/if}
     </ul>
-    <br />
 
     {if="$blog != null"}
         <ul class="active">
@@ -172,25 +171,26 @@
         </ul>
     {/if}
 
-    {$album = $contact->getAlbum()}
-    {if="$album"}
+    {if="$contact->tuneartist || $contact->tunetitle"}
     <ul class="flex">
         <li class="subheader block large">{$c->__('general.tune')}</li>
 
+        {$img_array = $c->getLastFM($contact)}
         <li class="
             block
             {if="$contact->tunetitle"}condensed{/if}
-            action
+            {if="isset($img_array[1]) && $img_array[1] != ''"} action{/if}
             ">
-            
-            <div class="action">
-                <a href="{$album->url}" target="_blank">
-                    <i class="zmdi zmdi-radio"></i>
-                </a>
-            </div>
+            {if="isset($img_array[1]) && $img_array[1] != ''"}
+                <div class="action">
+                    <a href="{$img_array[1]}" target="_blank">
+                        <i class="zmdi zmdi-radio"></i>
+                    </a>
+                </div>
+            {/if}
             <span class="icon bubble">
-                {if="isset($album->url)"}
-                    <img src="{$album->url}"/>
+                {if="isset($img_array[0]) && $img_array[0] != ''"}
+                    <img src="{$img_array[0]}"/>
                 {else}
                     <i class="zmdi zmdi-play-circle-fill"></i>
                 {/if}
@@ -203,6 +203,7 @@
                     {$contact->tunesource}
                 {/if}
             </span>
+
             {if="$contact->tunetitle"}
                 <p>{$contact->tunetitle}</p>
             {/if}

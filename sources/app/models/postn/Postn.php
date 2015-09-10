@@ -109,33 +109,33 @@ class Postn extends Model {
         else
             $entry = $item;
 
-        $this->__set('origin', $from);
+        $this->origin       = $from;
 
         if($node)
-            $this->__set('node', $node);
+            $this->node     = $node;
         else
-            $this->__set('node', (string)$item->attributes()->node);
+            $this->node     = (string)$item->attributes()->node;
 
-        $this->__set('nodeid', (string)$entry->attributes()->id);
+        $this->nodeid   = (string)$entry->attributes()->id;
 
         if($entry->entry->id)
-            $this->__set('nodeid', (string)$entry->entry->id);
+            $this->nodeid = (string)$entry->entry->id;
 
         // Get some informations on the author
         if($entry->entry->author->name)
-            $this->__set('aname', (string)$entry->entry->author->name);
+            $this->aname   = (string)$entry->entry->author->name;
         if($entry->entry->author->uri)
-            $this->__set('aid', substr((string)$entry->entry->author->uri, 5));
+            $this->aid     = substr((string)$entry->entry->author->uri, 5);
         if($entry->entry->author->email)
-            $this->__set('aemail', (string)$entry->entry->author->email);
+            $this->aemail     = (string)$entry->entry->author->email;
 
         // Non standard support
         if($entry->entry->source && $entry->entry->source->author->name)
-            $this->__set('aname', (string)$entry->entry->source->author->name);
+            $this->aname   = (string)$entry->entry->source->author->name;
         if($entry->entry->source && $entry->entry->source->author->uri)
-            $this->__set('aid', substr((string)$entry->entry->source->author->uri, 5));
+            $this->aid     = substr((string)$entry->entry->source->author->uri, 5);
 
-        $this->__set('title', (string)$entry->entry->title);
+        $this->title    = (string)$entry->entry->title;
 
         // Content
         if($entry->entry->summary && (string)$entry->entry->summary != '')
@@ -153,21 +153,22 @@ class Postn extends Model {
         $content = $summary.$content;
 
         if($entry->entry->updated)
-            $this->__set('updated', (string)$entry->entry->updated);
+            $this->updated   = (string)$entry->entry->updated;
         else
-            $this->__set('updated', gmdate(DATE_ISO8601));
+            $this->updated   = gmdate(DATE_ISO8601);
 
         if($entry->entry->published)
-            $this->__set('published', (string)$entry->entry->published);
+            $this->published = (string)$entry->entry->published;
         elseif($entry->entry->updated)
-            $this->__set('published', (string)$entry->entry->updated);
+            $this->published = (string)$entry->entry->updated;
         else
-            $this->__set('published', gmdate(DATE_ISO8601));
+            $this->published = gmdate(DATE_ISO8601);
 
         if($delay)
-            $this->__set('delay', $delay);
+            $this->delay     = $delay;
 
         $contentimg = $this->setAttachements($entry->entry->link);
+
 
         // Tags parsing
         if($entry->entry->category) {
@@ -182,24 +183,22 @@ class Postn extends Model {
         }
 
         if(!empty($this->tags))
-            $this->__set('tags', serialize($this->tags));
+            $this->tags = serialize($this->tags);
 
         if($contentimg != '')
             $content .= '<br />'.$contentimg;
 
         if(!isset($this->commentplace))
-            $this->__set('commentplace', $this->origin);
+            $this->commentplace = $this->origin;
 
-        $this->__set('content', trim($content));
-        //$this->__set('contentcleaned', prepareString(html_entity_decode($this->content)));
-        $purifier = new \HTMLPurifier();
-        $this->contentcleaned = $purifier->purify(html_entity_decode($this->content));
+        $this->content = trim($content);
+        $this->contentcleaned = prepareString(html_entity_decode($this->content));
 
         if($entry->entry->geoloc) {
             if($entry->entry->geoloc->lat != 0)
-                $this->__set('lat', (string)$entry->entry->geoloc->lat);
+                $this->lat = (string)$entry->entry->geoloc->lat;
             if($entry->entry->geoloc->lon != 0)
-                $this->__set('lon', (string)$entry->entry->geoloc->lon);
+                $this->lon = (string)$entry->entry->geoloc->lon;
         }
     }
 

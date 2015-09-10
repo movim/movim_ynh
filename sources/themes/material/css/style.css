@@ -152,13 +152,11 @@ body > nav.active {
     width: 45rem;
 }
 
-@media screen and (min-width: 1024px) {
-    body > div.dialog:not(:empty) ~ main,
-    body > div.dialog:not(:empty) ~ nav,
-    body > nav.active + main {
-        opacity: 0.5;
-        pointer-events: none;
-    }
+body > div.dialog:not(:empty) ~ main,
+body > div.dialog:not(:empty) ~ nav,
+body > nav.active + main {
+    opacity: 0.5;
+    pointer-events: none;
 }
 
 body > nav li { /* Little hack for the navbar */
@@ -229,7 +227,6 @@ main {
     background-color: white;
     -webkit-transition: opacity 0.3s ease-in-out;
     transition: opacity 0.3s ease-in-out;
-    transform: translateZ(0);
 }
 
 nav + main {
@@ -711,7 +708,6 @@ main section > div:first-child:nth-last-child(2) ~ div .actions.fixed > div:last
     width: 40rem;
     pointer-events: none;
     transition: opacity 0.2s ease, bottom 0.4s ease;
-    transform: translateX(0);
 }
 
 .snackbar p,
@@ -881,7 +877,6 @@ dl dd {
 .spinner:before,
 .spinner:after {
     transition: top .3s ease-in-out;
-    transform: translateX(0);
     content: '';
     position: absolute;
     left: calc(50% - 3.5rem);
@@ -895,8 +890,8 @@ dl dd {
 }
 
 .spinner.on:before {
-    animation: 1s spinner infinite linear;
-    -webkit-animation: 1s spinner 1s infinite linear;
+    animation: spinner 1s linear infinite;
+    -webkit-animation: spinner 1s linear infinite;
 }
 
 .spinner:before {
@@ -921,12 +916,10 @@ dl dd {
 }
 
 @keyframes spinner {
-    from { transform: rotate(0deg); }
     to {transform: rotate(360deg);}
 }
 
 @-webkit-keyframes spinner {
-    from { transform: rotate(0deg); }
     to {-webkit-transform: rotate(360deg);}
 }
 

@@ -12,10 +12,10 @@
                     </div>
                     
                     <input 
-                        class="button oppose color" 
+                        class="button flat oppose" 
                         type="submit" 
                         name="submit" 
-                        value="{$c->__('button.validate')}" />
+                        value="{$c->__('button.submit')}" />
             </form>
         </li>
     </ul>

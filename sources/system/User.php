@@ -53,8 +53,7 @@ class User {
             $this->config = $session->config;
             $lang = $this->getConfig('language');
             if(isset($lang)) {
-                $l = Locale::start();
-                $l->load($lang);
+                loadLanguage($lang);
             }
 
             $cd = new modl\CapsDAO;

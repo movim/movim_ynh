@@ -2,8 +2,6 @@
 
 namespace modl;
 
-use Respect\Validation\Validator;
-
 class Contact extends Model {
     public $jid;
 
@@ -160,36 +158,37 @@ class Contact extends Model {
     }
 
     public function set($vcard, $jid) {
-        $this->__set('jid', \echapJid($jid));
+        $this->jid = \echapJid($jid);
 
-        $validate_date = Validator::date('Y-m-d');
         if(isset($vcard->vCard->BDAY)
-        && $validate_date->validate($vcard->vCard->BDAY))
-            $this->__set('date', (string)$vcard->vCard->BDAY);
+        && (string)$vcard->vCard->BDAY != '')
+            $this->date = (string)$vcard->vCard->BDAY;
+        else
+            $this->date = null;
 
-        $this->__set('date', date(DATE_ISO8601, strtotime($this->date)));
+        $this->date = date(DATE_ISO8601, strtotime($this->date));
 
-        $this->__set('name', (string)$vcard->vCard->NICKNAME);
-        $this->__set('fn', (string)$vcard->vCard->FN);
-        $this->__set('url', (string)$vcard->vCard->URL);
+        $this->name = (string)$vcard->vCard->NICKNAME;
+        $this->fn = (string)$vcard->vCard->FN;
+        $this->url = (string)$vcard->vCard->URL;
 
-        $this->__set('gender', (string)$vcard->vCard->{'X-GENDER'});
-        $this->__set('marital', (string)$vcard->vCard->MARITAL->STATUS);
+        $this->gender = (string)$vcard->vCard->{'X-GENDER'};
+        $this->marital = (string)$vcard->vCard->MARITAL->STATUS;
 
-        $this->__set('email', (string)$vcard->vCard->EMAIL->USERID);
+        $this->email = (string)$vcard->vCard->EMAIL->USERID;
 
-        $this->__set('adrlocality', (string)$vcard->vCard->ADR->LOCALITY);
-        $this->__set('adrpostalcode', (string)$vcard->vCard->ADR->PCODE);
-        $this->__set('adrcountry', (string)$vcard->vCard->ADR->CTRY);
+        $this->adrlocality = (string)$vcard->vCard->ADR->LOCALITY;
+        $this->adrpostalcode = (string)$vcard->vCard->ADR->PCODE;
+        $this->adrcountry = (string)$vcard->vCard->ADR->CTRY;
 
         if(filter_var((string)$vcard->vCard->PHOTO, FILTER_VALIDATE_URL)) {
-            $this->__set('photobin', base64_encode(
-                requestUrl((string)$vcard->vCard->PHOTO, 1)));
+            $this->photobin = base64_encode(
+                requestUrl((string)$vcard->vCard->PHOTO, 1));
         } else {
-            $this->__set('photobin', (string)$vcard->vCard->PHOTO->BINVAL);
+            $this->photobin = (string)$vcard->vCard->PHOTO->BINVAL;
         }
 
-        $this->__set('description', (string)$vcard->vCard->DESC);
+        $this->description = (string)$vcard->vCard->DESC;
     }
 
     public function createThumbnails() {
@@ -251,32 +250,32 @@ class Contact extends Model {
     }
 
     public function setTune($stanza) {
-        $this->__set('tuneartist', (string)$stanza->items->item->tune->artist);
-        $this->__set('tunelenght', (int)$stanza->items->item->tune->lenght);
-        $this->__set('tunerating', (int)$stanza->items->item->tune->rating);
-        $this->__set('tunesource', (string)$stanza->items->item->tune->source);
-        $this->__set('tunetitle', (string)$stanza->items->item->tune->title);
-        $this->__set('tunetrack', (string)$stanza->items->item->tune->track);
+        $this->tuneartist = (string)$stanza->items->item->tune->artist;
+        $this->tunelenght = (int)$stanza->items->item->tune->lenght;
+        $this->tunerating = (int)$stanza->items->item->tune->rating;
+        $this->tunesource = (string)$stanza->items->item->tune->source;
+        $this->tunetitle  = (string)$stanza->items->item->tune->title;
+        $this->tunetrack  = (string)$stanza->items->item->tune->track;
     }
 
     public function setVcard4($vcard) {
-        $validate_date = Validator::date('Y-m-d');
-        if(isset($vcard->bday->date)
-        && $validate_date->validate($vcard->bday->date))
-            $this->__set('date', (string)$vcard->bday->date);
+        if(isset($vcard->bday->date))
+            $this->date    = (string)$vcard->bday->date;
+        if(empty($this->date))
+            $this->date    = null;
 
-        $this->__set('name', (string)$vcard->nickname->text);
-        $this->__set('fn', (string)$vcard->fn->text);
-        $this->__set('url', (string)$vcard->url->uri);
+        $this->name    = (string)$vcard->nickname->text;
+        $this->fn      = (string)$vcard->fn->text;
+        $this->url     = (string)$vcard->url->uri;
 
         if(isset($vcard->gender))
-            $this->__set('gender ', (string)$vcard->gender->sex->text);
+            $this->gender  = (string)$vcard->gender->sex->text;
         if(isset($vcard->marital))
-            $this->__set('marital', (string)$vcard->marital->status->text);
+            $this->marital = (string)$vcard->marital->status->text;
 
-        $this->__set('adrlocality', (string)$vcard->adr->locality);
-        $this->__set('adrcountry', (string)$vcard->adr->country);
-        $this->__set('adrpostalcode', (string)$vcard->adr->code);
+        $this->adrlocality     = (string)$vcard->adr->locality;
+        $this->adrcountry      = (string)$vcard->adr->country;
+        $this->adrpostalcode   = (string)$vcard->adr->code;
 
         if(isset($vcard->impp)) {
             foreach($vcard->impp->children() as $c) {
@@ -284,20 +283,21 @@ class Contact extends Model {
 
                 switch($key) {
                     case 'twitter' :
-                        $this->__set('twitter', str_replace('@', '', $value));
+                        $this->twitter = str_replace('@', '', $value);
                         break;
                     case 'skype' :
-                        $this->__set('skype', (string)$value);
+                        $this->skype = (string)$value;
                         break;
                     case 'ymsgr' :
-                        $this->__set('yahoo', (string)$value);
+                        $this->yahoo = (string)$value;
                         break;
                 }
             }
         }
 
-        $this->__set('email', (string)$vcard->email->text);
-        $this->__set('description', trim((string)$vcard->note->text));
+        $this->email           = (string)$vcard->email->text;
+
+        $this->description     = trim((string)$vcard->note->text);
     }
 
     public function getPlace() {
@@ -386,26 +386,6 @@ class Contact extends Model {
 
         if($this->marital != null && $this->marital != 'none') {
             return $marital[$this->marital];
-        }
-    }
-
-    function getAlbum()
-    {
-        $uri = str_replace(
-            ' ',
-            '%20',
-            'http://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=80c1aa3abfa9e3d06f404a2e781e38f9&artist='.
-                $this->tuneartist.
-                '&album='.
-                $this->tunesource.
-                '&format=json'
-            );
-
-        $json = json_decode(requestURL($uri, 2));
-
-        if($json->album) {
-            $json->album->url = $json->album->image[2]->{'#text'};
-            return $json->album;
         }
     }
 

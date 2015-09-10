@@ -1,4 +1,4 @@
-<div class="quote" cite="{$embed->url}">
+<q cite="{$embed->url}">
     <ul>
         <li>
             <span>
@@ -17,4 +17,4 @@
             </li>
         {/if}
     </ul>
-</div>
+</q>

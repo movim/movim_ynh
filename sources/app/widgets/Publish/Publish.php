@@ -157,18 +157,14 @@ class Publish extends WidgetBase
             }
 
             if($form->embed->value != '' && filter_var($form->embed->value, FILTER_VALIDATE_URL)) {
-                try {
-                    $embed = Embed\Embed::create($form->embed->value);
-                    $p->setLink($form->embed->value);
+                $embed = Embed\Embed::create($form->embed->value);
+                $p->setLink($form->embed->value);
 
-                    if($embed->type == 'photo') {
-                        $key = key($embed->images);
-                        $p->setImage($embed->images[0]['value'], $embed->title, $embed->images[0]['mime']);
-                    } else {
-                        $content .= $this->prepareEmbed($embed);
-                    }
-                } catch(Exception $e) {
-                    error_log($e->getMessage());
+                if($embed->type == 'photo') {
+                    $key = key($embed->images);
+                    $p->setImage($embed->images[0]['value'], $embed->title, $embed->images[0]['mime']);
+                } else {
+                    $content .= $this->prepareEmbed($embed);
                 }
             }
 
@@ -189,19 +185,15 @@ class Publish extends WidgetBase
             return;
         }
 
-        try {
-            $embed = Embed\Embed::create($url);
-            $html = $this->prepareEmbed($embed);
+        $embed = Embed\Embed::create($url);
+        $html = $this->prepareEmbed($embed);
 
-            if($embed->type == 'photo') {
-                RPC::call('movim_fill', 'gallery', $this->prepareGallery($embed));
-                RPC::call('movim_fill', 'preview', '');
-            } else {
-                RPC::call('movim_fill', 'preview', $html);
-                RPC::call('movim_fill', 'gallery', '');
-            }
-        } catch(Exception $e) {
-            error_log($e->getMessage());
+        if($embed->type == 'photo') {
+            RPC::call('movim_fill', 'gallery', $this->prepareGallery($embed));
+            RPC::call('movim_fill', 'preview', '');
+        } else {
+            RPC::call('movim_fill', 'preview', $html);
+            RPC::call('movim_fill', 'gallery', '');
         }
     }
 

@@ -72,8 +72,6 @@ class AdminMain extends WidgetBase
         $cd = new \Modl\ConfigDAO();
         $config = $cd->get();
 
-        $l = Locale::start();
-
         $this->view->assign('conf', $cd->get());
         $this->view->assign('logs',
             array(
@@ -98,6 +96,6 @@ class AdminMain extends WidgetBase
         }
 
         $this->view->assign('timezones', getTimezoneList());
-        $this->view->assign('langs', $l->getList());
+        $this->view->assign('langs', loadLangArray());
     }
 }
