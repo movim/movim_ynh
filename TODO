@@ -1,2 +1,1 @@
 - systemd Log to /var/log/movim/
-- write systemd service to /etc/systemd/system
