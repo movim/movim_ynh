@@ -2,4 +2,3 @@
 - Sysvinit script syslog
 - Log to /var/log/movim/
 - write systemd service to /etc/systemd/system
-- autostart movim.init

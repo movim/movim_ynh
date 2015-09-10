@@ -112,7 +112,7 @@ then
 else
 	sudo cp ../conf/movim.init /etc/init.d/movim
 	sudo chmod 755 /etc/init.d/movim
-	sudo update-rc.d movim defaults S90
+	sudo update-rc.d movim defaults
 	sudo /etc/init.d/movim start
 fi
 
