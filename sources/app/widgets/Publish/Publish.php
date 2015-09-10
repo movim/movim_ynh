@@ -29,6 +29,7 @@ class Publish extends WidgetBase
     function load()
     {
         $this->addjs('publish.js');
+        $this->addcss('publish.css');
         $this->registerEvent('pubsub_postpublish_handle', 'onPublish');
         $this->registerEvent('pubsub_testpostpublish_handle', 'onTestPublish');
         $this->registerEvent('pubsub_testpostpublish_error', 'onTestPublishError');
@@ -138,41 +139,47 @@ class Publish extends WidgetBase
     {
         RPC::call('Publish.disableSend');
 
-        if($form->content->value != '') {
-            $content = Markdown::defaultTransform($form->content->value);
+        if($form->title->value != '') {
 
             $p = new PostPublish;
             $p->setFrom($this->user->getLogin())
               ->setTo($form->to->value)
-              ->setContent($form->content->value)
+              ->setTitle($form->title->value)
               ->setNode($form->node->value);
               //->setLocation($geo)
               //->enableComments()
+            if($form->content->value != '') {
+                $p->setContent($form->content->value);
 
+                $content = Markdown::defaultTransform($form->content->value);
+                $p->setContentXhtml(rawurldecode($content));
+            }
+
+            // Still usefull ? Check line 44
             if($form->node->value == 'urn:xmpp:microblog:0') {
                 $p->enableComments();
             }
-            if($form->title->value != '') {
-                $p->setTitle($form->title->value);
-            }
 
             if($form->embed->value != '' && filter_var($form->embed->value, FILTER_VALIDATE_URL)) {
-                $embed = Embed\Embed::create($form->embed->value);
-                $p->setLink($form->embed->value);
+                try {
+                    $embed = Embed\Embed::create($form->embed->value);
+                    $p->setLink($form->embed->value);
 
-                if($embed->type == 'photo') {
-                    $key = key($embed->images);
-                    $p->setImage($embed->images[0]['value'], $embed->title, $embed->images[0]['mime']);
-                } else {
-                    $content .= $this->prepareEmbed($embed);
+                    if($embed->type == 'photo') {
+                        $key = key($embed->images);
+                        $p->setImage($embed->images[0]['value'], $embed->title, $embed->images[0]['mime']);
+                    } else {
+                        $content .= $this->prepareEmbed($embed);
+                    }
+                } catch(Exception $e) {
+                    error_log($e->getMessage());
                 }
             }
 
-            $p->setContentXhtml(rawurldecode($content))
-              ->request();
+            $p->request();
         } else {
             RPC::call('Publish.enableSend');
-            Notification::append(false, $this->__('publish.no_content'));
+            Notification::append(false, $this->__('publish.no_title'));
         }
     }
 
@@ -185,15 +192,19 @@ class Publish extends WidgetBase
             return;
         }
 
-        $embed = Embed\Embed::create($url);
-        $html = $this->prepareEmbed($embed);
+        try {
+            $embed = Embed\Embed::create($url);
+            $html = $this->prepareEmbed($embed);
 
-        if($embed->type == 'photo') {
-            RPC::call('movim_fill', 'gallery', $this->prepareGallery($embed));
-            RPC::call('movim_fill', 'preview', '');
-        } else {
-            RPC::call('movim_fill', 'preview', $html);
-            RPC::call('movim_fill', 'gallery', '');
+            if($embed->type == 'photo') {
+                RPC::call('movim_fill', 'gallery', $this->prepareGallery($embed));
+                RPC::call('movim_fill', 'preview', '');
+            } else {
+                RPC::call('movim_fill', 'preview', $html);
+                RPC::call('movim_fill', 'gallery', '');
+            }
+        } catch(Exception $e) {
+            error_log($e->getMessage());
         }
     }
 

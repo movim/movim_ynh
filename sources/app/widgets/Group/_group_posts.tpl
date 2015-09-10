@@ -20,11 +20,13 @@
                         <span class="icon bubble color {$value->node|stringToColor}">{$value->node|firstLetterCapitalize}</span>
                     {/if}
                     <h2>
-                        {if="$value->title != null"}
-                            {$value->title}
-                        {else}
-                            {$c->__('post.default_title')}
-                        {/if}
+                        <a href="{$c->route('news', $value->nodeid)}">
+                            {if="$value->title != null"}
+                                {$value->title}
+                            {else}
+                                {$c->__('post.default_title')}
+                            {/if}
+                        </a>
                     </h2>
                     <p>
                         {if="$value->getContact()->getTrueName() != ''"}
@@ -47,7 +49,7 @@
             <ul class="thin">
                 {if="isset($attachements.links)"}
                     {loop="$attachements.links"}
-                        {if="substr($value.href, 0, 5) != 'xmpp:'"}
+                        {if="substr($value.href, 0, 5) != 'xmpp:' && filter_var($value.href, FILTER_VALIDATE_URL)"}
                         <li>
                             <span class="icon small"><img src="http://icons.duckduckgo.com/ip2/{$value.url.host}.ico"/></span>
                             <a href="{$value.href}" class="alternate" target="_blank">
@@ -110,7 +112,9 @@
                         {/if}
                         <span class="info">{$value->published|strtotime|prepareDate}</span>
                         <span>
-                            {$value->getContact()->getTrueName()}
+                            <a href="{$c->route('contact', $value->getContact()->jid)}">
+                                {$value->getContact()->getTrueName()}
+                            </a>
                         </span>
                         <p class="all">
                             {$value->content}

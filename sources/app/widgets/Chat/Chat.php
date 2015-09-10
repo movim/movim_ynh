@@ -253,7 +253,7 @@ class Chat extends WidgetBase
         }
 
         $m->body      = rawurldecode($message);
-        $m->html      = prepareString($m->body, false, true);
+        //$m->html      = prepareString($m->body, false, true);
         $m->published = gmdate('Y-m-d H:i:s');
         $m->delivered = gmdate('Y-m-d H:i:s');
 
@@ -265,7 +265,7 @@ class Chat extends WidgetBase
         $p = new Publish;
         $p->setTo($to);
         //$p->setHTML($m->html);
-        $p->setContent(htmlspecialchars($m->body));
+        $p->setContent($m->body);
 
         if($muc) {
             $p->setMuc();
@@ -488,7 +488,10 @@ class Chat extends WidgetBase
         if(isset($message->html)) {
             $message->body = $message->html;
         } else {
-            $message->body = prepareString(htmlentities($message->body , ENT_COMPAT,'UTF-8'));
+            // We add some smileys...
+            $message->convertEmojis();
+            $message->addUrls();
+            //    $message->body = prepareString(htmlentities($message->body , ENT_COMPAT,'UTF-8'));
         }
 
         if($message->type == 'groupchat') {

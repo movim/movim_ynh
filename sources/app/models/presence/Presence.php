@@ -4,23 +4,23 @@ namespace Modl;
 
 class Presence extends Model {
     protected $id;
-    
+
     protected $session;
     protected $jid;
-    
+
     // General presence informations
     protected $resource;
     protected $value;
     protected $priority;
     protected $status;
-    
+
     // Client Informations
     protected $node;
     protected $ver;
-    
+
     // Delay - XEP 0203
     protected $delay;
-    
+
     // Last Activity - XEP 0256
     protected $last;
 
@@ -33,84 +33,84 @@ class Presence extends Model {
 
     // vcard-temp:x:update, not saved in the DB
     public $photo = false;
-    
+
     public function __construct() {
         $this->_struct = '
         {
-            "id" : 
+            "id" :
                 {"type":"string", "size":128, "mandatory":true },
-            "session" : 
+            "session" :
                 {"type":"string", "size":64, "mandatory":true, "key":true },
-            "jid" : 
+            "jid" :
                 {"type":"string", "size":64, "mandatory":true, "key":true },
-            "resource" : 
+            "resource" :
                 {"type":"string", "size":64, "key":true },
-            "value" : 
+            "value" :
                 {"type":"int",    "size":11, "mandatory":true },
-            "priority" : 
+            "priority" :
                 {"type":"int",    "size":11 },
-            "status" : 
+            "status" :
                 {"type":"text"},
-            "node" : 
+            "node" :
                 {"type":"string", "size":128 },
-            "ver" : 
+            "ver" :
                 {"type":"string", "size":128 },
-            "delay" : 
+            "delay" :
                 {"type":"date"},
-            "last" : 
+            "last" :
                 {"type":"int",    "size":11 },
-            "publickey" : 
+            "publickey" :
                 {"type":"text"},
-            "muc" : 
+            "muc" :
                 {"type":"int",    "size":1 },
-            "mucjid" : 
+            "mucjid" :
                 {"type":"string", "size":64 },
-            "mucaffiliation" : 
+            "mucaffiliation" :
                 {"type":"string", "size":32 },
-            "mucrole" : 
+            "mucrole" :
                 {"type":"string", "size":32 }
         }';
-        
+
         parent::__construct();
     }
-    
+
     public function setPresence($stanza) {
         $jid = explode('/',(string)$stanza->attributes()->from);
-        
+
         if($stanza->attributes()->to)
             $to = current(explode('/',(string)$stanza->attributes()->to));
         else
             $to = $jid[0];
 
-        $this->session = $to;
-        $this->jid = $jid[0];
+        $this->__set('session', $to);
+        $this->__set('jid', $jid[0]);
         if(isset($jid[1]))
-            $this->resource = $jid[1];
+            $this->__set('resource', $jid[1]);
         else
-            $this->resource = 'default';
-            
-        $this->status = (string)$stanza->status;
-        
+            $this->__set('resource', 'default');
+
+        $this->__set('status', (string)$stanza->status);
+
         if($stanza->c) {
-            $this->node = (string)$stanza->c->attributes()->node;
-            $this->ver = (string)$stanza->c->attributes()->ver;
+            $this->__set('node', (string)$stanza->c->attributes()->node);
+            $this->__set('ver', (string)$stanza->c->attributes()->ver);
         }
-        
+
         if($stanza->priority)
-            $this->priority = (string)$stanza->priority;
-        
+            $this->__set('priority', (string)$stanza->priority);
+
         if((string)$stanza->attributes()->type == 'error') {
-            $this->value = 6;    
+            $this->__set('value', 6);
         } elseif((string)$stanza->attributes()->type == 'unavailable') {
-            $this->value = 5;
+            $this->__set('value', 5);
         } elseif((string)$stanza->show == 'away') {
-            $this->value = 2;
+            $this->__set('value', 2);
         } elseif((string)$stanza->show == 'dnd') {
-            $this->value = 3;
+            $this->__set('value', 3);
         } elseif((string)$stanza->show == 'xa') {
-            $this->value = 4;
+            $this->__set('value', 4);
         } else {
-            $this->value = 1;
+            $this->__set('value', 1);
         }
 
         // Specific XEP
@@ -118,41 +118,41 @@ class Presence extends Model {
             foreach($stanza->children() as $name => $c) {
                 switch($c->attributes()->xmlns) {
                     case 'jabber:x:signed' :
-                        $this->publickey = (string)$c;
+                        $this->__set('publickey', (string)$c);
                         break;
                     case 'http://jabber.org/protocol/muc#user' :
-                        $this->muc             = true;
+                        $this->__set('muc            ', true);
                         if($c->item->attributes()->jid)
-                            $this->mucjid          = cleanJid((string)$c->item->attributes()->jid);
+                            $this->__set('mucjid', cleanJid((string)$c->item->attributes()->jid));
                         else
-                            $this->mucjid          = (string)$stanza->attributes()->from;
+                            $this->__set('mucjid', (string)$stanza->attributes()->from);
 
-                        $this->mucrole         = (string)$c->item->attributes()->role;
-                        $this->mucaffiliation  = (string)$c->item->attributes()->affiliation;
+                        $this->__set('mucrole', (string)$c->item->attributes()->role);
+                        $this->__set('mucaffiliation', (string)$c->item->attributes()->affiliation);
                         break;
                     case 'vcard-temp:x:update' :
-                        $this->photo = true;
+                        $this->__set('photo', true);
                         break;
                 }
             }
         }
-        
+
         if($stanza->delay) {
-            $this->delay = 
+            $this->__set('delay',
                         gmdate(
-                            'Y-m-d H:i:s', 
+                            'Y-m-d H:i:s',
                             strtotime(
                                 (string)$stanza->delay->attributes()->stamp
                                 )
                             )
-                        ;
+                        );
         }
-        
+
         if($stanza->query) {
-            $this->last = (int)$stanza->query->attributes()->seconds;
+            $this->__set('last', (int)$stanza->query->attributes()->seconds);
         }
     }
-    
+
     public function getPresence() {
         $txt = array(
                 1 => 'online',
@@ -162,7 +162,7 @@ class Presence extends Model {
                 5 => 'offline',
                 6 => 'server_error'
             );
-    
+
         $arr = array();
         $arr['jid'] = $this->jid;
         $arr['resource'] = $this->resource;
@@ -172,7 +172,7 @@ class Presence extends Model {
         $arr['status'] = $this->status;
         $arr['node'] = $this->node;
         $arr['ver'] = $this->ver;
-        
+
         return $arr;
     }
 

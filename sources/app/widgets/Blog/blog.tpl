@@ -93,17 +93,24 @@
                     </li>
                 </ul>
             </header>
+            {$attachements = $value->getAttachements()}
             <section>
                 <content>
+                    {if="strlen($value->contentcleaned) < 500 && isset($attachements.pictures)"}
+                        {loop="$attachements.pictures"}
+                            <a href="{$value.href}" class="alternate" target="_blank">
+                                <img class="big_picture" type="{$value.type}" src="{$value.href|urldecode}"/>
+                            </a>
+                        {/loop}
+                    {/if}
                     {$value->contentcleaned}
                 </content>
             </section>
             <footer>
-                {$attachements = $value->getAttachements()}
                 <ul class="middle divided spaced">
                     {if="isset($attachements.links)"}
                         {loop="$attachements.links"}
-                            {if="substr($value.href, 0, 5) != 'xmpp:'"}
+                            {if="substr($value.href, 0, 5) != 'xmpp:' && filter_var($value.href, FILTER_VALIDATE_URL)"}
                                 <li>
                                     <span class="icon">
                                         <img src="http://icons.duckduckgo.com/ip2/{$value.url.host}.ico"/>
@@ -132,7 +139,7 @@
                         {/loop}
                     {/if}
                 </ul>
-                {if="isset($attachements.pictures)"}
+                {if="strlen($value->contentcleaned) >= 500 && isset($attachements.pictures)"}
                     <ul class="flex middle">
                     {loop="$attachements.pictures"}
                         <li class="block pic">
