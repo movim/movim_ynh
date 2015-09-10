@@ -12,7 +12,6 @@ Current Movim version : 0.9 git2015-08-25
 **Changelog**
 
 0.9b 2015-0
-- Update to Movim 0.9 git2015-08-25
 - Add notes in README about public pods & whitelisting
 - script/install now check if path is empty.
 - script/remove now delete /etc/php/fpm/pool.d/movim.conf (fix #8).

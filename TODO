@@ -1,4 +1,3 @@
 - Check if Yes and yes are both working
 - Sysvinit script syslog
 - Log to /var/log/movim/
-- Movim must start AFTER mysql
