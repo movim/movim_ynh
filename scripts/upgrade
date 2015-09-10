@@ -51,7 +51,8 @@ sudo sed -i "s@YHPORT@$port@g" ../conf/movim.{service,init}
 initcheck=`pgrep -ox systemd`
 if [ "$initcheck" = "1" ];
 then
-	sudo cp ../conf/movim.service /lib/systemd/system/
+	sudo rm -f /lib/systemd/system/movim.service
+	sudo cp ../conf/movim.service /etc/systemd/system/
 	sudo systemctl daemon-reload
 else
 	sudo /etc/init.d/movim stop

@@ -1,4 +1,2 @@
-- Check if Yes and yes are both working
-- Sysvinit script syslog
-- Log to /var/log/movim/
+- systemd Log to /var/log/movim/
 - write systemd service to /etc/systemd/system

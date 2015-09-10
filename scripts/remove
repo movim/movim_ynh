@@ -10,8 +10,8 @@ sudo /etc/init.d/movim stop
 sudo systemctl stop movim.service
 sudo systemctl disable movim.service
 sudo update-rc.d -f movim remove
-sudo rm /etc/init.d/movim
-sudo rm /lib/systemd/system/movim.service
+sudo rm -f /etc/init.d/movim
+sudo rm -f /lib/systemd/system/movim.service
 
 #Drop database, movim files and user.
 mysql -u root -p$root_pwd -e "DROP DATABASE $db_name ; DROP USER $db_user@localhost ;"
