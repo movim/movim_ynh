@@ -90,8 +90,14 @@ class Postn extends Model {
             switch($c->attributes()->type) {
                 case 'html':
                 case 'xhtml':
-                    if($c->getName() == 'content') return $c->children()->asXML();
-                    else return (string)$c->asXML();
+                    $dom = new \DOMDocument('1.0', 'utf-8');
+                    $import = dom_import_simplexml($c->children());
+                    if($import == null) {
+                        $import = dom_import_simplexml($c);
+                    }
+                    $element = $dom->importNode($import, true);
+                    $dom->appendChild($element);
+                    return (string)$dom->saveHTML();
                     break;
                 case 'text':
                 default :
@@ -291,6 +297,14 @@ class Postn extends Model {
             return true;
         else
             return false;
+    }
+
+    public function getUUID() {
+        if(substr($this->nodeid, 10) == 'urn:uuid:') {
+            return $this->nodeid;
+        } else {
+            return 'urn:uuid:'.generateUUID($this->nodeid);
+        }
     }
 
     public function isMicroblog() {

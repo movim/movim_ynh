@@ -7,23 +7,23 @@ Warning: BETA.
 
 You need a valid SSL certificate to use Movim, auto-signed is not allowed.
 
-Current Movim version : 0.9 git2015-09-10
+Current Movim version : 0.9 git2015-09-22
 
 **Changelog**
 
 0.9b 2015-0
-- Update to upstream Movim 0.9 git2015-09-10
-- Add notes in README about public pods & whitelisting
+- Update to upstream Movim 0.9 git2015-09-22.
+- Add notes in README about public pods & whitelisting.
 - script/install now check if path is empty.
 - script/remove now delete /etc/php/fpm/pool.d/movim.conf (fix #8).
 - script/remove now delete 'movim' user only after Movim service is stopped.
-- script/remove now stop php5-fpm in order to remove Movim user
+- script/remove now stop php5-fpm in order to remove Movim user.
 - script/update now updates php dependancies (composer update).
 - conf/movim.service now has a PID and a syslog identifier.
 - conf/movim.service starts after mysql.service.
-- conf/movim.service is now located in /etc/systemd/system
+- conf/movim.service is now located in /etc/systemd/system.
 - conf/movim.init starts after mysql.
-- conf/nginx.conf : proxy_read_timeout and proxy_send_timeout removed (default is 60s)
+- conf/nginx.conf : proxy_read_timeout and proxy_send_timeout removed (default is 60s).
 - conf/php-fpm.conf add timezone parameter.
 
 0.8b 2015-08-24

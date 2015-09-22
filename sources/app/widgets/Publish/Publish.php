@@ -140,7 +140,6 @@ class Publish extends WidgetBase
         RPC::call('Publish.disableSend');
 
         if($form->title->value != '') {
-
             $p = new PostPublish;
             $p->setFrom($this->user->getLogin())
               ->setTo($form->to->value)
@@ -148,16 +147,17 @@ class Publish extends WidgetBase
               ->setNode($form->node->value);
               //->setLocation($geo)
               //->enableComments()
-            if($form->content->value != '') {
-                $p->setContent($form->content->value);
-
-                $content = Markdown::defaultTransform($form->content->value);
-                $p->setContentXhtml(rawurldecode($content));
-            }
 
             // Still usefull ? Check line 44
             if($form->node->value == 'urn:xmpp:microblog:0') {
                 $p->enableComments();
+            }
+
+            $content = $content_xhtml = '';
+
+            if($form->content->value != '') {
+                $content = $form->content->value;
+                $content_xhtml = Markdown::defaultTransform($content);
             }
 
             if($form->embed->value != '' && filter_var($form->embed->value, FILTER_VALIDATE_URL)) {
@@ -169,11 +169,19 @@ class Publish extends WidgetBase
                         $key = key($embed->images);
                         $p->setImage($embed->images[0]['value'], $embed->title, $embed->images[0]['mime']);
                     } else {
-                        $content .= $this->prepareEmbed($embed);
+                        $content_xhtml .= $this->prepareEmbed($embed);
                     }
                 } catch(Exception $e) {
                     error_log($e->getMessage());
                 }
+            }
+
+            if($content != '') {
+                $p->setContent($content);
+            }
+
+            if($content_xhtml != '') {
+                $p->setContentXhtml(rawurldecode($content_xhtml));
             }
 
             $p->request();
