@@ -1,0 +1,10 @@
+Checklist before pushing to master :
+
+* Installation 
+* Upgrade
+* Remove
+* Auto start on boot 
+* Movim login
+* Log output
+
+On Debian 8 x86_64 & Debian 7 armhf.
