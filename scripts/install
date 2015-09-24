@@ -8,6 +8,7 @@ password=$4
 language=$5
 public_site=$6
 port=$7
+timezone=`cat /etc/timezone`
 
 # Check domain/path availability
 sudo yunohost app checkurl $domain$path -a movim
@@ -29,7 +30,21 @@ fi
 
 # Check password not empty
 if [[ -z "$password" ]]; then
-printf "Error empty admin password, aborting"
+printf "Error empty admin password, installation aborted"
+   exit 1
+fi
+
+# Check timezone
+if [[ -z "$timezone" ]]; then
+printf "Could not detect Timezone, please check /etc/timezone. Installation aborted"
+  exit 1
+else
+printf "Detected Timezone $timezone \n"
+fi
+
+# Check path not empty
+if [[ -z "$path" ]]; then
+printf "Error path is empty, installation aborted"
    exit 1
 fi
 
@@ -75,7 +90,7 @@ sudo su -c "cd $final_path && php mud.php db set" movim
 sudo su -c "cd $final_path && php mud.php config locale:$language" movim
 sudo su -c "cd $final_path && php mud.php config loglevel:1" movim
 sudo su -c "cd $final_path && php mud.php config environment:production" movim
-sudo su -c "cd $final_path && php mud.php config timezone:`cat /etc/timezone`" movim
+sudo su -c "cd $final_path && php mud.php config timezone:$timezone" movim
 sudo su -c "cd $final_path && php mud.php config username:$admin" movim
 sudo su -c "cd $final_path && php mud.php config password:`echo -n $password | sha1sum | awk '{print $1}'`" movim
 if [ $public_site = "No" ]; 
@@ -91,7 +106,7 @@ sudo sed -i "s@YHPORT@$port@g" ../conf/movim.{service,init}
 initcheck=`pgrep -ox systemd`
 if [ "$initcheck" = "1" ];
 then
-	sudo cp ../conf/movim.service /lib/systemd/system/
+	sudo cp ../conf/movim.service /etc/systemd/system/
 	sudo systemctl enable movim.service
 	sudo systemctl start movim.service
 else
@@ -102,6 +117,7 @@ else
 fi
 
 # php-fpm configuration
+sed -i "s@YHTZ@$timezone@g" ../conf/php-fpm.conf
 sudo cp ../conf/php-fpm.conf /etc/php5/fpm/pool.d/movim.conf
 
 # Nginx configuration

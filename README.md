@@ -3,11 +3,28 @@ Movim for Yunohost.
 
 Movim is a decentralized social network, written in PHP and HTML5 and based on the XMPP standard protocol : https://movim.eu .
 
-Warning: BETA.
+Warning: BETA. *Next release should be 1.0RC*
 
-Current Movim version : 20150824.
+You need a "valid" (example: StartSSL) certificate to use Movim, auto-signed is not allowed.
+
+Current Movim version : 0.9 git2015-09-22
 
 **Changelog**
+
+0.9b 2015-09-24
+- Update to upstream Movim 0.9 git2015-09-22.
+- Add notes in README about public pods & whitelisting.
+- script/install now check if path is empty.
+- script/remove now delete /etc/php/fpm/pool.d/movim.conf (fix #8).
+- script/remove now delete 'movim' user only after Movim service is stopped.
+- script/remove now stop php5-fpm in order to remove Movim user.
+- script/update now updates php dependancies (composer update).
+- conf/movim.service now has a PID and a syslog identifier.
+- conf/movim.service starts after mysql.service.
+- conf/movim.service is now located in /etc/systemd/system.
+- conf/movim.init starts after mysql.
+- conf/nginx.conf : proxy_read_timeout and proxy_send_timeout removed (default is 60s).
+- conf/php-fpm.conf add timezone parameter.
 
 0.8b 2015-08-24
 - Added language selection : ar, de, es, it, ja, nl, ru
@@ -78,6 +95,13 @@ Username and password are definied during installation.
 
 * URL rewriting is disabled (experimental feature)
 * No SSO auto login
+
+**Public Pod & Whitelisting**
+
+* Public pod = Yes : anyone can connect in your Movim pod using its own JID
+* Public pod = No : Whitelist allows only JID from your Yunohost to login*
+
+If you want to allow more domains, connect to yourserver.yourdomain.org/movim/?q=admin then add domains in the whitelist.
 
 **Help**
 

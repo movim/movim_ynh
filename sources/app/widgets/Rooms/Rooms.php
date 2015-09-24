@@ -16,6 +16,7 @@ class Rooms extends WidgetBase
         $this->registerEvent('bookmark_set_handle', 'onBookmark');
         $this->registerEvent('presence_muc_handle', 'onConnected');
         $this->registerEvent('presence_unavailable_handle', 'onDisconnected');
+        $this->registerEvent('presence_muc_errorconflict', 'onConflict');
     }
 
     function onBookmark()
@@ -27,6 +28,11 @@ class Rooms extends WidgetBase
     function onConnected()
     {
         $this->refreshRooms();
+    }
+
+    function onConflict()
+    {
+        Notification::append(null, $this->__('chatrooms.conflict'));
     }
 
     function onDisconnected()
@@ -196,9 +202,9 @@ class Rooms extends WidgetBase
             array_push($arr,
                 array(
                     'type'      => 'conference',
-                    'name'      => $c->name,
+                    'name'      => htmlentities($c->name),
                     'autojoin'  => $c->autojoin,
-                    'nick'      => $c->nick,
+                    'nick'      => htmlentities($c->nick),
                     'jid'       => $c->conference));
         }
 
@@ -237,7 +243,22 @@ class Rooms extends WidgetBase
     {
         $view = $this->tpl();
         $cod = new \modl\ConferenceDAO();
-        $view->assign('conferences', $cod->getAll());
+
+        $list = $cod->getAll();
+
+        $connected = array();
+        
+        foreach($list as $key => $room) {
+            if($this->checkConnected($room->conference, $room->nick)) {
+                $room->connected = true;
+                array_push($connected, $room);
+                unset($list[$key]);
+            }
+        }
+
+        $list = array_merge($connected, $list);
+        
+        $view->assign('conferences', $list);
         $view->assign('room', $this->get('r'));
 
         return $view->draw('_rooms', true);

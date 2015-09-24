@@ -5,6 +5,15 @@ path=$(sudo yunohost app setting movim path)
 domain=$(sudo yunohost app setting movim domain)
 port=$(sudo yunohost app setting movim port)
 public_site=$(sudo yunohost app setting movim public_site)
+timezone=`cat /etc/timezone`
+
+# Check timezone
+if [[ -z "$timezone" ]]; then
+printf "Could not detect Timezone, please check /etc/timezone. Installation aborted"
+  exit 1
+else
+printf "Detected Timezone $timezone \n"
+fi
 
 # Install Movim files
 final_path=/var/www/movim
@@ -21,8 +30,7 @@ else
 fi
 
 # Update PHP dependencies
-sudo su -c "curl -sS https://getcomposer.org/installer | php -- --install-dir=$final_path" movim
-sudo su -c "cd $final_path && php composer.phar install" movim
+sudo su -c "cd $final_path && php composer.phar update" movim
 
 # Movim configuration
 sudo sed -i "s@/ws/@$path/ws/@g" $final_path/app/assets/js/movim_websocket.js
@@ -43,11 +51,9 @@ sudo sed -i "s@YHPORT@$port@g" ../conf/movim.{service,init}
 initcheck=`pgrep -ox systemd`
 if [ "$initcheck" = "1" ];
 then
-	sudo systemctl stop movim.service
-	sudo systemctl disable movim.service
-	sudo cp ../conf/movim.service /lib/systemd/system/
-	sudo systemctl enable movim.service
-	sudo systemctl start movim.service
+	sudo rm -f /lib/systemd/system/movim.service
+	sudo cp ../conf/movim.service /etc/systemd/system/
+	sudo systemctl daemon-reload
 else
 	sudo /etc/init.d/movim stop
 	sudo cp ../conf/movim.init /etc/init.d/movim
@@ -57,6 +63,7 @@ else
 fi
 
 # Update php-fpm configuration
+sed -i "s@YHTZ@$timezone@g" ../conf/php-fpm.conf
 sudo cp ../conf/php-fpm.conf /etc/php5/fpm/pool.d/movim.conf
 
 # Nginx configuration

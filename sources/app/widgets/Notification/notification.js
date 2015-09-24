@@ -75,6 +75,12 @@ var Notification = {
         Notification_ajaxCurrent(Notification.notifs_key);
     },
     toast : function(html) {
+        // Android notification
+        if(typeof Android !== 'undefined') {
+            Android.showToast(html);
+            return;
+        }
+
         target = document.getElementById('toast');
 
         if(target) {
@@ -88,7 +94,8 @@ var Notification = {
             3000);
     },
     snackbar : function(html, time) {
-        if(Notification.inhibed == true) return;
+        if(typeof Android !== 'undefined'
+        || Notification.inhibed == true) return;
 
         target = document.getElementById('snackbar');
 
@@ -102,11 +109,26 @@ var Notification = {
             },
             time*1000);
     },
-    desktop : function(title, body, picture) {
+    desktop : function(title, body, picture, action) {
         if(Notification.inhibed == true
-        || Notification.focused) return;
-console.log(DesktopNotification);
+        || Notification.focused
+        || typeof DesktopNotification === 'undefined') return;
+
+        console.log(Notification.focused);
+
         var notification = new DesktopNotification(title, { icon: picture, body: body });
+
+        if(action !== null) {
+            notification.onclick = function() {
+                window.location.href = action;
+            }
+        }
+    },
+    android : function(title, body, picture, action) {
+        if(typeof Android !== 'undefined') {
+            Android.showNotification(title, body, picture, action);
+            return;
+        }
     }
 }
 
@@ -133,6 +155,8 @@ document.onfocus = function() {
 
 
 window.addEventListener('load', function () {
+    if(typeof DesktopNotification === 'undefined') return;
+
     DesktopNotification.requestPermission(function (status) {
     // This allows to use Notification.permission with Chrome/Safari
     if(DesktopNotification.permission !== status) {

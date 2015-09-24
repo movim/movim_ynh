@@ -53,7 +53,8 @@ class User {
             $this->config = $session->config;
             $lang = $this->getConfig('language');
             if(isset($lang)) {
-                loadLanguage($lang);
+                $l = Movim\i18n\Locale::start();
+                $l->load($lang);
             }
 
             $cd = new modl\CapsDAO;

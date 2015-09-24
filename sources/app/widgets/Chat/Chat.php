@@ -72,20 +72,23 @@ class Chat extends WidgetBase
             && $message->type != 'groupchat') {
                 $avatar = $contact->getPhoto('s');
                 if($avatar == false) $avatar = null;
-                Notification::append('chat|'.$from, $contact->getTrueName(), $message->body, $avatar, 4);
+                Notification::append(
+                    'chat|'.$from,
+                    $contact->getTrueName(),
+                    $message->body,
+                    $avatar,
+                    4,
+                    $this->route('chat', $contact->jid)
+                );
             }
 
             RPC::call('movim_fill', $from.'_state', $contact->jid);
-        // If the message is from me
-        } /*else {
+        } else {
+            // If the message is from me we reset the notif counter
             $from = $message->jidto;
-            $contact = $cd->get();
-        }*
-
-        $me = $cd->get();
-        if($me == null) {
-            $me = new \Modl\Contact;
-        }*/
+            $n = new Notification;
+            $n->ajaxClear('chat|'.$from);
+        }
 
         if(!preg_match('#^\?OTR#', $message->body)) {
             RPC::call('Chat.appendMessage', $this->prepareMessage($message));
@@ -253,7 +256,7 @@ class Chat extends WidgetBase
         }
 
         $m->body      = rawurldecode($message);
-        $m->html      = prepareString($m->body, false, true);
+        //$m->html      = prepareString($m->body, false, true);
         $m->published = gmdate('Y-m-d H:i:s');
         $m->delivered = gmdate('Y-m-d H:i:s');
 
@@ -265,7 +268,7 @@ class Chat extends WidgetBase
         $p = new Publish;
         $p->setTo($to);
         //$p->setHTML($m->html);
-        $p->setContent(htmlspecialchars($m->body));
+        $p->setContent($m->body);
 
         if($muc) {
             $p->setMuc();
@@ -488,7 +491,10 @@ class Chat extends WidgetBase
         if(isset($message->html)) {
             $message->body = $message->html;
         } else {
-            $message->body = prepareString(htmlentities($message->body , ENT_COMPAT,'UTF-8'));
+            // We add some smileys...
+            $message->convertEmojis();
+            $message->addUrls();
+            //    $message->body = prepareString(htmlentities($message->body , ENT_COMPAT,'UTF-8'));
         }
 
         if($message->type == 'groupchat') {

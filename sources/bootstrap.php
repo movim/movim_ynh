@@ -81,7 +81,7 @@ class Bootstrap {
             DOCUMENT_ROOT.'/log/php.log',
             DOCUMENT_ROOT.'/cache/test.tmp',
         );
-        $errors=array();
+        $errors = array();
 
         if(!is_writable(DOCUMENT_ROOT))
             $errors[] = 'We\'re unable to write to folder '.DOCUMENT_ROOT.': check rights';
@@ -200,9 +200,6 @@ class Bootstrap {
     }
 
     private function loadSystem() {
-        // Loads up all system libraries.
-        require_once(SYSTEM_PATH . "/i18n/i18n.php");
-
         require_once(SYSTEM_PATH . "Session.php");
         require_once(SYSTEM_PATH . "Sessionx.php");
         require_once(SYSTEM_PATH . "Utils.php");
@@ -219,8 +216,8 @@ class Bootstrap {
         require_once(LIB_PATH . "XMPPtoForm.php");
 
         // SDPtoJingle and JingletoSDP lib :)
-        require_once(LIB_PATH . "SDPtoJingle.php");
-        require_once(LIB_PATH . "JingletoSDP.php");
+        //require_once(LIB_PATH . "SDPtoJingle.php");
+        //require_once(LIB_PATH . "JingletoSDP.php");
     }
 
     private function loadHelpers() {
@@ -241,7 +238,7 @@ class Bootstrap {
         require_once(SYSTEM_PATH . "widget/WidgetBase.php");
         require_once(SYSTEM_PATH . "widget/WidgetWrapper.php");
 
-        require_once(APP_PATH . "widgets/WidgetCommon/WidgetCommon.php");
+        //require_once(APP_PATH . "widgets/WidgetCommon/WidgetCommon.php");
         require_once(APP_PATH . "widgets/Notification/Notification.php");
     }
 
@@ -255,20 +252,23 @@ class Bootstrap {
         $cd = new \Modl\ConfigDAO();
         $config = $cd->get();
 
+        $l = Movim\i18n\Locale::start();
+
         if($user->isLogged()) {
             $lang = $user->getConfig('language');
             if(isset($lang)) {
-                loadLanguage($lang);
+                $l->load($lang);
             } else {
                 // Load default language.
-                loadLanguage($config->locale);
+                $l->load($config->locale);
             }
         }
-        else if(isset($_SERVER['HTTP_ACCEPT_LANGUAGE'])) {
-            loadLanguageAuto();
+        elseif(isset($_SERVER['HTTP_ACCEPT_LANGUAGE'])) {
+            $l->detect();
+            $l->loadPo();
         }
         else {
-            loadLanguage($config->locale);
+            $l->load($config->locale);
         }
     }
 
@@ -321,7 +321,7 @@ class Bootstrap {
         if(file_exists(DOCUMENT_ROOT.'/config/db.inc.php')) {
             require DOCUMENT_ROOT.'/config/db.inc.php';
         } else {
-            throw new MovimException('Cannot find config/db.inc.php file');
+            throw new Exception('Cannot find config/db.inc.php file');
         }
 
         $db->setConnectionArray($conf);
@@ -387,7 +387,7 @@ class Bootstrap {
         $s->load();
 
         $user = new User;
-        $db = modl\Modl::getInstance();
+        $db = Modl\Modl::getInstance();
         $db->setUser($user->getLogin());
     }
 }

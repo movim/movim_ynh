@@ -62,7 +62,8 @@
             {
                 "name": "public_site",
                 "ask": {
-                    "en": "Public pod ?"
+                    "en": "Public pod ? (see README on github)",
+		    "fr": "Pod public ? (voir README sur github)"
                 },
                 "choices": ["Yes", "No"],
                 "default": "No"
