@@ -81,7 +81,7 @@ Current Movim version : 0.9 git2015-09-22
 
     https://example.com/movim/?q=admin
 
-Username and password are definied during installation.
+Username and password are defined during installation.
 
 **Upgrade**
 
