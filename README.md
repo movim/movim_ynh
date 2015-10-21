@@ -3,13 +3,14 @@ Movim for Yunohost.
 
 Movim is a decentralized social network, written in PHP and HTML5 and based on the XMPP standard protocol : https://movim.eu .
 
-Warning: BETA. *Next release should be 1.0RC*
-
 You need a "valid" (example: StartSSL) certificate to use Movim, auto-signed is not allowed.
 
 Current Movim version : 0.9 git2015-09-22
 
 **Changelog**
+
+1.0 2015-10-21
+- Stable release
 
 0.9b 2015-09-24
 - Update to upstream Movim 0.9 git2015-09-22.
