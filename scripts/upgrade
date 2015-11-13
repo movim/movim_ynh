@@ -30,10 +30,14 @@ else
 fi
 
 # Update PHP dependencies
-sudo su -c "cd $final_path && php composer.phar update" movim
+sudo su -c "cd $final_path && php composer.phar config --global discard-changes true" movim # auto y
+sudo su -c "cd $final_path && php composer.phar update -n" movim # upgrade + quiet
 
 # Movim configuration
 sudo sed -i "s@/ws/@$path/ws/@g" $final_path/app/assets/js/movim_websocket.js
+
+# Upgrade db if necessary
+sudo su -c "cd $final_path && php mud.php db set" movim
 
 # Update xmppwhitelist if private
 if [ $public_site = "No" ];
