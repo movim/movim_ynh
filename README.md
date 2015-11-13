@@ -9,7 +9,7 @@ Current Movim version : 0.9 git2015-11-13
 
 **Changelog**
 
-1.1 ?
+1.1 2015-11-13
 - Update to Movim 0.9 git2015-11-13 to fix a bug (impossible to login)
 - conf/nginx.conf : fix #10 (timeout set to 4h)
 
