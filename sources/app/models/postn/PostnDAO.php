@@ -12,6 +12,7 @@ class PostnDAO extends SQL {
 
                     title           = :title,
                     content         = :content,
+                    contentraw      = :contentraw,
                     contentcleaned  = :contentcleaned,
 
                     commentplace    = :commentplace,
@@ -42,6 +43,7 @@ class PostnDAO extends SQL {
 
                 'title'             => $post->title,
                 'content'           => $post->content,
+                'contentraw'        => $post->contentraw,
                 'contentcleaned'    => $post->contentcleaned,
 
                 'commentplace'      => $post->commentplace,
@@ -81,6 +83,7 @@ class PostnDAO extends SQL {
 
                 title,
                 content,
+                contentraw,
                 contentcleaned,
 
                 commentplace,
@@ -108,6 +111,7 @@ class PostnDAO extends SQL {
 
                     :title,
                     :content,
+                    :contentraw,
                     :contentcleaned,
 
                     :commentplace,
@@ -135,6 +139,7 @@ class PostnDAO extends SQL {
 
                     'title'             => $post->title,
                     'content'           => $post->content,
+                    'contentraw'        => $post->contentraw,
                     'contentcleaned'    => $post->contentcleaned,
 
                     'commentplace'      => $post->commentplace,
@@ -229,8 +234,8 @@ class PostnDAO extends SQL {
                 and postn.node = :node
             order by postn.published desc';
 
-        if($limitr)
-            $this->_sql = $this->_sql.' limit '.$limitr.' offset '.$limitf;
+        if($limitr !== false)
+            $this->_sql = $this->_sql.' limit '.(int)$limitr.' offset '.(int)$limitf;
 
         $this->prepare(
             'Postn',
@@ -391,8 +396,8 @@ class PostnDAO extends SQL {
                 and privacy.value = 1
             order by postn.published desc';
 
-        if($limitr)
-            $this->_sql = $this->_sql.' limit '.$limitr.' offset '.$limitf;
+        if($limitr !== false)
+            $this->_sql = $this->_sql.' limit '.(int)$limitr.' offset '.(int)$limitf;
 
         $this->prepare(
             'Postn',

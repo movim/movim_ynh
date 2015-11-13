@@ -60,6 +60,13 @@
 
     <section>
         <content>
+            {if="$post->isShort() && isset($attachements.pictures)"}
+                {loop="$attachements.pictures"}
+                    <a href="{$value.href}" class="alternate" target="_blank">
+                        <img class="big_picture" type="{$value.type}" src="{$value.href|urldecode}"/>
+                    </a>
+                {/loop}
+            {/if}
             {$post->contentcleaned}
         </content>
     </section>
@@ -71,7 +78,7 @@
                     {if="substr($value.href, 0, 5) != 'xmpp:' && filter_var($value.href, FILTER_VALIDATE_URL)"}
                         <li>
                             <span class="icon">
-                                <img src="http://icons.duckduckgo.com/ip2/{$value.url.host}.ico"/>
+                                <img src="https://icons.duckduckgo.com/ip2/{$value.url.host}.ico"/>
                             </span>
                             <a href="{$value.href}" class="alternate" target="_blank">
                                 <span>{$value.href|urldecode}</span>
@@ -97,7 +104,7 @@
                 {/loop}
             {/if}
         </ul>
-        {if="isset($attachements.pictures)"}
+        {if="!$post->isShort() && isset($attachements.pictures)"}
             <ul class="flex middle">
             {loop="$attachements.pictures"}
                 <li class="block pic">
@@ -133,13 +140,7 @@
                         <i class="zmdi zmdi-portable-wifi"></i>
                     </span>
                     <span>
-                        <a target="_blank" href="
-                            {if="$post->isMicroblog()"}
-                                {$c->route('blog', array($post->origin))}
-                            {else}
-                                {$c->route('grouppublic', array($post->origin, $post->node))}
-                            {/if}
-                            ">
+                        <a target="_blank" href="{$post->getPublicUrl()}">
                             {$c->__('post.public')}
                         </a>
                     </span>

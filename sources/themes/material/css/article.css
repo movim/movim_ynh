@@ -50,7 +50,8 @@ article section content ol li {
     line-height: 3rem;
     padding-left: 2rem;
     list-style-position: inside;
-    min-height: 4rem;
+    min-height: 3rem;
+    font-weight: 300;
     margin: 1rem auto;
 }
 
@@ -113,6 +114,10 @@ article section content div.quote li {
     flex: 1 25%;
     list-style-type: none;
     padding-left: 0;
+}
+
+article section content div.quote ul li > * {
+    margin-right: 1rem;
 }
 
 article section content div.quote li:first-child {

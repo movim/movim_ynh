@@ -156,7 +156,6 @@ class Chat extends WidgetBase
         $html = $view->draw('_chat_state', true);
 
         RPC::call('movim_fill', $jid.'_state', $html);
-        //RPC::call('MovimTpl.scrollPanel');
     }
 
     /**
@@ -194,8 +193,8 @@ class Chat extends WidgetBase
 
             Header::fill($header);
             RPC::call('movim_fill', 'chat_widget', $html);
-            RPC::call('MovimTpl.scrollPanel');
             RPC::call('MovimTpl.showPanel');
+            RPC::call('Chat.focus');
 
             $this->prepareMessages($jid);
         }
@@ -215,8 +214,8 @@ class Chat extends WidgetBase
 
         Header::fill($header);
         RPC::call('movim_fill', 'chat_widget', $html);
-        RPC::call('MovimTpl.scrollPanel');
         RPC::call('MovimTpl.showPanel');
+        RPC::call('Chat.focus');
 
         $this->prepareMessages($room, true);
     }
@@ -484,6 +483,7 @@ class Chat extends WidgetBase
 
         RPC::call('Chat.setBubbles', $left, $right, $room);
         RPC::call('Chat.appendMessages', $messages);
+        RPC::call('MovimTpl.scrollPanel');
     }
 
     function prepareMessage(&$message)
@@ -526,6 +526,11 @@ class Chat extends WidgetBase
         $validate_jid = Validator::string()->noWhitespace()->length(6, 60);
         if(!$validate_jid->validate($jid)) return false;
         else return true;
+    }
+
+    function getSmileyPath($id)
+    {
+        return getSmileyPath($id);
     }
 
     function display()

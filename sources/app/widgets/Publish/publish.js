@@ -31,7 +31,7 @@ var Publish = {
     headerBack: function(server, node, ok) {
         // We check if the form is filled
         if(Publish.checkFilled() && ok == false) {
-            Publish_ajaxFormFilled('{$server}', '{$node}');
+            Publish_ajaxFormFilled(server, node);
             return;
         }
 
@@ -42,6 +42,7 @@ var Publish = {
             MovimTpl.hidePanel();
         } else {
             Group_ajaxGetItems(server, node);
+            Group_ajaxGetAffiliations(server, node);
         }
     },
 
@@ -59,6 +60,12 @@ var Publish = {
         }
 
         return false;
+    },
+
+    initEdit: function() {
+        Publish.enableContent();
+        Publish_ajaxEmbedTest(document.querySelector('#content_link input').value);
+        movim_textarea_autoheight(document.querySelector('#content_field textarea'));
     }
 }
 

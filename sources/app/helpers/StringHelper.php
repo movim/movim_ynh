@@ -50,9 +50,9 @@ class MovimEmoji
 function addUrls($string, $preview = false) {
     // Add missing links
     return preg_replace_callback(
-        "/([\w\"'>]+\:\/\/[\w-?&;#+%:~=\.\/\@]+[\w\/])/", function ($match) use($preview) {
+        "/([\w\"'>]+\:\/\/[\w-?'&;#+,%:~=\.\/\@]+)/u", function ($match) use($preview) {
             if(!in_array(substr($match[0], 0, 1), array('>', '"', '\''))) {
-		$content = $match[0];
+                $content = $match[0];
 
                 if($preview) {
                     try {
@@ -258,7 +258,7 @@ function sizeToCleanSize($size)
 {
     $units = array( 'B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB');
     $power = $size > 0 ? floor(log($size, 1024)) : 0;
-    return number_format($size / pow(1024, $power), 2, '.', ',') . ' ' . $units[$power];
+    return number_format($size / pow(1024, $power), 7, '.', ',') . ' ' . $units[$power];
 }
 
 /**
@@ -306,6 +306,50 @@ function stringToColor($string) {
     } else {
         return 'orange';
     }
+}
+
+/**
+ * Strip tags and add a whitespace
+ * @param string
+ * @return string
+ */
+function stripTags($string)
+{
+    return strip_tags(preg_replace('/(<\/[^>]+?>)(<[^>\/][^>]*?>)/', '$1 $2', $string));
+}
+
+/**
+ * Purify a string
+ * @param string
+ * @return string
+ */
+function purifyHTML($string)
+{
+    $config = \HTMLPurifier_Config::createDefault();
+    $config->set('HTML.Doctype', 'HTML 4.01 Transitional');
+    $config->set('Cache.SerializerPath', '/tmp');
+    $config->set('HTML.DefinitionID', 'html5-definitions'); 
+    $config->set('HTML.DefinitionRev', 1);
+    if ($def = $config->maybeGetRawHTMLDefinition()) {
+        $def->addElement('video', 'Block', 'Optional: (source, Flow) | (Flow, source) | Flow', 'Common', array(
+          'src' => 'URI',
+          'type' => 'Text',
+          'width' => 'Length',
+          'height' => 'Length',
+          'poster' => 'URI',
+          'preload' => 'Enum#auto,metadata,none',
+          'controls' => 'Bool',
+        ));
+        $def->addElement('audio', 'Block', 'Optional: (source, Flow) | (Flow, source) | Flow', 'Common', array(
+          'src' => 'URI',
+          'preload' => 'Enum#auto,metadata,none',
+          'muted' => 'Bool',
+          'controls' => 'Bool',
+        ));
+    }
+
+    $purifier = new \HTMLPurifier($config);
+    return $purifier->purify($string);
 }
 
 /**

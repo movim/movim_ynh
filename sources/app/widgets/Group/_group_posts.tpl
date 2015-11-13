@@ -42,6 +42,13 @@
         </header>
         <section>
             <content>
+                {if="$value->isShort() && isset($attachements.pictures)"}
+                    {loop="$attachements.pictures"}
+                        <a href="{$value.href}" class="alternate" target="_blank">
+                            <img class="big_picture" type="{$value.type}" src="{$value.href|urldecode}"/>
+                        </a>
+                    {/loop}
+                {/if}
                 {$value->contentcleaned}
             </content>
         </section>
@@ -51,7 +58,7 @@
                     {loop="$attachements.links"}
                         {if="substr($value.href, 0, 5) != 'xmpp:' && filter_var($value.href, FILTER_VALIDATE_URL)"}
                         <li>
-                            <span class="icon small"><img src="http://icons.duckduckgo.com/ip2/{$value.url.host}.ico"/></span>
+                            <span class="icon small"><img src="https://icons.duckduckgo.com/ip2/{$value.url.host}.ico"/></span>
                             <a href="{$value.href}" class="alternate" target="_blank">
                                 <span>{$value.href|urldecode}</span>
                             </a>
@@ -76,7 +83,7 @@
                     {/loop}
                 {/if}
             </ul>
-            {if="isset($attachements.pictures)"}
+            {if="!$value->isShort() && isset($attachements.pictures)"}
                 <ul class="flex middle">
                 {loop="$attachements.pictures"}
                     <li class="block pic">
@@ -88,6 +95,35 @@
                         </a>
                     </li>
                 {/loop}
+                </ul>
+            {/if}
+            {if="$value->isMine()"}
+                <ul class="middle">
+                    <li class="action">
+                        <form>
+                            <div class="action">
+                                <div class="checkbox">
+                                    <input
+                                        type="checkbox"
+                                        id="privacy_{$value->nodeid}"
+                                        name="privacy_{$value->nodeid}"
+                                        {if="$value->isPublic()"}
+                                            checked
+                                        {/if}
+                                        onclick="Group_ajaxTogglePrivacy('{$value->nodeid}')">
+                                    <label for="privacy_{$value->nodeid}"></label>
+                                </div>
+                            </div>
+                        </form>
+                        <span class="icon gray">
+                            <i class="zmdi zmdi-portable-wifi"></i>
+                        </span>
+                        <span>
+                            <a target="_blank" href="{$value->getPublicUrl()}">
+                                {$c->__('post.public')}
+                            </a>
+                        </span>
+                    </li>
                 </ul>
             {/if}
         </footer>
@@ -117,7 +153,7 @@
                             </a>
                         </span>
                         <p class="all">
-                            {$value->content}
+                            {$value->contentraw}
                         </p>
                     </li>
                 {/loop}

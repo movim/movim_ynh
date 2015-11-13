@@ -72,6 +72,9 @@ class Contact extends WidgetBase
         $a = new Moxl\Xec\Action\Avatar\Get;
         $a->setTo(echapJid($jid))->request();
 
+        $v = new Moxl\Xec\Action\Vcard\Get;
+        $v->setTo(echapJid($jid))->request();
+
         $r = new Get;
         $r->setTo(echapJid($jid))->request();
     }
@@ -204,10 +207,12 @@ class Contact extends WidgetBase
 
         if($c == null
         || $c->created == null
-        || $c->isEmpty()
+        //|| $c->isEmpty()
         || $c->isOld()) {
-            $c = new \Modl\Contact;
-            $c->jid = $jid;
+            if($c == null) {
+                $c = new \Modl\Contact;
+                $c->jid = $jid;
+            }
             $this->ajaxRefreshVcard($jid);
         }
 
@@ -217,7 +222,9 @@ class Contact extends WidgetBase
 
         $pd = new \Modl\PostnDAO;
         $gallery = $pd->getGallery($jid);
-        $blog    = $pd->getPublic($jid, 'urn:xmpp:microblog:0', 1, 0);
+        $blog    = $pd->getPublic($jid, 'urn:xmpp:microblog:0', 0, 4);
+
+        $presencestxt = getPresencesTxt();
 
         if(isset($c)) {
             $view->assign('mood', getMood());
@@ -233,6 +240,10 @@ class Contact extends WidgetBase
 
                 $cad = new \Modl\CapsDAO();
                 $caps = $cad->get($node);
+
+                if($cr->value != null) {
+                    $view->assign('presence', $presencestxt[$cr->value]);
+                }
 
                 if(
                     isset($caps)

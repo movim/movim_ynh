@@ -1,10 +1,16 @@
-{if="!BROWSER_COMP"}
-    <div class="message warning">
-        {$c->__('error.too_old')}
-    </div>
-{else}
 <div id="login_widget">
     <div id="sessions" class="dialog actions"></div>
+
+    {if="isset($httpAuthUser)"}
+        <script type="text/javascript">
+        MovimWebsocket.attach(function() {
+            MovimWebsocket.connection.register('{$httpAuthHost}');
+        });
+        MovimWebsocket.register(function() {
+            Login_ajaxHTTPLogin('{$httpAuthUser}', '{$httpAuthPassword}');
+        });
+        </script>
+    {/if}
 
     <div id="form" class="dialog">
         <section>
@@ -78,5 +84,3 @@
 <div id="error_websocket" class="snackbar">
     {$c->__('error.websocket')}
 </div>
-
-{/if}

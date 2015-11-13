@@ -2,6 +2,8 @@
 
 namespace Modl;
 
+use Respect\Validation\Validator;
+
 class Postn extends Model {
     public $origin;         // Where the post is comming from (jid or server)
     public $node;           // microblog or pubsub
@@ -13,6 +15,7 @@ class Postn extends Model {
 
     public $title;          //
     public $content;        // The content
+    public $contentraw;     // The raw content
     public $contentcleaned; // The cleanned content
 
     public $commentplace;
@@ -53,6 +56,8 @@ class Postn extends Model {
             "title" :
                 {"type":"text" },
             "content" :
+                {"type":"text" },
+            "contentraw" :
                 {"type":"text" },
             "contentcleaned" :
                 {"type":"text" },
@@ -100,6 +105,10 @@ class Postn extends Model {
                     return (string)$dom->saveHTML();
                     break;
                 case 'text':
+                    if(trim($c) != '') {
+                        $this->__set('contentraw', trim($c));
+                    }
+                    break;
                 default :
                     $content = (string)$c;
                     break;
@@ -197,9 +206,8 @@ class Postn extends Model {
             $this->__set('commentplace', $this->origin);
 
         $this->__set('content', trim($content));
-        //$this->__set('contentcleaned', prepareString(html_entity_decode($this->content)));
-        $purifier = new \HTMLPurifier();
-        $this->contentcleaned = $purifier->purify(html_entity_decode($this->content));
+
+        $this->contentcleaned = purifyHTML(html_entity_decode($this->content));
 
         if($entry->entry->geoloc) {
             if($entry->entry->geoloc->lat != 0)
@@ -258,6 +266,7 @@ class Postn extends Model {
                             array_push($attachements['files'], $l);
                         }
                         break;
+                    case 'related' :
                     case 'alternate' :
                         array_push($attachements['links'], array('href' => $l['href'], 'url' => parse_url($l['href'])));
                         break;
@@ -272,6 +281,26 @@ class Postn extends Model {
         return $attachements;
     }
 
+    public function getAttachement()
+    {
+        $attachements = $this->getAttachements();
+        if(isset($attachements['pictures'])) {
+            return $attachements['pictures'][0];
+        }
+        if(isset($attachements['files'])) {
+            return $attachements['files'][0];
+        }
+        if(isset($attachements['links'])) {
+            foreach($attachements['links'] as $link) {
+                if(Validator::url()->validate($link['href'])) {
+                    return $link;
+                }
+            }
+            return false;
+        }
+        return false;
+    }
+
     public function getPicture()
     {
         $attachements = $this->getAttachements();
@@ -281,7 +310,8 @@ class Postn extends Model {
         }
     }
 
-    public function getPlace() {
+    public function getPlace()
+    {
         if(isset($this->lat, $this->lon) && $this->lat != '' && $this->lon != '') {
             return true;
         }
@@ -289,7 +319,8 @@ class Postn extends Model {
             return false;
     }
 
-    public function isMine() {
+    public function isMine()
+    {
         $user = new \User();
 
         if($this->aid == $user->getLogin()
@@ -299,7 +330,8 @@ class Postn extends Model {
             return false;
     }
 
-    public function getUUID() {
+    public function getUUID()
+    {
         if(substr($this->nodeid, 10) == 'urn:uuid:') {
             return $this->nodeid;
         } else {
@@ -307,11 +339,39 @@ class Postn extends Model {
         }
     }
 
-    public function isMicroblog() {
-        if($this->node == "urn:xmpp:microblog:0")
+    public function isMicroblog()
+    {
+        if($this->node == "urn:xmpp:microblog:0") {
             return true;
-        else
+        } else {
             return false;
+        }
+    }
+
+    public function isEditable()
+    {
+        return ($this->contentraw != null);
+    }
+
+    public function isShort()
+    {
+        return (strlen($this->contentcleaned) < 500);
+    }
+
+    public function getPublicUrl()
+    {
+        if($this->isMicroblog()) {
+            return \Route::urlize('blog', array($this->origin));
+        } else {
+            return \Route::urlize('grouppublic', array($this->origin, $this->node));
+        }
+    }
+
+    public function isPublic() {
+        if(isset($this->privacy) && $this->privacy) {
+            return true;
+        }
+        return false;
     }
 }
 

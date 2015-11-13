@@ -15,7 +15,6 @@
 
 class RPC
 {
-    protected static $instance;
     protected static $funcalls;
 
     public static function call($funcname)

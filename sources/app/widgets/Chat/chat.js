@@ -15,7 +15,14 @@ var Chat = {
         var text = n.value;
         n.value = "";
         n.focus();
+        movim_textarea_autoheight(n);
         Chat_ajaxSendMessage(jid, encodeURIComponent(text), muc);
+    },
+    focus: function()
+    {
+        if(document.documentElement.clientWidth > 1024) {
+            document.querySelector('#chat_textarea').focus();
+        }
     },
     appendTextarea: function(value)
     {
@@ -35,18 +42,18 @@ var Chat = {
         var div = document.createElement('div');
 
         div.innerHTML = left;
-        Chat.left = div.firstChild;
+        Chat.left = div.firstChild.cloneNode(true);
         div.innerHTML = right;
-        Chat.right = div.firstChild;
+        Chat.right = div.firstChild.cloneNode(true);
         div.innerHTML = room;
-        Chat.room = div.firstChild;
+        Chat.room = div.firstChild.cloneNode(true);
     },
     appendMessages : function(messages) {
         if(messages) {
-	    for(var i = 0, len = messages.length; i < len; ++i ) {
-                Chat.appendMessage(messages[i]);
-            }
-	}
+            for(var i = 0, len = messages.length; i < len; ++i ) {
+                    Chat.appendMessage(messages[i]);
+                }
+        }
     },
     appendMessage : function(message) {
         if(message.body == '') return;
@@ -79,10 +86,10 @@ var Chat = {
             bubble.querySelector('span.user').innerHTML = message.resource;
             var conversation = document.getElementById(id);
             if(conversation) {
-		conversation.appendChild(bubble);
-	    }
+                conversation.appendChild(bubble);
+            }
 
-	    bubble.querySelector('div').className = '';
+            bubble.querySelector('div').className = '';
         } else if(Chat.left != null) {
             if(message.session == message.jidfrom) {
                 bubble = Chat.right.cloneNode(true);
@@ -114,6 +121,8 @@ var Chat = {
 
                 movim_append(id, bubble.outerHTML);
                 bubble.querySelector('div.bubble').className = 'bubble';
+
+                if(bubble.className.indexOf('oppose') > -1) MovimTpl.scrollPanel();
             }
         }
 
@@ -126,6 +135,7 @@ MovimWebsocket.attach(function() {
     if(jid) {
         MovimTpl.showPanel();
         Chat_ajaxGet(jid);
+        Notification.current('chat|' + jid);
     }
 });
 

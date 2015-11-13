@@ -10,14 +10,21 @@
 <div>
     {if="$post->isMine()"}
         <ul class="active">
-            <li onclick="Post_ajaxDelete('{$post->origin}', '{$post->node}', '{$post->nodeid}')">
+            {if="$post->isEditable()"}
+                <li onclick="Publish_ajaxCreate('{$post->origin}', '{$post->node}', '{$post->nodeid}')" title="{$c->__('button.edit')}">
+                    <span class="icon">
+                        <i class="zmdi zmdi-edit"></i>
+                    </span>
+                </li>
+            {/if}
+            <li onclick="Post_ajaxDelete('{$post->origin}', '{$post->node}', '{$post->nodeid}')" title="{$c->__('button.delete')}">
                 <span class="icon">
                     <i class="zmdi zmdi-delete"></i>
                 </span>
             </li>
         </ul>
     {/if}
-    <div class="return active {if="$post->isMine()"}r1{/if}" onclick="MovimTpl.hidePanel(); Post_ajaxClear();">
+    <div class="return active {if="$post->isMine()"}{if="$post->isEditable()"}r2{else}r1{/if}{/if}" onclick="MovimTpl.hidePanel(); Post_ajaxClear();">
         <span id="back" class="icon"><i class="zmdi zmdi-arrow-back"></i></span>
         <h2>
             {if="$post != null"}

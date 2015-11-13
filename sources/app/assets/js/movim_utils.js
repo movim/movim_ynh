@@ -116,9 +116,20 @@ function movim_form_to_json(formname) {
  * @param DOMElement textbox
  */
 function movim_textarea_autoheight(textbox) {
-    if(textbox != null ) {
-        textbox.style.height = 0;
-        textbox.style.height = textbox.scrollHeight +"px";
+    if(textbox != null) {
+        var val = textbox.value;
+        val = val.replace(/\n/g, '<br>');
+        var hidden = document.querySelector('#hiddendiv');
+        hidden.innerHTML = val + '<br/>';
+
+        textboxStyle = window.getComputedStyle(textbox);
+
+        hidden.style.paddingTop = textboxStyle.paddingTop;
+        hidden.style.paddingBottom = textboxStyle.paddingBottom;
+        hidden.style.width = textboxStyle.width;
+        hidden.style.fontSize = textboxStyle.fontSize;
+
+        textbox.style.height = hidden.scrollHeight+"px";
     }
 }
 
