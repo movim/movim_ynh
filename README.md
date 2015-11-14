@@ -9,7 +9,7 @@ Current Movim version : 0.9 git2015-11-13
 
 **Changelog**
 
-1.2 2015-11-13
+1.2 2015-11-14
 - script/install : fix #11 (composer prompt user, and db needs upgrade)
 - script/upgrade : fix #11 (composer prompt user, and db needs upgrade)
 
