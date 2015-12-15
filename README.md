@@ -3,13 +3,19 @@ Movim for Yunohost.
 
 Movim is a decentralized social network, written in PHP and HTML5 and based on the XMPP standard protocol : https://movim.eu .
 
-You need a "valid" (example: StartSSL) certificate to use Movim, auto-signed is not allowed.
+It is recommended to use a "valid" certificate to use Movim, auto-signed is sometimes problematic. You might want to take a look a StartSSL or Let's Encrypt.
+
+Currently there is no SSO support (auto login), but we are working hard with edhelas to add this feature :)
 
 Current Movim version : 0.9 git2015-12-15
 
 **Installation**
 
     yunohost app install https://github.com/src386/movim_ynh
+
+**Upgrade**
+
+    yunohost app upgrade movim -u https://github.com/src386/movim_ynh
 
 **Options**
 
@@ -18,34 +24,18 @@ Current Movim version : 0.9 git2015-12-15
 * admin : Who can access ?q=admin (pod options).
 * password : Password to access ?q=admin.
 * language : Pod language, currently en or fr.
-* public_site : Pod protected by Yunohost SSO portal or not.
+* public_site : Only whitelist your server (can be changed in pod advanced configuration)
 * port : Port for Movim daemon. Default is 9537, a check is performed before installation.
 
-**Pod configuration**
+**Pod advanced configuration**
 
     https://example.com/movim/?q=admin
 
 Username and password are defined during installation.
 
-**Upgrade**
-
-    yunohost app upgrade movim -u https://github.com/src386/movim_ynh
-
 **Remove**
 
     yunohost app remove movim
-
-**Notes**
-
-* URL rewriting is disabled (experimental feature)
-* No SSO (auto login) yet
-
-**Public Pod & Whitelisting**
-
-* Public pod = Yes : anyone can connect in your Movim pod using its own JID
-* Public pod = No : Whitelist allows only JID from your Yunohost to login*
-
-If you want to allow more domains, connect to yourserver.yourdomain.org/movim/?q=admin then add domains in the whitelist.
 
 **Help**
 
