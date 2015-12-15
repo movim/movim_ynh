@@ -5,9 +5,13 @@ Movim is a decentralized social network, written in PHP and HTML5 and based on t
 
 You need a "valid" (example: StartSSL) certificate to use Movim, auto-signed is not allowed.
 
-Current Movim version : 0.9 git2015-11-13
+Current Movim version : 0.9 git2015-12-15
 
 **Changelog**
+
+1.3 2015-12-15
+- Update to Movim 0.9 git2015-12-15
+- script/upgrade : reinstall composer instead of update
 
 1.2 2015-11-14
 - script/install : fix #11 (composer prompt user, and db needs upgrade)
