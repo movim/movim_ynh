@@ -22,6 +22,7 @@ class WidgetBase
 {
     protected $js = array(); /*< Contains javascripts. */
     protected $css = array(); /*< Contains CSS files. */
+    protected $rawcss = array(); /*< Contains raw CSS files links. */
     protected $ajax;     /*< Contains ajax client code. */
     protected $user;
     protected $name;
@@ -31,12 +32,19 @@ class WidgetBase
     public $events;
     public $filters;
 
+    // Meta tags
+    public $title;
+    public $image;
+    public $description;
+
     /**
      * Initialises Widget stuff.
      */
     function __construct($light = false, $view = null)
     {
         if($view != null) $this->_view = $view;
+
+        $this->user = new User;
 
         $this->load();
         $this->name = get_class($this);
@@ -48,10 +56,8 @@ class WidgetBase
         // Put default widget init here.
         $this->ajax = AjaxController::getInstance();
 
-        $this->user = new User;
-
         // Generating Ajax calls.
-        $refl = new ReflectionClass(get_class($this));
+        $refl = new ReflectionClass($this->name);
         $meths = $refl->getMethods();
 
         foreach($meths as $method) {
@@ -62,7 +68,7 @@ class WidgetBase
                     $params[] = $param->name;
                 }
 
-                $this->ajax->defun(get_class($this), $method->name, $params);
+                $this->ajax->defun($this->name, $method->name, $params);
             }
         }
 
@@ -84,7 +90,9 @@ class WidgetBase
     function __destruct()
     {
         unset($this->view);
+        unset($this->ajax);
         unset($this->user);
+        unset($this->_view);
     }
 
     function __()
@@ -238,7 +246,7 @@ class WidgetBase
     }
 
     /**
-     * @brief Adds a javascript file to this widget.
+     * @brief Adds a CSS file to this widget.
      */
     protected function addcss($filename)
     {
@@ -246,11 +254,19 @@ class WidgetBase
     }
 
     /**
+     * @brief Adds a CSS to the page.
+     */
+    protected function addrawcss($url)
+    {
+        $this->rawcss[] = $url;
+    }
+
+    /**
      * @brief returns the list of javascript files to be loaded for the widget.
      */
     public function loadcss()
     {
-        return $this->css;
+        return array_merge($this->css, $this->rawcss);
     }
 
     /*

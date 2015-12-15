@@ -178,7 +178,7 @@ class Contact extends WidgetBase
 
     function ajaxPublic($page = 0)
     {
-        $validate_page = Validator::int();
+        $validate_page = Validator::intType();
         if(!$validate_page->validate($page)) return;
 
         RPC::call('MovimTpl.fill', '#public_list', $this->preparePublic($page));
@@ -221,7 +221,7 @@ class Contact extends WidgetBase
         $view = $this->tpl();
 
         $pd = new \Modl\PostnDAO;
-        $gallery = $pd->getGallery($jid);
+        $gallery = $pd->getGallery($jid, 0, 12);
         $blog    = $pd->getPublic($jid, 'urn:xmpp:microblog:0', 0, 4);
 
         $presencestxt = getPresencesTxt();
@@ -289,7 +289,7 @@ class Contact extends WidgetBase
      */
     private function validateJid($jid)
     {
-        $validate_jid = Validator::string()->noWhitespace()->length(6, 60);
+        $validate_jid = Validator::stringType()->noWhitespace()->length(6, 60);
         if(!$validate_jid->validate($jid)) return false;
         else return true;
     }

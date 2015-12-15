@@ -24,7 +24,6 @@ class Postn extends Model {
     public $updated;        //
     public $delay;          //
 
-    public $tags;           // Store the tags
     public $picture;        // Tell if the post contain embeded pictures
 
     public $lat;
@@ -35,6 +34,8 @@ class Postn extends Model {
     public $privacy;
 
     public $hash;
+
+    private $youtube;
 
     public function __construct() {
         $this->hash = md5(openssl_random_pseudo_bytes(5));
@@ -80,8 +81,6 @@ class Postn extends Model {
                 {"type":"text" },
             "picture" :
                 {"type":"int", "size":4 },
-            "tags" :
-                {"type":"text" },
             "hash" :
                 {"type":"string", "size":128 }
         }';
@@ -96,7 +95,7 @@ class Postn extends Model {
                 case 'html':
                 case 'xhtml':
                     $dom = new \DOMDocument('1.0', 'utf-8');
-                    $import = dom_import_simplexml($c->children());
+                    $import = @dom_import_simplexml($c->children());
                     if($import == null) {
                         $import = dom_import_simplexml($c);
                     }
@@ -186,18 +185,23 @@ class Postn extends Model {
 
         // Tags parsing
         if($entry->entry->category) {
-            $this->tags = array();
+            $td = new \Modl\TagDAO;
 
             if($entry->entry->category->count() == 1
-            && isset($entry->entry->category->attributes()->term))
-                array_push($this->tags, (string)$entry->entry->category->attributes()->term);
-            else
-                foreach($entry->entry->category as $cat)
-                    array_push($this->tags, (string)$cat->attributes()->term);
+            && isset($entry->entry->category->attributes()->term)) {
+                $tag = new \Modl\Tag;
+                $tag->nodeid = $this->__get('nodeid');
+                $tag->tag    = (string)$entry->entry->category->attributes()->term;
+                $td->set($tag);
+            } else {
+                foreach($entry->entry->category as $cat) {
+                    $tag = new \Modl\Tag;
+                    $tag->nodeid = $this->__get('nodeid');
+                    $tag->tag    = (string)$cat->attributes()->term;
+                    $td->set($tag);
+                }
+            }
         }
-
-        if(!empty($this->tags))
-            $this->__set('tags', serialize($this->tags));
 
         if($contentimg != '')
             $content .= '<br />'.$contentimg;
@@ -206,7 +210,6 @@ class Postn extends Model {
             $this->__set('commentplace', $this->origin);
 
         $this->__set('content', trim($content));
-
         $this->contentcleaned = purifyHTML(html_entity_decode($this->content));
 
         if($entry->entry->geoloc) {
@@ -219,6 +222,10 @@ class Postn extends Model {
 
     private function typeIsPicture($type) {
         return in_array($type, array('image/jpeg', 'image/png', 'image/jpg'));
+    }
+
+    private function typeIsLink($type) {
+        return $type == 'text/html';
     }
 
     private function setAttachements($links) {
@@ -252,24 +259,29 @@ class Postn extends Model {
     public function getAttachements()
     {
         $attachements = null;
+        $this->picture = null;
 
         if(isset($this->links)) {
             $attachements = array('pictures' => array(), 'files' => array(), 'links' => array());
 
             $links = unserialize($this->links);
             foreach($links as $l) {
-                switch($l['rel']) {
-                    case 'enclosure' :
-                        if($this->typeIsPicture($l['type'])) {
-                            array_push($attachements['pictures'], $l);
-                        } else {
-                            array_push($attachements['files'], $l);
-                        }
-                        break;
-                    case 'related' :
-                    case 'alternate' :
-                        array_push($attachements['links'], array('href' => $l['href'], 'url' => parse_url($l['href'])));
-                        break;
+                if(isset($l['type']) && $this->typeIsPicture($l['type'])) {
+                    if($this->picture == null) {
+                        $this->picture = $l['href'];
+                    }
+                    array_push($attachements['pictures'], $l);
+                } elseif((isset($l['type']) && $this->typeIsLink($l['type'])
+                || in_array($l['rel'], array('related', 'alternate')))
+                && Validator::url()->validate($l['href'])) {
+                    if($this->youtube == null
+                    && preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $l['href'], $match)) {
+                        $this->youtube = $match[1];
+                    }
+
+                    array_push($attachements['links'], array('href' => $l['href'], 'url' => parse_url($l['href'])));
+                } elseif(isset($l['rel']) && $l['rel'] == 'enclosure') {
+                    array_push($attachements['files'], $l);
                 }
             }
         }
@@ -284,50 +296,39 @@ class Postn extends Model {
     public function getAttachement()
     {
         $attachements = $this->getAttachements();
-        if(isset($attachements['pictures'])) {
+        if(isset($attachements['pictures']) && !isset($attachements['links'])) {
             return $attachements['pictures'][0];
         }
         if(isset($attachements['files'])) {
             return $attachements['files'][0];
         }
         if(isset($attachements['links'])) {
-            foreach($attachements['links'] as $link) {
-                if(Validator::url()->validate($link['href'])) {
-                    return $link;
-                }
-            }
-            return false;
+            return $attachements['links'][0];
         }
         return false;
     }
 
     public function getPicture()
     {
-        $attachements = $this->getAttachements();
-        if(is_array($attachements)
-        && array_key_exists('pictures', $attachements)) {
-            return $attachements['pictures'][0]['href'];
-        }
+        return $this->picture;
+    }
+
+    public function getYoutube()
+    {
+        return $this->youtube;
     }
 
     public function getPlace()
     {
-        if(isset($this->lat, $this->lon) && $this->lat != '' && $this->lon != '') {
-            return true;
-        }
-        else
-            return false;
+        return (isset($this->lat, $this->lon) && $this->lat != '' && $this->lon != '');
     }
 
     public function isMine()
     {
         $user = new \User();
 
-        if($this->aid == $user->getLogin()
-        || $this->origin == $user->getLogin())
-            return true;
-        else
-            return false;
+        return ($this->aid == $user->getLogin()
+        || $this->origin == $user->getLogin());
     }
 
     public function getUUID()
@@ -341,11 +342,7 @@ class Postn extends Model {
 
     public function isMicroblog()
     {
-        if($this->node == "urn:xmpp:microblog:0") {
-            return true;
-        } else {
-            return false;
-        }
+        return ($this->node == "urn:xmpp:microblog:0");
     }
 
     public function isEditable()
@@ -355,7 +352,7 @@ class Postn extends Model {
 
     public function isShort()
     {
-        return (strlen($this->contentcleaned) < 500);
+        return (strlen($this->contentcleaned) < 700);
     }
 
     public function getPublicUrl()
@@ -363,15 +360,29 @@ class Postn extends Model {
         if($this->isMicroblog()) {
             return \Route::urlize('blog', array($this->origin));
         } else {
-            return \Route::urlize('grouppublic', array($this->origin, $this->node));
+            return \Route::urlize('node', array($this->origin, $this->node));
+        }
+    }
+
+    public function getTags()
+    {
+        $td = new \Modl\TagDAO;
+        $tags = $td->getTags($this->nodeid);
+        if(is_array($tags)) {
+            return array_map(function($tag) { return $tag->tag; }, $tags);
+        }
+    }
+
+    public function getTagsImploded()
+    {
+        $tags = $this->getTags();
+        if(is_array($tags)) {
+            return implode(', ', $tags);
         }
     }
 
     public function isPublic() {
-        if(isset($this->privacy) && $this->privacy) {
-            return true;
-        }
-        return false;
+        return (isset($this->privacy) && $this->privacy);
     }
 }
 

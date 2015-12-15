@@ -32,13 +32,6 @@ class Chats extends WidgetBase
             }
 
             $this->ajaxOpen($from, false);
-            /*
-            $chats = Cache::c('chats');
-            if(!array_key_exists($from, $chats)) {
-                $this->ajaxOpen($from);
-            } else {
-                RPC::call('Chats.prepend', $from, $this->prepareChat($from));
-            }*/
         }
     }
 
@@ -217,7 +210,7 @@ class Chats extends WidgetBase
 
     private function validateJid($jid)
     {
-        $validate_jid = Validator::string()->noWhitespace()->length(6, 40);
+        $validate_jid = Validator::stringType()->noWhitespace()->length(6, 40);
 
         if($validate_jid->validate($jid)) return true;
         else return false;

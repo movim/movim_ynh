@@ -1,26 +1,19 @@
-<?php /* -*- mode: html -*- */
-    $cd = new \Modl\ConfigDAO();
-    $config = $cd->get();
-?><!DOCTYPE html>
+<!DOCTYPE html>
 <html ng-app="roster">
   <head>
     <meta charset="utf-8" />
     <title><?php $this->title();?></title>
 
-    <meta name="description" content="<?php echo $config->description; ?>" />
     <meta name="theme-color" content="#1C1D5B" />
 
-    <link rel="shortcut icon" href="<?php $this->linkFile('img/favicon.ico');?>" />
-    <!--<link rel="stylesheet" href="<?php echo BASE_URI; ?>app/assets/js/leaflet.css" />
-    <script src="<?php echo BASE_URI; ?>app/assets/js/leaflet.js"></script>-->
-    <script src="<?php echo BASE_URI; ?>app/assets/js/favico.js"></script>
+    <?php $this->meta();?>
 
-    <!-- OTR -->
-    <!--<script src="<?php echo BASE_URI; ?>app/assets/js/otr/dep/bigint.js"></script>
-    <script src="<?php echo BASE_URI; ?>app/assets/js/otr/dep/crypto.js"></script>
-    <script src="<?php echo BASE_URI; ?>app/assets/js/otr/dep/eventemitter.js"></script>
-    <script src="<?php echo BASE_URI; ?>app/assets/js/otr/otr.js"></script>
-    <script src="<?php echo BASE_URI; ?>app/assets/js/cycle.js"></script>-->
+    <meta name="application-name" content="Movim">
+    <link rel="shortcut icon" href="<?php $this->linkFile('img/favicon.ico');?>" />
+    <link rel="icon" type="image/png" href="<?php $this->linkFile('img/app/48.png');?>" sizes="48x48">
+    <link rel="icon" type="image/png" href="<?php $this->linkFile('img/app/96.png');?>" sizes="96x96">
+    <link rel="icon" type="image/png" href="<?php $this->linkFile('img/app/128.png');?>" sizes="128x128">
+    <script src="<?php echo BASE_URI; ?>app/assets/js/favico.js"></script>
 
     <meta name="viewport" content="width=device-width, user-scalable=no">
 
@@ -55,10 +48,6 @@
         <?php $this->widget('Dialog');?>
         <?php $this->widget('Notification');?>
         <?php $this->content();?>
-
-        <?php
-            $this->displayFooterDebug();
-        ?>
         <script type="text/javascript">movim_onload();</script>
     </body>
 </html>

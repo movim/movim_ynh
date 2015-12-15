@@ -20,6 +20,7 @@ class Message extends Model {
     public $delivered;
 
     public $color; // Only for chatroom purpose
+    public $publishedPrepared; // Only for chat purpose
 
     public function __construct()
     {
@@ -99,7 +100,7 @@ class Message extends Model {
     public function convertEmojis()
     {
         $emoji = \MovimEmoji::getInstance();
-        $this->body = $emoji->replace($this->body);
+        $this->body = addHFR($emoji->replace($this->body));
     }
 
     public function addUrls()

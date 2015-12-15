@@ -176,7 +176,7 @@
                     <span class="info">{$value->published|strtotime|prepareDate}</span>
                 </li>
             {/loop}
-            <a href="{$c->route('blog', array($jid))}" target="_blank" class="block large">
+            <a href="{$c->route('blog', array($contact->jid))}" target="_blank" class="block large">
                 <li class="action">
                     <div class="action">
                         <i class="zmdi zmdi-chevron-right"></i>
@@ -315,7 +315,7 @@
                 <li style="background-image: url('{$attachements['pictures'][0]['href']}');"
                     onclick="movim_reload('{$c->route('news', $value->nodeid)}')">
                     <nav>
-                        {$attachements['pictures'][0]['title']}
+                        <span>{$value->title}</span>
                     </nav>
                 </li>
             {/loop}

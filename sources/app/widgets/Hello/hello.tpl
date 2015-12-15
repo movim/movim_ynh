@@ -4,7 +4,7 @@
             {$a = '1f600'}
             <li>
                 <h2>{$c->__('hello.enter_title')}</h2>
-                <p>{$c->__('hello.enter_paragraph')} <img alt=":smiley:" class="emoji" src="{$a|getSmileyPath:false}"></p>
+                <p class="all">{$c->__('hello.enter_paragraph')} <img alt=":smiley:" class="emoji" src="{$a|getSmileyPath}"></p>
             </li>
         </ul>
         <ul class="middle">
@@ -14,7 +14,7 @@
                     <i class="zmdi zmdi-cloud-outline on_desktop"></i>
                 </span>
                 <span>{$c->__('hello.menu_title')}</span>
-                <p>{$c->__('hello.menu_paragraph')}</p>
+                <p class="all">{$c->__('hello.menu_paragraph')}</p>
             </li>
         </ul>
     {/if}
@@ -77,6 +77,7 @@
                 </li>
             {/if}
             {loop="$news"}
+                {$attachements = $value->getAttachements()}
                 <li class="block condensed"
                     data-id="{$value->nodeid}"
                     {if="$value->title != null"}

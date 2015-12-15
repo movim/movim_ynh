@@ -34,7 +34,14 @@ var Avatar = {
             var base64 = canvas.toDataURL('image/jpeg', 0.7);
 
             var preview = document.querySelector('form[name=avatarform] img');
+
+            var list = document.querySelector('form[name=avatarform] ul');
+            if(list) list.style.display = 'none';
+
             var input = document.querySelector('input[name="photobin"]');
+
+            if(preview.className == 'error') preview.className = '';
+
             preview.src = base64;
 
             var bin = base64.split(",");
@@ -48,8 +55,8 @@ MovimWebsocket.attach(function() {
 });
 
 function showVideo(){
-	navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
-	navigator.getUserMedia({video:true, audio:false}, successCallback, errorCallback);
+    navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
+    navigator.getUserMedia({video:true, audio:false}, successCallback, errorCallback);
 
     movim_toggle_class('#camdiv', 'active');
 }

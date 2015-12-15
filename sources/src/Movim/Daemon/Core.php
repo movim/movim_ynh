@@ -10,10 +10,12 @@ class Core implements MessageComponentInterface {
     public $loop;
     public $baseuri;
 
-    private $cleanerdelay = 60; // in minutes
+    private $cleanerdelay = 2; // in hours
 
     public function __construct($loop, $baseuri, $port)
     {
+        $baseuri = rtrim($baseuri, '/') . '/';
+
         echo colorize("Movim daemon launched\n", 'green');
         echo colorize("Base URI :", 'green')." {$baseuri}\n";
         $ws = $this->setWebsocket($baseuri, $port);
@@ -110,7 +112,9 @@ class Core implements MessageComponentInterface {
     {
         $this->loop->addPeriodicTimer(5, function() {
             foreach($this->sessions as $sid => $session) {
-                if(time()-$session->timestamp > $this->cleanerdelay*60) {
+                if((time()-$session->timestamp > $this->cleanerdelay*3600)
+                || ($session->countClients() == 0
+                && $session->registered == null)) {
                     $session->killLinker();
                     $this->closeEmptySession($sid);
                 }
@@ -122,7 +126,7 @@ class Core implements MessageComponentInterface {
     {
         // No WebSockets and no linker ? We close the whole session
         if($this->sessions[$sid]->countClients() == 0
-        && $this->sessions[$sid]->process == null) {
+        && ($this->sessions[$sid]->process == null)) {
             $sd = new \Modl\SessionxDAO();
             $sd->delete($sid);
             

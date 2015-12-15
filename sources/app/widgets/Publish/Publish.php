@@ -67,20 +67,20 @@ class Publish extends WidgetBase
     {
         if(!$this->validateServerNode($server, $node)) return;
 
-        $item = false;
+        $post = false;
 
         if($id) {
             $pd = new \modl\PostnDAO();
             $p = $pd->getItem($id);
             if($p->isEditable()) {
-                $item = $p;
+                $post = $p;
             }
         }
 
         $view = $this->tpl();
         $view->assign('to', $server);
         $view->assign('node', $node);
-        $view->assign('item', $item);
+        $view->assign('item', $post);
 
         RPC::call('MovimTpl.fill', 'main section > div:nth-child(2)', $view->draw('_publish_create', true));
 
@@ -90,6 +90,7 @@ class Publish extends WidgetBase
         $view = $this->tpl();
         $view->assign('server', $server);
         $view->assign('node', $node);
+        $view->assign('post', $post);
         $view->assign('item', $item);
 
         Header::fill($view->draw('_publish_header', true));
@@ -160,7 +161,7 @@ class Publish extends WidgetBase
             $p = new PostPublish;
             $p->setFrom($this->user->getLogin())
               ->setTo($form->to->value)
-              ->setTitle($form->title->value)
+              ->setTitle(htmlspecialchars($form->title->value))
               ->setNode($form->node->value);
               //->setLocation($geo)
               //->enableComments()
@@ -179,6 +180,26 @@ class Publish extends WidgetBase
 
             if($form->id->value != '') {
                 $p->setId($form->id->value);
+
+                $pd = new \modl\PostnDAO();
+                $post = $pd->getItem($form->id->value);
+
+                if(isset($post)) {
+                    $p->setPublished(strtotime($post->published));
+                }
+            }
+
+            if(Validator::stringType()->notEmpty()->alnum(',')->validate($form->tags->value)) {
+                $p->setTags(array_unique(
+                    array_filter(
+                        array_map(
+                            function($value) {
+                                return trim(strtolower($value));
+                            },
+                            explode(',', $form->tags->value)
+                        )
+                    )
+                ));
             }
 
             if($form->embed->value != '' && filter_var($form->embed->value, FILTER_VALIDATE_URL)) {
@@ -186,10 +207,12 @@ class Publish extends WidgetBase
                     $embed = Embed\Embed::create($form->embed->value);
                     $p->setLink($form->embed->value);
 
-                    if($embed->type == 'photo') {
+                    if(in_array($embed->type, array('photo', 'rich'))) {
                         $key = key($embed->images);
                         $p->setImage($embed->images[0]['value'], $embed->title, $embed->images[0]['mime']);
-                    } else {
+                    }
+
+                    if($embed->type !== 'photo') {
                         $content_xhtml .= $this->prepareEmbed($embed);
                     }
                 } catch(Exception $e) {
@@ -198,11 +221,11 @@ class Publish extends WidgetBase
             }
 
             if($content != '') {
-                $p->setContent($content);
+                $p->setContent(htmlspecialchars($content));
             }
 
             if($content_xhtml != '') {
-                $p->setContentXhtml(rawurldecode($content_xhtml));
+                $p->setContentXhtml($content_xhtml);
             }
 
             $p->request();
@@ -225,12 +248,15 @@ class Publish extends WidgetBase
             $embed = Embed\Embed::create($url);
             $html = $this->prepareEmbed($embed);
 
-            if($embed->type == 'photo') {
+            RPC::call('movim_fill', 'preview', '');
+            RPC::call('movim_fill', 'gallery', '');
+
+            if(in_array($embed->type, array('photo', 'rich'))) {
                 RPC::call('movim_fill', 'gallery', $this->prepareGallery($embed));
-                RPC::call('movim_fill', 'preview', '');
-            } else {
+            }
+
+            if($embed->type !== 'photo') {
                 RPC::call('movim_fill', 'preview', $html);
-                RPC::call('movim_fill', 'gallery', '');
             }
         } catch(Exception $e) {
             error_log($e->getMessage());
@@ -253,8 +279,8 @@ class Publish extends WidgetBase
 
     private function validateServerNode($server, $node)
     {
-        $validate_server = Validator::string()->noWhitespace()->length(6, 40);
-        $validate_node = Validator::string()->length(3, 100);
+        $validate_server = Validator::stringType()->noWhitespace()->length(6, 40);
+        $validate_node = Validator::stringType()->length(3, 100);
 
         if(!$validate_server->validate($server)
         || !$validate_node->validate($node)

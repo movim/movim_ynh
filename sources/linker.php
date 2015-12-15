@@ -6,6 +6,8 @@ require_once(DOCUMENT_ROOT.'/bootstrap.php');
 
 gc_enable();
 
+//memprof_enable();
+
 $bootstrap = new Bootstrap();
 $booted = $bootstrap->boot();
 
@@ -99,6 +101,7 @@ $xmpp_behaviour = function (React\Stream\Stream $stream) use (&$conn, $loop, &$s
     $stdin->on('data', $stdin_behaviour);
 
     // We define a huge buffer to prevent issues with SSL streams, see https://bugs.php.net/bug.php?id=65137
+    $conn->bufferSize = 1024*32;
     $conn->on('data', function($message) use (&$conn, $loop, $parser) {
         if(!empty($message)) {
             $restart = false;
@@ -136,13 +139,9 @@ $xmpp_behaviour = function (React\Stream\Stream $stream) use (&$conn, $loop, &$s
             \Moxl\API::clear();
             \RPC::clear();
 
-            fwrite(STDERR, colorize(getenv('sid'), 'yellow')." before : ".\sizeToCleanSize(memory_get_usage())."\n");
-
             if(!$parser->parse($message)) {
                 fwrite(STDERR, colorize(getenv('sid'), 'yellow')." ".$parser->getError()."\n");
             }
-
-            fwrite(STDERR, colorize(getenv('sid'), 'yellow')." after : ".\sizeToCleanSize(memory_get_usage())."\n");
 
             if($restart) {
                 $session = \Sessionx::start();
@@ -170,7 +169,11 @@ $xmpp_behaviour = function (React\Stream\Stream $stream) use (&$conn, $loop, &$s
 
             \Moxl\API::clear();
 
+            $loop->tick();
+
             gc_collect_cycles();
+            //fwrite(STDERR, colorize(getenv('sid'), 'yellow')." end data : ".\sizeToCleanSize(memory_get_usage())."\n");
+            //memprof_dump_callgrind(fopen("/tmp/callgrind.out", "w"));
         }
     });
 
@@ -187,6 +190,8 @@ $xmpp_behaviour = function (React\Stream\Stream $stream) use (&$conn, $loop, &$s
     // And we say that we are ready !
     $obj = new \StdClass;
     $obj->func = 'registered';
+
+    fwrite(STDERR, 'registered');
 
     //fwrite(STDERR, colorize(json_encode($obj).' '.strlen($obj), 'yellow')." : ".colorize('obj sent to browser', 'green')."\n");
 

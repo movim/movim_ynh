@@ -6,6 +6,10 @@ form > div:not(.clear):not(.control) {
     box-sizing: border-box;
 }
 
+form > div.compact:not(.clear):not(.control) {
+    min-height: 0;
+}
+
 li > form > div:not(.control) { /* If we put the form in a list */
     min-height: 0;
     line-height: 3rem;
@@ -60,6 +64,7 @@ form > div > .select:after {
 form > div > .select select {
     width: calc(100% + 3rem);
     background-color: transparent;
+    background-image: none;
 }
 
 main > header form > div:not(.clear):not(.control) {
@@ -104,6 +109,12 @@ form > div > textarea {
     overflow: hidden; /* Fixme */
 
     box-shadow: none; /* Firefox weird CSS */
+}
+
+form > div.compact > .select,
+form > div.compact > input:not([type=submit]),
+form > div.compact > textarea {
+    padding-top: 2.5rem;
 }
 
 /* Webkit hack */
@@ -261,6 +272,8 @@ input[type=button] {
     transition: background 0.3s ease, box-shadow 0.3s ease;
 
     box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.5);
+
+    background-image: none;
 }
 
 .button:active {

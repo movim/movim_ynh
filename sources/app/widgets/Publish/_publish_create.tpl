@@ -28,7 +28,7 @@
         </article>
         <div id="gallery"></div>
     </div>
-    
+
     <div id="enable_content" onclick="Publish.enableContent();">
         <input type="text" value="{$c->__('publish.add_text')}"/>
         <label>{$c->__('publish.add_text_label')}</label>
@@ -48,4 +48,18 @@
         </li>
         {/if}
     </ul>
+
+    <div>
+        {if="$item != false"}
+            {$tags = $item->getTagsImploded()}
+        {/if}
+        <input
+            type="text"
+            name="tags"
+            placeholder="write, comma separated, tags"
+            {if="isset($tags)"}
+                value="{$tags}"
+            {/if}>
+        <label for="title">{$c->__('post.tags')}</label>
+    </div>
 </form>

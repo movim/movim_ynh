@@ -12,7 +12,7 @@
         "michelf/php-markdown": "1.4.*@dev",
         "movim/modl": "dev-master",
         "movim/sasl2": "dev-master",
-        "movim/moxl": "dev-ws",
+        "movim/moxl": "dev-master",
 
         "embed/embed": "dev-master",
         "heyupdate/emoji": "0.2.*@dev",
@@ -22,7 +22,7 @@
         "react/socket-client": "0.4.3",
 
         "forxer/Gravatar": "~1.2",
-        "respect/validation": "0.8.*",
+        "respect/validation": "1.0.*",
         "ezyang/htmlpurifier": "^4.7"
     }
 }

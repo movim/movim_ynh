@@ -20,6 +20,7 @@
 
 use Moxl\Xec\Action\Pubsub\PostPublish;
 use Moxl\Xec\Action\Pubsub\PostDelete;
+use Moxl\Xec\Action\Pubsub\GetItem;
 use Moxl\Xec\Action\Microblog\CommentsGet;
 use Moxl\Xec\Action\Microblog\CommentCreateNode;
 use Moxl\Xec\Action\Microblog\CommentPublish;
@@ -96,7 +97,16 @@ class Post extends WidgetBase
 
     function ajaxGetPost($id)
     {
-        $html = $this->preparePost($id);
+        $pd = new \Modl\PostnDAO;
+        $p  = $pd->getItem($id);
+
+        $gi = new GetItem;
+        $gi->setTo($p->origin)
+           ->setNode($p->node)
+           ->setId($p->nodeid)
+           ->request();
+
+        $html = $this->preparePost($p);
         $header = $this->prepareHeader($id);
 
         Header::fill($header);
@@ -137,8 +147,8 @@ class Post extends WidgetBase
     {
         $comment = trim($form->comment->value);
 
-        $validate_comment = Validator::string()->notEmpty();
-        $validate_id = Validator::string()->length(6, 128)->noWhitespace();
+        $validate_comment = Validator::stringType()->notEmpty();
+        $validate_id = Validator::stringType()->length(6, 128)->noWhitespace();
 
         if(!$validate_comment->validate($comment)
         || !$validate_id->validate($id)) return;
@@ -178,19 +188,18 @@ class Post extends WidgetBase
         return $view->draw('_post_header', true);
     }
 
-    function preparePost($id)
+    function preparePost($p, $external = false, $public = false)
     {
-        $pd = new \Modl\PostnDAO;
-        $p  = $pd->getItem($id);
-
         $view = $this->tpl();
 
         if(isset($p)) {
-            if(isset($p->commentplace)) {
+            if(isset($p->commentplace) && !$external) {
                 $this->ajaxGetComments($p->commentplace, $p->nodeid);
             }
 
             $view->assign('recycled', false);
+            $view->assign('external', $external);
+            $view->assign('public', $public);
 
             // Is it a recycled post ?
             if($p->getContact()->jid
@@ -203,13 +212,13 @@ class Post extends WidgetBase
             $view->assign('post', $p);
             $view->assign('attachements', $p->getAttachements());
             return $view->draw('_post', true);
-        } else {
+        } elseif(!$external) {
             return $this->prepareEmpty();
         }
     }
 
     function ajaxTogglePrivacy($id) {
-        $validate = Validator::string()->length(6, 128);
+        $validate = Validator::stringType()->length(6, 128);
 
         if(!$validate->validate($id))
             return;
@@ -232,9 +241,15 @@ class Post extends WidgetBase
         }
     }
 
+    function getComments($post)
+    {
+        $pd = new \Modl\PostnDAO();
+        return $pd->getComments($post);
+    }
+
     function display()
     {
-        $validate_nodeid = Validator::string()->length(10, 100);
+        $validate_nodeid = Validator::stringType()->length(10, 100);
 
         $this->view->assign('nodeid', false);
         if($validate_nodeid->validate($this->get('n'))) {

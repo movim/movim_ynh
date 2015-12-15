@@ -1,4 +1,6 @@
 {loop="$posts"}
+    {$c->preparePost($value)}
+    <!--
     {$attachements = $value->getAttachements()}
     <article id="{$value->nodeid}" class="block">
         {if="isset($attachements.pictures)"}
@@ -36,6 +38,9 @@
                              -
                         {/if}
                         {$value->published|strtotime|prepareDate}
+                        {if="$value->published != $value->updated"}
+                            - <i class="zmdi zmdi-edit"></i> {$value->updated|strtotime|prepareDate}
+                        {/if}
                     </p>
                 </li>
             </ul>
@@ -53,6 +58,19 @@
             </content>
         </section>
         <footer>
+            {$tags = $value->getTags()}
+            {if="isset($tags)"}
+                <ul class="middle">
+                    <li>
+                        <span class="icon zmdi zmdi-tag gray"></span>
+                        <span>
+                            {loop="$tags"}
+                                <a target="_blank" href="{$c->route('tag', array($value))}">#{$value}</a>
+                            {/loop}
+                        </span>
+                    </li>
+                </ul>
+            {/if}
             <ul class="thin">
                 {if="isset($attachements.links)"}
                     {loop="$attachements.links"}
@@ -171,7 +189,7 @@
             </ul>
         {/if}
         <br />
-    </article>
+    </article>-->
 {/loop}
 {if="$posts != null && count($posts) >= $paging-1"}
 <ul class="active thick">

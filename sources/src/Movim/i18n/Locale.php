@@ -81,7 +81,13 @@ class Locale {
         && array_key_exists($arr[1], $this->hash[$arr[0]])) {
             $skey = $this->hash[$arr[0]][$arr[1]];
 
-            if(is_array($this->translations)
+            if($this->language == 'en') {
+                if(is_string($skey)) {
+                    $string = $skey;
+                } else {
+                    $string = $skey[0];
+                }
+            } elseif(is_array($this->translations)
             && array_key_exists($skey, $this->translations)
             && isset($this->translations[$skey])) {
                 $string = $this->translations[$skey];

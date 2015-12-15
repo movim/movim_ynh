@@ -15,8 +15,6 @@
  * See COPYING for licensing information.
  */
 class User {
-    private $xmppSession;
-
     public  $username = '';
     private $password = '';
     private $config = array();
@@ -32,12 +30,18 @@ class User {
      * Class constructor. Reloads the user's session or attempts to authenticate
      * the user.
      */
-    function __construct()
+    function __construct($username = false)
     {
-        $session = \Sessionx::start();
-        if($session->active) {
-            $this->username = $session->user.'@'.$session->host;
+        if($username) {
+            $this->username = $username;
+        }
 
+        $session = \Sessionx::start();
+        if($session->active && $this->username == null) {
+            $this->username = $session->user.'@'.$session->host;
+        }
+
+        if($this->username != null) {
             $this->userdir = DOCUMENT_ROOT.'/users/'.$this->username.'/';
             $this->useruri = BASE_URI.'users/'.$this->username.'/';
         }
@@ -157,6 +161,9 @@ class User {
     {
         $session = \Sessionx::start();
         $session->config = $config;
+
+        file_put_contents($this->userdir.'config.dump', serialize($config));
+
         $this->reload();
     }
 
@@ -166,6 +173,16 @@ class User {
             return $this->config;
         if(isset($this->config[$key]))
             return $this->config[$key];
+    }
+
+    function getDumpedConfig($key = false)
+    {
+        $config = unserialize(file_get_contents($this->userdir.'config.dump'));
+
+        if($key == false)
+            return $config;
+        if(isset($config[$key]))
+            return $config[$key];
     }
 
     function isSupported($key)

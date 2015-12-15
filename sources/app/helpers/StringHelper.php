@@ -23,7 +23,7 @@ class MovimEmoji
 
     public function replace($string, $large = false)
     {
-        $this->_emoji->setAssetUrlFormat($this->getPath($large));
+        $this->_emoji->setAssetUrlFormat($this->getPath());
         $string = $this->_emoji->replaceEmojiWithImages($string);
         $this->_emoji->setAssetUrlFormat($this->getPath());
 
@@ -32,10 +32,7 @@ class MovimEmoji
 
     private function getPath($large = false)
     {
-        $path = BASE_URI . 'themes/' . $this->_theme . '/img/emojis/';
-        if($large) $path .= 'large/';
-
-        return $path.'%s.png';
+        return BASE_URI . 'themes/' . $this->_theme . '/img/emojis/svg/%s.svg';
     }
 
     public static function getInstance()
@@ -75,6 +72,18 @@ function addUrls($string, $preview = false) {
             }
 
         }, $string
+    );
+}
+
+function addHFR($string) {
+    // HFR EasterEgg
+    return preg_replace_callback(
+            '/\[:([\w\s-]+)([:\d])*\]/', function ($match) {
+                $num = '';
+                if(count($match) == 3)
+                    $num = $match[2].'/';
+                return '<img class="hfr" title="'.$match[0].'" alt="'.$match[0].'" src="http://forum-images.hardware.fr/images/perso/'.$num.$match[1].'.gif">';
+            }, $string
     );
 }
 
@@ -328,7 +337,7 @@ function purifyHTML($string)
     $config = \HTMLPurifier_Config::createDefault();
     $config->set('HTML.Doctype', 'HTML 4.01 Transitional');
     $config->set('Cache.SerializerPath', '/tmp');
-    $config->set('HTML.DefinitionID', 'html5-definitions'); 
+    $config->set('HTML.DefinitionID', 'html5-definitions');
     $config->set('HTML.DefinitionRev', 1);
     if ($def = $config->maybeGetRawHTMLDefinition()) {
         $def->addElement('video', 'Block', 'Optional: (source, Flow) | (Flow, source) | Flow', 'Common', array(
@@ -345,6 +354,10 @@ function purifyHTML($string)
           'preload' => 'Enum#auto,metadata,none',
           'muted' => 'Bool',
           'controls' => 'Bool',
+        ));
+        $def->addElement('source', 'Block', 'Flow', 'Common', array(
+          'src' => 'URI',
+          'type' => 'Text',
         ));
     }
 

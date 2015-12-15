@@ -203,9 +203,9 @@ class Rooms extends WidgetBase
             array_push($arr,
                 array(
                     'type'      => 'conference',
-                    'name'      => htmlentities($c->name),
+                    'name'      => $c->name,
                     'autojoin'  => $c->autojoin,
-                    'nick'      => htmlentities($c->nick),
+                    'nick'      => $c->nick,
                     'jid'       => $c->conference));
         }
 
@@ -248,7 +248,7 @@ class Rooms extends WidgetBase
         $list = $cod->getAll();
 
         $connected = array();
-        
+
         foreach($list as $key => $room) {
             if($this->checkConnected($room->conference, $room->nick)) {
                 $room->connected = true;
@@ -258,7 +258,7 @@ class Rooms extends WidgetBase
         }
 
         $list = array_merge($connected, $list);
-        
+
         $view->assign('conferences', $list);
         $view->assign('room', $this->get('r'));
 
@@ -272,7 +272,7 @@ class Rooms extends WidgetBase
      */
     private function validateRoom($room)
     {
-        $validate_server = Validator::string()->noWhitespace()->length(6, 80);
+        $validate_server = Validator::stringType()->noWhitespace()->length(6, 80);
         if(!$validate_server->validate($room)) return false;
         else return true;
     }
@@ -284,7 +284,7 @@ class Rooms extends WidgetBase
      */
     private function validateResource($resource)
     {
-        $validate_resource = Validator::string()->length(2, 40);
+        $validate_resource = Validator::stringType()->length(2, 40);
         if(!$validate_resource->validate($resource)) return false;
         else return true;
     }

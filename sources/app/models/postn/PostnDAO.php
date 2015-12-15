@@ -26,7 +26,6 @@ class PostnDAO extends SQL {
 
                     links           = :links,
                     picture         = :picture,
-                    tags            = :tags,
 
                     hash            = :hash
 
@@ -57,7 +56,6 @@ class PostnDAO extends SQL {
 
                 'links'             => $post->links,
                 'picture'           => $post->picture,
-                'tags'              => $post->tags,
 
                 'hash'              => $post->hash,
 
@@ -97,7 +95,6 @@ class PostnDAO extends SQL {
 
                 links,
                 picture,
-                tags,
 
                 hash)
                 values(
@@ -125,7 +122,6 @@ class PostnDAO extends SQL {
 
                     :links,
                     :picture,
-                    :tags,
 
                     :hash
                 )';
@@ -153,7 +149,6 @@ class PostnDAO extends SQL {
 
                     'links'             => $post->links,
                     'picture'           => $post->picture,
-                    'tags'              => $post->tags,
 
                     'hash'              => $post->hash,
 
@@ -210,8 +205,8 @@ class PostnDAO extends SQL {
                 and postn.node != \'urn:xmpp:microblog:0\'
             order by postn.published desc';
 
-        if($limitr)
-            $this->_sql = $this->_sql.' limit '.$limitr.' offset '.$limitf;
+        if($limitr !== false)
+            $this->_sql = $this->_sql.' limit '.(int)$limitr.' offset '.(int)$limitf;
 
         $this->prepare(
             'Postn',
@@ -219,6 +214,28 @@ class PostnDAO extends SQL {
                 'aid' => $this->_user, // TODO: Little hack to bypass the check, need to fix it in Modl
                 'origin' => $from,
                 'node' => $node
+            )
+        );
+
+        return $this->run('ContactPostn');
+    }
+
+    function getPublicTag($tag, $limitf = false, $limitr = false) {
+        $this->_sql = '
+            select *, postn.aid, privacy.value as privacy from postn
+            left outer join contact on postn.aid = contact.jid
+            left outer join privacy on postn.nodeid = privacy.pkey
+            where nodeid in (select nodeid from tag where tag = :title)
+                and privacy.value = 1
+            order by postn.published desc';
+
+        if($limitr !== false)
+            $this->_sql = $this->_sql.' limit '.(int)$limitr.' offset '.(int)$limitf;
+
+        $this->prepare(
+            'Postn',
+            array(
+                'title' => $tag # Hack
             )
         );
 
@@ -248,20 +265,21 @@ class PostnDAO extends SQL {
         return $this->run('ContactPostn');
     }
 
-    function getGallery($from) {
+    function getGallery($from, $limitf = false, $limitr = false) {
         $this->_sql = '
             select *, postn.aid, privacy.value as privacy from postn
             left outer join contact on postn.aid = contact.jid
             left outer join privacy on postn.nodeid = privacy.pkey
-            where (postn.origin in (select jid from rosterlink where session = :origin and rostersubscription in (\'both\', \'to\')))
-                and postn.origin = :aid
+            where postn.aid = :aid
                 and postn.picture = 1
             order by postn.published desc';
+
+        if($limitr !== false)
+            $this->_sql = $this->_sql.' limit '.(int)$limitr.' offset '.(int)$limitf;
 
         $this->prepare(
             'Postn',
             array(
-                'origin' => $this->_user,
                 'aid' => $from // Another hack
             )
         );
@@ -410,7 +428,7 @@ class PostnDAO extends SQL {
         return $this->run('ContactPostn');
     }
 
-    function getPublicItem($origin, $node, $nodeid, $limitf = false, $limitr = false) {
+    function getPublicItem($origin, $node, $nodeid) {
         $this->_sql = '
             select *, postn.aid, privacy.value as privacy from postn
             left outer join contact on postn.aid = contact.jid
@@ -420,9 +438,6 @@ class PostnDAO extends SQL {
                 and privacy.value = 1
                 and postn.nodeid = :nodeid
             order by postn.published desc';
-
-        if($limitr)
-            $this->_sql = $this->_sql.' limit '.$limitr.' offset '.$limitf;
 
         $this->prepare(
             'Postn',
@@ -481,24 +496,6 @@ class PostnDAO extends SQL {
         );
 
         return $this->run('Postn');
-    }
-
-    // TODO: fixme
-    function getStatistics() {
-        $this->_sql = '
-            select count(*) as count, extract(month from published) as month, extract(year from published) as year
-            from postn
-            where session = :session
-            group by month, year order by year desc, month desc';
-
-        $this->prepare(
-            'Postn',
-            array(
-                'session' => $this->_user
-            )
-        );
-
-        return $this->run(null, 'array');
     }
 
     function getCountSince($date) {
