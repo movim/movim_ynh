@@ -1,4 +1,5 @@
 #!/bin/bash
+#
 
 # Retrieve arguments
 path=$(sudo yunohost app setting movim path)
@@ -44,6 +45,7 @@ sudo su -c "cd $final_path && php mud.php db set" movim
 # Reset SSO parameters
 sudo yunohost app setting movim protected_uris -d
 sudo yunohost app setting movim skipped_uris -d
+sudo yunohost app clearaccess movim
 
 # SSOwat Configuration
 if [ $ssoenabled = "No" ] || [ $public_site = "No" ];

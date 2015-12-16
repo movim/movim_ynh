@@ -1,4 +1,5 @@
 #!/bin/bash
+#
 
 # Retrieve arguments
 domain=$1
