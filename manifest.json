@@ -60,10 +60,10 @@
                 "default" : "en"
             },
             {
-                "name": "public_site",
+                "name": "ssoenabled",
                 "ask": {
-                    "en": "Public pod ? (see README on github)",
-		    "fr": "Pod public ? (voir README sur github)"
+                    "en": "Enable SSO (autologin) ?",
+		    "fr": "Activer le SSO (connexin auto) ?"
                 },
                 "choices": ["Yes", "No"],
                 "default": "No"

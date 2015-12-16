@@ -6,7 +6,7 @@ path=$2
 admin=$3
 password=$4
 language=$5
-public_site=$6
+ssoenabled=$6
 port=$7
 timezone=`cat /etc/timezone`
 
@@ -50,7 +50,7 @@ fi
 
 # Save parameters
 sudo yunohost app setting movim admin -v $admin
-sudo yunohost app setting movim public_site -v $public_site
+sudo yunohost app setting movim ssoenabled -v $ssoenabled
 sudo yunohost app setting movim port -v $port
 sudo yunohost app setting movim path -v $path
 
@@ -94,11 +94,6 @@ sudo su -c "cd $final_path && php mud.php config environment:production" movim
 sudo su -c "cd $final_path && php mud.php config timezone:$timezone" movim
 sudo su -c "cd $final_path && php mud.php config username:$admin" movim
 sudo su -c "cd $final_path && php mud.php config password:`echo -n $password | sha1sum | awk '{print $1}'`" movim
-if [ $public_site = "No" ]; 
-then
-        sudo su -c "cd $final_path && php mud.php config xmppwhitelist:$domain" movim
-fi
-sudo yunohost app addaccess movim -u $admin
 
 # Copy init script or systemd service
 sudo sed -i "s@YHURL@$domain$path@g" ../conf/movim.{service,init}
@@ -129,8 +124,15 @@ sed -i "s@//ws/@/ws/@g" ../conf/nginx.conf # Avoid duplicate /
 sudo cp ../conf/nginx.conf /etc/nginx/conf.d/$domain.d/movim.conf
 
 # SSOwat Configuration
-sudo yunohost app setting movim skipped_uris -v "/"  
-sudo yunohost app ssowatconf
+if [ $ssoenabled = "No" ];
+then
+	sudo yunohost app setting movim skipped_uris -v "/"  
+	sudo yunohost app ssowatconf
+	sudo su -c "cd $final_path && php mud.php config xmppwhitelist:$domain" movim
+else
+	sudo yunohost app setting movim unprotected_uris -v "/"
+	sudo yunohost app ssowatconf
+fi
 
 # Start Movim
 sudo service php5-fpm restart
