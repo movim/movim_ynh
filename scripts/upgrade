@@ -48,7 +48,7 @@ sudo yunohost app setting movim skipped_uris -d
 sudo yunohost app clearaccess movim
 
 # SSOwat Configuration
-if [ $ssoenabled = "No" ] || [ $public_site = "No" ];
+if [ $ssoenabled = "No" ] || [ $public_site = "Yes" ];
 then
         sudo yunohost app setting movim skipped_uris -v "/"
         sudo yunohost app ssowatconf
