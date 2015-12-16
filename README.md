@@ -21,15 +21,15 @@ Current Movim version : 0.9 git2015-12-15
 
 * domain : Your domain name.
 * path : Path for you Movim pod (will be https://example.com/path).
-* admin : Who can access ?q=admin (pod options).
-* password : Password to access ?q=admin.
+* admin : Who can access /?admin (pod options).
+* password : Password to access /?admin.
 * language : Pod language, currently en or fr.
 * public_site : Only whitelist your server (can be changed in pod advanced configuration)
 * port : Port for Movim daemon. Default is 9537, a check is performed before installation.
 
 **Pod advanced configuration**
 
-    https://example.com/movim/?q=admin
+    https://example.com/movim/?admin
 
 Username and password are defined during installation.
 
