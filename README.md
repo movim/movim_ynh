@@ -22,7 +22,7 @@ Current Movim version : 0.9 git2015-12-15
 * admin : Who can access /?admin (pod options).
 * password : Password to access /?admin.
 * language : Pod language, currently en or fr.
-* public_site : Only whitelist your server (can be changed in pod advanced configuration)
+* enable sso : automatic login.
 * port : Port for Movim daemon. Default is 9537, a check is performed before installation.
 
 **Pod advanced configuration**
