@@ -82,7 +82,7 @@ function addHFR($string) {
                 $num = '';
                 if(count($match) == 3)
                     $num = $match[2].'/';
-                return '<img class="hfr" title="'.$match[0].'" alt="'.$match[0].'" src="http://forum-images.hardware.fr/images/perso/'.$num.$match[1].'.gif">';
+                return '<img class="hfr" title="'.$match[0].'" alt="'.$match[0].'" src="http://forum-images.hardware.fr/images/perso/'.$num.$match[1].'.gif"/>';
             }, $string
     );
 }
@@ -335,7 +335,7 @@ function stripTags($string)
 function purifyHTML($string)
 {
     $config = \HTMLPurifier_Config::createDefault();
-    $config->set('HTML.Doctype', 'HTML 4.01 Transitional');
+    $config->set('HTML.Doctype', 'XHTML 1.1');
     $config->set('Cache.SerializerPath', '/tmp');
     $config->set('HTML.DefinitionID', 'html5-definitions');
     $config->set('HTML.DefinitionRev', 1);

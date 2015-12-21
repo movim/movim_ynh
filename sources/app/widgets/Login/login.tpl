@@ -30,47 +30,48 @@
                     <label for="pass">{$c->__('form.password')}</label>
                 </div>
                 <div>
-                    <ul class="simple thin">
-                        <li class="action">
-                            <div class="action">
+                    <ul class="list thin">
+                        <li>
+                            <p class="center">
+                                <a id="return_sessions" class="button flat" href="#" onclick="Login.toChoose()">
+                                    {$c->__('account.title')}
+                                </a>
                                 <input
                                     type="submit"
                                     disabled
                                     data-loading="{$c->__('button.connecting')}"
                                     value="{$c->__('button.come_in')}"
                                     class="button flat"/>
-                            </div>
-                            <a id="return_sessions" class="button flat" href="#" onclick="Login.toChoose()">
-                                {$c->__('account.title')}
-                            </a>
+                            </p>
                         </li>
                     </ul>
                 </div>
             </form>
 
             {if="isset($info) && $info != ''"}
-            <ul class="thin simple card">
+            <ul class="list thin card">
                 <li class="info">
-                    <p>{$info}</p>
+                    <p class="normal">{$info}</p>
                 </li>
             </ul>
             {/if}
 
             {if="isset($whitelist) && $whitelist != ''"}
-            <ul class="thin simple card">
+            <ul class="list thin card">
                 <li class="info">
-                    <p>{$c->__('whitelist.info')} : {$whitelist}</p>
+                    <p class="normal">{$c->__('whitelist.info')} : {$whitelist}</p>
                 </li>
             </ul>
             {/if}
 
-            <ul class="thin simple">
-                <li class="new_account">
-                    <span>{$c->__('form.no_account')}<br />
+            <ul class="list thin">
+                <li>
+                    <p class="normal center">
+                        {$c->__('form.no_account')}
                         <a class="button flat" href="{$c->route('account')}">
                             {$c->__('form.create_one')}
                         </a>
-                    </span>
+                    </p>
                 </li>
             </ul>
         </section>

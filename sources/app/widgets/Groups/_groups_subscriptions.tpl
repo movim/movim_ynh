@@ -7,29 +7,31 @@
         </li>
     </ul>
 {else}
-    <ul class="divided spaced middle active">
+    <ul class="list divided spaced middle active all">
         {loop="$subscriptions"}
             {if="$c->checkNewServer($value)"}
-                <li class="subheader">
-                    <a href="#" onclick="Groups_ajaxDisco('{$value->server}')">{$value->server} - {$value->servicename}</a>
+                <li class="subheader" onclick="Groups_ajaxDisco('{$value->server}')">
+                    <span class="control icon gray"><i class="zmdi zmdi-chevron-right"></i></span>
+                    <p>
+                        {$value->server} - {$value->servicename}
+                    </p>
                 </li>
             {/if}
             <li
-                {if="$value->description"}class="condensed"{/if}
                 data-server="{$value->server}"
                 data-node="{$value->node}"
                 title="{$value->server} - {$value->node}"
             >
-                <span class="icon bubble color {$value->node|stringToColor}">{$value->node|firstLetterCapitalize}</span>
-                <span>
+                <span class="primary icon bubble color {$value->node|stringToColor}">{$value->node|firstLetterCapitalize}</span>
+                <p class="line normal">
                     {if="$value->name"}
                         {$value->name}
                     {else}
                         {$value->node}
                     {/if}
-                </span>
+                </p>
                 {if="$value->description"}
-                    <p class="wrap">{$value->description|strip_tags}</p>
+                    <p class="line">{$value->description|strip_tags}</p>
                 {/if}
             </li>
         {/loop}
