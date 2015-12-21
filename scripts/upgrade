@@ -66,6 +66,7 @@ then
         sudo su -c "cd $final_path && php mud.php config xmppwhitelist:$domain" movim
 else
         sudo yunohost app setting movim unprotected_uris -v "/"
+	sudo yunohost app setting movim skipped_regex -v "login"
         sudo yunohost app ssowatconf
 fi
 
