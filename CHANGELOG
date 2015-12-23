@@ -2,8 +2,8 @@
 
 1.4 ?
 - IMPORTANT (upgrades only): public pod option has been removed and replaced by SSO option.
-  If you have a public pod --> SSO will be disabled, but xmpp whitelist will allow only your domain. This can be changed using Movim admin (example.org/movim/?admin).
-  If you have a private pod --> SSO will be enabled, xmpp whitelist will remains but is now useless.
+  If you had a public pod --> SSO will be disabled, but xmpp whitelist will allow only your domain. This can be changed using Movim admin (example.org/movim/?admin).
+  If you had a private pod --> SSO will be enabled, xmpp whitelist will remains but is now useless.
 - Yunohost SSO support !
 - Changelog is now on a separate file
 - script/install : removed "addaccess" parameter
