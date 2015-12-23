@@ -228,7 +228,7 @@ ul.list li > .control ~ .control ~ .control {
 /* Limit the size of the main content */
 
 ul.list li > .control ~ *:not(.control):not(.bubble):not(.counter) {
-    width: calc(100% - 8rem);
+    width: calc(100% - 9rem);
 }
 
 ul.list li > .control ~ .control ~ *:not(.control):not(.bubble):not(.counter) {
@@ -331,7 +331,9 @@ ul li div.bubble {
 }
 
 ul li div.bubble > p {
-    display: inline;
+    overflow: hidden;
+    display: inline-block;
+    max-width: 100%;
 }
 
 ul li.oppose div.bubble {
