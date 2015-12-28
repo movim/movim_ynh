@@ -1,6 +1,6 @@
 **Changelog**
 
-1.4 ?
+1.4 2015-12-28
 - IMPORTANT (upgrades only): public pod option has been removed and replaced by SSO option.
   If you had a public pod --> SSO will be disabled, but xmpp whitelist will allow only your domain. This can be changed using Movim admin (example.org/movim/?admin).
   If you had a private pod --> SSO will be enabled, xmpp whitelist will remains but is now useless.
