@@ -1,5 +1,5 @@
 {loop="$users"}
-    <li class="block" style="background-image: url();" onclick="Contact_ajaxGetContact('{$value->jid}', {$page});">
+    <li class="block" style="background-image: url();" onclick="Contact_ajaxGetContact('{$value->jid}', {if="$page"}{$page}{else}0{/if});">
         {$url = $value->getPhoto('s')}
         {if="$url"}
             <span class="primary icon bubble">
@@ -33,10 +33,10 @@
         <span class="primary icon gray">
             <i class="zmdi zmdi-book"></i>
         </span>
-        {loop="$pages"}
-            <p>
-                <a onclick="Contact_ajaxPublic('{$key}');" class="button flat {if="$key == $page"}on{/if}">{$key+1}</a>
-            </p>
-        {/loop}
+        <p>
+            {loop="$pages"}
+                <a onclick="Contact_ajaxPublic({$key});" class="button flat {if="$key == $page"}on{/if}">{$key+1}</a>
+            {/loop}
+        </p>
     </li>
 {/if}
