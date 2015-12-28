@@ -5,7 +5,7 @@ Movim is a decentralized social network, written in PHP and HTML5 and based on t
 
 It is recommended to use a "valid" certificate to use Movim, auto-signed is sometimes problematic. You might want to take a look a StartSSL or Let's Encrypt.
 
-Current Movim version : 0.9 git2015-12-28
+Provided Movim version : 0.9 git2015-12-28
 
 Please read CHANGELOG.
 
@@ -20,7 +20,7 @@ Please read CHANGELOG.
 **Options**
 
 * domain : Your domain name.
-* path : Path for you Movim pod (will be https://example.com/path).
+* path : Path for you Movim pod (https://example.com/path).
 * admin : Who can access /?admin (pod options).
 * password : Password to access /?admin.
 * language : Pod language, currently en or fr.
