@@ -1,7 +1,7 @@
 **Changelog**
 
 1.5 ?
-- Update to movim 0.9 git2016-01-06
+- Update to movim 0.9 git2016-01-07
 - fix #16 (Installing movim crashes agendav) because of bad ssowatconf/regex
 - script/install : removed skipped_uris
 - script/install : sed DisconnectController.php to avoid redirect to ?login after ?disconnect
