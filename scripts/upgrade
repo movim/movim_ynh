@@ -66,7 +66,8 @@ then
         sudo su -c "cd $final_path && php mud.php config xmppwhitelist:$domain" movim
 else
         sudo yunohost app setting movim unprotected_uris -v "/"
-	sudo yunohost app setting movim skipped_regex -v "login"
+        # Next line is to avoid SSO to auto-connect just after disconnect
+        sudo sed -i "s@redirect('login')@redirect('')@g" $final_path/app/controllers/DisconnectController.php
         sudo yunohost app ssowatconf
 fi
 

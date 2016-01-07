@@ -2,6 +2,11 @@
 
 1.5 ?
 - Update to movim 0.9 git2016-01-06
+- fix #16 (Installing movim crashes agendav) because of bad ssowatconf/regex
+- script/install : removed skipped_uris
+- script/install : sed DisconnectController.php to avoid redirect to ?login after ?disconnect
+- script/upgrade : removed skipped_uris
+- script/upgrade : sed DisconnectController.php to avoid redirect to ?login after ?disconnect
 
 1.4 2015-12-28
 - IMPORTANT (upgrades only): public pod option has been removed and replaced by SSO option.
