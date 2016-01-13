@@ -1,6 +1,8 @@
 #
 # Translators:
-# Maxime Buquet <tidusx62@gmail.com>, 2015
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2012
+# Simon Ede <vargamarci64@gmail.com>, 2015
+# Simon Ede <vargamarci64@gmail.com>, 2015
 #. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
 #. extracted from ../app/widgets/About/locales.ini
 #. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
@@ -96,37 +98,37 @@ msgstr ""
 "POT-Creation-Date: 2015-12-29 13:42+0200\n"
 "PO-Revision-Date: 2015-12-29 12:43+0000\n"
 "Last-Translator: Jaussoin Timothée <edhelas@movim.eu>\n"
-"Language-Team: Japanese (http://www.transifex.com/movim/movim/language/ja/)\n"
-"Language: ja\n"
+"Language-Team: Hungarian (http://www.transifex.com/movim/movim/language/hu/)\n"
+"Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Translate Toolkit 1.13.0\n"
 
 #: [about]thanks
 msgid "Thanks"
-msgstr ""
+msgstr "Köszönet"
 
 #: [about]developers
 msgid "Developers"
-msgstr "開発者"
+msgstr "Fejlesztők"
 
 #: [about]translators
 msgid "Translators"
-msgstr "翻訳者"
+msgstr "Fordítók"
 
 #: [about]translators_text
 msgid "Thanks to all the translators"
-msgstr ""
+msgstr "Köszönet minden fordítónak"
 
 #: [about]software
 msgid "Software"
-msgstr "ソフトウェア"
+msgstr "Szoftver"
 
 #: [about]resources
 msgid "Resources"
-msgstr "リソース"
+msgstr "Erőforrások"
 
 #: [about]api [schema]api [api]title
 msgid "API"
@@ -134,76 +136,76 @@ msgstr "API"
 
 #: [about]info
 msgid "Movim is an XMPP-based communication platform. All the project, except the following software and resources, is under"
-msgstr ""
+msgstr "A Movim egy XMPP alapú kommunikációs platform. Az egész projekt, kikéve a következő szoftvereket és forrásokat alatta van a"
 
 #: [account]title
 msgid "Account"
-msgstr "アカウント"
+msgstr "Felhasználó"
 
 #: [account]password_change_title
 msgid "Change my password"
-msgstr "パスワードを変更する"
+msgstr "Megváltoztatom a jelszavam"
 
 #: [account]password [db]password [credentials]password [form]password
 #: [input]password
 msgid "Password"
-msgstr "パスワード"
+msgstr "Jelszó"
 
 #: [account]password_confirmation
 msgid "Password confirmation"
-msgstr "パスワードを再入力してください"
+msgstr "Jelszó megerősítése"
 
 #: [account]password_changed
 msgid "The password has been updated"
-msgstr "パスワードは更新されました"
+msgstr "A jelszó frissítve lett"
 
 #: [account]password_not_valid
 msgid "Please provide a valid password (6 characters minimum)"
-msgstr "適正なパスワードを記入してください（最低６文字）"
+msgstr "Kérlek adj meg egy érvényes jelszót (minimum 6 karakter)"
 
 #: [account]password_not_same
 msgid "The provided passwords are not the same"
-msgstr "記入されたパスワードが異なっています"
+msgstr "A megadott jelszavak nem egyeznek"
 
 #: [account]delete_title
 msgid "Delete my account"
-msgstr "アカウントを削除する"
+msgstr "Törlöm a felhasználói fiókom"
 
 #: [account]delete
 msgid "Delete your account"
-msgstr "アカウントを削除する"
+msgstr "Felhasználói fiókod törlése"
 
 #: [account]delete_text
 msgid "You will delete your XMPP account and all the relative information linked to it (profile, contacts and publications)."
-msgstr "XMPP アカウントと関連しているデータ、プロファイル、コンタクトや投稿などが削除されます。"
+msgstr "Törölni fogod az XMPP felhasználód és minden vele kapcsolatos információt (profil, kapcsolatok, és megosztások)."
 
 #: [account]delete_text_confirm
 msgid "Are you sure that you want to delete it ?"
-msgstr "削除してよろしいですか"
+msgstr "Biztosan törölni akarod?"
 
 #: [account]gateway_title
 msgid "Gateway"
-msgstr ""
+msgstr "Átjáró"
 
 #: [create]title [subscribe]title
 msgid "Create a new account"
-msgstr "新しいアカウントを作成する"
+msgstr "Felhasználó létrehozása"
 
 #: [create]notfound
 msgid "No account creation form found on the server"
-msgstr ""
+msgstr "Nem található felhasználó létrehozási űrlap a szerveren."
 
 #: [create]server_on
 msgid "on"
-msgstr ""
+msgstr "rajta"
 
 #: [create]successfull
 msgid "Your acccount has been successfully registered"
-msgstr "アカウントが正常に作成されました"
+msgstr "Felhasználói fiókodat sikeresen létrehoztuk."
 
 #: [create]loading
 msgid "Loading"
-msgstr "読み込み中"
+msgstr "Töltés"
 
 #: [create]placeholder
 msgid "…and start playing"
@@ -211,55 +213,55 @@ msgstr ""
 
 #: [error]not_acceptable
 msgid "Not Acceptable"
-msgstr "不正"
+msgstr "Nem elfogadható"
 
 #: [error]service_unavailable
 msgid "The registration system of this server is currently unavailable"
-msgstr ""
+msgstr "A szerver regisztrációs rendszere jelenleg nem elérhető."
 
 #: [oob]about
 msgid "This server use an external system for the registration, please click on the following URL."
-msgstr ""
+msgstr "Ez a szerver külső rendszert használ a regisztrációhoz, kérlek kattints a következő URL-re."
 
 #: [adhoc]title
 msgid "Actions"
-msgstr "アクション"
+msgstr "Akciók"
 
 #: [db]legend [schema]database
 msgid "Database"
-msgstr "データベース"
+msgstr "Adatbázis"
 
 #: [db]connect_error
 msgid "Modl wasn't able to connect to the database"
-msgstr "Modlがデータベースに接続できませんでした"
+msgstr "Modl nem tudott kapcsolódni az adatbázishoz."
 
 #: [db]connect_success
 msgid "Movim is connected to the database"
-msgstr "Movimがデータベースに接続しました"
+msgstr "Movim csatlakoztatva az adatbázishoz."
 
 #: [db]update
 msgid "The database need to be updated"
-msgstr "データベースをアップデートする必要があります"
+msgstr "Az adatbázis frissítésre szorul."
 
 #: [db]up_to_date
 msgid "Movim database is up to date"
-msgstr "データベースがアップデートされました"
+msgstr "A Movim adatbázis napra kész."
 
 #: [db]type
 msgid "Database Type"
-msgstr "データベースタイプ"
+msgstr "Adatbázis típusa"
 
 #: [db]username [credentials]username [input]username
 msgid "Username"
-msgstr "ユーザ名"
+msgstr "Felhasználónév"
 
 #: [db]host
 msgid "Host"
-msgstr "ホスト"
+msgstr "Host"
 
 #: [db]port
 msgid "Port"
-msgstr "ポート"
+msgstr "Port"
 
 #: [db]name
 msgid "Database Name"
@@ -267,31 +269,31 @@ msgstr ""
 
 #: [admin]general
 msgid "General Settings"
-msgstr "一般設定"
+msgstr "Általános Beállítások"
 
 #: [general]theme
 msgid "Theme"
-msgstr "テーマ"
+msgstr "Téma"
 
 #: [general]language
 msgid "Default language"
-msgstr "標準の言語"
+msgstr "Alapértelmezett nyelv"
 
 #: [general]log_verbosity
 msgid "Log verbosity"
-msgstr "ログ"
+msgstr ""
 
 #: [general]timezone
 msgid "Server Timezone"
-msgstr "サーバータイムゾーン"
+msgstr "Szerver Időzóna"
 
 #: [general]limit
 msgid "User folder size limit (in bytes)"
-msgstr "ユーザーフォルダのサイズ上限（バイト）"
+msgstr "Felhasználói mappa méret korlátja (bájtokban)"
 
 #: [websocket]title
 msgid "WebSocket Configuration"
-msgstr "ウェブソケット設定"
+msgstr ""
 
 #: [websocket]info
 msgid "Enter here a valid WebSocket URI in the form"
@@ -299,11 +301,11 @@ msgstr ""
 
 #: [websocket]label
 msgid "WebSocket URI"
-msgstr "ウェブソケットURI"
+msgstr ""
 
 #: [websocket]save_info
 msgid "If you change the URI, please restart the daemon to reload the configuration"
-msgstr "URIを変えるとデーモンを再起動してください"
+msgstr ""
 
 #: [websocket]publics
 msgid "Public WebSockets"
@@ -311,69 +313,69 @@ msgstr ""
 
 #: [credentials]title
 msgid "Administration Credential"
-msgstr "管理者認証"
+msgstr ""
 
 #: [credentials]info
 msgid "Change the default credentials admin/password"
-msgstr "デフォルトの管理者・パスワードを変更する"
+msgstr ""
 
 #: [credentials]re_password
 msgid "Retype password"
-msgstr "パスワードを再入力してください"
+msgstr "Gépeld újra a jelszót"
 
 #: [whitelist]title
 msgid "Whitelist - XMPP Server"
-msgstr "信頼するXMPPサーバー"
+msgstr "Fehérlista - XMPP szerver"
 
 #: [whitelist]info1
 msgid "If you want to specify a list of authorized XMPP servers on your Movim pod and forbid the connection on all the others please put their domain name here, with comma (ex: movim.eu,jabber.fr)"
-msgstr "限られた信頼するXMPPサーバーのリストをMovimのポッドに設定し、他のサーバーの接続をブロックしたい場合、ここにドメインネームをコンマで区切って（例：movim.eu,jabber.fr）入力してください。"
+msgstr "Ha megakarsz határozni az azonosított XMPP szervereket a Movim pod-odon és megtiltani a kapcsolatot minden egyéb szervernek, kérlek írd a domain nevüket ide, vesszővel elválasztva (pl: movim.eu,jabber.fr)"
 
 #: [whitelist]info2
 msgid "Leave this field blank if you allow the access to all the XMPP accounts."
-msgstr "空のままにするとアクセスできるXMPPアカウントが制限されません"
+msgstr "Hagyd ezt a mezőt üresen ha engedélyezed a hozzáférést mindegyik XMPP felhasználóhoz."
 
 #: [whitelist]label
 msgid "List of whitelisted XMPP servers"
-msgstr "信頼するXMPPサーバー"
+msgstr "A fehérlistázott szerverek listája"
 
 #: [information]title
 msgctxt "[information]title"
 msgid "Information Message"
-msgstr ""
+msgstr "Információs üzenet"
 
 #: [information]description
 msgid "Description"
-msgstr ""
+msgstr "Leírás"
 
 #: [information]info1
 msgid "This message will be displayed on the login page"
-msgstr "このメッセージはログインページに表示されます"
+msgstr "Ez az üzenet a bejelentkező képernyőn fog megjelenni"
 
 #: [information]info2
 msgid "Leave this field blank if you dont want to show any message."
-msgstr ""
+msgstr "Hagyd ezt a mezőt üresen ha nem akarsz megjeleníteni semmilyen üzenetet."
 
 #: [information]label
 msgctxt "[information]label"
 msgid "Information Message"
-msgstr ""
+msgstr "Információs üzenet"
 
 #: [log]empty
 msgid "Empty"
-msgstr "空"
+msgstr "Üres"
 
 #: [log]syslog
 msgid "Syslog"
-msgstr "Syslog"
+msgstr ""
 
 #: [log]syslog_files
 msgid "Syslog and files"
-msgstr "Syslogとファイル"
+msgstr ""
 
 #: [admin]compatibility
 msgid "General Overview"
-msgstr "概要"
+msgstr "Általános Áttekintés"
 
 #: [compatibility]info
 msgid "Movim has found some issues or things that need to be fixed or improved"
@@ -381,23 +383,23 @@ msgstr ""
 
 #: [compatibility]php1
 msgid "Update your PHP-Version: %s"
-msgstr "PHPをアップデートしてください： %s"
+msgstr "A PHP verziód: %s"
 
 #: [compatibility]php2
 msgid "Required: 5.3.0"
-msgstr ""
+msgstr "Szükséges verzió: 5.3.0"
 
 #: [compatibility]curl
 msgid "Install the php5-curl library"
-msgstr ""
+msgstr "Telepítsd a php5-curl könyvtárat"
 
 #: [compatibility]imagick
 msgid "Install the php5-imagick library"
-msgstr ""
+msgstr "Telepítsd a php5-imagick könyvtárat"
 
 #: [compatibility]gd
 msgid "Install the php5-gd library"
-msgstr ""
+msgstr "Telepítsd a php5-gd könyvtárat"
 
 #: [compatibility]rights
 msgid "Read and write rights for the webserver in Movims root directory"
@@ -417,15 +419,15 @@ msgstr ""
 
 #: [schema]browser
 msgid "Browser"
-msgstr "ブラウザ"
+msgstr "Böngésző"
 
 #: [schema]movim
 msgid "Movim Core"
-msgstr "Movim コア"
+msgstr "Movim Core"
 
 #: [schema]daemon
 msgid "Movim Daemon"
-msgstr "Movim デーモン"
+msgstr "Movim Daemon"
 
 #: [schema]xmpp
 msgid "XMPP"
@@ -433,7 +435,7 @@ msgstr "XMPP"
 
 #: [api]info
 msgid "Here you can register your pod on the official %sMovim API%s and be listed on %sthe pods page%s."
-msgstr ""
+msgstr "Itt tudod regisztrálni a podod a hivatalos %sMovim API%kon és listázhatod a %sthe pods page%n."
 
 #: [api]register
 msgid "Your pod is not registered on the API"
@@ -449,7 +451,7 @@ msgstr ""
 
 #: [api]validated
 msgid "Your pod is validated"
-msgstr ""
+msgstr "A podod érvényesítve lett."
 
 #: [api]unregister
 msgid "You asked to be removed from the API, this request will be processed in a couple of hours"
@@ -457,35 +459,35 @@ msgstr ""
 
 #: [api]conf_updated [config]updated
 msgid "Configuration updated"
-msgstr "設定が変更されました"
+msgstr "Konfiguráció frissítve."
 
 #: [avatar]file
 msgid "File"
-msgstr "ファイル"
+msgstr "Fájl"
 
 #: [avatar]use_it
 msgid "Use it"
-msgstr "使用する"
+msgstr "Használd"
 
 #: [avatar]webcam
 msgid "Webcam"
-msgstr "ウェブカメラ"
+msgstr "Webkam"
 
 #: [avatar]cheese
 msgid "Cheese !"
-msgstr "はい、チーズ！"
+msgstr "Sajt!"
 
 #: [avatar]snapshot
 msgid "Take a webcam snapshot"
-msgstr "ウェブカメラで写真を撮る"
+msgstr "Webkam pillanatkép készítése."
 
 #: [avatar]updated
 msgid "Avatar Updated"
-msgstr "アバターがアップデートされました"
+msgstr "Avatár frissítve"
 
 #: [avatar]not_updated
 msgid "Avatar Not Updated"
-msgstr "アバターが更新されていません"
+msgstr "Az avatár nem lett frissítve."
 
 #: [avatar]missing
 msgid "No avatar defined yet"
@@ -493,11 +495,11 @@ msgstr ""
 
 #: [blog]title [feed]title
 msgid "%s's feed"
-msgstr "%s のフィード"
+msgstr ""
 
 #: [blog]empty
 msgid "This user has not posted anything right now"
-msgstr "このユーザがまだ投稿していません"
+msgstr "Ez a felhasználó nem osztott meg semmit sem eddig."
 
 #: [blog]private
 msgid "This content is private, please login to see it"
@@ -505,56 +507,56 @@ msgstr ""
 
 #: [title]conferences
 msgid "Conferences"
-msgstr ""
+msgstr "Konferenciák"
 
 #: [title]groups [group]empty_title [menu]groups [page]groups
 msgid "Groups"
-msgstr "グループ"
+msgstr "Csoportok"
 
 #: [chatroom]add
 msgid "Add a new Chat Room"
-msgstr "チャットルームを追加する"
+msgstr "Új chat szoba hozzáadása."
 
 #: [chatroom]id [chatrooms]id
 msgid "Chat Room ID"
-msgstr ""
+msgstr "Chat szoba azonosítója:"
 
 #: [chatroom]name
 msgctxt "[chatroom]name"
 msgid "Name"
-msgstr "名前"
+msgstr "Név"
 
 #: [chatroom]nickname [general]nickname [chatrooms]nickname
 msgid "Nickname"
-msgstr "ニックネーム"
+msgstr "Becenév"
 
 #: [chatroom]autojoin_label
 msgid "Do you want do join automaticaly this Chat Room ?"
-msgstr ""
+msgstr "Automatikusan be akarsz lépni a chat szobába?"
 
 #: [chatroom]bad_id [chatrooms]bad_id
 msgid "Bad Chatroom ID"
-msgstr "不正チャットルームID"
+msgstr "Rossz Chat szoba azonosító"
 
 #: [chatroom]empty_name [chatrooms]empty_name
 msgid "Empty name"
-msgstr "名前が空です"
+msgstr ""
 
 #: [bookmarks]updated
 msgid "Bookmarks updated"
-msgstr "ブックマークを更新しました"
+msgstr "Könyvjelzők frissítve"
 
 #: [bookmarks]error
 msgid "An error occured :"
-msgstr ""
+msgstr "Hiba lépett fel:"
 
 #: [bookmarks]configure
 msgid "Configure"
-msgstr "設定する"
+msgstr "Konfigurálás"
 
 #: [url]add
 msgid "Add a new URL"
-msgstr "URLを追加する"
+msgstr "Új URL hozzáadása"
 
 #: [url]url
 msgid "URL"
@@ -563,23 +565,23 @@ msgstr "URL"
 #: [url]name
 msgctxt "[url]name"
 msgid "Name"
-msgstr ""
+msgstr "Név"
 
 #: [message]published
 msgid "Message Published"
-msgstr "メッセージが公開されました"
+msgstr "Üzenet közzétéve"
 
 #: [message]encrypted
 msgid "Encrypted message"
-msgstr "暗号化されたメッセージ"
+msgstr "Titkosított üzenet"
 
 #: [message]composing [chats]composing
 msgid "Composing..."
-msgstr "書き込み中"
+msgstr "Ír..."
 
 #: [message]paused [chats]paused
 msgid "Paused..."
-msgstr ""
+msgstr "Megállt..."
 
 #: [message]gone
 msgid "Contact gone"
@@ -591,59 +593,59 @@ msgstr ""
 
 #: [chat]attention
 msgid "%s needs your attention"
-msgstr ""
+msgstr "%snek a figyelmedre van szüksége"
 
 #: [chat]placeholder
 msgid "Your message here..."
-msgstr "ここに記入を..."
+msgstr "Ide írd az üzenetet..."
 
 #: [chat]smileys
 msgid "Smileys"
-msgstr "絵文字"
+msgstr "Hangulatjelek"
 
 #: [chat]empty_title [button]chat
 msgid "Chat"
-msgstr "チャット"
+msgstr "Chat"
 
 #: [chat]empty_text
 msgid "Discuss with your contacts"
-msgstr ""
+msgstr "Vitasd meg ismerőseiddel"
 
 #: [chat]frequent [chats]frequent
 msgid "Frequent contacts"
-msgstr ""
+msgstr "Gyakori kapcsolatok"
 
 #: [chatroom]members
 msgid "Members"
-msgstr "メンバー"
+msgstr "Tagok"
 
 #: [chatroom]connected [chatrooms]connected
 msgid "Connected to the chatroom"
-msgstr ""
+msgstr "Csatlakozva a chat szobához"
 
 #: [chatroom]disconnected [chatrooms]disconnected
 msgid "Disconnected from the chatroom"
-msgstr ""
+msgstr "Lecsatlakozva a chat szobától"
 
 #: [chatroom]config [group]configuration [page]configuration
 msgid "Configuration"
-msgstr "設定"
+msgstr "Beállítások"
 
 #: [chatroom]config_saved
 msgid "Configuration saved"
-msgstr "設定が保存されました。"
+msgstr "Beállítások elmentve."
 
 #: [chatroom]subject
 msgid "Subject"
-msgstr "トピック"
+msgstr "Tárgy"
 
 #: [chatroom]subject_changed
 msgid "Subject changed"
-msgstr "トピックが更新されました"
+msgstr "A tárgy megváltozott"
 
 #: [chats]empty_title
 msgid "No chats yet..."
-msgstr ""
+msgstr "Nincsenek még beszélgetések..."
 
 #: [chats]empty
 msgid "Open a new conversation by clicking on the %s button bellow or visit the %sContacts%s page."
@@ -651,39 +653,39 @@ msgstr ""
 
 #: [chats]add
 msgid "Chat with a contact"
-msgstr "誰かとチャットする"
+msgstr ""
 
 #: [chats]more
 msgid "Load more contacts"
-msgstr ""
+msgstr "További kapcsolatok betöltése"
 
 #: [title]data
 msgid "Data"
-msgstr "データ"
+msgstr "Adat"
 
 #: [title]cache
 msgid "Cache"
-msgstr "キャッシュ"
+msgstr "Cache"
 
 #: [title]contacts [menu]contacts [page]contacts
 msgid "Contacts"
-msgstr "コンタクト"
+msgstr "Kapcsolatok"
 
 #: [title]posts [page]posts
 msgid "Posts"
-msgstr "投稿"
+msgstr "Megosztások"
 
 #: [title]messages
 msgid "Messages"
-msgstr "メッセージ"
+msgstr "Üzenetek"
 
 #: [config]general
 msgid "General"
-msgstr "一般"
+msgstr "Általános"
 
 #: [config]language
 msgid "Language"
-msgstr "言語"
+msgstr "Nyelv"
 
 #: [config]roster
 msgid "Roster display"
@@ -691,15 +693,15 @@ msgstr ""
 
 #: [config]roster_show
 msgid "Show the offline contacts"
-msgstr "オフラインのコンタクトを表示"
+msgstr "Mutatsd az offline kapcsolatokat"
 
 #: [config]roster_hide
 msgid "Hide the offline contacts"
-msgstr "オフラインのコンタクトを非表示"
+msgstr "Rejtsd el az offline kapcsolatokat"
 
 #: [config]appearence
 msgid "Appearence"
-msgstr "表示"
+msgstr "Megjelenés"
 
 #: [config]not_valid
 msgid "Configuration invalid"
@@ -711,7 +713,7 @@ msgstr ""
 
 #: [notifications]message
 msgid "Notify on incoming message"
-msgstr ""
+msgstr "Értesíts bejövő üzenet esetén"
 
 #: [notifications]desktop
 msgid "Use desktop notifications"
@@ -723,115 +725,115 @@ msgstr ""
 
 #: [general]legend [general]general_title
 msgid "General Informations"
-msgstr "一般情報"
+msgstr "Általános információk"
 
 #: [general]name [public_groups]name [chatrooms]name
 msgid "Name"
-msgstr "名前"
+msgstr "Név"
 
 #: [general]date_of_birth
 msgid "Date of Birth"
-msgstr "生年月日"
+msgstr "Születési idő"
 
 #: [general]gender
 msgid "Gender"
-msgstr "性別"
+msgstr "Nem"
 
 #: [general]marital
 msgid "Marital Status"
-msgstr "婚姻区分"
+msgstr "Családi állapot"
 
 #: [general]email
 msgid "Email"
-msgstr "メール"
+msgstr "Email"
 
 #: [general]website
 msgid "Website"
-msgstr "ホームページ"
+msgstr "Honlap"
 
 #: [general]about
 msgid "About Me"
-msgstr "個人情報"
+msgstr "Névjegyem"
 
 #: [general]accounts
 msgid "Other Accounts"
-msgstr "他のアカウント"
+msgstr "Egyéb felhasználói fiókok"
 
 #: [general]tune
 msgid "Is Listening"
-msgstr ""
+msgstr "Éppen hallgatja"
 
 #: [position]legend [position]position_title
 msgid "Geographic Position"
-msgstr ""
+msgstr "Földrajzi helyzet"
 
 #: [position]locality
 msgid "Locality"
-msgstr "現在地"
+msgstr "Helység"
 
 #: [position]country
 msgid "Country"
-msgstr "国名"
+msgstr "Ország"
 
 #: [mood]title
 msgid "Mood"
-msgstr "機嫌"
+msgstr "Hangulat"
 
 #: [mood]im
 msgid "I'm "
-msgstr ""
+msgstr "Én"
 
 #: [listen]title
 msgid "Listening"
-msgstr ""
+msgstr "hallgat"
 
 #: [last]title
 msgid "Last seen"
-msgstr ""
+msgstr "Utoljára itt"
 
 #: [client]title
 msgid "Client Informations"
-msgstr "クライアントインフォメーション"
+msgstr "Kliens információk"
 
 #: [explore]last_registered
 msgid "Last registered"
-msgstr ""
+msgstr "Utoljára regisztrálva"
 
 #: [explore]explore
 msgid "Find some new friends"
-msgstr ""
+msgstr "Találj néhány új barátot"
 
 #: [edit]title [button]edit
 msgid "Edit"
-msgstr "編集"
+msgstr "Szerkesztés"
 
 #: [edit]alias
 msgid "Alias"
-msgstr "アリアス"
+msgstr "Alias"
 
 #: [edit]group
 msgid "Group"
-msgstr "グループ"
+msgstr "Csoport"
 
 #: [edit]updated [roster]updated
 msgid "Contact updated"
-msgstr "コンタクトが更新されました"
+msgstr "Kapcsolat frissítve"
 
 #: [delete]title
 msgid "Are you sure?"
-msgstr "よろしいですか"
+msgstr "Biztos vagy benne?"
 
 #: [delete]text
 msgid "You are going to delete one of your contacts, please confirm your action"
-msgstr "コンタクトを削除しますが、よろしいですか"
+msgstr "Törölni fogod az egyik kapcsolatod, kérlek erősítsd meg a szándékod."
 
 #: [age]years
 msgid "%s years"
-msgstr "%s 年"
+msgstr "%s éves"
 
 #: [blog]last
 msgid "Last public post"
-msgstr ""
+msgstr "Utolsó nyilvános megosztás"
 
 #: [blog]visit
 msgid "Visit the blog to see all the public posts"
@@ -839,103 +841,103 @@ msgstr ""
 
 #: [subscription]to
 msgid "You can see this contact status"
-msgstr ""
+msgstr "Láthatod ezt a kapcsolati állapotot"
 
 #: [subscription]to_button
 msgid "Share my status"
-msgstr ""
+msgstr "Állapot megosztása"
 
 #: [subscription]to_text
 msgid "But this contact cannot see yours"
-msgstr ""
+msgstr "De ez az ismerős nem láthatja a tiéd"
 
 #: [subscription]from
 msgid "You are not subscribed to this contact"
-msgstr ""
+msgstr "Nem vagy feliratkozva erre az ismerősre"
 
 #: [subscription]from_button
 msgid "Ask to subscribe"
-msgstr ""
+msgstr "Felkérés feliratkozásra"
 
 #: [subscription]from_text
 msgid "But this contact can still see if you are online"
-msgstr ""
+msgstr "De ez az ismerős még mindig láthatja ha online vagy"
 
 #: [subscription]nil
 msgid "No subscriptions"
-msgstr ""
+msgstr "Nincsenek feliratkozók"
 
 #: [subscription]nil_button
 msgid "Invite"
-msgstr ""
+msgstr "Meghívás"
 
 #: [subscription]nil_text
 msgid "This contact is in your contact list but there is no subscriptions between the two accounts"
-msgstr ""
+msgstr "Ez az ismerős az ismerős listádon van, de nincsenek feliratkozások a két felhasználó között."
 
 #: [group]subscribe
 msgid "Subscribe"
-msgstr "参加申請する"
+msgstr "Feliratkozás"
 
 #: [group]subscribed
 msgid "Subscribed"
-msgstr "参加申請済"
+msgstr "Feliratkozva"
 
 #: [group]unsubscribe
 msgid "Unsubscribe"
-msgstr "参加申請取消"
+msgstr "Leiratkozás"
 
 #: [group]unsubscribe_text
 msgid "You are going to unsubscribe from this Group"
-msgstr ""
+msgstr "Le fogsz iratkozni ennek a csoportnak a frissítéseiről"
 
 #: [group]unsubscribed
 msgid "Unsubscribed"
-msgstr ""
+msgstr "Leiratkozva"
 
 #: [group]share_label
 msgid "Make your membership to this group public to your friends"
-msgstr ""
+msgstr "Tedd publikussá, hogy ennek a csoportnak tagja vagy a barátaid számára"
 
 #: [group]label_label
 msgid "Give a label for this group"
-msgstr ""
+msgstr "Adj meg címkéket ehhez a csoporthoz"
 
 #: [group]sure
 msgid "Are you sure ?"
-msgstr "よろしいですか"
+msgstr "Biztos vagy benne ?"
 
 #: [group]empty_text
 msgid "Discover, follow and share"
-msgstr ""
+msgstr "Fedezd fel, kövesd és oszd meg"
 
 #: [group]empty
 msgid "Something bad happened to this group"
-msgstr ""
+msgstr "Valami rossz történt a csoporttal"
 
 #: [group]config_saved
 msgid "Group configuration saved"
-msgstr "グループの設定が保存されました"
+msgstr "Csoportbeállítások elmentve."
 
 #: [group]delete_title
 msgid "Delete the group"
-msgstr "グループを削除する"
+msgstr "Csoport törlése"
 
 #: [group]delete_text
 msgid "You are going to delete the following group. Please confirm your action."
-msgstr "このグループを削除しますが、よろしいですか"
+msgstr "Törölni fogod a következő csoportot. Kérlek erősítsd meg szándékod!"
 
 #: [group]delete_clean_text
 msgid "It seems that this group doesn't exists anymore. Do you want to remove it from your subscriptions?"
-msgstr ""
+msgstr "Úgy tűnik ez a csoport már nem létezik. El akarod távolítani a feliratkozásaid közül?"
 
 #: [group]counter
 msgid "%s groups on this server"
-msgstr ""
+msgstr "%s csoportok a szerveren."
 
 #: [group]subscriptions [statistics]subscriptions
 msgid "Subscriptions"
-msgstr ""
+msgstr "Feliratkozások"
 
 #: [group]servers
 msgid "Groups servers"
@@ -943,7 +945,7 @@ msgstr ""
 
 #: [group]search_server
 msgid "Search for a new server"
-msgstr ""
+msgstr "Új szerver keresése"
 
 #: [group]help_info1
 msgid "Groups are the perfect way to share posts about topics that you like with all the other Movim's users."
@@ -963,11 +965,11 @@ msgstr ""
 
 #: [groups]empty_title
 msgid "Hello"
-msgstr "こんにちは"
+msgstr "Szia"
 
 #: [groups]contact_post [hello]contact_post [menu]contact_post
 msgid "Contact post"
-msgstr "コンタクトの投稿"
+msgstr ""
 
 #: [groups]empty_text1
 msgid "You don't have any group subscriptions yet."
@@ -979,27 +981,27 @@ msgstr ""
 
 #: [groups]subscriptions
 msgid "My Subscriptions"
-msgstr ""
+msgstr "Feliratkozásaim"
 
 #: [groups]add
 msgid "Create a new Group"
-msgstr "グループを作成する"
+msgstr "Új csoport létrehozása"
 
 #: [groups]name
 msgid "Group name"
-msgstr "グループ名"
+msgstr "Csoport neve"
 
 #: [groups]name_example
 msgid "My Little Pony - Fan Club"
-msgstr "ママチャリ部活"
+msgstr "Én Kicsi Pónim - Rajongói Klub"
 
 #: [groups]created
 msgid "Group created successfully"
-msgstr "グループが正常に作成されました"
+msgstr "Csoport sikeresen létrehozva"
 
 #: [groups]deleted
 msgid "Group deleted successfully"
-msgstr "グループが正常に削除されました"
+msgstr "Csoport sikeresen törölve"
 
 #: [groups]name_error
 msgid "Please provide a valid group name (4 characters minimum)"
@@ -1007,39 +1009,39 @@ msgstr ""
 
 #: [groups]no_creation
 msgid "You cannot create a new Group on this server"
-msgstr ""
+msgstr "Nem tudsz új csoportot létrehozni ezen a szerveren"
 
 #: [groups]sub
 msgid "%s subscribers"
-msgstr ""
+msgstr "%s feliratkozó"
 
 #: [groups]num
 msgid "%s posts"
-msgstr "%s 投稿"
+msgstr "%s poszt"
 
 #: [groups]disco_error
 msgid "This server doesn't exists"
-msgstr ""
+msgstr "Ez a szerver nem létezik"
 
 #: [roster]search
 msgid "Search in your contacts"
-msgstr ""
+msgstr "Keresés ismerősök között"
 
 #: [hello]chat
 msgid "Go on the Chat page"
-msgstr "チャットへ"
+msgstr "Irány a chat oldal"
 
 #: [hello]news [page]news
 msgid "News"
-msgstr "新着情報"
+msgstr "Hírek"
 
 #: [hello]news_page
 msgid "Read all theses articles on the News page"
-msgstr "新着情報をもっと読む"
+msgstr "Olvasd ezeket a cikkeket a híroldalon"
 
 #: [hello]blog_title
 msgid "Visit your public blog"
-msgstr "公開ブログへ"
+msgstr "Látogasd meg a nyilvános blogod."
 
 #: [hello]blog_text
 msgid "See your public posts and share them with all your contacts"
@@ -1047,7 +1049,7 @@ msgstr ""
 
 #: [hello]share_title
 msgid "Universal share button"
-msgstr ""
+msgstr "Univerzális megosztás gomb"
 
 #: [hello]share_text
 msgid "Bookmark or drag and drop the following button in your toolbar and use it on all the pages you want to share on Movim"
@@ -1055,15 +1057,15 @@ msgstr ""
 
 #: [hello]share_button
 msgid "Share on Movim"
-msgstr "Movimで共有する"
+msgstr "Megosztás Movimon"
 
 #: [hello]enter_title
 msgid "Oh! Hello!"
-msgstr ""
+msgstr "Ó! Szia!"
 
 #: [hello]enter_paragraph
 msgid "It seems that you're new there! Welcome on Movim!"
-msgstr ""
+msgstr "Úgy tűnik új vagy itt! Üdv a Movimon!"
 
 #: [hello]menu_title
 msgid "Check the Menu"
@@ -1075,55 +1077,55 @@ msgstr ""
 
 #: [help]faq
 msgid "Frequently Asked Questions"
-msgstr "よくある質問"
+msgstr ""
 
 #: [banner]title
 msgid "What do the little banners refer to ?"
-msgstr "この標の意味はなんですか"
+msgstr ""
 
 #: [banner]info1
 msgid "Thanks to these five little banners, you can quickly identitfy the level of confdentiality applied to the information you provide."
-msgstr "この標で、あなとが公開しているデータの機密性が分かります。"
+msgstr ""
 
 #: [banner]white
 msgid "White, only you can see the information"
-msgstr "白、あなとしか見れない"
+msgstr ""
 
 #: [banner]green
 msgid "Green, you have chosen some contacts who can see your information"
-msgstr "緑、シェアーしているコンタクトしか見れない"
+msgstr ""
 
 #: [banner]orange
 msgid "Orange, all your contact list can see your information"
-msgstr "オレンジ、あなたのコンタクト全員が見れる"
+msgstr ""
 
 #: [banner]red
 msgid "Red, everybody in the XMPP network can see your information"
-msgstr "XMPPを使っている人全員が見れる"
+msgstr ""
 
 #: [banner]black
 msgid "Black, the whole Internet can see your information"
-msgstr "黒、誰でも見れる"
+msgstr ""
 
 #: [wiki]question
 msgid "Looking for some documentation ?"
-msgstr "ドキュメンテーションお探しですか"
+msgstr ""
 
 #: [wiki]button
 msgid "Read the Wiki"
-msgstr "Wiki へ"
+msgstr "Wiki olvasása"
 
 #: [ml]question
 msgid "Talk with us by email ?"
-msgstr "メールで連絡したいと思っていますか"
+msgstr ""
 
 #: [ml]button
 msgid "Join the Mailing List"
-msgstr "Mailing List に登録する"
+msgstr ""
 
 #: [chatroom]question
 msgid "Chat with the team ?"
-msgstr "チャットがいいですか"
+msgstr ""
 
 #: [chatroom]button
 msgid "Add the chatroom"
@@ -1155,7 +1157,7 @@ msgstr ""
 
 #: [location]title
 msgid "Location"
-msgstr "現在地"
+msgstr ""
 
 #: [location]wrong_postition
 msgid "Wrong position"
@@ -1163,11 +1165,11 @@ msgstr ""
 
 #: [location]updated
 msgid "Location updated"
-msgstr "現在地が更新されました"
+msgstr "Helyzet frissítve"
 
 #: [location]update
 msgid "Update my position"
-msgstr "現在地を更新する"
+msgstr "Helyzetem frissítése"
 
 #: [login_anonymous]bad_username
 msgid "Bad nickname (between 4 and 40 characters)"
@@ -1175,11 +1177,11 @@ msgstr ""
 
 #: [error]username
 msgid "Wrong username"
-msgstr "ユーザ名が正しくありません"
+msgstr "Téves felhasználónév"
 
 #: [error]jid
 msgid "Invalid JID"
-msgstr "JID が正しくありません"
+msgstr ""
 
 #: [error]empty_challenge
 msgid "Empty Challenge from the server"
@@ -1187,27 +1189,27 @@ msgstr ""
 
 #: [error]dns
 msgid "XMPP Domain error, your account is not a correct Jabber ID"
-msgstr "XMPPドメインエラーが発生しました。使われているアカウントは不可なJabberIDです。"
+msgstr ""
 
 #: [error]data_missings
 msgid "Some data are missing !"
-msgstr "いくつかのデータが足りません。"
+msgstr "Néhány adat hiányzik!"
 
 #: [error]wrong_password
 msgid "Wrong password"
-msgstr "パスワードが違います"
+msgstr "Hibás jelszó"
 
 #: [error]internal
 msgid "Internal server error"
-msgstr "内部エラー"
+msgstr "Belső szerver hiba"
 
 #: [error]session
 msgid "Session error"
-msgstr "セッションエラー"
+msgstr "Hiba a munkamenetben"
 
 #: [error]account_created
 msgid "Account successfully created"
-msgstr "アカウントが正常に作成されました"
+msgstr "Felhasználói fiók sikeresen létrehozva"
 
 #: [error]xmpp_unauthorized
 msgctxt "[error]xmpp_unauthorized"
@@ -1216,7 +1218,7 @@ msgstr ""
 
 #: [error]mec_error
 msgid "The server takes too much time to respond"
-msgstr "このサーバは重すぎます"
+msgstr "A szervernek túl sok időbe telik válaszolni"
 
 #: [error]websocket
 msgid "Movim cannot talk with the server, please try again later (Websocket connection error)"
@@ -1228,19 +1230,19 @@ msgstr ""
 
 #: [error]title
 msgid "Oops!"
-msgstr "おっとぉ!"
+msgstr "Hupsz!"
 
 #: [error]default [visio]unknown_error
 msgid "Unknown error"
-msgstr "原因不明のエラー"
+msgstr "Ismeretlen hiba"
 
 #: [error]login_format
 msgid "Invalid username format"
-msgstr ""
+msgstr "Érvénytelen felhasználónév formátum"
 
 #: [error]password_format
 msgid "Invalid password format"
-msgstr ""
+msgstr "Érvénytelen jelszó formátum"
 
 #: [error]unauthorized
 msgctxt "[error]unauthorized"
@@ -1249,35 +1251,35 @@ msgstr ""
 
 #: [error]conflict
 msgid "A Movim session is already open on an other device"
-msgstr "他にセッションが存在しています"
+msgstr ""
 
 #: [error]wrong_account
 msgid "Movim failed to authenticate. You entered wrong data"
-msgstr "認識が失敗しました。入力した情報を確認してください"
+msgstr ""
 
 #: [error]mechanism
 msgid "Authentication mechanism not supported by Movim"
-msgstr "認識方法が対応されていません"
+msgstr ""
 
 #: [error]fail_auth
 msgid "The XMPP authentification failed"
-msgstr "XMPP認証に失敗しました"
+msgstr "Az XMPP azonosítás sikertelen volt."
 
 #: [form]username
 msgid "My address"
-msgstr "マイアドレス"
+msgstr "Én címem"
 
 #: [form]create_one
 msgid "Create one !"
-msgstr ""
+msgstr "Hozz létre egyet!"
 
 #: [form]another_account
 msgid "Another account"
-msgstr "違うアカウント"
+msgstr "Másik felhasználói fiók"
 
 #: [form]no_account
 msgid "No account yet ?"
-msgstr ""
+msgstr "Nincs még felhasználói fiókod ?"
 
 #: [form]whitelist.info
 msgid "You can login with accounts from theses servers"
@@ -1285,15 +1287,15 @@ msgstr ""
 
 #: [form]connected
 msgid "Connected"
-msgstr ""
+msgstr "Csatlakozva"
 
 #: [form]population
 msgid "Population"
-msgstr "人口"
+msgstr "Lakosság"
 
 #: [menu]empty_title
 msgid "No news yet..."
-msgstr ""
+msgstr "Nincsenek még hírek"
 
 #: [menu]empty
 msgid "Welcome on your news feed, here you will see all the posts published by your contacts and in the groups you have subscribed."
@@ -1301,15 +1303,15 @@ msgstr ""
 
 #: [menu]refresh
 msgid "Refresh all the streams"
-msgstr ""
+msgstr "Adatfolyamok frissítése"
 
 #: [menu]public
 msgid "This post is public"
-msgstr ""
+msgstr "Ez a megosztás nyílvános"
 
 #: [menu]all
 msgid "All"
-msgstr "全て"
+msgstr "Mind"
 
 #: [affiliations]title
 msgid "Manage your members"
@@ -1317,7 +1319,7 @@ msgstr ""
 
 #: [affiliations]get
 msgid "Get the members"
-msgstr ""
+msgstr "Tagok lekérdezése"
 
 #: [affiliations]saved
 msgid "Affiliations saved"
@@ -1325,15 +1327,15 @@ msgstr ""
 
 #: [subscriptions]title
 msgid "Manage your subscriptions"
-msgstr "サブスクリプションの管理"
+msgstr ""
 
 #: [subscriptions]info
 msgid "Manage the subscriptions"
-msgstr "サブスクリプションの管理"
+msgstr ""
 
 #: [subscriptions]get
 msgid "Get the subscriptions"
-msgstr "サブスクリプションを習得する"
+msgstr ""
 
 #: [subscriptions]saved
 msgid "Subscriptions saved"
@@ -1341,15 +1343,15 @@ msgstr ""
 
 #: [notifs]title
 msgid "Pending Invitations"
-msgstr ""
+msgstr "Várakozó meghívások"
 
 #: [notifs]wants_to_talk
 msgid "%s wants to talk with you"
-msgstr ""
+msgstr "%s beszélni szeretne veled"
 
 #: [post]news_feed
 msgid "News Feed"
-msgstr "新着情報"
+msgstr "Hírfolyam"
 
 #: [post]placeholder
 msgid "Discover and register to the groups you are interested in"
@@ -1357,19 +1359,19 @@ msgstr ""
 
 #: [post]content [post]content_label
 msgid "Content"
-msgstr "コンテンツ"
+msgstr "Tartalom"
 
 #: [post]published
 msgid "Post published"
-msgstr ""
+msgstr "Poszt közzétéve"
 
 #: [post]deleted
 msgid "Post deleted"
-msgstr ""
+msgstr "Poszt törölve"
 
 #: [post]hot
 msgid "What's Hot"
-msgstr ""
+msgstr "Újdonságok"
 
 #: [post]hot_text
 msgid "Posts recently published in Groups that you are not subscribed (yet)"
@@ -1377,7 +1379,7 @@ msgstr ""
 
 #: [post]new [publish]new
 msgid "New post"
-msgstr "新しい投稿"
+msgstr "Új poszt"
 
 #: [post]repost
 msgid "This is a re-post from %s"
@@ -1401,11 +1403,11 @@ msgstr ""
 
 #: [post]delete_title [post]delete
 msgid "Delete this post"
-msgstr "この投稿を削除する"
+msgstr "Poszt törlése"
 
 #: [post]delete_text
 msgid "You are going to delete this post, please confirm your action"
-msgstr "この投稿が削除されますが、よろしいですか"
+msgstr ""
 
 #: [post]discover
 msgid "Discover more articles on the Groups page"
@@ -1413,15 +1415,15 @@ msgstr ""
 
 #: [post]comments_disabled
 msgid "Comments disabled"
-msgstr ""
+msgstr "Kommentek letiltva"
 
 #: [post]comment_published
 msgid "Comment published"
-msgstr ""
+msgstr "Komment közzétéve"
 
 #: [status]disconnect
 msgid "Disconnect"
-msgstr "切断する"
+msgstr "Lecsatlakozás"
 
 #: [status]here
 msgid "Your status here !"
@@ -1429,31 +1431,31 @@ msgstr ""
 
 #: [status]updated
 msgid "Status updated"
-msgstr "ステータスを更新しました"
+msgstr "Állapot frissítve"
 
 #: [status]status
 msgid "Status"
-msgstr "ステータス"
+msgstr "Állapot"
 
 #: [status]presence
 msgid "Presence"
-msgstr ""
+msgstr "Jelenlét"
 
 #: [status]online
 msgid "Online with Movim"
-msgstr ""
+msgstr "Online Movimmal"
 
 #: [post]preview [page]preview
 msgid "Preview"
-msgstr "プレビュー"
+msgstr "Előnézet"
 
 #: [post]help [page]help
 msgid "Help"
-msgstr "ヘルプ"
+msgstr "Segítség"
 
 #: [post]help_more
 msgid "More help"
-msgstr ""
+msgstr "Mégtöbb segítség"
 
 #: [post]help_manual
 msgid "Markdown syntax manual"
@@ -1465,15 +1467,15 @@ msgstr ""
 
 #: [post]link
 msgid "Link"
-msgstr "リンク"
+msgstr "Link"
 
 #: [post]tags
 msgid "Tags"
-msgstr ""
+msgstr "Címkék"
 
 #: [post]gallery
 msgid "This picture will be added to your gallery"
-msgstr ""
+msgstr "Ez a kép a galériádhoz lesz adva"
 
 #: [publish]valid_url
 msgid "Please enter a valid url"
@@ -1481,11 +1483,11 @@ msgstr ""
 
 #: [publish]no_content_preview
 msgid "No content to preview"
-msgstr ""
+msgstr "Nincs megjeleníthető tartalom előnézethez"
 
 #: [publish]no_title
 msgid "Please provide a title"
-msgstr ""
+msgstr "Kérlek adj címet neki"
 
 #: [publish]edit
 msgid "Edit post"
@@ -1493,11 +1495,11 @@ msgstr ""
 
 #: [publish]title
 msgid "Publish"
-msgstr ""
+msgstr "Közzétesz"
 
 #: [publish]attach
 msgid "Add a file or a picture to your post"
-msgstr ""
+msgstr "Csatolj fájlt vagy képet a posztodhoz"
 
 #: [publish]no_publication
 msgid "You cannot publish a post on this Group"
@@ -1517,7 +1519,7 @@ msgstr ""
 
 #: [public_groups]shared
 msgid "Shared"
-msgstr ""
+msgstr "Megosztva"
 
 #: [public_groups]added
 msgid "%s has been added to your public groups"
@@ -1525,11 +1527,11 @@ msgstr ""
 
 #: [rooms]add
 msgid "Add a chatroom"
-msgstr "チャットルームを追加する"
+msgstr ""
 
 #: [rooms]empty_text1
 msgid "You don't have any chatroom yet."
-msgstr "チャットルームはまだありません"
+msgstr ""
 
 #: [rooms]empty_text2
 msgid "Add one by clicking on the add button."
@@ -1537,7 +1539,7 @@ msgstr ""
 
 #: [chatrooms]title
 msgid "Chatrooms"
-msgstr "チャットルーム"
+msgstr ""
 
 #: [chatrooms]name_placeholder
 msgid "My Favorite Room"
@@ -1553,7 +1555,7 @@ msgstr ""
 
 #: [chatrooms]conflict
 msgid "Username already taken"
-msgstr ""
+msgstr "A felhasználónév már használatban van"
 
 #: [room]anonymous_title
 msgid "Public chatroom"
@@ -1573,7 +1575,7 @@ msgstr ""
 
 #: [room]anonymous_login
 msgid "Login on %s"
-msgstr ""
+msgstr "Bejelentkezés %s-n"
 
 #: [room]nick
 msgid "Your nickname"
@@ -1585,23 +1587,23 @@ msgstr ""
 
 #: [roster]show_disconnected
 msgid "Show disconnected contacts"
-msgstr "オフラインの連絡先を表示"
+msgstr "Lecsatlakozott ismerősök mutatása"
 
 #: [roster]hide_disconnected
 msgid "Hide disconnected contacts"
-msgstr "オフラインの連絡先を非表示"
+msgstr "Lecsatlakozott ismerősök rejtése"
 
 #: [roster]show_group
 msgid "Show group %s"
-msgstr "グループ%sを表示"
+msgstr "%s csoport mutatása"
 
 #: [roster]hide_group
 msgid "Hide group %s"
-msgstr "グループ%sを非表示"
+msgstr "%s csoport elrejtése"
 
 #: [roster]jid_error
 msgid "Please enter a valid Jabber ID"
-msgstr "正しいジャバーIDを入力してください"
+msgstr ""
 
 #: [roster]no_contacts_title
 msgid "No contacts ?"
@@ -1613,7 +1615,7 @@ msgstr ""
 
 #: [roster]show_hide
 msgid "Show/Hide"
-msgstr "表示/非表示"
+msgstr ""
 
 #: [roster]add_contact_info1
 msgid "Enter the Jabber ID of your contact."
@@ -1625,23 +1627,23 @@ msgstr ""
 
 #: [roster]jid
 msgid "JID"
-msgstr "JID"
+msgstr ""
 
 #: [roster]results
 msgid "Results"
-msgstr "検索結果"
+msgstr "Eredmények"
 
 #: [roster]added
 msgid "Contact added"
-msgstr "コンタクトが追加されました"
+msgstr "Ismerős hozzáadva"
 
 #: [roster]deleted
 msgid "Contact deleted"
-msgstr "コンタクトが削除されました"
+msgstr "Ismerős törölve"
 
 #: [roster]search
 msgid "Search"
-msgstr "検索"
+msgstr "Keresés"
 
 #: [share]error
 msgid "This is not a valid url"
@@ -1653,15 +1655,15 @@ msgstr ""
 
 #: [statistics]title
 msgid "Statistics"
-msgstr ""
+msgstr "Statisztika"
 
 #: [statistics]since
 msgid "Since"
-msgstr ""
+msgstr "Óta"
 
 #: [statistics]sessions
 msgid "Sessions"
-msgstr "セッション"
+msgstr "Munkamenetek"
 
 #: [statistics]monthly_sub
 msgid "Monthly Subscriptions"
@@ -1673,11 +1675,11 @@ msgstr ""
 
 #: [subscribe]info
 msgid "Movim is a decentralized social network, before creating a new account you need to choose a server to register."
-msgstr ""
+msgstr "A Movim egy decentralizált közösségi hálózat. Mielőtt létrehozod a fiókod válassz egy szervert a regisztrációhoz."
 
 #: [subscribe]server_question
 msgid "Your server here ?"
-msgstr ""
+msgstr "Itt van a szervered ?"
 
 #: [subscribe]server_contact
 msgid "Contact us to add yours to the officially supported servers list"
@@ -1689,35 +1691,35 @@ msgstr ""
 
 #: [feed]nope_contact
 msgid "No contact specified"
-msgstr ""
+msgstr "Nincs kapcsolat megadva"
 
 #: [upload]title
 msgid "Upload a file"
-msgstr ""
+msgstr "Fájl feltöltése"
 
 #: [upload]choose
 msgid "Choose a file to upload"
-msgstr ""
+msgstr "Válaszd ki a feltölteni kívánt fájlt"
 
 #: [vcard]title [page]profile
 msgid "Profile"
-msgstr "プロフィール"
+msgstr "Profil"
 
 #: [vcard]updated
 msgid "Profile Updated"
-msgstr "プロフィールを更新しました"
+msgstr "Profil frissítve"
 
 #: [vcard]not_updated
 msgid "Profile Not Updated"
-msgstr "プロファイルは更新されませんでした"
+msgstr ""
 
 #: [vcard]public
 msgid "Your profile is now public"
-msgstr "あなたのプロファイルは公開されました"
+msgstr "A profilod mostantól nyilvános"
 
 #: [vcard]restricted
 msgid "Your profile is now restricted"
-msgstr "あなたのプロファイルは非公開されました"
+msgstr ""
 
 #: [general]nickname
 msgctxt "[general]nickname"
@@ -1726,7 +1728,7 @@ msgstr ""
 
 #: [accounts]accounts_title
 msgid "Accounts"
-msgstr "アカウント"
+msgstr "Felhasználók"
 
 #: [accounts]twitter
 msgid "Twitter"
@@ -1738,7 +1740,7 @@ msgstr "Skype"
 
 #: [accounts]yahoo
 msgid "Yahoo Account"
-msgstr ""
+msgstr "Yahoo Account"
 
 #: [accounts]accounts_nickname
 msgctxt "[accounts]accounts_nickname"
@@ -1747,11 +1749,11 @@ msgstr ""
 
 #: [privacy]privacy_title
 msgid "Privacy Level"
-msgstr ""
+msgstr "Magánszféra szintje"
 
 #: [privacy]privacy_question
 msgid "Is this profile public ?"
-msgstr ""
+msgstr "Nyilvános ez a profil?"
 
 #: [privacy]privacy_info
 msgid "Please pay attention ! By making your profile public, all the information listed above will be available for all the Movim users and on the whole Internet."
@@ -1759,11 +1761,11 @@ msgstr ""
 
 #: [save]submit [button]submit
 msgid "Submit"
-msgstr "送信"
+msgstr "Küldés"
 
 #: [save]reset [button]reset
 msgid "Reset"
-msgstr "リセット"
+msgstr "Alapértékek"
 
 #: [visio]hung_up
 msgid "Hung up"
@@ -1779,11 +1781,11 @@ msgstr ""
 
 #: [visio]calling
 msgid "Is calling you"
-msgstr ""
+msgstr "Hív téged"
 
 #: [visio]call
 msgid "Call"
-msgstr "呼び出し"
+msgstr "Hívás"
 
 #: [visio]hang_up
 msgid "Hang up"
@@ -1791,7 +1793,7 @@ msgstr ""
 
 #: [visio]connection
 msgid "Connection"
-msgstr ""
+msgstr "Kapcsolat"
 
 #: [global]no_js
 msgid "You don't have javascript enabled.  Good luck with that."
@@ -1803,11 +1805,11 @@ msgstr ""
 
 #: [page]administration
 msgid "Administration"
-msgstr "システム管理"
+msgstr "Adminisztráció"
 
 #: [page]home
 msgid "Home"
-msgstr "ホーム"
+msgstr "Kezdőoldal"
 
 #: [page]discover
 msgid "Discover"
@@ -1819,63 +1821,63 @@ msgstr ""
 
 #: [page]account_creation
 msgid "Account Creation"
-msgstr "アカウント作成"
+msgstr "Felhasználó létrehozása"
 
 #: [page]avatar
 msgid "Avatar"
-msgstr "アバター"
+msgstr "Avatár"
 
 #: [page]chats
 msgid "Chats"
-msgstr "チャット"
+msgstr ""
 
 #: [page]server
 msgid "Server"
-msgstr "サーバー"
+msgstr "Szerver"
 
 #: [page]public_groups
 msgid "Public Groups"
-msgstr ""
+msgstr "Nyilvános csoportok"
 
 #: [page]viewer
 msgid "Viewer"
-msgstr ""
+msgstr "Nézegető"
 
 #: [page]media
 msgid "Media"
-msgstr "画像"
+msgstr "Média"
 
 #: [page]blog
 msgid "Blog"
-msgstr "ブログ"
+msgstr "Blog"
 
 #: [page]about
 msgid "About"
-msgstr ""
+msgstr "Névjegy"
 
 #: [page]login
 msgid "Login"
-msgstr "ログイン"
+msgstr "Bejelentkezés"
 
 #: [page]feed
 msgid "Feed"
-msgstr "フィード"
+msgstr "Hírforrás"
 
 #: [page]gallery
 msgid "Gallery"
-msgstr ""
+msgstr "Galéria"
 
 #: [page]visio
 msgid "Visio-conference"
-msgstr ""
+msgstr "Videó-konferencia"
 
 #: [page]pods
 msgid "Pods"
-msgstr ""
+msgstr "Podok"
 
 #: [page]share
 msgid "Share"
-msgstr ""
+msgstr "Megosztás"
 
 #: [page]room
 msgid "Room"
@@ -1887,11 +1889,11 @@ msgstr ""
 
 #: [error]error
 msgid "Error: %s"
-msgstr "エラーが発生しました。%s"
+msgstr "Hiba: %s"
 
 #: [error]cannot_load_file
 msgid "Cannot load file '%s'"
-msgstr "「%s」というファイルをロードできません。"
+msgstr ""
 
 #: [error]route
 msgid "Route error, please set all the parameters for the page %s"
@@ -1907,11 +1909,11 @@ msgstr ""
 
 #: [error]whoops
 msgid "Whoops!"
-msgstr ""
+msgstr "Hupsz!"
 
 #: [error]media_not_found
 msgid "It seem that you don't have any pictures here?"
-msgstr ""
+msgstr "Úgy tűnik még nincsenek itt képeid."
 
 #: [error]media_ask_upload
 msgid "You can try to upload a couple by going to the Media page"
@@ -1923,7 +1925,7 @@ msgstr ""
 
 #: [title]account
 msgid "%s - Account"
-msgstr "%s - アカウント"
+msgstr "%s - Felhasználó"
 
 #: [title]administration
 msgid "%s - Administration Panel"
@@ -1935,7 +1937,7 @@ msgstr ""
 
 #: [title]configuration
 msgid "%s - Configuration"
-msgstr "%s - 設定"
+msgstr "%s - Beállítások"
 
 #: [title]discover
 msgid "%s - Discover"
@@ -1947,91 +1949,91 @@ msgstr ""
 
 #: [title]help
 msgid "%s - Help Page"
-msgstr "%s - ヘルプページ"
+msgstr ""
 
 #: [title]login
 msgid "%s - Login to Movim"
-msgstr "%s - MOVIMにログインする"
+msgstr "%s - Bejelentkezés Momimon"
 
 #: [title]main
 msgid "%s - Welcome to Movim"
-msgstr "%s - MOVIMへようこそ"
+msgstr "%s - Üdv a Movimon"
 
 #: [title]media
 msgid "%s - Media"
-msgstr ""
+msgstr "%s - Média"
 
 #: [title]news
 msgid "%s - News"
-msgstr ""
+msgstr "%s - Hírek"
 
 #: [title]node_configuration
 msgid "%s - Group Configuration"
-msgstr ""
+msgstr "%s - Csoport beállítása"
 
 #: [title]node
 msgid "%s - Group"
-msgstr ""
+msgstr "%s - Csoport"
 
 #: [title]not_found
 msgid "%s - 404"
-msgstr ""
+msgstr "%s - 404"
 
 #: [title]profile
 msgid "%s - Profile"
-msgstr "%s - プロファイル"
+msgstr "%s - Profil"
 
 #: [title]server
 msgid "%s - Server"
-msgstr ""
+msgstr "%s - Szerver"
 
 #: [button]validate
 msgid "Validate"
-msgstr "確認"
+msgstr "Érvényesít"
 
 #: [button]refresh
 msgid "Refresh"
-msgstr "再読込"
+msgstr "Frissít"
 
 #: [button]add
 msgid "Add"
-msgstr "追加"
+msgstr "Hozzáad"
 
 #: [button]delete
 msgid "Delete"
-msgstr ""
+msgstr "Törlés"
 
 #: [button]cancel
 msgid "Cancel"
-msgstr ""
+msgstr "Mégse"
 
 #: [button]close
 msgid "Close"
-msgstr "閉じる"
+msgstr "Bezárás"
 
 #: [button]update
 msgid "Update"
-msgstr "更新"
+msgstr "Frissít"
 
 #: [button]updating
 msgid "Updating"
-msgstr "更新中"
+msgstr "Frissítés"
 
 #: [button]submitting
 msgid "Submitting"
-msgstr ""
+msgstr "Közzétesz"
 
 #: [button]register
 msgid "Register"
-msgstr ""
+msgstr "Regisztráció"
 
 #: [button]unregister
 msgid "Unregister"
-msgstr ""
+msgstr "Regisztráció törlése"
 
 #: [button]save
 msgid "Save"
-msgstr "保存"
+msgstr "Mentés"
 
 #: [button]clear
 msgid "Clear"
@@ -2039,193 +2041,193 @@ msgstr ""
 
 #: [button]upload
 msgid "Upload"
-msgstr "アップロード"
+msgstr "Feltölt"
 
 #: [button]come_in
 msgid "Come in!"
-msgstr "来てください！"
+msgstr "Gyere be!"
 
 #: [button]connecting
 msgid "Connecting"
-msgstr ""
+msgstr "Csatlakozás"
 
 #: [button]bool_yes
 msgid "Yes"
-msgstr ""
+msgstr "Igen"
 
 #: [button]bool_no
 msgid "No"
-msgstr ""
+msgstr "Nem"
 
 #: [button]return
 msgid "Return"
-msgstr ""
+msgstr "Visszatérés"
 
 #: [button]accept
 msgid "Accept"
-msgstr "承知する"
+msgstr "Elfogad"
 
 #: [button]refuse
 msgid "Refuse"
-msgstr ""
+msgstr "Visszautasít"
 
 #: [button]next
 msgid "Next"
-msgstr "次へ"
+msgstr "Következő"
 
 #: [button]previous
 msgid "Previous"
-msgstr "前へ"
+msgstr "Előző"
 
 #: [step]step
 msgid "Step %s"
-msgstr ""
+msgstr "%s. lépés"
 
 #: [day]title
 msgid "Day"
-msgstr "日"
+msgstr "Nap"
 
 #: [day]monday
 msgid "Monday"
-msgstr "月曜日"
+msgstr "Hétfő"
 
 #: [day]tuesday
 msgid "Tuesday"
-msgstr "火曜日"
+msgstr "Kedd"
 
 #: [day]wednesday
 msgid "Wednesday"
-msgstr "水曜日"
+msgstr "Szerda"
 
 #: [day]thursday
 msgid "Thursday"
-msgstr "木曜日"
+msgstr "Csütörtök"
 
 #: [day]friday
 msgid "Friday"
-msgstr "金曜日"
+msgstr "Péntek"
 
 #: [day]saturday
 msgid "Saturday"
-msgstr "土曜日"
+msgstr "Szombat"
 
 #: [day]sunday
 msgid "Sunday"
-msgstr ""
+msgstr "Vasárnap"
 
 #: [gender]nil
 msgctxt "[gender]nil"
 msgid "None"
-msgstr ""
+msgstr "Nincs"
 
 #: [gender]male
 msgid "Male"
-msgstr "男性"
+msgstr "Férfi"
 
 #: [gender]female
 msgid "Female"
-msgstr "女性"
+msgstr "Nő"
 
 #: [gender]other
 msgid "Other"
-msgstr "その他"
+msgstr "Egyéb"
 
 #: [client]bot
 msgid "Bot"
-msgstr "ボット"
+msgstr "Robot"
 
 #: [client]desktop
 msgid "Desktop"
-msgstr "デスクトップ"
+msgstr "Asztal"
 
 #: [client]phone
 msgid "Phone"
-msgstr "電話"
+msgstr "Telefon"
 
 #: [client]web
 msgid "Web"
-msgstr "ウェブ"
+msgstr "Webcím"
 
 #: [client]registered
 msgid "Registered"
-msgstr "登録済み"
+msgstr "Regisztrálva"
 
 #: [marital]nil
 msgctxt "[marital]nil"
 msgid "None"
-msgstr ""
+msgstr "Nincs"
 
 #: [marital]single
 msgid "Single"
-msgstr "独身"
+msgstr "Egyedülálló"
 
 #: [marital]relationship
 msgid "In a relationship"
-msgstr "カップル"
+msgstr "Kapcsolatban"
 
 #: [marital]married
 msgid "Married"
-msgstr "既婚"
+msgstr "Házas"
 
 #: [marital]divorced
 msgid "Divorced"
-msgstr "離婚"
+msgstr "Elvált"
 
 #: [marital]widowed
 msgid "Widowed"
-msgstr "死別"
+msgstr "Özvegy"
 
 #: [marital]cohabiting
 msgid "Cohabiting"
-msgstr "共有"
+msgstr "Élettársak"
 
 #: [marital]union
 msgid "Civil Union"
-msgstr "市民結合"
+msgstr ""
 
 #: [flag]white
 msgid "Not shared"
-msgstr "共有されていません"
+msgstr "Nem publikus"
 
 #: [flag]green
 msgid "Shared with one contact"
-msgstr "一人のコンタクトと共有"
+msgstr ""
 
 #: [flag]orange
 msgid "Shared with all contacts"
-msgstr "全てのコンタクトと共有"
+msgstr "Minden ismerőssel megosztva"
 
 #: [flag]red
 msgid "Shared with the XMPP network"
-msgstr "XMPPネットワークと共有"
+msgstr "Megosztva az XMPP hálózattal"
 
 #: [flag]black
 msgid "Shared with the whole Internet"
-msgstr "全てと共有"
+msgstr ""
 
 #: [presence]online
 msgid "Online"
-msgstr "オンライン"
+msgstr "Elérhető"
 
 #: [presence]away
 msgid "Away"
-msgstr "離席中"
+msgstr "Távol"
 
 #: [presence]dnd
 msgid "Do Not Disturb"
-msgstr "取り込み中"
+msgstr "Ne zavarj"
 
 #: [presence]xa
 msgid "Extended Away"
-msgstr "長時間の不在"
+msgstr ""
 
 #: [presence]offline
 msgid "Offline"
-msgstr "オフライン"
+msgstr "Offline"
 
 #: [presence]error
 msgid "Error"
-msgstr "エラー"
+msgstr "Hiba"
 
 #: [mood]afraid
 msgid "afraid"
@@ -2233,7 +2235,7 @@ msgstr ""
 
 #: [mood]amazed
 msgid "amazed"
-msgstr ""
+msgstr "lenyűgözött"
 
 #: [mood]amorous
 msgid "amorous"
@@ -2241,7 +2243,7 @@ msgstr ""
 
 #: [mood]angry
 msgid "angry"
-msgstr ""
+msgstr "haragos"
 
 #: [mood]annoyed
 msgid "annoyed"
@@ -2249,7 +2251,7 @@ msgstr ""
 
 #: [mood]anxious
 msgid "anxious"
-msgstr ""
+msgstr "szorongó"
 
 #: [mood]aroused
 msgid "aroused"
@@ -2261,27 +2263,27 @@ msgstr ""
 
 #: [mood]bored
 msgid "bored"
-msgstr ""
+msgstr "unott"
 
 #: [mood]brave
 msgid "brave"
-msgstr ""
+msgstr "bátor"
 
 #: [mood]calm
 msgid "calm"
-msgstr ""
+msgstr "nyugodt"
 
 #: [mood]cautious
 msgid "cautious"
-msgstr ""
+msgstr "óvatos"
 
 #: [mood]cold
 msgid "cold"
-msgstr ""
+msgstr "hideg"
 
 #: [mood]confident
 msgid "confident"
-msgstr ""
+msgstr "konfidens"
 
 #: [mood]confused
 msgid "confused"
@@ -2301,15 +2303,15 @@ msgstr ""
 
 #: [mood]crazy
 msgid "crazy"
-msgstr ""
+msgstr "őrült"
 
 #: [mood]creative
 msgid "creative"
-msgstr ""
+msgstr "kreatív"
 
 #: [mood]curious
 msgid "curious"
-msgstr ""
+msgstr "kíváncsi"
 
 #: [mood]dejected
 msgid "dejected"
@@ -2317,15 +2319,15 @@ msgstr ""
 
 #: [mood]depressed
 msgid "depressed"
-msgstr ""
+msgstr "depressziós"
 
 #: [mood]disappointed
 msgid "disappointed"
-msgstr ""
+msgstr "csalódott"
 
 #: [mood]disgusted
 msgid "disgusted"
-msgstr ""
+msgstr "undorodó"
 
 #: [mood]dismayed
 msgid "dismayed"
@@ -2337,27 +2339,27 @@ msgstr ""
 
 #: [mood]embarrassed
 msgid "embarrassed"
-msgstr ""
+msgstr "cikis"
 
 #: [mood]envious
 msgid "envious"
-msgstr ""
+msgstr "irigykedő"
 
 #: [mood]excited
 msgid "excited"
-msgstr ""
+msgstr "izgatott"
 
 #: [mood]flirtatious
 msgid "flirtatious"
-msgstr ""
+msgstr "flörtölő"
 
 #: [mood]frustated
 msgid "frustated"
-msgstr ""
+msgstr "frusztrált"
 
 #: [mood]grateful
 msgid "grateful"
-msgstr ""
+msgstr "hálás"
 
 #: [mood]grieving
 msgid "grieving"
@@ -2365,23 +2367,23 @@ msgstr ""
 
 #: [mood]grumpy
 msgid "grumpy"
-msgstr ""
+msgstr "mogorva"
 
 #: [mood]guilty
 msgid "guilty"
-msgstr ""
+msgstr "bűnös"
 
 #: [mood]happy
 msgid "happy"
-msgstr ""
+msgstr "boldog"
 
 #: [mood]hopeful
 msgid "hopeful"
-msgstr ""
+msgstr "reményteli"
 
 #: [mood]hot
 msgid "hot"
-msgstr ""
+msgstr "forró/ szexi"
 
 #: [mood]humbled
 msgid "humbled"
@@ -2389,15 +2391,15 @@ msgstr ""
 
 #: [mood]humiliated
 msgid "humiliated"
-msgstr ""
+msgstr "megalázott"
 
 #: [mood]hungry
 msgid "hungry"
-msgstr ""
+msgstr "éhes"
 
 #: [mood]hurt
 msgid "hurt"
-msgstr ""
+msgstr "sérült"
 
 #: [mood]impressed
 msgid "impressed"
@@ -2409,7 +2411,7 @@ msgstr ""
 
 #: [mood]in_love
 msgid "in love"
-msgstr ""
+msgstr "szerelmes"
 
 #: [mood]indignant
 msgid "indignant"
@@ -2417,11 +2419,11 @@ msgstr ""
 
 #: [mood]interested
 msgid "interested"
-msgstr ""
+msgstr "érdeklődő"
 
 #: [mood]intoxicated
 msgid "intoxicated"
-msgstr ""
+msgstr "mérgezett"
 
 #: [mood]invincible
 msgid "invincible"
@@ -2429,19 +2431,19 @@ msgstr ""
 
 #: [mood]jealous
 msgid "jealous"
-msgstr ""
+msgstr "irigy"
 
 #: [mood]lonely
 msgid "lonely"
-msgstr ""
+msgstr "magányos"
 
 #: [mood]lost
 msgid "lost"
-msgstr ""
+msgstr "elveszett"
 
 #: [mood]lucky
 msgid "lucky"
-msgstr ""
+msgstr "szerencsés"
 
 #: [mood]mean
 msgid "mean"
@@ -2453,203 +2455,203 @@ msgstr ""
 
 #: [mood]nervous
 msgid "nervous"
-msgstr ""
+msgstr "feszült"
 
 #: [mood]neutral
 msgid "neutral"
-msgstr ""
+msgstr "semleges"
 
 #: [mood]offended
 msgid "offended"
-msgstr ""
+msgstr "sértett"
 
 #: [mood]outraged
 msgid "outraged"
-msgstr ""
+msgstr "dühös"
 
 #: [mood]playful
 msgid "playful"
-msgstr ""
+msgstr "játékos"
 
 #: [mood]proud
 msgid "proud"
-msgstr ""
+msgstr "büszke"
 
 #: [mood]relaxed
 msgid "relaxed"
-msgstr ""
+msgstr "ellazult"
 
 #: [mood]relieved
 msgid "relieved"
-msgstr ""
+msgstr "megkönnyebbült"
 
 #: [mood]restless
 msgid "restless"
-msgstr ""
+msgstr "nyugtalan"
 
 #: [mood]sad
 msgid "sad"
-msgstr ""
+msgstr "szomorú"
 
 #: [mood]sarcastic
 msgid "sarcastic"
-msgstr ""
+msgstr "szarkasztikus"
 
 #: [mood]satisfied
 msgid "satisfied"
-msgstr ""
+msgstr "elégedett"
 
 #: [mood]serious
 msgid "serious"
-msgstr ""
+msgstr "komoly"
 
 #: [mood]shocked
 msgid "shocked"
-msgstr ""
+msgstr "sokkolt"
 
 #: [mood]shy
 msgid "shy"
-msgstr ""
+msgstr "szégyellős"
 
 #: [mood]sick
 msgid "sick"
-msgstr ""
+msgstr "beteg"
 
 #: [mood]sleepy
 msgid "sleepy"
-msgstr ""
+msgstr "álmos"
 
 #: [mood]spontaneous
 msgid "spontaneous"
-msgstr ""
+msgstr "spontán"
 
 #: [mood]stressed
 msgid "stressed"
-msgstr ""
+msgstr "stresszes"
 
 #: [mood]strong
 msgid "strong"
-msgstr ""
+msgstr "erős"
 
 #: [mood]surprised
 msgid "surprised"
-msgstr ""
+msgstr "meglepett"
 
 #: [mood]thankful
 msgid "thankful"
-msgstr ""
+msgstr "hálás"
 
 #: [mood]thirsty
 msgid "thirsty"
-msgstr ""
+msgstr "szomjas"
 
 #: [mood]tired
 msgid "tired"
-msgstr ""
+msgstr "fáradt"
 
 #: [mood]undefined
 msgid "undefined"
-msgstr "不明"
+msgstr ""
 
 #: [mood]weak
 msgid "weak"
-msgstr ""
+msgstr "gyenge"
 
 #: [mood]worried
 msgid "worried"
-msgstr ""
+msgstr "aggódik"
 
 #: [month]title
 msgid "Month"
-msgstr "月"
+msgstr "Hónap"
 
 #: [month]january
 msgid "January"
-msgstr "１月"
+msgstr "Január"
 
 #: [month]february
 msgid "February"
-msgstr "２月"
+msgstr "Február"
 
 #: [month]march
 msgid "March"
-msgstr "３月"
+msgstr "Március"
 
 #: [month]april
 msgid "April"
-msgstr "４月"
+msgstr "Április"
 
 #: [month]may
 msgid "May"
-msgstr "５月"
+msgstr "Május"
 
 #: [month]june
 msgid "June"
-msgstr "６月"
+msgstr "Június"
 
 #: [month]july
 msgid "July"
-msgstr "７月"
+msgstr "Július"
 
 #: [month]august
 msgid "August"
-msgstr "８月"
+msgstr "Augusztus"
 
 #: [month]september
 msgid "September"
-msgstr "９月"
+msgstr "Szeptember"
 
 #: [month]october
 msgid "October"
-msgstr "１０月"
+msgstr "Október"
 
 #: [month]november
 msgid "November"
-msgstr "１１月"
+msgstr "November"
 
 #: [month]december
 msgid "December"
-msgstr "１２月"
+msgstr "December"
 
 #: [year]title
 msgid "Year"
-msgstr "年"
+msgstr "Év"
 
 #: [date]today
 msgid "Today"
-msgstr "今日"
+msgstr "Ma"
 
 #: [date]tomorrow
 msgid "Tomorrow"
-msgstr "明日"
+msgstr "Holnap"
 
 #: [date]yesterday
 msgid "Yesterday"
-msgstr "昨日"
+msgstr "Tegnap"
 
 #: [date]ago
 msgid "%d days ago"
-msgstr ""
+msgstr "%d napja"
 
 #: [date]day
 msgid "day"
-msgstr "日"
+msgstr "nap"
 
 #: [post]title
 msgid "Title"
-msgstr "件名"
+msgstr "Cím"
 
 #: [post]whats_new
 msgid "What's new ?"
-msgstr ""
+msgstr "Mi történt?"
 
 #: [post]place
 msgid "Place"
-msgstr ""
+msgstr "Hely"
 
 #: [post]by
 msgid "by"
-msgstr ""
+msgstr "által"
 
 #: [post]geolocalisation
 msgid "Geolocalisation"
@@ -2657,11 +2659,11 @@ msgstr ""
 
 #: [post]email
 msgid "email"
-msgstr "メール"
+msgstr "email"
 
 #: [post]empty
 msgid "No content"
-msgstr ""
+msgstr "Nincs tartalom"
 
 #: [post]no_comments
 msgid "No comments yet"
@@ -2673,55 +2675,55 @@ msgstr ""
 
 #: [post]no_load
 msgid "Your feed cannot be loaded."
-msgstr "フィードがロードできませんでした。"
+msgstr ""
 
 #: [post]older
 msgid "Get older posts"
-msgstr "前の投稿を見る"
+msgstr ""
 
 #: [post]new_items
 msgid "%s new items"
-msgstr ""
+msgstr "%s új elem"
 
 #: [post]comment_error
 msgid "Comment publication error"
-msgstr ""
+msgstr "Hozzászólás megosztási hiba"
 
 #: [post]comments_older
 msgid "Show the older comments"
-msgstr "前のコメントを見る"
+msgstr "Mutasd a régebbi hozzászólásokat"
 
 #: [post]comments_loading
 msgid "Loading comments..."
-msgstr ""
+msgstr "Hozzászólások betöltése..."
 
 #: [post]comments_get
 msgid "Get the comments"
-msgstr "コメントを見る"
+msgstr ""
 
 #: [post]comment_add
 msgid "Add a comment"
-msgstr "コメントを投稿する"
+msgstr "Hozzászólok"
 
 #: [post]share
 msgid "Share with"
-msgstr ""
+msgstr "Megosztás vele:"
 
 #: [post]share_everyone
 msgid "Everyone"
-msgstr "全て"
+msgstr "Mindenki"
 
 #: [post]share_your_contacts
 msgid "Your contacts"
-msgstr ""
+msgstr "Ismerőseid"
 
 #: [post]updated
 msgid "Updated"
-msgstr ""
+msgstr "Frissítve"
 
 #: [post]content_not_found
 msgid "Content not found"
-msgstr "コンタクトが見つかりませんでした"
+msgstr "Tartalom nem található"
 
 #: [post]default_title
 msgid "Contact publication"
@@ -2729,7 +2731,7 @@ msgstr ""
 
 #: [post]comments
 msgid "Comments"
-msgstr "コメント"
+msgstr "Kommentek"
 
 #: [api]error
 msgid "The API is not reachable, try again later"
@@ -2737,4 +2739,4 @@ msgstr ""
 
 #: [field]type_here
 msgid "Type here"
-msgstr "ここに入力を"
+msgstr "Ide írj"
