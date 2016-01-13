@@ -1,5 +1,8 @@
 **Changelog**
 
+1.6 ?
+- Update to movim 0.9 git2016-01-13
+
 1.5 2016-01-13
 - Update to movim 0.9 git2016-01-07
 - fix #16 (Installing movim crashes agendav)

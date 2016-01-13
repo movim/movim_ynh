@@ -41,6 +41,7 @@
         </div>
     {/if}
 
+    {if="($public && $post->isPublic()) || !$public"}
     <ul class="list thick">
         <li>
             {if="$recycled"}
@@ -111,6 +112,7 @@
 
         </li>
     </ul>
+    {/if}
 </header>
 
 {if="!$external && !$public"}
@@ -220,8 +222,8 @@
                                     <div class="checkbox">
                                         <input
                                             type="checkbox"
-                                            id="privacy"
-                                            name="privacy"
+                                            id="privacy_{$post->nodeid}"
+                                            name="privacy_{$post->nodeid}"
                                             {if="$post->privacy"}
                                                 checked
                                             {/if}
@@ -231,7 +233,7 @@
                                                 onclick="Post_ajaxTogglePrivacy('{$post->nodeid}')"
                                             {/if}
                                         >
-                                        <label for="privacy"></label>
+                                        <label for="privacy_{$post->nodeid}"></label>
                                     </div>
                                 </div>
                             </form>
