@@ -11,11 +11,11 @@ Please read CHANGELOG.
 
 **Installation**
 
-    yunohost app install https://github.com/src386/movim_ynh
+    yunohost app install https://github.com/movim/movim_ynh
 
 **Upgrade**
 
-    yunohost app upgrade movim -u https://github.com/src386/movim_ynh
+    yunohost app upgrade movim -u https://github.com/movim/movim_ynh
 
 **Options**
 
