@@ -1,5 +1,9 @@
 **Changelog**
 
+1.6 2016-01-27
+- Update to movim 0.9 git2016-01-27
+- Repository moved to Movim organization on github
+
 1.5 2016-01-13
 - Update to movim 0.9 git2016-01-07
 - fix #16 (Installing movim crashes agendav)

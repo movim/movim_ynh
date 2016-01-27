@@ -3,11 +3,11 @@ Movim - Kickass Social Network
 
 Movim is a decentralized social network, written in PHP and HTML5 and based on the XMPP standard protocol.
 
-![movim logo](https://movim.eu/sites/default/files/large_0.png)
+![movim logo](https://movim.eu/img/main_top.png)
 
 Installation
 ------------
-Please refer to the installation instructions that are available on the GitHub Wiki : https://github.com/edhelas/movim/wiki .
+Please refer to the installation instructions that are available on the GitHub Wiki : https://github.com/movim/movim/wiki .
 
 
 Translations
@@ -29,8 +29,8 @@ You can also use Movim on our official Pods :
 ### Librairies
 Movim also contains two specific librairies :
 
-* https://github.com/edhelas/moxl Moxl (for Movim XMPP Library) is a PHP XMPP library especially made for the Movim project 
-* https://github.com/edhelas/modl Modl (for Movim Data Layer) is a light PHP Database layer using DAO pattern
+* https://github.com/movim/moxl Moxl (for Movim XMPP Library) is a PHP XMPP library especially made for the Movim project 
+* https://github.com/movim/modl Modl (for Movim Data Layer) is a light PHP Database layer using DAO pattern
 
 Support Us
 ----------

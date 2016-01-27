@@ -5,17 +5,17 @@ Movim is a decentralized social network, written in PHP and HTML5 and based on t
 
 It is recommended to use a "valid" certificate to use Movim, auto-signed is sometimes problematic. You might want to take a look a StartSSL or Let's Encrypt.
 
-Provided Movim version : 0.9 git2015-01-07
+Provided Movim version : 0.9 git2016-01-27
 
 Please read CHANGELOG.
 
 **Installation**
 
-    yunohost app install https://github.com/src386/movim_ynh
+    yunohost app install https://github.com/movim/movim_ynh
 
 **Upgrade**
 
-    yunohost app upgrade movim -u https://github.com/src386/movim_ynh
+    yunohost app upgrade movim -u https://github.com/movim/movim_ynh
 
 **Options**
 
@@ -39,4 +39,4 @@ Username and password are defined during installation.
 
 **Help**
 
-support@conference.yunohost.org src386_ or just open an issue.
+Just open an issue.
