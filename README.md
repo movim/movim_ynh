@@ -39,4 +39,4 @@ Username and password are defined during installation.
 
 **Help**
 
-support@conference.yunohost.org src386_ or just open an issue.
+Just open an issue.
