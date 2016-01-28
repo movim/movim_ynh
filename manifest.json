@@ -4,12 +4,19 @@
     "description": {
         "en": "The Kickass Social Network"
     },
+    "url": "https://movim.eu/",
     "license": "AGPL-3",
     "maintainer": {
         "name": "src386",
         "email": "soyouz@src386.org",
         "url": "http://github.com/src386"
     },
+    "services": [
+        "nginx",
+        "php5-fpm",
+        "mysql",
+        "metronome"
+    ],
     "multi_instance": "false",
     "arguments": {
         "install" : [
