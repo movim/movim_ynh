@@ -3,6 +3,7 @@
 1.6.1 2016-02-12
 - Update to movim 0.9 git2016-01-27
 - Improve config/ and log/ protection (nginx)
+- M5oul: Add 'url' and 'services' keys in manifest.
 
 1.6 2016-01-27
 - Update to movim 0.9 git2016-01-27
