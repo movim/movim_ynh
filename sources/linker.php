@@ -23,7 +23,7 @@ fwrite(STDERR, colorize(getenv('sid'), 'yellow')." widgets before : ".\sizeToCle
 
 // We load and register all the widgets
 $wrapper = WidgetWrapper::getInstance();
-$wrapper->registerAll(true);
+$wrapper->registerAll($bootstrap->getWidgets());
 
 fwrite(STDERR, colorize(getenv('sid'), 'yellow')." widgets : ".\sizeToCleanSize(memory_get_usage())."\n");
 
@@ -33,11 +33,20 @@ $parser = new \Moxl\Parser;
 
 $buffer = '';
 
+$timestamp = time();
+
 function handleSSLErrors($errno, $errstr) {
     fwrite(STDERR, colorize(getenv('sid'), 'yellow')." : ".colorize($errstr, 'red')."\n");
 }
 
-$stdin_behaviour = function ($data) use (&$conn, $loop, &$buffer, &$connector, &$xmpp_behaviour, &$parser) {
+// Temporary linker killer
+$loop->addPeriodicTimer(5, function() use(&$conn, &$timestamp) {
+    if($timestamp < time() - 3600*2) {
+        $conn->close();
+    }
+});
+
+$stdin_behaviour = function ($data) use (&$conn, $loop, &$buffer, &$connector, &$xmpp_behaviour, &$parser, &$timestamp) {
     if(substr($data, -1) == "") {
         $messages = explode("", $buffer . substr($data, 0, -1));
         $buffer = '';
@@ -53,6 +62,10 @@ $stdin_behaviour = function ($data) use (&$conn, $loop, &$buffer, &$connector, &
                 } elseif($msg->func == 'unregister') {
                     \Moxl\Stanza\Stream::end();
                 } elseif($msg->func == 'register') {
+                    if(is_resource($conn->stream)) {
+                        $conn->stream->close();
+                    }
+
                     $cd = new \Modl\ConfigDAO();
                     $config = $cd->get();
 
@@ -83,6 +96,7 @@ $stdin_behaviour = function ($data) use (&$conn, $loop, &$buffer, &$connector, &
             \Moxl\API::clear();
 
             if(!empty($xml) && $conn) {
+                //$timestamp = time();
                 $conn->write(trim($xml));
                 #fwrite(STDERR, colorize(trim($xml), 'yellow')." : ".colorize('sent to XMPP', 'green')."\n");
             }
@@ -92,7 +106,7 @@ $stdin_behaviour = function ($data) use (&$conn, $loop, &$buffer, &$connector, &
     }
 };
 
-$xmpp_behaviour = function (React\Stream\Stream $stream) use (&$conn, $loop, &$stdin, $stdin_behaviour, $parser) {
+$xmpp_behaviour = function (React\Stream\Stream $stream) use (&$conn, $loop, &$stdin, $stdin_behaviour, $parser, &$timestamp) {
     $conn = $stream;
     fwrite(STDERR, colorize(getenv('sid'), 'yellow')." : ".colorize('linker launched', 'blue')."\n");
     fwrite(STDERR, colorize(getenv('sid'), 'yellow')." launched : ".\sizeToCleanSize(memory_get_usage())."\n");
@@ -102,7 +116,7 @@ $xmpp_behaviour = function (React\Stream\Stream $stream) use (&$conn, $loop, &$s
 
     // We define a huge buffer to prevent issues with SSL streams, see https://bugs.php.net/bug.php?id=65137
     $conn->bufferSize = 1024*32;
-    $conn->on('data', function($message) use (&$conn, $loop, $parser) {
+    $conn->on('data', function($message) use (&$conn, $loop, $parser, &$timestamp) {
         if(!empty($message)) {
             $restart = false;
 
@@ -139,6 +153,8 @@ $xmpp_behaviour = function (React\Stream\Stream $stream) use (&$conn, $loop, &$s
             \Moxl\API::clear();
             \RPC::clear();
 
+            $timestamp = time();
+
             if(!$parser->parse($message)) {
                 fwrite(STDERR, colorize(getenv('sid'), 'yellow')." ".$parser->getError()."\n");
             }
@@ -163,6 +179,7 @@ $xmpp_behaviour = function (React\Stream\Stream $stream) use (&$conn, $loop, &$s
             $xml = \Moxl\API::commit();
 
             if(!empty($xml)) {
+                //$timestamp = time();
                 $conn->write(trim($xml));
                 #fwrite(STDERR, colorize(trim($xml), 'yellow')." : ".colorize('sent to XMPP', 'green')."\n");
             }

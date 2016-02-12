@@ -94,7 +94,7 @@ class Core implements MessageComponentInterface {
     public function onMessage(ConnectionInterface $from, $msg)
     {
         $sid = $this->getSid($from);
-        if($sid != null) {
+        if($sid != null && isset($this->sessions[$sid])) {
             $this->sessions[$sid]->messageIn($from, $msg);
         }
     }
@@ -102,9 +102,12 @@ class Core implements MessageComponentInterface {
     public function onClose(ConnectionInterface $conn)
     {
         $sid = $this->getSid($conn);
-        if($sid != null) {
+        if($sid != null && isset($this->sessions[$sid])) {
             $this->sessions[$sid]->detach($conn);
-            $this->closeEmptySession($sid);
+
+            if($this->sessions[$sid]->process == null) {
+                unset($this->sessions[$sid]);
+            }
         }
     }
 
@@ -112,26 +115,24 @@ class Core implements MessageComponentInterface {
     {
         $this->loop->addPeriodicTimer(5, function() {
             foreach($this->sessions as $sid => $session) {
-                if((time()-$session->timestamp > $this->cleanerdelay*3600)
-                || ($session->countClients() == 0
-                && $session->registered == null)) {
+                if($session->countClients() == 0
+                && $session->registered == null) {
                     $session->killLinker();
-                    $this->closeEmptySession($sid);
+                }
+
+                if($session->process == null) {
+                    unset($this->sessions[$sid]);
                 }
             }
+
+            $this->cleanupDBSessions();
         });
     }
 
-    private function closeEmptySession($sid)
+    private function cleanupDBSessions()
     {
-        // No WebSockets and no linker ? We close the whole session
-        if($this->sessions[$sid]->countClients() == 0
-        && ($this->sessions[$sid]->process == null)) {
-            $sd = new \Modl\SessionxDAO();
-            $sd->delete($sid);
-            
-            unset($this->sessions[$sid]);
-        }
+        $sd = new \Modl\SessionxDAO();
+        $sd->deleteEmpty();
     }
     
     public function onError(ConnectionInterface $conn, \Exception $e)

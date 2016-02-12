@@ -60,7 +60,7 @@ ul.list li > .primary.small {
     margin-top: -1.5rem;
 }
 
-ul.list > li > *:not(.counter):not(span):not(.bubble),
+ul.list > li > *:not(.counter):not(span):not(.bubble):not(.button),
 ul.list li.subheader p {
     width: 100%;
     box-sizing: border-box;
@@ -127,7 +127,7 @@ ul.list li > p:nth-last-of-type(2) + p {
 
 ul.list li > p:nth-last-of-type(3) + p.all,
 ul.list li > p:nth-last-of-type(2) + p.all {
-    max-height: auto;
+    max-height: 100%;
 }
 
 /* Subheader */
