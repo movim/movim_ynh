@@ -5,6 +5,7 @@ var Chat = {
     previous: null,
     date: null,
     lastScroll: null,
+    edit: false,
     addSmiley: function(element) {
         var n = document.querySelector('#chat_textarea');
         n.value = n.value + element.dataset.emoji;
@@ -18,7 +19,12 @@ var Chat = {
         n.value = "";
         n.focus();
         movim_textarea_autoheight(n);
-        Chat_ajaxSendMessage(jid, encodeURIComponent(text), muc);
+        if(Chat.edit) {
+            Chat.edit = false;
+            Chat_ajaxCorrect(jid, encodeURIComponent(text));
+        } else {
+            Chat_ajaxSendMessage(jid, encodeURIComponent(text), muc);
+        }
     },
     focus: function()
     {
@@ -26,8 +32,15 @@ var Chat = {
             document.querySelector('#chat_textarea').focus();
         }
     },
-    appendTextarea: function(value)
+    setTextarea: function(value)
     {
+        Chat.edit = true;
+        document.querySelector('#chat_textarea').value = value;
+    },
+    clearReplace: function()
+    {
+        Chat.edit = false;
+        document.querySelector('#chat_textarea').value = '';
     },
     notify : function(title, body, image)
     {
@@ -70,6 +83,7 @@ var Chat = {
             for(var i = 0, len = messages.length; i < len; ++i ) {
                 Chat.appendMessage(messages[i], false);
             }
+            Chat.edit = false;
         }
     },
     appendMessage : function(message, prepend) {
@@ -127,6 +141,12 @@ var Chat = {
                 id = message.jidfrom + '_conversation';
             }
 
+            if(message.id != null) {
+                bubble.id = message.id;
+                if(message.newid != null)
+                    bubble.id = message.newid;
+            }
+
             if(message.body.match(/^\/me/)) {
                 bubble.querySelector('div.bubble').className = 'bubble quote';
                 message.body = message.body.substr(4);
@@ -135,7 +155,12 @@ var Chat = {
             if(bubble) {
                 bubble.querySelector('div.bubble > p').innerHTML = message.body.replace(/\r\n?|\n/g, '<br />');
 
-                bubble.querySelector('div.bubble > span.info').innerHTML = message.publishedPrepared;
+                var info = bubble.querySelector('div.bubble > span.info');
+                info.innerHTML = message.publishedPrepared;
+
+                if(message.edited) {
+                    info.innerHTML = '<i class="zmdi zmdi-edit"></i> ' + info.innerHTML;
+                }
 
                 if(prepend) {
                     Chat.date = message.published;
@@ -148,6 +173,10 @@ var Chat = {
                     var scrollDiff = discussion.scrollHeight - Chat.lastScroll;
                     discussion.scrollTop += scrollDiff;
                     Chat.lastScroll = discussion.scrollHeight;
+                } else if(message.edited) {
+                    var elem = document.getElementById(message.id);
+                    if(elem)
+                        elem.parentElement.replaceChild(bubble, elem);
                 } else {
                     movim_append(id, bubble.outerHTML);
                 }

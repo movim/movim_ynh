@@ -123,7 +123,8 @@ class Postn extends Model {
         else
             $entry = $item;
 
-        $this->__set('origin', $from);
+        if($from != '')
+            $this->__set('origin', $from);
 
         if($node)
             $this->__set('node', $node);
@@ -358,9 +359,9 @@ class Postn extends Model {
     public function getPublicUrl()
     {
         if($this->isMicroblog()) {
-            return \Route::urlize('blog', array($this->origin));
+            return \Route::urlize('blog', array($this->origin, $this->nodeid));
         } else {
-            return \Route::urlize('node', array($this->origin, $this->node));
+            return \Route::urlize('node', array($this->origin, $this->node, $this->nodeid));
         }
     }
 

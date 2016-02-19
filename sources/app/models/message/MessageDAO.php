@@ -5,43 +5,27 @@ namespace modl;
 class MessageDAO extends SQL {
     function set(Message $message) {
         $this->_sql = '
-            insert into message
-            (
-            session,
-            jidto,
-            jidfrom,
-            resource,
-            type,
-            subject,
-            thread,
-            body,
-            html,
-            published,
-            delivered)
-            values(
-                :session,
-                :jidto,
-                :jidfrom,
-                :resource,
-                :type,
-                :subject,
-                :thread,
-                :body,
-                :html,
-                :published,
-                :delivered
-                )';
+            update message
+                set id              = :thread,
+                    body            = :body,
+                    html            = :html,
+                    published       = :published,
+                    delivered       = :delivered,
+                    edited          = 1
+
+                where session       = :session
+                    and id          = :id
+                    and jidto       = :jidto
+                    and jidfrom     = :jidfrom';
 
         $this->prepare(
             'Message',
             array(
+                'thread'    => $message->newid, // FIXME
+                'id'        => $message->id,
                 'session'   => $message->session,
                 'jidto'     => $message->jidto,
                 'jidfrom'   => $message->jidfrom,
-                'resource'  => $message->resource,
-                'type'      => $message->type,
-                'subject'   => $message->subject,
-                'thread'    => $message->thread,
                 'body'      => $message->body,
                 'html'      => $message->html,
                 'published' => $message->published,
@@ -49,10 +33,85 @@ class MessageDAO extends SQL {
             )
         );
 
+        $this->run('Message');
+
+        if(!$this->_effective) {
+            $this->_sql = '
+                insert into message
+                (
+                id,
+                session,
+                jidto,
+                jidfrom,
+                resource,
+                type,
+                subject,
+                thread,
+                body,
+                html,
+                published,
+                delivered)
+                values(
+                    :id,
+                    :session,
+                    :jidto,
+                    :jidfrom,
+                    :resource,
+                    :type,
+                    :subject,
+                    :thread,
+                    :body,
+                    :html,
+                    :published,
+                    :delivered
+                    )';
+
+            $this->prepare(
+                'Message',
+                array(
+                    'id'        => $message->id,
+                    'session'   => $message->session,
+                    'jidto'     => $message->jidto,
+                    'jidfrom'   => $message->jidfrom,
+                    'resource'  => $message->resource,
+                    'type'      => $message->type,
+                    'subject'   => $message->subject,
+                    'thread'    => $message->thread,
+                    'body'      => $message->body,
+                    'html'      => $message->html,
+                    'published' => $message->published,
+                    'delivered' => $message->delivered
+                )
+            );
+        }
+
         return $this->run('Message');
     }
 
-    function getContact($jid, $limitf = false, $limitr = false) {
+    function getLastItem($to)
+    {
+        $this->_sql = '
+            select * from message
+            where session = :session
+                and jidto = :jidto
+                and jidfrom = :jidfrom
+            order by published desc
+            limit 1';
+
+        $this->prepare(
+            'Message',
+            array(
+                'session' => $this->_user,
+                'jidto'   => $to,
+                'jidfrom' => $this->_user
+            )
+        );
+
+        return $this->run('Message', 'item');
+    }
+
+    function getContact($jid, $limitf = false, $limitr = false)
+    {
         $this->_sql = '
             select * from message
             where session = :session
