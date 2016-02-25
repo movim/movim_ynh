@@ -8,6 +8,8 @@ use Moxl\Xec\Action\Muc\GetConfig;
 use Moxl\Xec\Action\Muc\SetConfig;
 use Moxl\Xec\Action\Muc\SetSubject;
 
+use Moxl\Xec\Action\BOB\Request;
+
 use Respect\Validation\Validator;
 
 use Ramsey\Uuid\Uuid;
@@ -28,8 +30,11 @@ class Chat extends WidgetBase
         $this->registerEvent('paused', 'onPaused');
         $this->registerEvent('gone', 'onGone');
         $this->registerEvent('subject', 'onConferenceSubject');
+
         $this->registerEvent('muc_getconfig_handle', 'onRoomConfig');
         $this->registerEvent('muc_setconfig_handle', 'onRoomConfigSaved');
+
+        $this->registerEvent('bob_request_handle', 'onSticker');
         //$this->registerEvent('muc_setsubject_handle', 'onRoomSubjectChanged');
         //$this->registerEvent('presence', 'onPresence');
     }
@@ -96,7 +101,14 @@ class Chat extends WidgetBase
 
         if(!preg_match('#^\?OTR#', $message->body)) {
             RPC::call('Chat.appendMessage', $this->prepareMessage($message));
+            RPC::call('Chat.cleanBubbles');
         }
+    }
+
+    function onSticker($packet)
+    {
+        list($to, $cid) = array_values($packet->content);
+        $this->ajaxGet($to);
     }
 
     function onComposing($array)
@@ -375,12 +387,13 @@ class Chat extends WidgetBase
 
         if(count($messages) > 0) {
             Notification::append(false, $this->__('message.history', count($messages)));
-        }
 
-        foreach($messages as $message) {
-            if(!preg_match('#^\?OTR#', $message->body)) {
-                RPC::call('Chat.appendMessage', $this->prepareMessage($message), true);
+            foreach($messages as $message) {
+                if(!preg_match('#^\?OTR#', $message->body)) {
+                    RPC::call('Chat.appendMessage', $this->prepareMessage($message), true);
+                }
             }
+            RPC::call('Chat.cleanBubbles');
         }
     }
 
@@ -570,6 +583,21 @@ class Chat extends WidgetBase
             $message->convertEmojis();
             $message->addUrls();
             //    $message->body = prepareString(htmlentities($message->body , ENT_COMPAT,'UTF-8'));
+        }
+
+        if(isset($message->sticker)) {
+            $p = new Picture;
+            $sticker = $p->get($message->sticker, false, false, 'png');
+
+            if($sticker == false) {
+                $r = new Request;
+                $r->setTo($message->jidfrom)
+                  ->setResource($message->resource)
+                  ->setCid($message->sticker)
+                  ->request();
+            } else {
+                $message->sticker = $sticker;
+            }
         }
 
         if($message->type == 'groupchat') {

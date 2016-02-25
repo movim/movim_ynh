@@ -26,22 +26,24 @@ class Message extends Model {
     public $publishedPrepared; // Only for chat purpose
     public $edited;
 
+    public $sticker; // The sticker code
+
     public function __construct()
     {
         $this->_struct = '
         {
             "session" :
-                {"type":"string", "size":128, "mandatory":true },
+                {"type":"string", "size":96, "mandatory":true },
             "id" :
-                {"type":"string", "size":36},
+                {"type":"string", "size":64},
             "jidto" :
-                {"type":"string", "size":128, "mandatory":true },
+                {"type":"string", "size":96, "mandatory":true },
             "jidfrom" :
-                {"type":"string", "size":128, "mandatory":true },
+                {"type":"string", "size":96, "mandatory":true },
             "resource" :
-                {"type":"string", "size":128 },
+                {"type":"string", "size":128, "mandatory":true },
             "type" :
-                {"type":"string", "size":20 },
+                {"type":"string", "size":16, "mandatory":true },
             "subject" :
                 {"type":"text"},
             "thread" :
@@ -51,11 +53,13 @@ class Message extends Model {
             "html" :
                 {"type":"text"},
             "published" :
-                {"type":"date"},
+                {"type":"date", "mandatory":true},
             "delivered" :
                 {"type":"date"},
             "edited" :
-                {"type":"int", "size":1}
+                {"type":"int", "size":1},
+            "sticker" :
+                {"type":"string", "size":128 }
         }';
 
         parent::__construct();
@@ -86,10 +90,22 @@ class Message extends Model {
                 $this->type    = (string)$stanza->attributes()->type;
             }
 
-            $this->__set('body', (string)$stanza->body);
-            $this->__set('subject', (string)$stanza->subject);
+            if($stanza->body)
+                $this->__set('body', (string)$stanza->body);
+
+            if($stanza->subject)
+                $this->__set('subject', (string)$stanza->subject);
 
             $images = (bool)($this->type == 'chat');
+
+            if($stanza->html) {
+                $xhtml = new \SimpleXMLElement('<body xmlns="http://www.w3.org/1999/xhtml">'.(string)$stanza->html->body.'</body>');
+                $xhtml->registerXPathNamespace('xhtml', 'http://www.w3.org/1999/xhtml');
+                $img = $xhtml->xpath('//xhtml:img/@src')[0];
+                if($img) {
+                    $this->sticker = getCid((string)$img);
+                }
+            }
 
             /*if($stanza->html) {
                 $this->html = \cleanHTMLTags($stanza->html->body->asXML());
