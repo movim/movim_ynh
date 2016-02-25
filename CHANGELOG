@@ -2,6 +2,7 @@
 
 1.7 2016-?
 - Update to movim 0.9 git2016-02-25
+- conf/nginx.conf : disable the Yunohost logo
 
 1.6.1 2016-02-12
 - Update to movim 0.9 git2016-01-27
