@@ -2,7 +2,10 @@
 
 1.7 2016-?
 - Update to movim 0.9 git2016-03-06
+- Php composer stuff is now shipped in the package
 - conf/nginx.conf : disable the Yunohost logo
+- script/install : comment (disable) php composer stuff
+- script/upgrade : comment (disable) php composer stuff
 
 1.6.1 2016-02-12
 - Update to movim 0.9 git2016-01-27
