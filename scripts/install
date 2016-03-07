@@ -80,9 +80,10 @@ sudo chown -R movim:www-data $final_path
 sudo chmod -R 750 $final_path
 
 # Install PHP dependencies
-sudo su -c "curl -sS https://getcomposer.org/installer | php -- --install-dir=$final_path" movim
-sudo su -c "cd $final_path && php composer.phar config --global discard-changes true" movim # auto yes
-sudo su -c "cd $final_path && php composer.phar install -n" movim # install + quiet mode
+# This is not necessary anymore, movim_ynh ships everything
+#sudo su -c "curl -sS https://getcomposer.org/installer | php -- --install-dir=$final_path" movim
+#sudo su -c "cd $final_path && php composer.phar config --global discard-changes true" movim # auto yes
+#sudo su -c "cd $final_path && php composer.phar install -n" movim # install + quiet mode
 
 # Movim configuration
 sudo sed -i "s@'username'    => 'username'@'username'    => '$db_user'@g" $final_path/config/db.inc.php
