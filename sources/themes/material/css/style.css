@@ -512,7 +512,7 @@ main ul li .control > i {
     position: relative;
 }
 
-.dialog > section > *:first-child {
+.dialog > section > *:first-child:not(ul) {
     margin-top: 2rem;
 }
 
@@ -864,4 +864,12 @@ dl dd {
 .disabled {
     opacity: 0.5;
     pointer-events: none;
+}
+
+/* Spinner */
+div#spinner{
+    position: relative;
+    overflow: visible;
+    text-align: center;
+    margin: 50% 0;
 }

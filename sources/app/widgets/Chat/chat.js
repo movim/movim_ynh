@@ -4,13 +4,8 @@ var Chat = {
     room: null,
     date: null,
     lastScroll: null,
+    lastDate: null,
     edit: false,
-    addSmiley: function(element) {
-        var n = document.querySelector('#chat_textarea');
-        n.value = n.value + element.dataset.emoji;
-        n.focus();
-        Dialog.clear();
-    },
     sendMessage: function(jid, muc)
     {
         var n = document.querySelector('#chat_textarea');
@@ -78,6 +73,7 @@ var Chat = {
     },
     appendMessages : function(messages) {
         if(messages) {
+            Chat.lastDate = null;
             Chat.date = messages[0].published;
             for(var i = 0, len = messages.length; i < len; ++i ) {
                 Chat.appendMessage(messages[i], false);
@@ -146,7 +142,10 @@ var Chat = {
 
             if(bubble) {
                 if(message.sticker != null) {
-                    bubble.querySelector('div.bubble > p').innerHTML = '<img src="' + message.sticker + '"/>';
+                    bubble.querySelector('div.bubble > p').innerHTML =
+                        '<img src="' + message.sticker.url +
+                        '" width="' + message.sticker.width +
+                        '" height="' + message.sticker.height + '"/>';
                 } else {
                     bubble.querySelector('div.bubble > p').innerHTML = message.body.replace(/\r\n?|\n/g, '<br />');
                 }
@@ -213,6 +212,15 @@ var Chat = {
 
                 previous = 'left';
             }
+
+            /*if(bubbles[i].className.indexOf('room') > -1) {
+                var lastDate = bubbles[i].querySelector('span.info').innerHTML;
+                if(lastDate == Chat.lastDate) {
+                    bubbles[i].querySelector('span.info').innerHTML = '';
+                }
+
+                Chat.lastDate = lastDate;
+            }*/
         }
     }
 }

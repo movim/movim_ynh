@@ -11,6 +11,8 @@ class Stickers extends WidgetBase
 {
     function load()
     {
+        $this->addcss('stickers.css');
+        $this->addjs('stickers.js');
         $this->registerEvent('bob', 'onRequest');
     }
 
@@ -60,7 +62,7 @@ class Stickers extends WidgetBase
         $m->jidto   = echapJid($to);
         $m->jidfrom = $this->user->getLogin();
         $m->sticker = $key;
-        $m->body    = 'A Stickers has been sent using Movim';
+        $m->body    = $this->__('sticker.sent');
 
         $m->published = gmdate('Y-m-d H:i:s');
 
@@ -102,9 +104,31 @@ class Stickers extends WidgetBase
         $view = $this->tpl();
         $view->assign('jid', $to);
         $view->assign('stickers', $files);
+        $view->assign('icon', $this->respath('stickers').'/icon.png');
         $view->assign('path', $this->respath('stickers').'/');
 
         Dialog::fill($view->draw('_stickers', true), true);
+    }
+
+    /**
+     * @brief Show the smiley list
+     */
+    function ajaxSmiley($to)
+    {
+        if(!$this->validateJid($to)) return;
+
+        $view = $this->tpl();
+        $view->assign('jid', $to);
+        $view->assign('icon', $this->respath('stickers').'/icon.png');
+        Dialog::fill($view->draw('_stickers_smiley', true));
+    }
+
+    /**
+     * @brief Get the path of a emoji
+     */
+    function ajaxSmileyGet($string)
+    {
+        return prepareString($string, true);
     }
 
     /**
@@ -117,6 +141,11 @@ class Stickers extends WidgetBase
         $validate_jid = Validator::stringType()->noWhitespace()->length(6, 60);
         if(!$validate_jid->validate($jid)) return false;
         else return true;
+    }
+
+    function getSmileyPath($id)
+    {
+        return getSmileyPath($id);
     }
 
     function display()

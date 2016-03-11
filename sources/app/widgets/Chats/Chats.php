@@ -74,25 +74,45 @@ class Chats extends WidgetBase
         RPC::call('Chats.refresh');
     }
 
+    function ajaxGet()
+    {
+        RPC::call('movim_fill', 'chats_widget_list', $this->prepareChats());
+        RPC::call('Chats.refresh');
+    }
+
     /**
      * @brief Get history
      */
-    function ajaxGetHistory($jid)
+    function ajaxGetHistory($jid = false)
     {
-        if(!$this->validateJid($jid)) return;
-
-        $md = new \Modl\MessageDAO();
-        $messages = $md->getContact(echapJid($jid), 0, 1);
-
         $g = new \Moxl\Xec\Action\MAM\Get;
-        $g->setJid(echapJid($jid));
+        $md = new \Modl\MessageDAO();
 
-        if(!empty($messages)) {
-            // We add a little delay of 10sec to prevent some sync issues
-            $g->setStart(strtotime($messages[0]->published)+10);
+        if($jid == false) {
+            $chats = Cache::c('chats');
+
+            foreach($chats as $jid => $value) {
+                $messages = $md->getContact(echapJid($jid), 0, 1);
+                $g->setJid(echapJid($jid));
+
+                if(!empty($messages)) {
+                    $g->setStart(strtotime($messages[0]->published)+10);
+                }
+
+                $g->request();
+            }
+        } elseif($this->validateJid($jid)) {
+            $messages = $md->getContact(echapJid($jid), 0, 1);
+
+            $g->setJid(echapJid($jid));
+
+            if(!empty($messages)) {
+                // We add a little delay of 10sec to prevent some sync issues
+                $g->setStart(strtotime($messages[0]->published)+10);
+            }
+
+            $g->request();
         }
-
-        $g->request();
     }
 
     function ajaxOpen($jid, $history = true)
@@ -167,9 +187,12 @@ class Chats extends WidgetBase
     {
         $chats = Cache::c('chats');
 
-        if(!isset($chats)) $chats = array();
-
         $view = $this->tpl();
+
+        if(!isset($chats)) {
+            return '';
+        }
+
         $view->assign('chats', array_reverse($chats));
 
         return $view->draw('_chats', true);
@@ -223,6 +246,6 @@ class Chats extends WidgetBase
 
     function display()
     {
-        $this->view->assign('list', $this->prepareChats());
+        $this->view->assign('base_uri',  BASE_URI);
     }
 }

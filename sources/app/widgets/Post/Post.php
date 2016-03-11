@@ -107,6 +107,8 @@ class Post extends WidgetBase
 
         $html = $this->preparePost($p);
 
+        RPC::call('movim_push_state', $this->route('news', $id));
+
         RPC::call('movim_fill', 'post_widget', $html);
         RPC::call('MovimTpl.scrollHeaders');
     }
@@ -163,8 +165,13 @@ class Post extends WidgetBase
     {
         $view = $this->tpl();
 
-        $nd = new \modl\PostnDAO();
+        $nd = new \modl\PostnDAO;
+        $cd = new modl\ContactDAO;
+
         $view = $this->tpl();
+
+        $view->assign('presencestxt', getPresencesTxt());
+        $view->assign('top', $cd->getTop(6));
         $view->assign('blogs', $nd->getLastBlogPublic(0, 6));
         $view->assign('posts', $nd->getLastPublished(0, 4));
 

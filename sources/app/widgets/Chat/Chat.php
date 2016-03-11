@@ -176,23 +176,6 @@ class Chat extends WidgetBase
     }
 
     /**
-     * @brief Show the smiley list
-     */
-    function ajaxSmiley()
-    {
-        $view = $this->tpl();
-        Dialog::fill($view->draw('_chat_smiley', true));
-    }
-
-    /**
-     * @brief Get the path of a emoji
-     */
-    function ajaxSmileyGet($string)
-    {
-        return prepareString($string, true);
-    }
-
-    /**
      * @brief Get a discussion
      * @param string $jid
      */
@@ -205,6 +188,8 @@ class Chat extends WidgetBase
             $chats->ajaxGetHistory($jid);
 
             $html = $this->prepareChat($jid);
+
+            RPC::call('movim_push_state', $this->route('chat', $jid));
 
             RPC::call('movim_fill', 'chat_widget', $html);
             RPC::call('MovimTpl.showPanel');
@@ -343,7 +328,8 @@ class Chat extends WidgetBase
         $md = new \Modl\MessageDAO;
         $m = $md->getLastItem($to);
 
-        RPC::call('Chat.setTextarea', $m->body);
+        if(!isset($m->sticker))
+            RPC::call('Chat.setTextarea', $m->body);
     }
 
     /**
@@ -571,7 +557,7 @@ class Chat extends WidgetBase
 
         RPC::call('Chat.setBubbles', $left, $right, $room);
         RPC::call('Chat.appendMessages', $messages);
-        RPC::call('MovimTpl.scrollPanel', 100);
+        RPC::call('MovimTpl.scrollPanel');
     }
 
     function prepareMessage(&$message)
@@ -588,6 +574,7 @@ class Chat extends WidgetBase
         if(isset($message->sticker)) {
             $p = new Picture;
             $sticker = $p->get($message->sticker, false, false, 'png');
+            $stickerSize = $p->getSize();
 
             if($sticker == false) {
                 $r = new Request;
@@ -596,7 +583,10 @@ class Chat extends WidgetBase
                   ->setCid($message->sticker)
                   ->request();
             } else {
-                $message->sticker = $sticker;
+                $message->sticker = [
+                                        'url' => $sticker,
+                                        'width' => $stickerSize['width'],
+                                        'height' => $stickerSize['height']];
             }
         }
 
@@ -604,7 +594,7 @@ class Chat extends WidgetBase
             $message->color = stringToColor($message->session.$message->resource.$message->jidfrom.$message->type);
         }
 
-        $message->publishedPrepared = prepareDate(strtotime($message->published));
+        $message->publishedPrepared = prepareDate(strtotime($message->published), true, true);
 
         return $message;
     }
