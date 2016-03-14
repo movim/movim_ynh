@@ -1,0 +1,6 @@
+[07-Mar-2016 22:03:46 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Exception' with message 'Cannot find config/db.inc.php file' in /root/movim/bootstrap.php:324
+Stack trace:
+#0 /root/movim/bootstrap.php(64): Bootstrap->loadModl()
+#1 /root/movim/mud.php(7): Bootstrap->boot()
+#2 {main}
+  thrown in /root/movim/bootstrap.php on line 324
