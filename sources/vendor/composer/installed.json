@@ -229,6 +229,52 @@
         ]
     },
     {
+        "name": "react/event-loop",
+        "version": "v0.4.2",
+        "version_normalized": "0.4.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/reactphp/event-loop.git",
+            "reference": "164799f73175e1c80bba92a220ea35df6ca371dd"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/reactphp/event-loop/zipball/164799f73175e1c80bba92a220ea35df6ca371dd",
+            "reference": "164799f73175e1c80bba92a220ea35df6ca371dd",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4.0"
+        },
+        "suggest": {
+            "ext-event": "~1.0",
+            "ext-libev": "*",
+            "ext-libevent": ">=0.1.0"
+        },
+        "time": "2016-03-08 02:09:32",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "0.5-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "React\\EventLoop\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "description": "Event loop abstraction layer that libraries can use for evented I/O.",
+        "keywords": [
+            "asynchronous",
+            "event-loop"
+        ]
+    },
+    {
         "name": "react/socket",
         "version": "v0.4.3",
         "version_normalized": "0.4.3.0",
@@ -590,6 +636,62 @@
         ]
     },
     {
+        "name": "embed/embed",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/oscarotero/Embed.git",
+            "reference": "a79b08b6351230cb6cc7e1003814d46e69434c97"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/oscarotero/Embed/zipball/a79b08b6351230cb6cc7e1003814d46e69434c97",
+            "reference": "a79b08b6351230cb6cc7e1003814d46e69434c97",
+            "shasum": ""
+        },
+        "require": {
+            "ext-curl": "*",
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "guzzlehttp/guzzle": "5.x",
+            "phpunit/phpunit": "*"
+        },
+        "suggest": {
+            "guzzlehttp/guzzle@5.x": "To use Guzzle5 request resolver"
+        },
+        "time": "2016-03-03 22:47:10",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "Embed\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Oscar Otero",
+                "email": "oom@oscarotero.com",
+                "homepage": "http://oscarotero.com",
+                "role": "Developer"
+            }
+        ],
+        "description": "PHP library to retrieve page info using oembed, opengraph, etc",
+        "homepage": "https://github.com/oscarotero/Embed",
+        "keywords": [
+            "embed",
+            "embedly",
+            "oembed",
+            "opengraph",
+            "twitter cards"
+        ]
+    },
+    {
         "name": "ezyang/htmlpurifier",
         "version": "v4.7.0",
         "version_normalized": "4.7.0.0",
@@ -932,6 +1034,52 @@
         ]
     },
     {
+        "name": "movim/modl",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/movim/modl.git",
+            "reference": "e42a7df6aefeec8626337de62b1893dc43bdbf28"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/movim/modl/zipball/e42a7df6aefeec8626337de62b1893dc43bdbf28",
+            "reference": "e42a7df6aefeec8626337de62b1893dc43bdbf28",
+            "shasum": ""
+        },
+        "require": {
+            "monolog/monolog": "1.8.*",
+            "php": ">=5.3.0"
+        },
+        "time": "2016-03-07 21:07:09",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "Modl\\": "src/Modl"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "AGPLv3"
+        ],
+        "authors": [
+            {
+                "name": "Jaussoin Timothée",
+                "email": "edhelas@movim.eu",
+                "homepage": "http://edhelas.movim.eu"
+            }
+        ],
+        "description": "A light PHP Database layer using DAO pattern",
+        "homepage": "http://github.com/edhelas/modl",
+        "keywords": [
+            "dao",
+            "database",
+            "sql"
+        ]
+    },
+    {
         "name": "pear/net_dns2",
         "version": "1.4.1",
         "version_normalized": "1.4.1.0",
@@ -1027,6 +1175,55 @@
             "auth",
             "sasl2",
             "scram"
+        ]
+    },
+    {
+        "name": "movim/moxl",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/movim/moxl.git",
+            "reference": "1109533b5639282ba10fd258c93725b4c0551cbf"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/movim/moxl/zipball/1109533b5639282ba10fd258c93725b4c0551cbf",
+            "reference": "1109533b5639282ba10fd258c93725b4c0551cbf",
+            "shasum": ""
+        },
+        "require": {
+            "monolog/monolog": "1.8.*",
+            "movim/sasl2": "dev-master",
+            "pear/net_dns2": "^1.4",
+            "php": ">=5.3.0"
+        },
+        "time": "2016-03-11 21:50:50",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "Moxl\\": "src/Moxl"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "AGPLv3"
+        ],
+        "authors": [
+            {
+                "name": "Jaussoin Timothée",
+                "email": "edhelas@movim.eu",
+                "homepage": "http://edhelas.movim.eu"
+            }
+        ],
+        "description": "Moxl (for Movim XMPP Library) is a light PHP XMPP library built to use only BOSH HTTP request",
+        "homepage": "http://github.com/edhelas/moxl",
+        "keywords": [
+            "bosh",
+            "dao",
+            "php",
+            "xmpp"
         ]
     },
     {
@@ -1320,6 +1517,53 @@
         ]
     },
     {
+        "name": "react/socket-client",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/reactphp/socket-client.git",
+            "reference": "7c79c33c385030dd9952d5dce991c018b71e46e0"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/reactphp/socket-client/zipball/7c79c33c385030dd9952d5dce991c018b71e46e0",
+            "reference": "7c79c33c385030dd9952d5dce991c018b71e46e0",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0",
+            "react/dns": "0.4.*|0.3.*",
+            "react/event-loop": "0.4.*|0.3.*",
+            "react/promise": "~2.0|~1.1",
+            "react/stream": "0.4.*|0.3.*"
+        },
+        "require-dev": {
+            "clue/block-react": "~1.0"
+        },
+        "time": "2016-03-14 03:35:31",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "0.4-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "React\\SocketClient\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "description": "Async connector to open TCP/IP and SSL/TLS based connections.",
+        "keywords": [
+            "Socket"
+        ]
+    },
+    {
         "name": "respect/validation",
         "version": "1.0.4",
         "version_normalized": "1.0.4.0",
@@ -1383,250 +1627,6 @@
             "respect",
             "validation",
             "validator"
-        ]
-    },
-    {
-        "name": "react/event-loop",
-        "version": "v0.4.2",
-        "version_normalized": "0.4.2.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/reactphp/event-loop.git",
-            "reference": "164799f73175e1c80bba92a220ea35df6ca371dd"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/reactphp/event-loop/zipball/164799f73175e1c80bba92a220ea35df6ca371dd",
-            "reference": "164799f73175e1c80bba92a220ea35df6ca371dd",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.4.0"
-        },
-        "suggest": {
-            "ext-event": "~1.0",
-            "ext-libev": "*",
-            "ext-libevent": ">=0.1.0"
-        },
-        "time": "2016-03-08 02:09:32",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "0.5-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "React\\EventLoop\\": "src"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "description": "Event loop abstraction layer that libraries can use for evented I/O.",
-        "keywords": [
-            "asynchronous",
-            "event-loop"
-        ]
-    },
-    {
-        "name": "react/socket-client",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/reactphp/socket-client.git",
-            "reference": "7c79c33c385030dd9952d5dce991c018b71e46e0"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/reactphp/socket-client/zipball/7c79c33c385030dd9952d5dce991c018b71e46e0",
-            "reference": "7c79c33c385030dd9952d5dce991c018b71e46e0",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.0",
-            "react/dns": "0.4.*|0.3.*",
-            "react/event-loop": "0.4.*|0.3.*",
-            "react/promise": "~2.0|~1.1",
-            "react/stream": "0.4.*|0.3.*"
-        },
-        "require-dev": {
-            "clue/block-react": "~1.0"
-        },
-        "time": "2016-03-14 03:35:31",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "0.4-dev"
-            }
-        },
-        "installation-source": "source",
-        "autoload": {
-            "psr-4": {
-                "React\\SocketClient\\": "src"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "description": "Async connector to open TCP/IP and SSL/TLS based connections.",
-        "keywords": [
-            "Socket"
-        ]
-    },
-    {
-        "name": "embed/embed",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/oscarotero/Embed.git",
-            "reference": "a79b08b6351230cb6cc7e1003814d46e69434c97"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/oscarotero/Embed/zipball/a79b08b6351230cb6cc7e1003814d46e69434c97",
-            "reference": "a79b08b6351230cb6cc7e1003814d46e69434c97",
-            "shasum": ""
-        },
-        "require": {
-            "ext-curl": "*",
-            "php": ">=5.4.0"
-        },
-        "require-dev": {
-            "guzzlehttp/guzzle": "5.x",
-            "phpunit/phpunit": "*"
-        },
-        "suggest": {
-            "guzzlehttp/guzzle@5.x": "To use Guzzle5 request resolver"
-        },
-        "time": "2016-03-03 22:47:10",
-        "type": "library",
-        "installation-source": "source",
-        "autoload": {
-            "psr-4": {
-                "Embed\\": "src"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Oscar Otero",
-                "email": "oom@oscarotero.com",
-                "homepage": "http://oscarotero.com",
-                "role": "Developer"
-            }
-        ],
-        "description": "PHP library to retrieve page info using oembed, opengraph, etc",
-        "homepage": "https://github.com/oscarotero/Embed",
-        "keywords": [
-            "embed",
-            "embedly",
-            "oembed",
-            "opengraph",
-            "twitter cards"
-        ]
-    },
-    {
-        "name": "movim/modl",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/movim/modl.git",
-            "reference": "e42a7df6aefeec8626337de62b1893dc43bdbf28"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/movim/modl/zipball/e42a7df6aefeec8626337de62b1893dc43bdbf28",
-            "reference": "e42a7df6aefeec8626337de62b1893dc43bdbf28",
-            "shasum": ""
-        },
-        "require": {
-            "monolog/monolog": "1.8.*",
-            "php": ">=5.3.0"
-        },
-        "time": "2016-03-07 21:07:09",
-        "type": "library",
-        "installation-source": "source",
-        "autoload": {
-            "psr-4": {
-                "Modl\\": "src/Modl"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "AGPLv3"
-        ],
-        "authors": [
-            {
-                "name": "Jaussoin Timothée",
-                "email": "edhelas@movim.eu",
-                "homepage": "http://edhelas.movim.eu"
-            }
-        ],
-        "description": "A light PHP Database layer using DAO pattern",
-        "homepage": "http://github.com/edhelas/modl",
-        "keywords": [
-            "dao",
-            "database",
-            "sql"
-        ]
-    },
-    {
-        "name": "movim/moxl",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/movim/moxl.git",
-            "reference": "1109533b5639282ba10fd258c93725b4c0551cbf"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/movim/moxl/zipball/1109533b5639282ba10fd258c93725b4c0551cbf",
-            "reference": "1109533b5639282ba10fd258c93725b4c0551cbf",
-            "shasum": ""
-        },
-        "require": {
-            "monolog/monolog": "1.8.*",
-            "movim/sasl2": "dev-master",
-            "pear/net_dns2": "^1.4",
-            "php": ">=5.3.0"
-        },
-        "time": "2016-03-11 21:50:50",
-        "type": "library",
-        "installation-source": "source",
-        "autoload": {
-            "psr-4": {
-                "Moxl\\": "src/Moxl"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "AGPLv3"
-        ],
-        "authors": [
-            {
-                "name": "Jaussoin Timothée",
-                "email": "edhelas@movim.eu",
-                "homepage": "http://edhelas.movim.eu"
-            }
-        ],
-        "description": "Moxl (for Movim XMPP Library) is a light PHP XMPP library built to use only BOSH HTTP request",
-        "homepage": "http://github.com/edhelas/moxl",
-        "keywords": [
-            "bosh",
-            "dao",
-            "php",
-            "xmpp"
         ]
     }
 ]
