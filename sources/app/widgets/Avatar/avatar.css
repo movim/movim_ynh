@@ -1,0 +1,20 @@
+#avatar_form div#preview {
+    flex: 1 1 20%;
+    text-align: center;
+    padding-top: 2rem;
+}
+
+#avatar_form input[type=file] {
+    max-width: 200px;
+}
+
+#avatar_form div#preview > div,
+#avatar_form div#preview img {
+    max-width: 250px;
+    border-radius: 0.25rem;
+    margin: 0 auto;
+}
+
+#avatar_form div#preview img.error {
+    display: none;
+}

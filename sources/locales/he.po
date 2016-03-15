@@ -1,0 +1,2726 @@
+#
+# Translators:
+# GenghisKhan <genghiskhan@gmx.ca>, 2012
+#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
+#. extracted from ../app/widgets/About/locales.ini
+#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
+#. extracted from ../app/widgets/Account/locales.ini
+#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
+#. extracted from ../app/widgets/AccountNext/locales.ini
+#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
+#. extracted from ../app/widgets/AdHoc/locales.ini
+#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
+#. extracted from ../app/widgets/AdminDB/locales.ini
+#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
+#. extracted from ../app/widgets/AdminMain/locales.ini
+#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
+#. extracted from ../app/widgets/AdminTest/locales.ini
+#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
+#. extracted from ../app/widgets/Api/locales.ini
+#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
+#. extracted from ../app/widgets/Avatar/locales.ini
+#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
+#. extracted from ../app/widgets/Blog/locales.ini
+#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
+#. extracted from ../app/widgets/Bookmark/locales.ini
+#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
+#. extracted from ../app/widgets/Chat/locales.ini
+#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
+#. extracted from ../app/widgets/Chats/locales.ini
+#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
+#. extracted from ../app/widgets/Config/locales.ini
+#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
+#. extracted from ../app/widgets/Contact/locales.ini
+#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
+#. extracted from ../app/widgets/Group/locales.ini
+#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
+#. extracted from ../app/widgets/Groups/locales.ini
+#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
+#. extracted from ../app/widgets/Hello/locales.ini
+#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
+#. extracted from ../app/widgets/Help/locales.ini
+#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
+#. extracted from ../app/widgets/Init/locales.ini
+#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
+#. extracted from ../app/widgets/Login/locales.ini
+#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
+#. extracted from ../app/widgets/LoginAnonymous/locales.ini
+#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
+#. extracted from ../app/widgets/Menu/locales.ini
+#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
+#. extracted from ../app/widgets/Notifs/locales.ini
+#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
+#. extracted from ../app/widgets/Post/locales.ini
+#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
+#. extracted from ../app/widgets/Presence/locales.ini
+#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
+#. extracted from ../app/widgets/Publish/locales.ini
+#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
+#. extracted from ../app/widgets/Rooms/locales.ini
+#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
+#. extracted from ../app/widgets/Roster/locales.ini
+#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
+#. extracted from ../app/widgets/Share/locales.ini
+#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
+#. extracted from ../app/widgets/Statistics/locales.ini
+#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
+#. extracted from ../app/widgets/Stickers/locales.ini
+#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
+#. extracted from ../app/widgets/Subscribe/locales.ini
+#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
+#. extracted from ../app/widgets/Syndication/locales.ini
+#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
+#. extracted from ../app/widgets/Upload/locales.ini
+#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
+#. extracted from ../app/widgets/Vcard4/locales.ini
+#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
+#. extracted from ../locales/locales.ini
+msgid ""
+msgstr ""
+"Project-Id-Version: movim\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-08 08:30+0200\n"
+"PO-Revision-Date: 2015-12-29 12:43+0000\n"
+"Last-Translator: Jaussoin Timothée <edhelas@movim.eu>\n"
+"Language-Team: Hebrew (http://www.transifex.com/movim/movim/language/he/)\n"
+"Language: he\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Translate Toolkit 1.13.0\n"
+
+#: [about]thanks
+msgid "Thanks"
+msgstr "תודות"
+
+#: [about]developers
+msgid "Developers"
+msgstr "מפתחים"
+
+#: [about]translators
+msgid "Translators"
+msgstr "מתרגמים"
+
+#: [about]translators_text
+msgid "Thanks to all the translators"
+msgstr ""
+
+#: [about]software
+msgid "Software"
+msgstr "תוכנה"
+
+#: [about]resources
+msgid "Resources"
+msgstr "מקורות"
+
+#: [about]api [schema]api [api]title
+msgid "API"
+msgstr "API"
+
+#: [about]info
+msgid "Movim is an XMPP-based communication platform. All the project, except the following software and resources, is under"
+msgstr "Movim הינו פלטפורמת תקשורת מבוססת XMPP. כל הפרויקט, למעט התכנות והמקורות הבאים, רשוי תחת"
+
+#: [account]title
+msgid "Account"
+msgstr ""
+
+#: [account]password_change_title
+msgid "Change my password"
+msgstr ""
+
+#: [account]password [db]password [credentials]password [form]password
+#: [input]password
+msgid "Password"
+msgstr "סיסמה"
+
+#: [account]password_confirmation
+msgid "Password confirmation"
+msgstr ""
+
+#: [account]password_changed
+msgid "The password has been updated"
+msgstr ""
+
+#: [account]password_not_valid
+msgid "Please provide a valid password (6 characters minimum)"
+msgstr ""
+
+#: [account]password_not_same
+msgid "The provided passwords are not the same"
+msgstr ""
+
+#: [account]delete_title
+msgid "Delete my account"
+msgstr ""
+
+#: [account]delete
+msgid "Delete your account"
+msgstr ""
+
+#: [account]delete_text
+msgid "You will delete your XMPP account and all the relative information linked to it (profile, contacts and publications)."
+msgstr ""
+
+#: [account]delete_text_confirm
+msgid "Are you sure that you want to delete it ?"
+msgstr ""
+
+#: [account]gateway_title
+msgid "Gateway"
+msgstr ""
+
+#: [create]title [subscribe]title
+msgid "Create a new account"
+msgstr "יצירת חשבון חדש"
+
+#: [create]notfound
+msgid "No account creation form found on the server"
+msgstr ""
+
+#: [create]server_on
+msgid "on"
+msgstr ""
+
+#: [create]successfull
+msgid "Your acccount has been successfully registered"
+msgstr ""
+
+#: [create]loading
+msgid "Loading"
+msgstr ""
+
+#: [create]placeholder
+msgid "…and start playing"
+msgstr ""
+
+#: [error]not_acceptable
+msgid "Not Acceptable"
+msgstr ""
+
+#: [error]service_unavailable
+msgid "The registration system of this server is currently unavailable"
+msgstr ""
+
+#: [oob]about
+msgid "This server use an external system for the registration, please click on the following URL."
+msgstr ""
+
+#: [adhoc]title
+msgid "Actions"
+msgstr "פעולות"
+
+#: [db]legend [schema]database
+msgid "Database"
+msgstr "מסד נתונים"
+
+#: [db]connect_error
+msgid "Modl wasn't able to connect to the database"
+msgstr "Modl לא היה מסוגל להתחבר אל מסד נתונים"
+
+#: [db]connect_success
+msgid "Movim is connected to the database"
+msgstr "Movim הינו מחובר אל מסד נתונים"
+
+#: [db]update
+msgid "The database need to be updated"
+msgstr "על מסד נתונים להתעדכן"
+
+#: [db]up_to_date
+msgid "Movim database is up to date"
+msgstr "מסד נתונים Movim הינו עדכני"
+
+#: [db]type
+msgid "Database Type"
+msgstr "טיפוס מסד נתונים"
+
+#: [db]username [credentials]username [input]username
+msgid "Username"
+msgstr "שם משתמש"
+
+#: [db]host
+msgid "Host"
+msgstr "מארח"
+
+#: [db]port
+msgid "Port"
+msgstr "פורט"
+
+#: [db]name
+msgid "Database Name"
+msgstr ""
+
+#: [admin]general
+msgid "General Settings"
+msgstr "הגדרות כלליות"
+
+#: [general]theme
+msgid "Theme"
+msgstr "מוטיב"
+
+#: [general]language
+msgid "Default language"
+msgstr "שפה משתמטת"
+
+#: [general]log_verbosity
+msgid "Log verbosity"
+msgstr "גיבוב רשומת יומן"
+
+#: [general]timezone
+msgid "Server Timezone"
+msgstr "אזור זמן שרת"
+
+#: [general]limit
+msgid "User folder size limit (in bytes)"
+msgstr "מגבלת גודל תיקיית משתמש (בתים)"
+
+#: [websocket]title
+msgid "WebSocket Configuration"
+msgstr "תצורת WebSocket"
+
+#: [websocket]info
+msgid "Enter here a valid WebSocket URI in the form"
+msgstr ""
+
+#: [websocket]label
+msgid "WebSocket URI"
+msgstr ""
+
+#: [websocket]save_info
+msgid "If you change the URI, please restart the daemon to reload the configuration"
+msgstr ""
+
+#: [websocket]publics
+msgid "Public WebSockets"
+msgstr "WebSocket פומבי"
+
+#: [credentials]title
+msgid "Administration Credential"
+msgstr "נתוני התחברות מנהל"
+
+#: [credentials]info
+msgid "Change the default credentials admin/password"
+msgstr "שנה נתוני התחברות מנהל/סיסמה"
+
+#: [credentials]re_password
+msgid "Retype password"
+msgstr "הקלד סיסמה מחדש"
+
+#: [whitelist]title
+msgid "Whitelist - XMPP Server"
+msgstr "רשימה לבנה - שרת XMPP"
+
+#: [whitelist]info1
+msgid "If you want to specify a list of authorized XMPP servers on your Movim pod and forbid the connection on all the others please put their domain name here, with comma (ex: movim.eu,jabber.fr)"
+msgstr "אם ברצונך לציין רשימה של שרתי XMPP מורשים בשרת Movim שלך ולאסור את החיבור בכל האחרים אנא השם כאן את שם המתחם שלהם, עם פסיק (דוגמא: movim.eu,jabber.fr)"
+
+#: [whitelist]info2
+msgid "Leave this field blank if you allow the access to all the XMPP accounts."
+msgstr "השאר את שדה זה ריק אם ברצונך להתיר גישה אל כל החשבונות של XMPP."
+
+#: [whitelist]label
+msgid "List of whitelisted XMPP servers"
+msgstr "רשימה של שרתי XMPP שמצויים תחת רשימה לבנה"
+
+#: [information]title
+msgctxt "[information]title"
+msgid "Information Message"
+msgstr ""
+
+#: [information]description
+msgid "Description"
+msgstr "תיאור"
+
+#: [information]info1
+msgid "This message will be displayed on the login page"
+msgstr "הודעה זו תוצג בעמוד הכניסה"
+
+#: [information]info2
+msgid "Leave this field blank if you dont want to show any message."
+msgstr ""
+
+#: [information]label
+msgctxt "[information]label"
+msgid "Information Message"
+msgstr ""
+
+#: [log]empty
+msgid "Empty"
+msgstr "ריק"
+
+#: [log]syslog
+msgid "Syslog"
+msgstr "יומן מערכת"
+
+#: [log]syslog_files
+msgid "Syslog and files"
+msgstr "יומן מערכת וקבצים"
+
+#: [admin]compatibility
+msgid "General Overview"
+msgstr "סקירה כללית"
+
+#: [compatibility]info
+msgid "Movim has found some issues or things that need to be fixed or improved"
+msgstr ""
+
+#: [compatibility]php1
+msgid "Update your PHP-Version: %s"
+msgstr "עדכן גרסת PHP שלך: %s"
+
+#: [compatibility]php2
+msgid "Required: 5.3.0"
+msgstr "צריך: 5.3.0"
+
+#: [compatibility]curl
+msgid "Install the php5-curl library"
+msgstr "התקן את הספרייה php5-curl"
+
+#: [compatibility]imagick
+msgid "Install the php5-imagick library"
+msgstr ""
+
+#: [compatibility]gd
+msgid "Install the php5-gd library"
+msgstr ""
+
+#: [compatibility]rights
+msgid "Read and write rights for the webserver in Movims root directory"
+msgstr ""
+
+#: [compatibility]db
+msgid "The database need to be updated, go to the database panel to fix this"
+msgstr ""
+
+#: [compatibility]websocket
+msgid "WebSocket connection error, check if the Movim Daemon is running and is reachable"
+msgstr ""
+
+#: [compatibility]xmpp_websocket
+msgid "XMPP Websocket connection error, please check the validity of the URL given in the General Configuration"
+msgstr ""
+
+#: [schema]browser
+msgid "Browser"
+msgstr ""
+
+#: [schema]movim
+msgid "Movim Core"
+msgstr ""
+
+#: [schema]daemon
+msgid "Movim Daemon"
+msgstr ""
+
+#: [schema]xmpp
+msgid "XMPP"
+msgstr ""
+
+#: [api]info
+msgid "Here you can register your pod on the official %sMovim API%s and be listed on %sthe pods page%s."
+msgstr "באפשרותך לרשום כאן את השרת שלך בתוך %sMovim API%s הרשמי בו יהיה מנוי בתוך %sעמוד השרתים%s."
+
+#: [api]register
+msgid "Your pod is not registered on the API"
+msgstr "השרת שלך אינו רשום API"
+
+#: [api]registered
+msgid "Your pod is registered on the API"
+msgstr "השרת שלך הינו רשום API"
+
+#: [api]wait
+msgid "Your pod is not yet validated"
+msgstr "השרת שלך עדיין לא קיבל תוקף"
+
+#: [api]validated
+msgid "Your pod is validated"
+msgstr "השרת שלך הינו תקף"
+
+#: [api]unregister
+msgid "You asked to be removed from the API, this request will be processed in a couple of hours"
+msgstr ""
+
+#: [api]conf_updated [config]updated
+msgid "Configuration updated"
+msgstr "תצורה עודכנה"
+
+#: [avatar]file
+msgid "File"
+msgstr ""
+
+#: [avatar]use_it
+msgid "Use it"
+msgstr ""
+
+#: [avatar]webcam
+msgid "Webcam"
+msgstr "מצלמת רשת"
+
+#: [avatar]cheese
+msgid "Cheese !"
+msgstr "חייכו !"
+
+#: [avatar]snapshot
+msgid "Take a webcam snapshot"
+msgstr "קח תצלום בזק מתוך מצלמת רשת"
+
+#: [avatar]updated
+msgid "Avatar Updated"
+msgstr "אווטאר עודכן"
+
+#: [avatar]not_updated
+msgid "Avatar Not Updated"
+msgstr "אווטאר לא מעודכן"
+
+#: [avatar]missing
+msgid "No avatar defined yet"
+msgstr ""
+
+#: [blog]title [feed]title
+msgid "%s's feed"
+msgstr "הערוץ של %s"
+
+#: [blog]empty
+msgid "This user has not posted anything right now"
+msgstr ""
+
+#: [blog]private
+msgid "This content is private, please login to see it"
+msgstr ""
+
+#: [title]conferences
+msgid "Conferences"
+msgstr "ועידות"
+
+#: [title]groups [group]empty_title [menu]groups [page]groups
+msgid "Groups"
+msgstr "קבוצות"
+
+#: [chatroom]add
+msgid "Add a new Chat Room"
+msgstr "הוסף חדר שיחה חדש"
+
+#: [chatroom]id [chatrooms]id
+msgid "Chat Room ID"
+msgstr "מזהה חדר שיחה"
+
+#: [chatroom]name
+msgctxt "[chatroom]name"
+msgid "Name"
+msgstr ""
+
+#: [chatroom]nickname [general]nickname [chatrooms]nickname
+#: [accounts]accounts_nickname
+msgid "Nickname"
+msgstr "שם כינוי"
+
+#: [chatroom]autojoin_label
+msgid "Do you want do join automaticaly this Chat Room ?"
+msgstr "האם ברצונך להצטרף אוטומטית אל שיחת חדר זו ?"
+
+#: [chatroom]bad_id [chatrooms]bad_id
+msgid "Bad Chatroom ID"
+msgstr "מזהה חדר שיחה רע"
+
+#: [chatroom]empty_name [chatrooms]empty_name
+msgid "Empty name"
+msgstr "שם ריק"
+
+#: [bookmarks]updated
+msgid "Bookmarks updated"
+msgstr "סימניות עודכנו"
+
+#: [bookmarks]error
+msgid "An error occured :"
+msgstr ""
+
+#: [bookmarks]configure
+msgid "Configure"
+msgstr "הגדר"
+
+#: [url]add
+msgid "Add a new URL"
+msgstr "הוסף URL חדש"
+
+#: [url]url
+msgid "URL"
+msgstr "URL"
+
+#: [url]name
+msgctxt "[url]name"
+msgid "Name"
+msgstr ""
+
+#: [message]published
+msgid "Message Published"
+msgstr "הודעה פורסמה"
+
+#: [message]encrypted
+msgid "Encrypted message"
+msgstr "הודעה מוצפנת"
+
+#: [message]composing [chats]composing
+msgid "Composing..."
+msgstr "מלחין כעת..."
+
+#: [message]paused [chats]paused
+msgid "Paused..."
+msgstr "מושהה..."
+
+#: [message]gone
+msgid "Contact gone"
+msgstr ""
+
+#: [message]history
+msgid "%s messages retrieved"
+msgstr ""
+
+#: [chat]attention
+msgid "%s needs your attention"
+msgstr "%s רוצה את צומת ליבך"
+
+#: [chat]placeholder
+msgid "Your message here..."
+msgstr "הודעתך כאן..."
+
+#: [chat]smileys
+msgid "Smileys"
+msgstr "סמיילים"
+
+#: [chat]empty_title [button]chat
+msgid "Chat"
+msgstr "שיחה"
+
+#: [chat]empty_text
+msgid "Discuss with your contacts"
+msgstr "שוחח עם האנשי קשר שלך"
+
+#: [chat]frequent [chats]frequent
+msgid "Frequent contacts"
+msgstr ""
+
+#: [chatroom]members
+msgid "Members"
+msgstr ""
+
+#: [chatroom]connected [chatrooms]connected
+msgid "Connected to the chatroom"
+msgstr "מחובר אל שיחת קבוצה"
+
+#: [chatroom]disconnected [chatrooms]disconnected
+msgid "Disconnected from the chatroom"
+msgstr "מנותק מתוך שיחת הקבוצה"
+
+#: [chatroom]config [group]configuration [page]configuration
+msgid "Configuration"
+msgstr "תצורה"
+
+#: [chatroom]config_saved
+msgid "Configuration saved"
+msgstr ""
+
+#: [chatroom]subject
+msgid "Subject"
+msgstr ""
+
+#: [chatroom]subject_changed
+msgid "Subject changed"
+msgstr ""
+
+#: [chats]empty_title
+msgid "No chats yet..."
+msgstr ""
+
+#: [chats]empty
+msgid "Open a new conversation by clicking on the %s button bellow or visit the %sContacts%s page."
+msgstr ""
+
+#: [chats]add
+msgid "Chat with a contact"
+msgstr "שיח עם איש קשר"
+
+#: [chats]more
+msgid "Load more contacts"
+msgstr ""
+
+#: [button]new
+msgid "New conversation"
+msgstr ""
+
+#: [config]general
+msgid "General"
+msgstr "כללי"
+
+#: [config]language
+msgid "Language"
+msgstr "שפה"
+
+#: [config]roster
+msgid "Roster display"
+msgstr ""
+
+#: [config]roster_show
+msgid "Show the offline contacts"
+msgstr ""
+
+#: [config]roster_hide
+msgid "Hide the offline contacts"
+msgstr ""
+
+#: [config]appearence
+msgid "Appearence"
+msgstr "חזות"
+
+#: [config]not_valid
+msgid "Configuration invalid"
+msgstr ""
+
+#: [config]advanced
+msgid "Advanced Configuration"
+msgstr ""
+
+#: [notifications]message
+msgid "Notify on incoming message"
+msgstr "התראה בעת הודעה נכנסת"
+
+#: [notifications]desktop
+msgid "Use desktop notifications"
+msgstr "השתמש בהתראות שולחן עבודה"
+
+#: [cssurl]label
+msgid "Custom CSS URL for your blog"
+msgstr ""
+
+#: [general]legend
+msgid "General Informations"
+msgstr "מידע כללי"
+
+#: [general]name [chatrooms]name
+msgid "Name"
+msgstr "שם"
+
+#: [general]date_of_birth
+msgid "Date of Birth"
+msgstr "תאריך לידה"
+
+#: [general]gender
+msgid "Gender"
+msgstr "מין"
+
+#: [general]marital
+msgid "Marital Status"
+msgstr "מצב משפחתי"
+
+#: [general]email
+msgid "Email"
+msgstr "דוא״ל"
+
+#: [general]website
+msgid "Website"
+msgstr "אתר רשת"
+
+#: [general]about
+msgid "About Me"
+msgstr "אודותיי"
+
+#: [general]accounts
+msgid "Other Accounts"
+msgstr "חשבונות אחרים"
+
+#: [general]tune
+msgid "Is Listening"
+msgstr ""
+
+#: [position]legend
+msgid "Geographic Position"
+msgstr "מיקום גאוגרפי"
+
+#: [position]locality
+msgid "Locality"
+msgstr "מקומיות"
+
+#: [position]country
+msgid "Country"
+msgstr "ארץ"
+
+#: [mood]title
+msgid "Mood"
+msgstr "מצב רוח"
+
+#: [mood]im
+msgid "I'm "
+msgstr "אני "
+
+#: [listen]title
+msgid "Listening"
+msgstr "מאזין כעת"
+
+#: [last]title
+msgid "Last seen"
+msgstr "נראה לאחרונה"
+
+#: [client]title
+msgid "Client Informations"
+msgstr "מידע לקוח"
+
+#: [explore]last_registered
+msgid "Last registered"
+msgstr "נרשמו לאחרונה"
+
+#: [explore]explore
+msgid "Find some new friends"
+msgstr ""
+
+#: [edit]title [button]edit
+msgid "Edit"
+msgstr "ערוך"
+
+#: [edit]alias
+msgid "Alias"
+msgstr "כינוי"
+
+#: [edit]group
+msgid "Group"
+msgstr "קבוצה"
+
+#: [edit]updated [roster]updated
+msgid "Contact updated"
+msgstr "איש קשר עודכן"
+
+#: [delete]title
+msgid "Are you sure?"
+msgstr "האם אתה בטוח?"
+
+#: [delete]text
+msgid "You are going to delete one of your contacts, please confirm your action"
+msgstr ""
+
+#: [age]years
+msgid "%s years"
+msgstr ""
+
+#: [blog]last
+msgid "Last public post"
+msgstr ""
+
+#: [blog]visit
+msgid "Visit the blog to see all the public posts"
+msgstr ""
+
+#: [subscription]to
+msgid "You can see this contact status"
+msgstr ""
+
+#: [subscription]to_button
+msgid "Share my status"
+msgstr ""
+
+#: [subscription]to_text
+msgid "But this contact cannot see yours"
+msgstr ""
+
+#: [subscription]from
+msgid "You are not subscribed to this contact"
+msgstr ""
+
+#: [subscription]from_button
+msgid "Ask to subscribe"
+msgstr ""
+
+#: [subscription]from_text
+msgid "But this contact can still see if you are online"
+msgstr ""
+
+#: [subscription]nil
+msgid "No subscriptions"
+msgstr ""
+
+#: [subscription]nil_button
+msgid "Invite"
+msgstr ""
+
+#: [subscription]nil_text
+msgid "This contact is in your contact list but there is no subscriptions between the two accounts"
+msgstr ""
+
+#: [group]subscribe
+msgid "Subscribe"
+msgstr "הירשם"
+
+#: [group]subscribed
+msgid "Subscribed"
+msgstr "מנוי"
+
+#: [group]unsubscribe
+msgid "Unsubscribe"
+msgstr "בטל הרשמה"
+
+#: [group]unsubscribe_text
+msgid "You are going to unsubscribe from this Group"
+msgstr ""
+
+#: [group]unsubscribed
+msgid "Unsubscribed"
+msgstr ""
+
+#: [group]share_label
+msgid "Make your membership to this group public to your friends"
+msgstr ""
+
+#: [group]label_label
+msgid "Give a label for this group"
+msgstr ""
+
+#: [group]sure
+msgid "Are you sure ?"
+msgstr "האם אתה בטוח ?"
+
+#: [group]empty_text
+msgid "Discover, follow and share"
+msgstr ""
+
+#: [group]empty
+msgid "Something bad happened to this group"
+msgstr ""
+
+#: [group]config_saved
+msgid "Group configuration saved"
+msgstr "תצורת קבוצה נשמרה"
+
+#: [group]delete_title
+msgid "Delete the group"
+msgstr ""
+
+#: [group]delete_text
+msgid "You are going to delete the following group. Please confirm your action."
+msgstr ""
+
+#: [group]delete_clean_text
+msgid "It seems that this group doesn't exists anymore. Do you want to remove it from your subscriptions?"
+msgstr ""
+
+#: [group]counter
+msgid "%s groups on this server"
+msgstr ""
+
+#: [group]subscriptions [statistics]subscriptions
+msgid "Subscriptions"
+msgstr "הרשמות"
+
+#: [group]servers
+msgid "Groups servers"
+msgstr ""
+
+#: [group]search_server
+msgid "Search for a new server"
+msgstr ""
+
+#: [group]help_info1
+msgid "Groups are the perfect way to share posts about topics that you like with all the other Movim's users."
+msgstr ""
+
+#: [group]help_info2
+msgid "Choose a server and a Group and subscribe to it using the %s button in the header. You can also create a new one using the %s button."
+msgstr ""
+
+#: [group]help_info3
+msgid "Done? You can now publish a new post in the Group by using the %s button."
+msgstr ""
+
+#: [group]help_info4
+msgid "You will find a list of all your subscribed Groups in My Subscriptions and receive instantly all the new incoming posts in the %sNews%s page."
+msgstr ""
+
+#: [groups]empty_title
+msgid "Hello"
+msgstr "שלום"
+
+#: [groups]contact_post [hello]contact_post [menu]contact_post
+msgid "Contact post"
+msgstr "פרסום איש קשר"
+
+#: [groups]empty_text1
+msgid "You don't have any group subscriptions yet."
+msgstr ""
+
+#: [groups]empty_text2
+msgid "Here you will be able to manage all your subscriptions."
+msgstr ""
+
+#: [groups]subscriptions
+msgid "My Subscriptions"
+msgstr ""
+
+#: [groups]add
+msgid "Create a new Group"
+msgstr ""
+
+#: [groups]name
+msgid "Group name"
+msgstr ""
+
+#: [groups]name_example
+msgid "My Little Pony - Fan Club"
+msgstr "אין כמו אבא שבעולם - מועדון מעריצים"
+
+#: [groups]created
+msgid "Group created successfully"
+msgstr ""
+
+#: [groups]deleted
+msgid "Group deleted successfully"
+msgstr ""
+
+#: [groups]name_error
+msgid "Please provide a valid group name (4 characters minimum)"
+msgstr ""
+
+#: [groups]no_creation
+msgid "You cannot create a new Group on this server"
+msgstr ""
+
+#: [groups]sub
+msgid "%s subscribers"
+msgstr ""
+
+#: [groups]num
+msgid "%s posts"
+msgstr ""
+
+#: [groups]disco_error
+msgid "This server doesn't exists"
+msgstr ""
+
+#: [hello]chat
+msgid "Go on the Chat page"
+msgstr ""
+
+#: [hello]news [page]news
+msgid "News"
+msgstr "חדשות"
+
+#: [hello]news_page
+msgid "Read all theses articles on the News page"
+msgstr ""
+
+#: [hello]blog_title
+msgid "Visit your public blog"
+msgstr ""
+
+#: [hello]blog_text
+msgid "See your public posts and share them with all your contacts"
+msgstr ""
+
+#: [hello]share_title
+msgid "Universal share button"
+msgstr ""
+
+#: [hello]share_text
+msgid "Bookmark or drag and drop the following button in your toolbar and use it on all the pages you want to share on Movim"
+msgstr ""
+
+#: [hello]share_button
+msgid "Share on Movim"
+msgstr ""
+
+#: [hello]enter_title
+msgid "Oh! Hello!"
+msgstr ""
+
+#: [hello]enter_paragraph
+msgid "It seems that you're new there! Welcome on Movim!"
+msgstr ""
+
+#: [hello]menu_title
+msgid "Check the Menu"
+msgstr ""
+
+#: [hello]menu_paragraph
+msgid "All the main Movim features are accessible there. Don't hesitate to navigate through the pages to discover more!"
+msgstr ""
+
+#: [help]faq
+msgid "Frequently Asked Questions"
+msgstr "שאלות נפוצות"
+
+#: [banner]title
+msgid "What do the little banners refer to ?"
+msgstr "מה כרזות קטנות אלו מייחסות ?"
+
+#: [banner]info1
+msgid "Thanks to these five little banners, you can quickly identitfy the level of confdentiality applied to the information you provide."
+msgstr "הודות לחמשת כרזות אלו, באפשרותך לברר במהירות את רמת החיסיון שחלה על המידע אותו בחרת לספק."
+
+#: [banner]white
+msgid "White, only you can see the information"
+msgstr "לבן, רק לך האפשרות לראות את המידע"
+
+#: [banner]green
+msgid "Green, you have chosen some contacts who can see your information"
+msgstr "ירוק, בחרת אנשי קשר מסוימים אשר יכולים לראות את המידע שלך"
+
+#: [banner]orange
+msgid "Orange, all your contact list can see your information"
+msgstr "כתום, כל רשימת הקשר שלך יכולה לראות את המידע שלך"
+
+#: [banner]red
+msgid "Red, everybody in the XMPP network can see your information"
+msgstr "אדום, כל אחד ברשת התקשורת XMPP יכול לראות את המידע שלך"
+
+#: [banner]black
+msgid "Black, the whole Internet can see your information"
+msgstr "שחור, כל המרשתת יכולה לראות את המידע שלך"
+
+#: [wiki]question
+msgid "Looking for some documentation ?"
+msgstr "מחפשים תיעוד ?"
+
+#: [wiki]button
+msgid "Read the Wiki"
+msgstr "קרא את הויקי"
+
+#: [ml]question
+msgid "Talk with us by email ?"
+msgstr "שוחח עמנו באמצעות דוא״ל ?"
+
+#: [ml]button
+msgid "Join the Mailing List"
+msgstr "הצטרף לרשימת דיוור"
+
+#: [chatroom]question
+msgid "Chat with the team ?"
+msgstr "שיחה עם הצוות ?"
+
+#: [chatroom]button
+msgid "Add the chatroom"
+msgstr ""
+
+#: [init]location
+msgid "Location node created"
+msgstr "צומת מיקום נוצר"
+
+#: [init]bookmark
+msgid "Bookmark node created"
+msgstr "צומת סימנייה נוצר"
+
+#: [init]vcard4
+msgid "Profile node created"
+msgstr "צומת דיוקן נוצר"
+
+#: [init]avatar
+msgid "Avatar node created"
+msgstr "צומת אווטאר נוצר"
+
+#: [init]subscriptions
+msgid "Subscriptions node created"
+msgstr "צומת הרשמות נוצר"
+
+#: [init]microblog
+msgid "Microblog node created"
+msgstr "צומת מיקרו-בלוג נוצר"
+
+#: [error]username
+msgid "Wrong username"
+msgstr "שם משתמש שגוי"
+
+#: [error]jid
+msgid "Invalid JID"
+msgstr "‫JID שגויה"
+
+#: [error]empty_challenge
+msgid "Empty Challenge from the server"
+msgstr "רוקן הזמנה מן השרת"
+
+#: [error]dns
+msgid "XMPP Domain error, your account is not a correct Jabber ID"
+msgstr "שגיאת מתחם XMPP, חשבונך אינו כתובת JID תקינה"
+
+#: [error]data_missings
+msgid "Some data are missing !"
+msgstr "חסר מידע מסוים !"
+
+#: [error]wrong_password
+msgid "Wrong password"
+msgstr "סיסמה שגויה"
+
+#: [error]internal
+msgid "Internal server error"
+msgstr "שגיאת שרת פנימית"
+
+#: [error]session
+msgid "Session error"
+msgstr "שגיאת סשן"
+
+#: [error]account_created
+msgid "Account successfully created"
+msgstr "חשבון נוצר בהצלחה"
+
+#: [error]xmpp_unauthorized
+msgctxt "[error]xmpp_unauthorized"
+msgid "Your XMPP server is unauthorized"
+msgstr ""
+
+#: [error]mec_error
+msgid "The server takes too much time to respond"
+msgstr "לשרת לוקח יותר מדי זמן להגיב"
+
+#: [error]websocket
+msgid "Movim cannot talk with the server, please try again later (Websocket connection error)"
+msgstr ""
+
+#: [error]impossible
+msgid "Impossible login"
+msgstr ""
+
+#: [error]title
+msgid "Oops!"
+msgstr "אופס!"
+
+#: [error]default
+msgid "Unknown error"
+msgstr "שגיאה לא ידועה"
+
+#: [error]login_format
+msgid "Invalid username format"
+msgstr ""
+
+#: [error]password_format
+msgid "Invalid password format"
+msgstr ""
+
+#: [error]unauthorized
+msgctxt "[error]unauthorized"
+msgid "Your XMPP server is unauthorized"
+msgstr ""
+
+#: [error]conflict
+msgid "A Movim session is already open on an other device"
+msgstr ""
+
+#: [error]wrong_account
+msgid "Movim failed to authenticate. You entered wrong data"
+msgstr "‫Movim נכשלה לאמת. הזנת מידע שגוי"
+
+#: [error]mechanism
+msgid "Authentication mechanism not supported by Movim"
+msgstr "מנגנון אימות לא נתמך על ידי Movim"
+
+#: [error]fail_auth
+msgid "The XMPP authentification failed"
+msgstr "אימות XMPP נכשל"
+
+#: [form]username
+msgid "My address"
+msgstr "כתובת"
+
+#: [form]create_one
+msgid "Create one !"
+msgstr "צור חשבון !"
+
+#: [form]another_account
+msgid "Another account"
+msgstr "חשבון אחר"
+
+#: [form]no_account
+msgid "No account yet ?"
+msgstr "אין חשבון עדיין ?"
+
+#: [form]whitelist.info
+msgid "You can login with accounts from theses servers"
+msgstr ""
+
+#: [form]connected
+msgid "Connected"
+msgstr "מחובר"
+
+#: [form]population
+msgid "Population"
+msgstr "אוכלוסיה"
+
+#: [login_anonymous]bad_username
+msgid "Bad nickname (between 4 and 40 characters)"
+msgstr ""
+
+#: [menu]empty_title
+msgid "No news yet..."
+msgstr ""
+
+#: [menu]empty
+msgid "Welcome on your news feed, here you will see all the posts published by your contacts and in the groups you have subscribed."
+msgstr ""
+
+#: [menu]refresh
+msgid "Refresh all the streams"
+msgstr "רענון של כל הזרמים"
+
+#: [menu]public
+msgid "This post is public"
+msgstr ""
+
+#: [menu]all
+msgid "All"
+msgstr "הכל"
+
+#: [menu]mine
+#, fuzzy
+msgid "My publications"
+msgstr "פרסום איש קשר"
+
+#: [menu]contacts [page]contacts
+msgid "Contacts"
+msgstr "אנשי קשר"
+
+#: [menu]add_post
+#, fuzzy
+msgid "Add a post"
+msgstr "הוסף תגובה"
+
+#: [notifs]title
+msgid "Pending Invitations"
+msgstr "הזמנות תלויות ועומדות"
+
+#: [notifs]wants_to_talk
+msgid "%s wants to talk with you"
+msgstr "%s רוצה לשוחח עמך"
+
+#: [post]news_feed
+msgid "News Feed"
+msgstr "הזנת חדשות"
+
+#: [post]placeholder
+msgid "Discover and register to the groups you are interested in"
+msgstr ""
+
+#: [post]content [post]content_label
+msgid "Content"
+msgstr ""
+
+#: [post]published
+msgid "Post published"
+msgstr ""
+
+#: [post]deleted
+msgid "Post deleted"
+msgstr ""
+
+#: [post]hot
+msgid "What's Hot"
+msgstr "מה חם"
+
+#: [post]hot_text
+msgid "Posts recently published in Groups that you are not subscribed (yet)"
+msgstr ""
+
+#: [post]new [publish]new
+msgid "New post"
+msgstr ""
+
+#: [post]repost
+msgid "This is a re-post from %s"
+msgstr ""
+
+#: [post]repost_profile
+msgid "See %s profile"
+msgstr ""
+
+#: [post]blog_last
+#, fuzzy
+msgid "Public posts from users"
+msgstr "קבוצות פומביות"
+
+#: [post]public
+msgid "Publish this post publicly?"
+msgstr ""
+
+#: [post]public_yes
+msgid "This post is now public"
+msgstr ""
+
+#: [post]public_no
+msgid "This post is now private"
+msgstr ""
+
+#: [post]public_url
+msgid "Public URL of this post"
+msgstr ""
+
+#: [post]delete_title [post]delete
+msgid "Delete this post"
+msgstr "מחק את פרסום זה"
+
+#: [post]delete_text
+msgid "You are going to delete this post, please confirm your action"
+msgstr ""
+
+#: [post]discover
+msgid "Discover more articles on the Groups page"
+msgstr ""
+
+#: [post]comments_disabled
+msgid "Comments disabled"
+msgstr ""
+
+#: [post]comment_published
+msgid "Comment published"
+msgstr ""
+
+#: [status]disconnect
+msgid "Disconnect"
+msgstr "התנתק"
+
+#: [status]here
+msgid "Your status here !"
+msgstr "המצב שלך כאן !"
+
+#: [status]updated
+msgid "Status updated"
+msgstr "מצב עודכן"
+
+#: [status]status
+msgid "Status"
+msgstr "מצב"
+
+#: [status]presence
+msgid "Presence"
+msgstr "נוכחות"
+
+#: [status]online
+msgid "Online with Movim"
+msgstr ""
+
+#: [post]preview [page]preview
+msgid "Preview"
+msgstr "תצוגה מקדימה"
+
+#: [post]help [page]help
+msgid "Help"
+msgstr "עזרה"
+
+#: [post]help_more
+msgid "More help"
+msgstr ""
+
+#: [post]help_manual
+msgid "Markdown syntax manual"
+msgstr ""
+
+#: [post]content_text
+msgid "You can format your content using Markdown"
+msgstr ""
+
+#: [post]link
+msgid "Link"
+msgstr "קישור"
+
+#: [post]tags
+msgid "Tags"
+msgstr ""
+
+#: [post]gallery
+msgid "This picture will be added to your gallery"
+msgstr ""
+
+#: [publish]valid_url
+msgid "Please enter a valid url"
+msgstr ""
+
+#: [publish]no_content_preview
+msgid "No content to preview"
+msgstr ""
+
+#: [publish]no_title
+msgid "Please provide a title"
+msgstr ""
+
+#: [publish]edit
+msgid "Edit post"
+msgstr ""
+
+#: [publish]title
+msgid "Publish"
+msgstr ""
+
+#: [publish]attach
+msgid "Add a file or a picture to your post"
+msgstr ""
+
+#: [publish]no_publication
+msgid "You cannot publish a post on this Group"
+msgstr ""
+
+#: [publish]form_filled
+msgid "Some fields have been filled in. Do you still want to go back and loose their content?"
+msgstr ""
+
+#: [publish]add_text
+msgid "Click here to add some text to your publication"
+msgstr ""
+
+#: [publish]add_text_label
+msgid "Add some text"
+msgstr ""
+
+#: [rooms]add
+msgid "Add a chatroom"
+msgstr "הוסף חדר שיחה"
+
+#: [rooms]empty_text1
+msgid "You don't have any chatroom yet."
+msgstr ""
+
+#: [rooms]empty_text2
+msgid "Add one by clicking on the add button."
+msgstr ""
+
+#: [chatrooms]title
+msgid "Chatrooms"
+msgstr "חדרי שיחה"
+
+#: [chatrooms]name_placeholder
+msgid "My Favorite Room"
+msgstr "החדר המועדף עליי"
+
+#: [chatrooms]users
+msgid "Users in the room"
+msgstr "משתמשים בתוך החדר"
+
+#: [chatrooms]bad_nickname
+msgid "Please enter a correct nickname (2 to 40 characters)"
+msgstr ""
+
+#: [chatrooms]conflict
+msgid "Username already taken"
+msgstr ""
+
+#: [room]anonymous_title
+msgid "Public chatroom"
+msgstr ""
+
+#: [room]no_room
+msgid "Please provide a room address"
+msgstr ""
+
+#: [room]anonymous_text1
+msgid "You are currently logued as an anonymous user."
+msgstr ""
+
+#: [room]anonymous_text2
+msgid "You can join using your own account or create one on the login page by loging out using the cross in the top-right corner."
+msgstr ""
+
+#: [room]anonymous_login
+msgid "Login on %s"
+msgstr ""
+
+#: [room]nick
+msgid "Your nickname"
+msgstr ""
+
+#: [roster]ungrouped
+msgid "Ungrouped"
+msgstr "ללא קבוצה"
+
+#: [roster]show_disconnected
+msgid "Show disconnected contacts"
+msgstr "הצג אנשי קשר לא מחוברים"
+
+#: [roster]hide_disconnected
+msgid "Hide disconnected contacts"
+msgstr "הסתר אנשי קשר לא מחוברים"
+
+#: [roster]show_group
+msgid "Show group %s"
+msgstr "הצג את קבוצה %s"
+
+#: [roster]hide_group
+msgid "Hide group %s"
+msgstr "הסתר את קבוצה %s"
+
+#: [roster]jid_error
+msgid "Please enter a valid Jabber ID"
+msgstr "אנא הזן מזהה Jabber תקף"
+
+#: [roster]no_contacts_title
+msgid "No contacts ?"
+msgstr ""
+
+#: [roster]no_contacts_text
+msgid "You can add one using the + button bellow"
+msgstr ""
+
+#: [roster]show_hide
+msgid "Show/Hide"
+msgstr "הצג/הסתר"
+
+#: [roster]add_contact_info1
+msgid "Enter the Jabber ID of your contact."
+msgstr "הזן מזהה Jabber של איש קשר."
+
+#: [roster]add_contact_info2
+msgid "Press enter to validate."
+msgstr "לחץ Enter לשם וידוא"
+
+#: [roster]jid
+msgid "JID"
+msgstr "JID"
+
+#: [roster]results
+msgid "Results"
+msgstr "תוצאות"
+
+#: [roster]added
+msgid "Contact added"
+msgstr "איש קשר התווסף"
+
+#: [roster]deleted
+msgid "Contact deleted"
+msgstr "איש קשר נמחק"
+
+#: [roster]search
+msgid "Search in your contacts"
+msgstr ""
+
+#: [roster]search_pod
+#, fuzzy
+msgid "Search a contact"
+msgstr "שותף עם כל אנשי הקשר"
+
+#: [share]error
+msgid "This is not a valid url"
+msgstr ""
+
+#: [share]success
+msgid "Sharing the URL"
+msgstr ""
+
+#: [statistics]title
+msgid "Statistics"
+msgstr "סטטיסטיקה"
+
+#: [statistics]since
+msgid "Since"
+msgstr "מאז"
+
+#: [statistics]sessions
+msgid "Sessions"
+msgstr "הפעלות"
+
+#: [statistics]monthly_sub
+msgid "Monthly Subscriptions"
+msgstr "הרשמות חודשיות"
+
+#: [statistics]monthly_sub_cum
+msgid "Monthly Subscriptions Cumulated"
+msgstr "הרשמות חודשיות שהצטברו"
+
+#: [sticker]sent
+msgid "A sticker has been sent using Movim"
+msgstr ""
+
+#: [subscribe]info
+msgid "Movim is a decentralized social network, before creating a new account you need to choose a server to register."
+msgstr "Movim הינה רשת חברתית מבוזרת (א-ריכוזית), טרם יצירת חשבון חדש עליך לבחור שרת להירשם אליו."
+
+#: [subscribe]server_question
+msgid "Your server here ?"
+msgstr "שרתך כאן ?"
+
+#: [subscribe]server_contact
+msgid "Contact us to add yours to the officially supported servers list"
+msgstr "צור עמנו קשר כדי להוסיף את שלך אל רשימת השרתים אשר נתמכת באופן רשמי"
+
+#: [feed]nope
+msgid "No public feed for this contact"
+msgstr "אין ערוץ פומבי עבור איש קשר זה"
+
+#: [feed]nope_contact
+msgid "No contact specified"
+msgstr "לא צוין איש קשר"
+
+#: [upload]title
+msgid "Upload a file"
+msgstr ""
+
+#: [upload]choose
+msgid "Choose a file to upload"
+msgstr ""
+
+#: [vcard]title [page]profile
+msgid "Profile"
+msgstr "דיוקן"
+
+#: [vcard]updated
+msgid "Profile Updated"
+msgstr "דיוקן עודכן"
+
+#: [vcard]not_updated
+msgid "Profile Not Updated"
+msgstr "דיוקן לא מעודכן"
+
+#: [vcard]public
+msgid "Your profile is now public"
+msgstr "הדיוקן שלך הינו פומבי כעת"
+
+#: [vcard]restricted
+msgid "Your profile is now restricted"
+msgstr "הדיוקן שלך הינו מוגבל כעת"
+
+#: [accounts]accounts_title
+msgid "Accounts"
+msgstr "חשבונות"
+
+#: [accounts]twitter
+msgid "Twitter"
+msgstr "Twitter"
+
+#: [accounts]skype
+msgid "Skype"
+msgstr "Skype"
+
+#: [accounts]yahoo
+msgid "Yahoo Account"
+msgstr ""
+
+#: [privacy]privacy_title
+msgid "Privacy Level"
+msgstr "רמת פרטיות"
+
+#: [privacy]privacy_question
+msgid "Is this profile public ?"
+msgstr "האם דיוקן זה הינו פומבי ?"
+
+#: [privacy]privacy_info
+#, fuzzy
+msgid "Please pay attention ! By making your profile public, all the information listed bellow will be available for all the Movim users and on the whole Internet."
+msgstr "לצומת לבך ! בהופכך את דיוקנך לפומבי, כל המידע שמנוי מעלה יהיה זמין לכל המשתמשים של Movim וגם בכל המרשתת."
+
+#: [save]submit [button]submit
+msgid "Submit"
+msgstr "שלח"
+
+#: [save]reset [button]reset
+msgid "Reset"
+msgstr "אפס"
+
+#: [global]no_js
+msgid "You don't have javascript enabled.  Good luck with that."
+msgstr "אין לך Javascript מאופשר.  עליך לאפשר Javascript בכדי להשתמש באתר זה."
+
+#: [global]description
+msgid "Movim is a kickass distributed social networking platform that protect your privacy an comes with a set of awesome features."
+msgstr "Movim היא פלטפורמת רשת חברתית מבוזרת אשר שומרת על הפרטיות שלך ומגיעה עם סט של תכונות נהדרות."
+
+#: [page]administration
+msgid "Administration"
+msgstr "ניהול"
+
+#: [page]home
+msgid "Home"
+msgstr "בית"
+
+#: [page]discover
+msgid "Discover"
+msgstr "גלה"
+
+#: [page]explore
+msgid "Explore"
+msgstr "סייר"
+
+#: [page]account_creation
+msgid "Account Creation"
+msgstr "יצירת חשבון"
+
+#: [page]avatar
+msgid "Avatar"
+msgstr "אווטאר"
+
+#: [page]chats
+msgid "Chats"
+msgstr "שיחות"
+
+#: [page]server
+msgid "Server"
+msgstr "שרת"
+
+#: [page]public_groups
+msgid "Public Groups"
+msgstr "קבוצות פומביות"
+
+#: [page]viewer
+msgid "Viewer"
+msgstr "צופה"
+
+#: [page]media
+msgid "Media"
+msgstr "מדיה"
+
+#: [page]blog
+msgid "Blog"
+msgstr "בלוג"
+
+#: [page]about
+msgid "About"
+msgstr "אודות"
+
+#: [page]login
+msgid "Login"
+msgstr "כניסה"
+
+#: [page]feed
+msgid "Feed"
+msgstr "ערוץ"
+
+#: [page]posts
+msgid "Posts"
+msgstr "פרסומים"
+
+#: [page]gallery
+msgid "Gallery"
+msgstr "גלריה"
+
+#: [page]visio
+msgid "Visio-conference"
+msgstr "ועידת וידאו"
+
+#: [page]pods
+msgid "Pods"
+msgstr "שרתים"
+
+#: [page]share
+msgid "Share"
+msgstr ""
+
+#: [page]room
+msgid "Room"
+msgstr ""
+
+#: [page]tag
+msgid "Tag"
+msgstr ""
+
+#: [error]error
+msgid "Error: %s"
+msgstr "שגיאה: %s"
+
+#: [error]cannot_load_file
+msgid "Cannot load file '%s'"
+msgstr "לא ניתן לטעון קובץ '%s'"
+
+#: [error]route
+msgid "Route error, please set all the parameters for the page %s"
+msgstr "שגיאת ניתוב, אנא הגדר את כל הפרמטרים עבור העמוד %s"
+
+#: [error]widget_load_error
+msgid "Requested widget '%s' doesn't exist."
+msgstr "וידג׳ט מבוקש '%s' לא קיים."
+
+#: [error]widget_call_error
+msgid "Requested event '%s' not registered."
+msgstr "אירוע מבוקש '%s' לא רשום."
+
+#: [error]whoops
+msgid "Whoops!"
+msgstr "אופס!"
+
+#: [error]media_not_found
+msgid "It seem that you don't have any pictures here?"
+msgstr "נראה כי אין לך שום תמונה כאן?"
+
+#: [error]media_ask_upload
+msgid "You can try to upload a couple by going to the Media page"
+msgstr ""
+
+#: [title]about
+msgid "%s - About"
+msgstr "%s - אודות"
+
+#: [title]account
+msgid "%s - Account"
+msgstr "%s - חשבון"
+
+#: [title]administration
+msgid "%s - Administration Panel"
+msgstr "%s - לוח ניהול"
+
+#: [title]blog
+msgid "%s - Blog"
+msgstr "%s - בלוג"
+
+#: [title]configuration
+msgid "%s - Configuration"
+msgstr "‏‏%s - תצורה"
+
+#: [title]discover
+msgid "%s - Discover"
+msgstr "%s - לגלות"
+
+#: [title]explore
+msgid "%s - Explore"
+msgstr "%s - סייר"
+
+#: [title]help
+msgid "%s - Help Page"
+msgstr "‏‏%s - עמוד עזרה"
+
+#: [title]login
+msgid "%s - Login to Movim"
+msgstr "‏‏%s - התחברות אל Movim"
+
+#: [title]main
+msgid "%s - Welcome to Movim"
+msgstr "‏‏%s - ברוך בואך אל Movim"
+
+#: [title]media
+msgid "%s - Media"
+msgstr "%s - מדיה"
+
+#: [title]news
+msgid "%s - News"
+msgstr "%s - חדשות"
+
+#: [title]node_configuration
+msgid "%s - Group Configuration"
+msgstr "%s - תצורת קבוצה"
+
+#: [title]node
+msgid "%s - Group"
+msgstr "%s - קבוצה"
+
+#: [title]not_found
+msgid "%s - 404"
+msgstr ""
+
+#: [title]profile
+msgid "%s - Profile"
+msgstr "‏‏%s - דיוקן"
+
+#: [title]server
+msgid "%s - Server"
+msgstr "%s - שרת"
+
+#: [button]validate
+msgid "Validate"
+msgstr "מתן תוקף"
+
+#: [button]refresh
+msgid "Refresh"
+msgstr "רענן"
+
+#: [button]add
+msgid "Add"
+msgstr "הוסף"
+
+#: [button]delete
+msgid "Delete"
+msgstr "מחק"
+
+#: [button]cancel
+msgid "Cancel"
+msgstr "ביטול"
+
+#: [button]close
+msgid "Close"
+msgstr "סגור"
+
+#: [button]update
+msgid "Update"
+msgstr "עדכן"
+
+#: [button]updating
+msgid "Updating"
+msgstr "מעדכן כעת"
+
+#: [button]submitting
+msgid "Submitting"
+msgstr "שולח כעת"
+
+#: [button]register
+msgid "Register"
+msgstr "הירשם"
+
+#: [button]unregister
+msgid "Unregister"
+msgstr "בטל רישום"
+
+#: [button]save
+msgid "Save"
+msgstr "שמור"
+
+#: [button]clear
+msgid "Clear"
+msgstr "טהר"
+
+#: [button]upload
+msgid "Upload"
+msgstr "העלאה"
+
+#: [button]come_in
+msgid "Come in!"
+msgstr "כניסה!"
+
+#: [button]connecting
+msgid "Connecting"
+msgstr "כעת מתחבר"
+
+#: [button]bool_yes
+msgid "Yes"
+msgstr ""
+
+#: [button]bool_no
+msgid "No"
+msgstr ""
+
+#: [button]return
+msgid "Return"
+msgstr "חזור"
+
+#: [button]accept
+msgid "Accept"
+msgstr "קבלה"
+
+#: [button]refuse
+msgid "Refuse"
+msgstr ""
+
+#: [button]next
+msgid "Next"
+msgstr ""
+
+#: [button]previous
+msgid "Previous"
+msgstr ""
+
+#: [step]step
+msgid "Step %s"
+msgstr "צעד %s"
+
+#: [day]title
+msgid "Day"
+msgstr "יום"
+
+#: [day]monday
+msgid "Monday"
+msgstr "יום שני"
+
+#: [day]tuesday
+msgid "Tuesday"
+msgstr "יום שלישי"
+
+#: [day]wednesday
+msgid "Wednesday"
+msgstr "יום רביעי"
+
+#: [day]thursday
+msgid "Thursday"
+msgstr "יום חמישי"
+
+#: [day]friday
+msgid "Friday"
+msgstr "יום שישי"
+
+#: [day]saturday
+msgid "Saturday"
+msgstr "יום שבת"
+
+#: [day]sunday
+msgid "Sunday"
+msgstr "יום ראשון"
+
+#: [gender]nil
+msgctxt "[gender]nil"
+msgid "None"
+msgstr ""
+
+#: [gender]male
+msgid "Male"
+msgstr "זכר"
+
+#: [gender]female
+msgid "Female"
+msgstr "נקבה"
+
+#: [gender]other
+msgid "Other"
+msgstr "אחר"
+
+#: [client]bot
+msgid "Bot"
+msgstr "בוט"
+
+#: [client]desktop
+msgid "Desktop"
+msgstr "שולחן עבודה"
+
+#: [client]phone
+msgid "Phone"
+msgstr "טלפון"
+
+#: [client]web
+msgid "Web"
+msgstr "רשת"
+
+#: [client]registered
+msgid "Registered"
+msgstr "רשום"
+
+#: [marital]nil
+msgctxt "[marital]nil"
+msgid "None"
+msgstr ""
+
+#: [marital]single
+msgid "Single"
+msgstr "רווק/ה"
+
+#: [marital]relationship
+msgid "In a relationship"
+msgstr "במערכת יחסים"
+
+#: [marital]married
+msgid "Married"
+msgstr "נישואים"
+
+#: [marital]divorced
+msgid "Divorced"
+msgstr "גרוש/ה"
+
+#: [marital]widowed
+msgid "Widowed"
+msgstr "אלמן/ה"
+
+#: [marital]cohabiting
+msgid "Cohabiting"
+msgstr "חיים במשותף"
+
+#: [marital]union
+msgid "Civil Union"
+msgstr "נישואים אזרחיים"
+
+#: [flag]white
+msgid "Not shared"
+msgstr "לא שותף"
+
+#: [flag]green
+msgid "Shared with one contact"
+msgstr "שותף עם איש קשר אחד"
+
+#: [flag]orange
+msgid "Shared with all contacts"
+msgstr "שותף עם כל אנשי הקשר"
+
+#: [flag]red
+msgid "Shared with the XMPP network"
+msgstr "שותף עם רשת התקשורת XMPP"
+
+#: [flag]black
+msgid "Shared with the whole Internet"
+msgstr "שותף עם כל המרשתת"
+
+#: [presence]online
+msgid "Online"
+msgstr "מקוון"
+
+#: [presence]away
+msgid "Away"
+msgstr "נעדר"
+
+#: [presence]dnd
+msgid "Do Not Disturb"
+msgstr "נא לא להפריע"
+
+#: [presence]xa
+msgid "Extended Away"
+msgstr "לא זמין"
+
+#: [presence]offline
+msgid "Offline"
+msgstr "לא מקוון"
+
+#: [presence]error
+msgid "Error"
+msgstr "שגיאה"
+
+#: [mood]afraid
+msgid "afraid"
+msgstr "מפחד"
+
+#: [mood]amazed
+msgid "amazed"
+msgstr "נדהם"
+
+#: [mood]amorous
+msgid "amorous"
+msgstr "חושק"
+
+#: [mood]angry
+msgid "angry"
+msgstr "כועס"
+
+#: [mood]annoyed
+msgid "annoyed"
+msgstr "נרגז"
+
+#: [mood]anxious
+msgid "anxious"
+msgstr "חרד"
+
+#: [mood]aroused
+msgid "aroused"
+msgstr "מרוגש"
+
+#: [mood]ashamed
+msgid "ashamed"
+msgstr "מתבייש"
+
+#: [mood]bored
+msgid "bored"
+msgstr "משועמם"
+
+#: [mood]brave
+msgid "brave"
+msgstr "אמיץ"
+
+#: [mood]calm
+msgid "calm"
+msgstr "רגוע"
+
+#: [mood]cautious
+msgid "cautious"
+msgstr "זהיר"
+
+#: [mood]cold
+msgid "cold"
+msgstr "קר"
+
+#: [mood]confident
+msgid "confident"
+msgstr "סמוך"
+
+#: [mood]confused
+msgid "confused"
+msgstr "מבולבל"
+
+#: [mood]contemplative
+msgid "contemplative"
+msgstr "ספקולטיבי"
+
+#: [mood]contented
+msgid "contented"
+msgstr "מסופק"
+
+#: [mood]cranky
+msgid "cranky"
+msgstr "נרגז"
+
+#: [mood]crazy
+msgid "crazy"
+msgstr "מטורף"
+
+#: [mood]creative
+msgid "creative"
+msgstr "יצירתי"
+
+#: [mood]curious
+msgid "curious"
+msgstr "סקרן"
+
+#: [mood]dejected
+msgid "dejected"
+msgstr "מיואש"
+
+#: [mood]depressed
+msgid "depressed"
+msgstr "מדוכא"
+
+#: [mood]disappointed
+msgid "disappointed"
+msgstr "מאוכזב"
+
+#: [mood]disgusted
+msgid "disgusted"
+msgstr "נגעל"
+
+#: [mood]dismayed
+msgid "dismayed"
+msgstr "נחרד"
+
+#: [mood]distracted
+msgid "distracted"
+msgstr "טרוד"
+
+#: [mood]embarrassed
+msgid "embarrassed"
+msgstr "נבוך"
+
+#: [mood]envious
+msgid "envious"
+msgstr "מקנא"
+
+#: [mood]excited
+msgid "excited"
+msgstr "נרגש"
+
+#: [mood]flirtatious
+msgid "flirtatious"
+msgstr "פלרטטני"
+
+#: [mood]frustated
+msgid "frustated"
+msgstr "מתוסכל"
+
+#: [mood]grateful
+msgid "grateful"
+msgstr "נעים"
+
+#: [mood]grieving
+msgid "grieving"
+msgstr "מתאבל"
+
+#: [mood]grumpy
+msgid "grumpy"
+msgstr "זועף"
+
+#: [mood]guilty
+msgid "guilty"
+msgstr "אשם"
+
+#: [mood]happy
+msgid "happy"
+msgstr "שמח"
+
+#: [mood]hopeful
+msgid "hopeful"
+msgstr "אופטימי"
+
+#: [mood]hot
+msgid "hot"
+msgstr "לוהט"
+
+#: [mood]humbled
+msgid "humbled"
+msgstr "מוכנע"
+
+#: [mood]humiliated
+msgid "humiliated"
+msgstr "מושפל"
+
+#: [mood]hungry
+msgid "hungry"
+msgstr "רעב"
+
+#: [mood]hurt
+msgid "hurt"
+msgstr "פגוע"
+
+#: [mood]impressed
+msgid "impressed"
+msgstr "מתפעל"
+
+#: [mood]in_awe
+msgid "in awe"
+msgstr "מפוחד"
+
+#: [mood]in_love
+msgid "in love"
+msgstr "מאוהב"
+
+#: [mood]indignant
+msgid "indignant"
+msgstr "ממורמר"
+
+#: [mood]interested
+msgid "interested"
+msgstr "מתעניין"
+
+#: [mood]intoxicated
+msgid "intoxicated"
+msgstr "שיכור"
+
+#: [mood]invincible
+msgid "invincible"
+msgstr "בלתי מנוצח"
+
+#: [mood]jealous
+msgid "jealous"
+msgstr "מקנא"
+
+#: [mood]lonely
+msgid "lonely"
+msgstr "בודד"
+
+#: [mood]lost
+msgid "lost"
+msgstr "אבוד"
+
+#: [mood]lucky
+msgid "lucky"
+msgstr "בר מזל"
+
+#: [mood]mean
+msgid "mean"
+msgstr "דל"
+
+#: [mood]moody
+msgid "moody"
+msgstr "מדוכדך"
+
+#: [mood]nervous
+msgid "nervous"
+msgstr "עצבני"
+
+#: [mood]neutral
+msgid "neutral"
+msgstr "אדיש"
+
+#: [mood]offended
+msgid "offended"
+msgstr "נעלב"
+
+#: [mood]outraged
+msgid "outraged"
+msgstr "מזועזע"
+
+#: [mood]playful
+msgid "playful"
+msgstr "שובב"
+
+#: [mood]proud
+msgid "proud"
+msgstr "יהיר"
+
+#: [mood]relaxed
+msgid "relaxed"
+msgstr "רגוע"
+
+#: [mood]relieved
+msgid "relieved"
+msgstr "משוחרר"
+
+#: [mood]restless
+msgid "restless"
+msgstr "חסר מנוחה"
+
+#: [mood]sad
+msgid "sad"
+msgstr "עצוב"
+
+#: [mood]sarcastic
+msgid "sarcastic"
+msgstr "עוקצני"
+
+#: [mood]satisfied
+msgid "satisfied"
+msgstr "מרוצה"
+
+#: [mood]serious
+msgid "serious"
+msgstr "רציני"
+
+#: [mood]shocked
+msgid "shocked"
+msgstr "הלום"
+
+#: [mood]shy
+msgid "shy"
+msgstr "ביישן"
+
+#: [mood]sick
+msgid "sick"
+msgstr "חולה"
+
+#: [mood]sleepy
+msgid "sleepy"
+msgstr "ישנוני"
+
+#: [mood]spontaneous
+msgid "spontaneous"
+msgstr "ספונטני"
+
+#: [mood]stressed
+msgid "stressed"
+msgstr "לחוץ"
+
+#: [mood]strong
+msgid "strong"
+msgstr "חזק"
+
+#: [mood]surprised
+msgid "surprised"
+msgstr "מופתע"
+
+#: [mood]thankful
+msgid "thankful"
+msgstr "אסיר תודה"
+
+#: [mood]thirsty
+msgid "thirsty"
+msgstr "צמא"
+
+#: [mood]tired
+msgid "tired"
+msgstr "עייף"
+
+#: [mood]undefined
+msgid "undefined"
+msgstr "מעורפל"
+
+#: [mood]weak
+msgid "weak"
+msgstr "חלש"
+
+#: [mood]worried
+msgid "worried"
+msgstr "מודאג"
+
+#: [month]title
+msgid "Month"
+msgstr "חודש"
+
+#: [month]january
+msgid "January"
+msgstr "ינואר"
+
+#: [month]february
+msgid "February"
+msgstr "פברואר"
+
+#: [month]march
+msgid "March"
+msgstr "מרץ"
+
+#: [month]april
+msgid "April"
+msgstr "אפריל"
+
+#: [month]may
+msgid "May"
+msgstr "מאי"
+
+#: [month]june
+msgid "June"
+msgstr "יוני"
+
+#: [month]july
+msgid "July"
+msgstr "יולי"
+
+#: [month]august
+msgid "August"
+msgstr "אוגוסט"
+
+#: [month]september
+msgid "September"
+msgstr "ספטמבר"
+
+#: [month]october
+msgid "October"
+msgstr "אוקטובר"
+
+#: [month]november
+msgid "November"
+msgstr "נובמבר"
+
+#: [month]december
+msgid "December"
+msgstr "דצמבר"
+
+#: [year]title
+msgid "Year"
+msgstr "שנה"
+
+#: [date]today
+msgid "Today"
+msgstr "היום"
+
+#: [date]tomorrow
+msgid "Tomorrow"
+msgstr "מחר"
+
+#: [date]yesterday
+msgid "Yesterday"
+msgstr "אתמול"
+
+#: [date]ago
+msgid "%d days ago"
+msgstr ""
+
+#: [date]day
+msgid "day"
+msgstr "יום"
+
+#: [post]title
+msgid "Title"
+msgstr "כותרת"
+
+#: [post]whats_new
+msgid "What's new ?"
+msgstr "מה חדש ?"
+
+#: [post]place
+msgid "Place"
+msgstr "מיקום"
+
+#: [post]by
+msgid "by"
+msgstr "על ידי"
+
+#: [post]geolocalisation
+msgid "Geolocalisation"
+msgstr ""
+
+#: [post]email
+msgid "email"
+msgstr "דוא״ל"
+
+#: [post]empty
+msgid "No content"
+msgstr "אין איש קשר"
+
+#: [post]no_comments
+msgid "No comments yet"
+msgstr ""
+
+#: [post]no_comments_stream
+msgid "No comments stream"
+msgstr ""
+
+#: [post]no_load
+msgid "Your feed cannot be loaded."
+msgstr "ערוצך לא יכול להיטען."
+
+#: [post]older
+msgid "Get older posts"
+msgstr "השג רשומות נושנות"
+
+#: [post]new_items
+msgid "%s new items"
+msgstr "%s פריטים חדשים"
+
+#: [post]comment_error
+msgid "Comment publication error"
+msgstr "שגיאת פרסום תגובה"
+
+#: [post]comments_older
+msgid "Show the older comments"
+msgstr "הצג את התגובות הישנות יותר"
+
+#: [post]comments_loading
+msgid "Loading comments..."
+msgstr ""
+
+#: [post]comments_get
+msgid "Get the comments"
+msgstr "השג תגובות"
+
+#: [post]comment_add
+msgid "Add a comment"
+msgstr "הוסף תגובה"
+
+#: [post]share
+msgid "Share with"
+msgstr "שתף בעזרת"
+
+#: [post]share_everyone
+msgid "Everyone"
+msgstr "כולם"
+
+#: [post]share_your_contacts
+msgid "Your contacts"
+msgstr "אנשי הקשר שלך"
+
+#: [post]updated
+msgid "Updated"
+msgstr "עודכן"
+
+#: [post]content_not_found
+msgid "Content not found"
+msgstr "תוכן לא נמצא"
+
+#: [post]default_title
+msgid "Contact publication"
+msgstr "פרסום איש קשר"
+
+#: [post]comments
+msgid "Comments"
+msgstr ""
+
+#: [api]error
+msgid "The API is not reachable, try again later"
+msgstr "API אינו נגיש, נסה שוב מאוחר יותר"
+
+#: [field]type_here
+msgid "Type here"
+msgstr ""
+
+#~ msgid "Data"
+#~ msgstr "נתונים"
+
+#~ msgid "Cache"
+#~ msgstr "מטמון"
+
+#~ msgid "Messages"
+#~ msgstr "הודעות"
+
+#~ msgid "Location"
+#~ msgstr "מיקום"
+
+#~ msgid "Wrong position"
+#~ msgstr "מיקום שגוי"
+
+#~ msgid "Location updated"
+#~ msgstr "מיקום עודכן"
+
+#~ msgid "Update my position"
+#~ msgstr "עדכן את המיקום שלי"
+
+#~ msgid "Manage your members"
+#~ msgstr "נהל את חבריך"
+
+#~ msgid "Get the members"
+#~ msgstr "השג את החברים"
+
+#~ msgid "Affiliations saved"
+#~ msgstr "סינופים נשמרו"
+
+#~ msgid "Manage your subscriptions"
+#~ msgstr "נהל את ההרשמות שלך"
+
+#~ msgid "Manage the subscriptions"
+#~ msgstr "נהל את ההרשמות"
+
+#~ msgid "Get the subscriptions"
+#~ msgstr "השג את ההרשמות"
+
+#~ msgid "Subscriptions saved"
+#~ msgstr "הרשמות נשמרו"
+
+#~ msgid "Shared"
+#~ msgstr "משותף"
+
+#~ msgid "%s has been added to your public groups"
+#~ msgstr "%s התווסף אל הקבוצה הפומבית שלך"
+
+#~ msgid "Search"
+#~ msgstr "חיפוש"
+
+#~ msgid "Hung up"
+#~ msgstr "נותקה"
+
+#~ msgid "Your contact is busy"
+#~ msgstr "איש הקשר שלך הינו עסוק"
+
+#~ msgid "Declined"
+#~ msgstr "נדחתה"
+
+#~ msgid "Is calling you"
+#~ msgstr "מתקשר אליך"
+
+#~ msgid "Call"
+#~ msgstr "צור קשר"
+
+#~ msgid "Hang up"
+#~ msgstr "נתק"
+
+#~ msgid "Connection"
+#~ msgstr "חיבור"

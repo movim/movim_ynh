@@ -1,0 +1,30 @@
+{
+    "autoload": {
+        "psr-0": {
+            "Movim": "src"
+        }
+    },
+
+    "require": {
+        "monolog/monolog": "1.8.*",
+        "libchart/libchart": "dev-master",
+        "rain/raintpl": "dev-master",
+        "michelf/php-markdown": "1.4.*@dev",
+        "movim/modl": "dev-master",
+        "movim/sasl2": "dev-master",
+        "movim/moxl": "dev-master",
+
+        "embed/embed": "dev-master",
+        "heyupdate/emoji": "0.2.*@dev",
+
+        "cboden/ratchet": "0.3.*",
+        "react/child-process": "0.5.*@dev",
+        "react/socket-client": "dev-master",
+        "react/stream": "0.4.3",
+
+        "forxer/Gravatar": "~1.2",
+        "respect/validation": "1.0.*",
+        "ezyang/htmlpurifier": "^4.7",
+        "ramsey/uuid": "^3.2"
+    }
+}
