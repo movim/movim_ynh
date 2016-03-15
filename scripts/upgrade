@@ -32,7 +32,6 @@ else
 fi
 
 # Update PHP dependencies
-sudo su -c "cd $final_path && rm composer.lock"
 sudo su -c "cd $final_path && php composer.phar config --global discard-changes true" movim
 sudo su -c "cd $final_path && php composer.phar install -n" movim
 
