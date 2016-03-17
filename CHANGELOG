@@ -1,7 +1,7 @@
 **Changelog**
 
-1.7 2016-?
-- Update to movim 0.9 git2016-03-14
+1.7 2016-3-17
+- Update to movim 0.9 git2016-03-17
 - sources/upgrade : dont delete composer.lock
 - conf/nginx.conf : disable the Yunohost logo
 
