@@ -38,10 +38,15 @@
  */
 
 define('DOCUMENT_ROOT', dirname(__FILE__));
-require_once(DOCUMENT_ROOT.'/bootstrap.php');
+
+require 'vendor/autoload.php';
+
+use Movim\Bootstrap;
+use Movim\Controller\Front;
+use Movim\Widget\Wrapper;
 
 try {
-    $bootstrap = new Bootstrap();
+    $bootstrap = new Bootstrap;
     $bootstrap->boot();
 } catch(Exception $e) {
     error_log($e->getMessage());
@@ -49,9 +54,9 @@ try {
     return;
 }
 
-$rqst = new FrontController();
+$rqst = new Front;
 $rqst->handle();
 
-WidgetWrapper::getInstance(false);
+Wrapper::getInstance(false);
 // Closing stuff
-WidgetWrapper::destroyInstance();
+Wrapper::destroyInstance();

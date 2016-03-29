@@ -24,7 +24,7 @@ use Moxl\Xec\Action\Microblog\CommentCreateNode;
 use \Michelf\Markdown;
 use Respect\Validation\Validator;
 
-class Publish extends WidgetBase
+class Publish extends \Movim\Widget\Base
 {
     function load()
     {
@@ -211,7 +211,6 @@ class Publish extends WidgetBase
                     $p->setLink($form->embed->value);
 
                     if(in_array($embed->type, array('photo', 'rich'))) {
-                        $key = key($embed->images);
                         $p->setImage($embed->images[0]['value'], $embed->title, $embed->images[0]['mime']);
                     }
 
@@ -285,10 +284,8 @@ class Publish extends WidgetBase
         $validate_server = Validator::stringType()->noWhitespace()->length(6, 40);
         $validate_node = Validator::stringType()->length(3, 100);
 
-        if(!$validate_server->validate($server)
-        || !$validate_node->validate($node)
-        ) return false;
-        else return true;
+        return ($validate_server->validate($server)
+             && $validate_node->validate($node));
     }
 
     function display()

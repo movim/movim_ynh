@@ -10,16 +10,13 @@ class Core implements MessageComponentInterface {
     public $loop;
     public $baseuri;
 
-    private $cleanerdelay = 2; // in hours
-
     public function __construct($loop, $baseuri, $port)
     {
         $baseuri = rtrim($baseuri, '/') . '/';
 
         echo colorize("Movim daemon launched\n", 'green');
         echo colorize("Base URI :", 'green')." {$baseuri}\n";
-        $ws = $this->setWebsocket($baseuri, $port);
-        //echo colorize("Public WebSocket URL :", 'green')." {$ws}\n";
+        $this->setWebsocket($baseuri, $port);
 
         $this->loop    = $loop;
         $this->baseuri = $baseuri;
@@ -63,7 +60,7 @@ class Core implements MessageComponentInterface {
 ";
 
         $path = $explode['host'].$explode['path'];
-        
+
         if($explode['scheme'] == 'https') {
             $ws = 'wss://'.$path.'ws/';
             $secured = 'true';
@@ -78,7 +75,7 @@ class Core implements MessageComponentInterface {
 
         return $ws;
     }
-    
+
     public function onOpen(ConnectionInterface $conn)
     {
         $sid = $this->getSid($conn);
@@ -87,7 +84,7 @@ class Core implements MessageComponentInterface {
                 $this->sessions[$sid] = new Session($this->loop, $sid, $this->baseuri);
             }
 
-            $this->sessions[$sid]->attach($conn);
+            $this->sessions[$sid]->attach($this->loop, $conn);
         }
     }
 
@@ -103,11 +100,19 @@ class Core implements MessageComponentInterface {
     {
         $sid = $this->getSid($conn);
         if($sid != null && isset($this->sessions[$sid])) {
-            $this->sessions[$sid]->detach($conn);
+            $this->sessions[$sid]->detach($this->loop, $conn);
 
             if($this->sessions[$sid]->process == null) {
                 unset($this->sessions[$sid]);
             }
+        }
+    }
+
+    public function forceClose($sid)
+    {
+        if(array_key_exists($sid, $this->sessions)) {
+            $this->sessions[$sid]->killLinker();
+            unset($this->sessions[$sid]);
         }
     }
 
@@ -134,10 +139,17 @@ class Core implements MessageComponentInterface {
         $sd = new \Modl\SessionxDAO();
         $sd->deleteEmpty();
     }
-    
+
     public function onError(ConnectionInterface $conn, \Exception $e)
     {
         echo "An error has occurred: {$e->getMessage()}\n";
+    }
+
+    public function getSessions()
+    {
+        return array_map(
+            function($session) { return $session->registered; },
+             $this->sessions);
     }
 
     private function getSid(ConnectionInterface $conn)

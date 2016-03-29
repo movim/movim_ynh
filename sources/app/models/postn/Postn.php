@@ -117,6 +117,28 @@ class Postn extends Model {
         return $content;
     }
 
+    private function getTitle($titles) {
+        $title = '';
+        foreach($titles as $t) {
+            switch($t->attributes()->type) {
+                case 'html':
+                case 'xhtml':
+                    $title = strip_tags((string)$t->children()->asXML());
+                    break;
+                case 'text':
+                    if(trim($t) != '') {
+                        $title = trim($t);
+                    }
+                    break;
+                default :
+                    $title = (string)$t;
+                    break;
+            }
+        }
+
+        return $title;
+    }
+
     public function set($item, $from, $delay = false, $node = false) {
         if($item->item)
             $entry = $item->item;
@@ -150,7 +172,7 @@ class Postn extends Model {
         if($entry->entry->source && $entry->entry->source->author->uri)
             $this->__set('aid', substr((string)$entry->entry->source->author->uri, 5));
 
-        $this->__set('title', (string)$entry->entry->title);
+        $this->__set('title', $this->getTitle($entry->entry->title));
 
         // Content
         if($entry->entry->summary && (string)$entry->entry->summary != '')
@@ -182,8 +204,6 @@ class Postn extends Model {
         if($delay)
             $this->__set('delay', $delay);
 
-        $contentimg = $this->setAttachements($entry->entry->link);
-
         // Tags parsing
         if($entry->entry->category) {
             $td = new \Modl\TagDAO;
@@ -205,14 +225,24 @@ class Postn extends Model {
             }
         }
 
-        if($contentimg != '')
-            $content .= '<br />'.$contentimg;
-
         if(!isset($this->commentplace))
             $this->__set('commentplace', $this->origin);
 
         $this->__set('content', trim($content));
         $this->contentcleaned = purifyHTML(html_entity_decode($this->content));
+
+        $extra = false;
+        // We try to extract a picture
+        $xml = \simplexml_load_string('<div>'.$this->contentcleaned.'</div>');
+        if($xml) {
+            $results = $xml->xpath('//img/@src');
+            if(is_array($results) && !empty($results)) {
+                $extra = (string)$results[0];
+                $this->picture = true;
+            }
+        }
+
+        $this->setAttachements($entry->entry->link, $extra);
 
         if($entry->entry->geoloc) {
             if($entry->entry->geoloc->lat != 0)
@@ -223,16 +253,14 @@ class Postn extends Model {
     }
 
     private function typeIsPicture($type) {
-        return in_array($type, array('image/jpeg', 'image/png', 'image/jpg', 'image/gif'));
+        return in_array($type, array('picture', 'image/jpeg', 'image/png', 'image/jpg', 'image/gif'));
     }
 
     private function typeIsLink($type) {
         return $type == 'text/html';
     }
 
-    private function setAttachements($links) {
-        $contentimg = '';
-
+    private function setAttachements($links, $extra = false) {
         $l = array();
 
         foreach($links as $attachment) {
@@ -252,10 +280,12 @@ class Postn extends Model {
             }
         }
 
+        if($extra) {
+            array_push($l, array('href' => $extra, 'type' => 'picture'));
+        }
+
         if(!empty($l))
             $this->links = serialize($l);
-
-        return $contentimg;
     }
 
     public function getAttachements()

@@ -27,7 +27,7 @@ use Moxl\Xec\Action\Pubsub\GetItems;
 use Moxl\Stanza\Stream;
 use Moxl\Xec\Action\Storage\Get;
 
-class Presence extends WidgetBase
+class Presence extends \Movim\Widget\Base
 {
 
     function load()
@@ -35,6 +35,19 @@ class Presence extends WidgetBase
         $this->addcss('presence.css');
         $this->addjs('presence.js');
         $this->registerEvent('mypresence', 'onMyPresence');
+        $this->registerEvent('session_up', 'onSessionUp');
+        $this->registerEvent('session_down', 'onSessionDown');
+    }
+
+    function onSessionUp()
+    {
+        $this->ajaxSet();
+    }
+
+    function onSessionDown()
+    {
+        $p = new Away;
+        $p->request();
     }
 
     function onMyPresence($packet)
@@ -44,11 +57,6 @@ class Presence extends WidgetBase
         Notification::append(null, $this->__('status.updated'));
         RPC::call('Presence.refresh');
         RPC::call('movim_remove_class', '#presence_widget', 'unfolded');
-    }
-
-    function onPostDisconnect($data)
-    {
-        RPC::call('movim_reload', Route::urlize('disconnect'));
     }
 
     function ajaxSet($form = false)
@@ -103,9 +111,7 @@ class Presence extends WidgetBase
     function ajaxLogout()
     {
         $pd = new \Modl\PresenceDAO();
-
-        $session = \Sessionx::start();
-        $pd->clearPresence($session->username.'@'.$session->host);
+        $pd->clearPresence();
 
         $session = \Sessionx::start();
         $p = new Unavailable;
@@ -226,7 +232,6 @@ class Presence extends WidgetBase
         $presencetpl->assign('txt', $txt);
         $presencetpl->assign('txts', $txts);
 
-        $presencetpl->assign('calllogout',  $this->call('ajaxLogout'));
         $html = $presencetpl->draw('_presence_list', true);
 
         return $html;

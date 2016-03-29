@@ -13,7 +13,12 @@ v0.9.1 (trunk)
  * Clean properly the tags in the database
  * Allow tags with special characters
  * Various UI and navigation fixed
+ * Use UUID as identifiers for the messages and posts
+ * Delete properly the comments when deleting a post
  * Update the dependencies
+ * Create an internal API to save some memory and improve session handling
+ * Improve image handling in posts
+ * Improve overall performances
 
 v0.9
 ---------------------------

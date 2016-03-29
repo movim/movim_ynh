@@ -6,7 +6,7 @@ use Respect\Validation\Validator;
 use Moxl\Xec\Action\Pubsub\Create;
 use Moxl\Xec\Action\Pubsub\TestCreate;
 
-class Groups extends WidgetBase
+class Groups extends \Movim\Widget\Base
 {
     private $_list_server;
 
@@ -175,18 +175,6 @@ class Groups extends WidgetBase
         return $html;
     }
 
-    private function cleanServers($servers) {
-        $i = 0;
-        foreach($servers as $c) {
-            if(filter_var($c->server, FILTER_VALIDATE_EMAIL)) {
-                unset($servers[$i]);
-            } elseif(count(explode('.', $c->server))<3) {
-                unset($servers[$i]);
-            }
-            $i++;
-        }
-        return $servers;
-    }
     /**
      * @brief Validate the server
      *

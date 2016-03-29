@@ -1,8 +1,6 @@
-# Latvian translation for movim
-# Copyright (c) 2014 Rosetta Contributors and Canonical Ltd 2014
-# This file is distributed under the same license as the movim package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2014.
 #
+# Translators:
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2014
 #. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
 #. extracted from ../app/widgets/About/locales.ini
 #. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
@@ -37,8 +35,6 @@
 #. extracted from ../app/widgets/Group/locales.ini
 #. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
 #. extracted from ../app/widgets/Groups/locales.ini
-#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
-#. extracted from ../app/widgets/Hello/locales.ini
 #. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
 #. extracted from ../app/widgets/Help/locales.ini
 #. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
@@ -81,16 +77,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: movim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-08 08:30+0200\n"
-"PO-Revision-Date: 2015-06-09 12:19+0000\n"
-"Last-Translator: Jānis Marks Gailis <jm-gailis@fai-vianet.fr>\n"
-"Language-Team: Latvian <lv@li.org>\n"
+"POT-Creation-Date: 2016-03-23 23:26+0200\n"
+"PO-Revision-Date: 2016-03-23 22:27+0000\n"
+"Last-Translator: Jaussoin Timothée <edhelas@movim.eu>\n"
+"Language-Team: Latvian (http://www.transifex.com/movim/movim/language/lv/)\n"
 "Language: lv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-06-18 21:08+0000\n"
-"X-Generator: Launchpad (build 17570)\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2);\n"
+"X-Generator: Translate Toolkit 1.13.0\n"
 
 #: [about]thanks
 msgid "Thanks"
@@ -124,14 +120,13 @@ msgstr "API"
 msgid "Movim is an XMPP-based communication platform. All the project, except the following software and resources, is under"
 msgstr ""
 
-#: [account]title
+#: [account]title [page]account
 msgid "Account"
 msgstr ""
 
 #: [account]password_change_title
-#, fuzzy
 msgid "Change my password"
-msgstr "Nepareiza parole"
+msgstr ""
 
 #: [account]password [db]password [credentials]password [form]password
 #: [input]password
@@ -159,9 +154,8 @@ msgid "Delete my account"
 msgstr ""
 
 #: [account]delete
-#, fuzzy
 msgid "Delete your account"
-msgstr "Izveidot jaunu kontu"
+msgstr ""
 
 #: [account]delete_text
 msgid "You will delete your XMPP account and all the relative information linked to it (profile, contacts and publications)."
@@ -185,7 +179,7 @@ msgstr ""
 
 #: [create]server_on
 msgid "on"
-msgstr "šajā datumā"
+msgstr ""
 
 #: [create]successfull
 msgid "Your acccount has been successfully registered"
@@ -193,7 +187,7 @@ msgstr ""
 
 #: [create]loading
 msgid "Loading"
-msgstr "Ielādē"
+msgstr ""
 
 #: [create]placeholder
 msgid "…and start playing"
@@ -252,9 +246,8 @@ msgid "Port"
 msgstr "Ports"
 
 #: [db]name
-#, fuzzy
 msgid "Database Name"
-msgstr "Datubāzes nosaukums"
+msgstr ""
 
 #: [admin]general
 msgid "General Settings"
@@ -329,10 +322,9 @@ msgid "List of whitelisted XMPP servers"
 msgstr ""
 
 #: [information]title
-#, fuzzy
 msgctxt "[information]title"
 msgid "Information Message"
-msgstr "Informācijas paziņojums"
+msgstr ""
 
 #: [information]description
 msgid "Description"
@@ -347,10 +339,9 @@ msgid "Leave this field blank if you dont want to show any message."
 msgstr ""
 
 #: [information]label
-#, fuzzy
 msgctxt "[information]label"
 msgid "Information Message"
-msgstr "Informācijas paziņojums"
+msgstr ""
 
 #: [log]empty
 msgid "Empty"
@@ -513,10 +504,9 @@ msgid "Chat Room ID"
 msgstr ""
 
 #: [chatroom]name
-#, fuzzy
 msgctxt "[chatroom]name"
 msgid "Name"
-msgstr "Nosaukums"
+msgstr ""
 
 #: [chatroom]nickname [general]nickname [chatrooms]nickname
 #: [accounts]accounts_nickname
@@ -540,9 +530,8 @@ msgid "Bookmarks updated"
 msgstr ""
 
 #: [bookmarks]error
-#, fuzzy
 msgid "An error occured :"
-msgstr "Kļūda notika: "
+msgstr ""
 
 #: [bookmarks]configure
 msgid "Configure"
@@ -557,10 +546,9 @@ msgid "URL"
 msgstr ""
 
 #: [url]name
-#, fuzzy
 msgctxt "[url]name"
 msgid "Name"
-msgstr "Nosaukums"
+msgstr ""
 
 #: [message]published
 msgid "Message Published"
@@ -683,14 +671,12 @@ msgid "Appearence"
 msgstr "Izskats"
 
 #: [config]not_valid
-#, fuzzy
 msgid "Configuration invalid"
-msgstr "Atjaunināta konfigurācija"
+msgstr ""
 
 #: [config]advanced
-#, fuzzy
 msgid "Advanced Configuration"
-msgstr "Atjaunināta konfigurācija"
+msgstr ""
 
 #: [notifications]message
 msgid "Notify on incoming message"
@@ -837,18 +823,16 @@ msgid "You are not subscribed to this contact"
 msgstr ""
 
 #: [subscription]from_button
-#, fuzzy
 msgid "Ask to subscribe"
-msgstr "Atrakstīties"
+msgstr ""
 
 #: [subscription]from_text
 msgid "But this contact can still see if you are online"
 msgstr ""
 
 #: [subscription]nil
-#, fuzzy
 msgid "No subscriptions"
-msgstr "Apraksts"
+msgstr ""
 
 #: [subscription]nil_button
 msgid "Invite"
@@ -923,9 +907,8 @@ msgid "Subscriptions"
 msgstr ""
 
 #: [group]servers
-#, fuzzy
 msgid "Groups servers"
-msgstr "Grupas"
+msgstr ""
 
 #: [group]search_server
 msgid "Search for a new server"
@@ -951,16 +934,16 @@ msgstr ""
 msgid "Hello"
 msgstr ""
 
-#: [groups]contact_post [hello]contact_post [menu]contact_post
+#: [groups]contact_post [menu]contact_post [hello]contact_post
 msgid "Contact post"
 msgstr ""
 
 #: [groups]empty_text1
-msgid "You don't have any group subscriptions yet."
+msgid "Here you will be able to manage all your subscriptions."
 msgstr ""
 
 #: [groups]empty_text2
-msgid "Here you will be able to manage all your subscriptions."
+msgid "You don't have any group subscriptions yet."
 msgstr ""
 
 #: [groups]subscriptions
@@ -1005,54 +988,6 @@ msgstr ""
 
 #: [groups]disco_error
 msgid "This server doesn't exists"
-msgstr ""
-
-#: [hello]chat
-msgid "Go on the Chat page"
-msgstr ""
-
-#: [hello]news [page]news
-msgid "News"
-msgstr ""
-
-#: [hello]news_page
-msgid "Read all theses articles on the News page"
-msgstr ""
-
-#: [hello]blog_title
-msgid "Visit your public blog"
-msgstr ""
-
-#: [hello]blog_text
-msgid "See your public posts and share them with all your contacts"
-msgstr ""
-
-#: [hello]share_title
-msgid "Universal share button"
-msgstr ""
-
-#: [hello]share_text
-msgid "Bookmark or drag and drop the following button in your toolbar and use it on all the pages you want to share on Movim"
-msgstr ""
-
-#: [hello]share_button
-msgid "Share on Movim"
-msgstr ""
-
-#: [hello]enter_title
-msgid "Oh! Hello!"
-msgstr ""
-
-#: [hello]enter_paragraph
-msgid "It seems that you're new there! Welcome on Movim!"
-msgstr ""
-
-#: [hello]menu_title
-msgid "Check the Menu"
-msgstr ""
-
-#: [hello]menu_paragraph
-msgid "All the main Movim features are accessible there. Don't hesitate to navigate through the pages to discover more!"
 msgstr ""
 
 #: [help]faq
@@ -1172,10 +1107,9 @@ msgid "Account successfully created"
 msgstr "Konts veiksmīgi izveidots"
 
 #: [error]xmpp_unauthorized
-#, fuzzy
 msgctxt "[error]xmpp_unauthorized"
 msgid "Your XMPP server is unauthorized"
-msgstr "Jūsu XMPP serveris nav atļauts"
+msgstr ""
 
 #: [error]mec_error
 msgid "The server takes too much time to respond"
@@ -1206,10 +1140,9 @@ msgid "Invalid password format"
 msgstr ""
 
 #: [error]unauthorized
-#, fuzzy
 msgctxt "[error]unauthorized"
 msgid "Your XMPP server is unauthorized"
-msgstr "Jūsu XMPP serveris nav atļauts"
+msgstr ""
 
 #: [error]conflict
 msgid "A Movim session is already open on an other device"
@@ -1288,9 +1221,8 @@ msgid "Contacts"
 msgstr "Kontakti"
 
 #: [menu]add_post
-#, fuzzy
 msgid "Add a post"
-msgstr "Pievienot komentāru"
+msgstr ""
 
 #: [notifs]title
 msgid "Pending Invitations"
@@ -1380,6 +1312,42 @@ msgstr ""
 msgid "Comment published"
 msgstr ""
 
+#: [hello]blog_title
+msgid "Visit your public blog"
+msgstr ""
+
+#: [hello]blog_text
+msgid "See your public posts and share them with all your contacts"
+msgstr ""
+
+#: [hello]share_title
+msgid "Universal share button"
+msgstr ""
+
+#: [hello]share_text
+msgid "Bookmark or drag and drop the following button in your toolbar and use it on all the pages you want to share on Movim"
+msgstr ""
+
+#: [hello]share_button
+msgid "Share on Movim"
+msgstr ""
+
+#: [hello]enter_title
+msgid "Oh! Hello!"
+msgstr ""
+
+#: [hello]enter_paragraph
+msgid "It seems that you're new there! Welcome on Movim!"
+msgstr ""
+
+#: [hello]menu_title
+msgid "Check the Menu"
+msgstr ""
+
+#: [hello]menu_paragraph
+msgid "All the main Movim features are accessible there. Don't hesitate to navigate through the pages to discover more!"
+msgstr ""
+
 #: [status]disconnect
 msgid "Disconnect"
 msgstr "Atvienoties"
@@ -1404,7 +1372,7 @@ msgstr ""
 msgid "Online with Movim"
 msgstr ""
 
-#: [post]preview [page]preview
+#: [post]preview
 msgid "Preview"
 msgstr ""
 
@@ -1473,9 +1441,8 @@ msgid "Click here to add some text to your publication"
 msgstr ""
 
 #: [publish]add_text_label
-#, fuzzy
 msgid "Add some text"
-msgstr "Pievienot komentāru"
+msgstr ""
 
 #: [rooms]add
 msgid "Add a chatroom"
@@ -1507,7 +1474,7 @@ msgstr ""
 
 #: [chatrooms]conflict
 msgid "Username already taken"
-msgstr "Lietotājvārds jau aizņemts"
+msgstr ""
 
 #: [room]anonymous_title
 msgid "Public chatroom"
@@ -1558,9 +1525,8 @@ msgid "Please enter a valid Jabber ID"
 msgstr ""
 
 #: [roster]no_contacts_title
-#, fuzzy
 msgid "No contacts ?"
-msgstr "Jūsu kontakti"
+msgstr ""
 
 #: [roster]no_contacts_text
 msgid "You can add one using the + button bellow"
@@ -1595,14 +1561,12 @@ msgid "Contact deleted"
 msgstr ""
 
 #: [roster]search
-#, fuzzy
 msgid "Search in your contacts"
-msgstr "Jūsu kontakti"
+msgstr ""
 
 #: [roster]search_pod
-#, fuzzy
 msgid "Search a contact"
-msgstr "Jūsu kontakti"
+msgstr ""
 
 #: [share]error
 msgid "This is not a valid url"
@@ -1697,9 +1661,8 @@ msgid "Skype"
 msgstr "Skype"
 
 #: [accounts]yahoo
-#, fuzzy
 msgid "Yahoo Account"
-msgstr "Konti"
+msgstr ""
 
 #: [privacy]privacy_title
 msgid "Privacy Level"
@@ -1737,16 +1700,16 @@ msgstr "Administrācija"
 msgid "Home"
 msgstr "Sākumvieta"
 
-#: [page]discover
-msgid "Discover"
-msgstr "Atklāt"
-
 #: [page]explore
 msgid "Explore"
 msgstr "Izpētīt"
 
 #: [page]account_creation
 msgid "Account Creation"
+msgstr ""
+
+#: [page]news
+msgid "News"
 msgstr ""
 
 #: [page]avatar
@@ -1757,21 +1720,9 @@ msgstr ""
 msgid "Chats"
 msgstr ""
 
-#: [page]server
-msgid "Server"
-msgstr ""
-
 #: [page]public_groups
 msgid "Public Groups"
 msgstr ""
-
-#: [page]viewer
-msgid "Viewer"
-msgstr "Skatītājs"
-
-#: [page]media
-msgid "Media"
-msgstr "Multivide"
 
 #: [page]blog
 msgid "Blog"
@@ -1825,10 +1776,6 @@ msgstr ""
 msgid "Cannot load file '%s'"
 msgstr ""
 
-#: [error]route
-msgid "Route error, please set all the parameters for the page %s"
-msgstr ""
-
 #: [error]widget_load_error
 msgid "Requested widget '%s' doesn't exist."
 msgstr ""
@@ -1839,82 +1786,6 @@ msgstr ""
 
 #: [error]whoops
 msgid "Whoops!"
-msgstr ""
-
-#: [error]media_not_found
-msgid "It seem that you don't have any pictures here?"
-msgstr ""
-
-#: [error]media_ask_upload
-msgid "You can try to upload a couple by going to the Media page"
-msgstr ""
-
-#: [title]about
-msgid "%s - About"
-msgstr ""
-
-#: [title]account
-msgid "%s - Account"
-msgstr ""
-
-#: [title]administration
-msgid "%s - Administration Panel"
-msgstr ""
-
-#: [title]blog
-msgid "%s - Blog"
-msgstr ""
-
-#: [title]configuration
-msgid "%s - Configuration"
-msgstr ""
-
-#: [title]discover
-msgid "%s - Discover"
-msgstr ""
-
-#: [title]explore
-msgid "%s - Explore"
-msgstr ""
-
-#: [title]help
-msgid "%s - Help Page"
-msgstr ""
-
-#: [title]login
-msgid "%s - Login to Movim"
-msgstr ""
-
-#: [title]main
-msgid "%s - Welcome to Movim"
-msgstr ""
-
-#: [title]media
-msgid "%s - Media"
-msgstr ""
-
-#: [title]news
-msgid "%s - News"
-msgstr ""
-
-#: [title]node_configuration
-msgid "%s - Group Configuration"
-msgstr ""
-
-#: [title]node
-msgid "%s - Group"
-msgstr ""
-
-#: [title]not_found
-msgid "%s - 404"
-msgstr ""
-
-#: [title]profile
-msgid "%s - Profile"
-msgstr ""
-
-#: [title]server
-msgid "%s - Server"
 msgstr ""
 
 #: [button]validate
@@ -2007,10 +1878,6 @@ msgstr ""
 
 #: [button]previous
 msgid "Previous"
-msgstr ""
-
-#: [step]step
-msgid "Step %s"
 msgstr ""
 
 #: [day]title
@@ -2670,68 +2537,3 @@ msgstr ""
 #: [field]type_here
 msgid "Type here"
 msgstr ""
-
-#~ msgid "Data"
-#~ msgstr "Dati"
-
-#~ msgid "Cache"
-#~ msgstr "Kešatmiņa"
-
-#~ msgid "Messages"
-#~ msgstr "Ziņojumi"
-
-#~ msgid "Location"
-#~ msgstr "Atrašanās vieta"
-
-#~ msgid "Shared"
-#~ msgstr "Koplietots"
-
-#~ msgid "Search"
-#~ msgstr "Meklēt"
-
-#, fuzzy
-#~ msgctxt "[general]nickname"
-#~ msgid "Nickname"
-#~ msgstr "Segvārds"
-
-#, fuzzy
-#~ msgctxt "[accounts]accounts_nickname"
-#~ msgid "Nickname"
-#~ msgstr "Segvārds"
-
-#~ msgid "Your web browser is too old to use with Movim."
-#~ msgstr "Jūsu interneta pārlūks ir pārāk vecs lai lietot to ar Movim"
-
-#~ msgid "Manage"
-#~ msgstr "Pārvaldīt"
-
-#, fuzzy
-#~ msgid "Active contacts"
-#~ msgstr "Jūsu kontakti"
-
-#~ msgid "Yahoo"
-#~ msgstr "Yahoo"
-
-#~ msgid "Environment"
-#~ msgstr "Vide"
-
-#~ msgid "Invalid name"
-#~ msgstr "Nederīgs vārds"
-
-#~ msgid "You entered different passwords"
-#~ msgstr "Jūs ievadījāt dažādas paroles"
-
-#~ msgid "Could not connect to the XMPP server"
-#~ msgstr "Nevar pieslēgt uz XMPP serveri"
-
-#~ msgid "Could not communicate with the XMPP server"
-#~ msgstr "Nevar sazināties ar XMPP serveri"
-
-#~ msgid "Invite this user"
-#~ msgstr "Uzaicināt šo lietotāju"
-
-#~ msgid "What is Movim?"
-#~ msgstr "Kas ir Movim?"
-
-#~ msgid "I can't find the answer to my question here"
-#~ msgstr "Es nevaru atrast atbildi manam jautājumam šeit"

@@ -1,0 +1,2539 @@
+#
+# Translators:
+# Xals Xaloc <33xaloc@gmail.com>, 2016
+#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
+#. extracted from ../app/widgets/About/locales.ini
+#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
+#. extracted from ../app/widgets/Account/locales.ini
+#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
+#. extracted from ../app/widgets/AccountNext/locales.ini
+#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
+#. extracted from ../app/widgets/AdHoc/locales.ini
+#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
+#. extracted from ../app/widgets/AdminDB/locales.ini
+#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
+#. extracted from ../app/widgets/AdminMain/locales.ini
+#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
+#. extracted from ../app/widgets/AdminTest/locales.ini
+#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
+#. extracted from ../app/widgets/Api/locales.ini
+#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
+#. extracted from ../app/widgets/Avatar/locales.ini
+#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
+#. extracted from ../app/widgets/Blog/locales.ini
+#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
+#. extracted from ../app/widgets/Bookmark/locales.ini
+#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
+#. extracted from ../app/widgets/Chat/locales.ini
+#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
+#. extracted from ../app/widgets/Chats/locales.ini
+#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
+#. extracted from ../app/widgets/Config/locales.ini
+#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
+#. extracted from ../app/widgets/Contact/locales.ini
+#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
+#. extracted from ../app/widgets/Group/locales.ini
+#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
+#. extracted from ../app/widgets/Groups/locales.ini
+#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
+#. extracted from ../app/widgets/Help/locales.ini
+#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
+#. extracted from ../app/widgets/Init/locales.ini
+#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
+#. extracted from ../app/widgets/Login/locales.ini
+#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
+#. extracted from ../app/widgets/LoginAnonymous/locales.ini
+#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
+#. extracted from ../app/widgets/Menu/locales.ini
+#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
+#. extracted from ../app/widgets/Notifs/locales.ini
+#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
+#. extracted from ../app/widgets/Post/locales.ini
+#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
+#. extracted from ../app/widgets/Presence/locales.ini
+#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
+#. extracted from ../app/widgets/Publish/locales.ini
+#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
+#. extracted from ../app/widgets/Rooms/locales.ini
+#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
+#. extracted from ../app/widgets/Roster/locales.ini
+#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
+#. extracted from ../app/widgets/Share/locales.ini
+#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
+#. extracted from ../app/widgets/Statistics/locales.ini
+#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
+#. extracted from ../app/widgets/Stickers/locales.ini
+#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
+#. extracted from ../app/widgets/Subscribe/locales.ini
+#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
+#. extracted from ../app/widgets/Syndication/locales.ini
+#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
+#. extracted from ../app/widgets/Upload/locales.ini
+#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
+#. extracted from ../app/widgets/Vcard4/locales.ini
+#. #-#-#-#-#  locales.po (PACKAGE VERSION)  #-#-#-#-#
+#. extracted from ../locales/locales.ini
+msgid ""
+msgstr ""
+"Project-Id-Version: movim\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-23 23:26+0200\n"
+"PO-Revision-Date: 2016-03-23 22:27+0000\n"
+"Last-Translator: Jaussoin Timothée <edhelas@movim.eu>\n"
+"Language-Team: Catalan (http://www.transifex.com/movim/movim/language/ca/)\n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Translate Toolkit 1.13.0\n"
+
+#: [about]thanks
+msgid "Thanks"
+msgstr "Gràcies"
+
+#: [about]developers
+msgid "Developers"
+msgstr ""
+
+#: [about]translators
+msgid "Translators"
+msgstr "Traductors"
+
+#: [about]translators_text
+msgid "Thanks to all the translators"
+msgstr "Gràcies a tots els traductors"
+
+#: [about]software
+msgid "Software"
+msgstr "Software"
+
+#: [about]resources
+msgid "Resources"
+msgstr ""
+
+#: [about]api [schema]api [api]title
+msgid "API"
+msgstr ""
+
+#: [about]info
+msgid "Movim is an XMPP-based communication platform. All the project, except the following software and resources, is under"
+msgstr "Movim és una plataforma de comunicació basada en XMPP. Tot el projecte, a excepció del software i els recursos a continuació, estan sota"
+
+#: [account]title [page]account
+msgid "Account"
+msgstr "Compte "
+
+#: [account]password_change_title
+msgid "Change my password"
+msgstr "Canvia la contrasenya"
+
+#: [account]password [db]password [credentials]password [form]password
+#: [input]password
+msgid "Password"
+msgstr "Contrasenya"
+
+#: [account]password_confirmation
+msgid "Password confirmation"
+msgstr "Repeteix la contrasenya"
+
+#: [account]password_changed
+msgid "The password has been updated"
+msgstr "S'ha actualitzat la contrasenya"
+
+#: [account]password_not_valid
+msgid "Please provide a valid password (6 characters minimum)"
+msgstr "Siusplau proporcioni una contrasenya vàlida (6 caràcters mínim)"
+
+#: [account]password_not_same
+msgid "The provided passwords are not the same"
+msgstr "Les contrasenyes no coincideixen"
+
+#: [account]delete_title
+msgid "Delete my account"
+msgstr "Esborra el meu compte"
+
+#: [account]delete
+msgid "Delete your account"
+msgstr "Esborra el teu compte"
+
+#: [account]delete_text
+msgid "You will delete your XMPP account and all the relative information linked to it (profile, contacts and publications)."
+msgstr "Eliminaràs el teu compte XMPP i tota la informació relacionada (perfil, contactes i publicacions)."
+
+#: [account]delete_text_confirm
+msgid "Are you sure that you want to delete it ?"
+msgstr "Estàs segur de voler eliminar el compte?"
+
+#: [account]gateway_title
+msgid "Gateway"
+msgstr ""
+
+#: [create]title [subscribe]title
+msgid "Create a new account"
+msgstr "Crea un nou compte"
+
+#: [create]notfound
+msgid "No account creation form found on the server"
+msgstr "No s'ha trobat cap formulari de creació de compte en aquest servidor"
+
+#: [create]server_on
+msgid "on"
+msgstr ""
+
+#: [create]successfull
+msgid "Your acccount has been successfully registered"
+msgstr "El teu compte s'ha registrat correctament"
+
+#: [create]loading
+msgid "Loading"
+msgstr "Carregant"
+
+#: [create]placeholder
+msgid "…and start playing"
+msgstr ""
+
+#: [error]not_acceptable
+msgid "Not Acceptable"
+msgstr "Inacceptable"
+
+#: [error]service_unavailable
+msgid "The registration system of this server is currently unavailable"
+msgstr "El sistema de registrament d'aquest servidor no està disponible"
+
+#: [oob]about
+msgid "This server use an external system for the registration, please click on the following URL."
+msgstr "Aquest servidor utilitza un sistema de registrament extern, siusplau segueixi la URL següent."
+
+#: [adhoc]title
+msgid "Actions"
+msgstr "Accions"
+
+#: [db]legend [schema]database
+msgid "Database"
+msgstr "Base de dades"
+
+#: [db]connect_error
+msgid "Modl wasn't able to connect to the database"
+msgstr "Modl no s'ha pogut connectar a la base de dades"
+
+#: [db]connect_success
+msgid "Movim is connected to the database"
+msgstr "Movim està connectat a la base de dades"
+
+#: [db]update
+msgid "The database need to be updated"
+msgstr "La base de dades necessita una actualització"
+
+#: [db]up_to_date
+msgid "Movim database is up to date"
+msgstr "La base de dades de Movim està actualitzada"
+
+#: [db]type
+msgid "Database Type"
+msgstr "Tipus de base de dades"
+
+#: [db]username [credentials]username [input]username
+msgid "Username"
+msgstr "Nom d'usuari"
+
+#: [db]host
+msgid "Host"
+msgstr ""
+
+#: [db]port
+msgid "Port"
+msgstr ""
+
+#: [db]name
+msgid "Database Name"
+msgstr "Nom de la base de dades"
+
+#: [admin]general
+msgid "General Settings"
+msgstr "Configuració General"
+
+#: [general]theme
+msgid "Theme"
+msgstr "Tema"
+
+#: [general]language
+msgid "Default language"
+msgstr "Idioma per defecte"
+
+#: [general]log_verbosity
+msgid "Log verbosity"
+msgstr ""
+
+#: [general]timezone
+msgid "Server Timezone"
+msgstr "Zona horaria del servidor"
+
+#: [general]limit
+msgid "User folder size limit (in bytes)"
+msgstr "Mida màxima de la carpeta d'usuari (en bytes)"
+
+#: [websocket]title
+msgid "WebSocket Configuration"
+msgstr "Configuració de WebSocket"
+
+#: [websocket]info
+msgid "Enter here a valid WebSocket URI in the form"
+msgstr "Introdueixi aquí una URI de WebSocket vàlida"
+
+#: [websocket]label
+msgid "WebSocket URI"
+msgstr ""
+
+#: [websocket]save_info
+msgid "If you change the URI, please restart the daemon to reload the configuration"
+msgstr "Si canvies la URI, reinicia el daemon per tornar a carregar la configuració siusplau"
+
+#: [websocket]publics
+msgid "Public WebSockets"
+msgstr ""
+
+#: [credentials]title
+msgid "Administration Credential"
+msgstr "Credencial d'adiministració"
+
+#: [credentials]info
+msgid "Change the default credentials admin/password"
+msgstr "Canvia les credencials per defecte admin/password"
+
+#: [credentials]re_password
+msgid "Retype password"
+msgstr "Repeteix la contrasenya"
+
+#: [whitelist]title
+msgid "Whitelist - XMPP Server"
+msgstr ""
+
+#: [whitelist]info1
+msgid "If you want to specify a list of authorized XMPP servers on your Movim pod and forbid the connection on all the others please put their domain name here, with comma (ex: movim.eu,jabber.fr)"
+msgstr "Si vols especificar la llista de servidors XMPP autoritzats en el teu pod de Movim i prohibir la connexió a tota la resta introdueix el nom de domini aquí, amb coma (ex: movim.eu,jabber.fr)"
+
+#: [whitelist]info2
+msgid "Leave this field blank if you allow the access to all the XMPP accounts."
+msgstr "Deixa en aquest camp en blanc si permets la connexió a tots els comptes XMPP."
+
+#: [whitelist]label
+msgid "List of whitelisted XMPP servers"
+msgstr ""
+
+#: [information]title
+msgctxt "[information]title"
+msgid "Information Message"
+msgstr "Missatge d'infofmació"
+
+#: [information]description
+msgid "Description"
+msgstr "Descripció"
+
+#: [information]info1
+msgid "This message will be displayed on the login page"
+msgstr "Aquest missatge es mostrarà en la pàgina de login"
+
+#: [information]info2
+msgid "Leave this field blank if you dont want to show any message."
+msgstr "Deixa aquest camo en blanc si no vols mostrar cap missatge"
+
+#: [information]label
+msgctxt "[information]label"
+msgid "Information Message"
+msgstr "Missatge d'infofmació "
+
+#: [log]empty
+msgid "Empty"
+msgstr "Buit"
+
+#: [log]syslog
+msgid "Syslog"
+msgstr "Syslog"
+
+#: [log]syslog_files
+msgid "Syslog and files"
+msgstr "Syslog i fitxers"
+
+#: [admin]compatibility
+msgid "General Overview"
+msgstr "Vista general"
+
+#: [compatibility]info
+msgid "Movim has found some issues or things that need to be fixed or improved"
+msgstr "Movim ha trobat alguns problemes o coses que necessiten ser reparats o necessiten una millora"
+
+#: [compatibility]php1
+msgid "Update your PHP-Version: %s"
+msgstr "Actualitza el teu PHP-Version: %s"
+
+#: [compatibility]php2
+msgid "Required: 5.3.0"
+msgstr "Necessari: 5.3.0"
+
+#: [compatibility]curl
+msgid "Install the php5-curl library"
+msgstr "Instal•la la llibreria php5-curl"
+
+#: [compatibility]imagick
+msgid "Install the php5-imagick library"
+msgstr ""
+
+#: [compatibility]gd
+msgid "Install the php5-gd library"
+msgstr ""
+
+#: [compatibility]rights
+msgid "Read and write rights for the webserver in Movims root directory"
+msgstr "Llegeix i escriu drets pel webserver en el directori root de Movims"
+
+#: [compatibility]db
+msgid "The database need to be updated, go to the database panel to fix this"
+msgstr "La base de dades necessita ser actualitzada, ves al taulell de la base de dades per arreglar-ho"
+
+#: [compatibility]websocket
+msgid "WebSocket connection error, check if the Movim Daemon is running and is reachable"
+msgstr "Problema de connexió de WebSocket, comprova que el Movim Daemon estigui funcionant i sigui accessible"
+
+#: [compatibility]xmpp_websocket
+msgid "XMPP Websocket connection error, please check the validity of the URL given in the General Configuration"
+msgstr "Problema de connexió XMPP WebSocket, siusplau comprova la validesa de la URL donada en la configuració general"
+
+#: [schema]browser
+msgid "Browser"
+msgstr "Navegador"
+
+#: [schema]movim
+msgid "Movim Core"
+msgstr ""
+
+#: [schema]daemon
+msgid "Movim Daemon"
+msgstr ""
+
+#: [schema]xmpp
+msgid "XMPP"
+msgstr ""
+
+#: [api]info
+msgid "Here you can register your pod on the official %sMovim API%s and be listed on %sthe pods page%s."
+msgstr ""
+
+#: [api]register
+msgid "Your pod is not registered on the API"
+msgstr ""
+
+#: [api]registered
+msgid "Your pod is registered on the API"
+msgstr ""
+
+#: [api]wait
+msgid "Your pod is not yet validated"
+msgstr ""
+
+#: [api]validated
+msgid "Your pod is validated"
+msgstr ""
+
+#: [api]unregister
+msgid "You asked to be removed from the API, this request will be processed in a couple of hours"
+msgstr ""
+
+#: [api]conf_updated [config]updated
+msgid "Configuration updated"
+msgstr "Configuració actualitzada"
+
+#: [avatar]file
+msgid "File"
+msgstr "Fitxer"
+
+#: [avatar]use_it
+msgid "Use it"
+msgstr "Utilitza'l"
+
+#: [avatar]webcam
+msgid "Webcam"
+msgstr "Webcam"
+
+#: [avatar]cheese
+msgid "Cheese !"
+msgstr "Lluís !"
+
+#: [avatar]snapshot
+msgid "Take a webcam snapshot"
+msgstr ""
+
+#: [avatar]updated
+msgid "Avatar Updated"
+msgstr ""
+
+#: [avatar]not_updated
+msgid "Avatar Not Updated"
+msgstr ""
+
+#: [avatar]missing
+msgid "No avatar defined yet"
+msgstr ""
+
+#: [blog]title [feed]title
+msgid "%s's feed"
+msgstr ""
+
+#: [blog]empty
+msgid "This user has not posted anything right now"
+msgstr "Aquest usuari no ha publicat res en aquest moment"
+
+#: [blog]private
+msgid "This content is private, please login to see it"
+msgstr "Aquest contingut és privat, siusplau connectat per poder veure-ho."
+
+#: [title]conferences
+msgid "Conferences"
+msgstr "Conferències"
+
+#: [title]groups [group]empty_title [menu]groups [page]groups
+msgid "Groups"
+msgstr "Grups"
+
+#: [chatroom]add
+msgid "Add a new Chat Room"
+msgstr "Afegeix una nova sala de xat"
+
+#: [chatroom]id [chatrooms]id
+msgid "Chat Room ID"
+msgstr "ID de la sala de xat"
+
+#: [chatroom]name
+msgctxt "[chatroom]name"
+msgid "Name"
+msgstr "Nom"
+
+#: [chatroom]nickname [general]nickname [chatrooms]nickname
+#: [accounts]accounts_nickname
+msgid "Nickname"
+msgstr "Sobrenom"
+
+#: [chatroom]autojoin_label
+msgid "Do you want do join automaticaly this Chat Room ?"
+msgstr "Vols unir-te automàticament a aqiesta sala de xat ?"
+
+#: [chatroom]bad_id [chatrooms]bad_id
+msgid "Bad Chatroom ID"
+msgstr "ID de la sala de xat incorrecta"
+
+#: [chatroom]empty_name [chatrooms]empty_name
+msgid "Empty name"
+msgstr ""
+
+#: [bookmarks]updated
+msgid "Bookmarks updated"
+msgstr ""
+
+#: [bookmarks]error
+msgid "An error occured :"
+msgstr "Hi ha hagut un problema :"
+
+#: [bookmarks]configure
+msgid "Configure"
+msgstr "Configura"
+
+#: [url]add
+msgid "Add a new URL"
+msgstr "Afegeix una nova URL"
+
+#: [url]url
+msgid "URL"
+msgstr "URL"
+
+#: [url]name
+msgctxt "[url]name"
+msgid "Name"
+msgstr "Nom "
+
+#: [message]published
+msgid "Message Published"
+msgstr "Missatge publicat"
+
+#: [message]encrypted
+msgid "Encrypted message"
+msgstr "Missatge encriptat"
+
+#: [message]composing [chats]composing
+msgid "Composing..."
+msgstr ""
+
+#: [message]paused [chats]paused
+msgid "Paused..."
+msgstr "Aturat..."
+
+#: [message]gone
+msgid "Contact gone"
+msgstr ""
+
+#: [message]history
+msgid "%s messages retrieved"
+msgstr ""
+
+#: [chat]attention
+msgid "%s needs your attention"
+msgstr "%s necessita la teva atenció"
+
+#: [chat]placeholder
+msgid "Your message here..."
+msgstr "Aquí el teu missatge..."
+
+#: [chat]smileys
+msgid "Smileys"
+msgstr ""
+
+#: [chat]empty_title [button]chat
+msgid "Chat"
+msgstr "Xat"
+
+#: [chat]empty_text
+msgid "Discuss with your contacts"
+msgstr ""
+
+#: [chat]frequent [chats]frequent
+msgid "Frequent contacts"
+msgstr "Contactes freqüents"
+
+#: [chatroom]members
+msgid "Members"
+msgstr "Membres"
+
+#: [chatroom]connected [chatrooms]connected
+msgid "Connected to the chatroom"
+msgstr "Connectat a la sala de xat"
+
+#: [chatroom]disconnected [chatrooms]disconnected
+msgid "Disconnected from the chatroom"
+msgstr "Desconnectat de la sala de xat"
+
+#: [chatroom]config [group]configuration [page]configuration
+msgid "Configuration"
+msgstr "Configuració"
+
+#: [chatroom]config_saved
+msgid "Configuration saved"
+msgstr "Configuració guardada"
+
+#: [chatroom]subject
+msgid "Subject"
+msgstr "Tema"
+
+#: [chatroom]subject_changed
+msgid "Subject changed"
+msgstr "Tema canviat"
+
+#: [chats]empty_title
+msgid "No chats yet..."
+msgstr "Encara no hi ha cap xat..."
+
+#: [chats]empty
+msgid "Open a new conversation by clicking on the %s button bellow or visit the %sContacts%s page."
+msgstr "Obra una nova conversa apretant el %s botó a sota o visita la pàgina de %sContactes%s."
+
+#: [chats]add
+msgid "Chat with a contact"
+msgstr "Xateja amb un contacte"
+
+#: [chats]more
+msgid "Load more contacts"
+msgstr "Carrega més contactes"
+
+#: [button]new
+msgid "New conversation"
+msgstr ""
+
+#: [config]general
+msgid "General"
+msgstr "General"
+
+#: [config]language
+msgid "Language"
+msgstr "Idioma"
+
+#: [config]roster
+msgid "Roster display"
+msgstr ""
+
+#: [config]roster_show
+msgid "Show the offline contacts"
+msgstr "Mostra els contactes desconnectats"
+
+#: [config]roster_hide
+msgid "Hide the offline contacts"
+msgstr "Amaga els contactes desconnectats"
+
+#: [config]appearence
+msgid "Appearence"
+msgstr "Aparença"
+
+#: [config]not_valid
+msgid "Configuration invalid"
+msgstr "Configuració invàlida"
+
+#: [config]advanced
+msgid "Advanced Configuration"
+msgstr "Configuració avançada"
+
+#: [notifications]message
+msgid "Notify on incoming message"
+msgstr ""
+
+#: [notifications]desktop
+msgid "Use desktop notifications"
+msgstr ""
+
+#: [cssurl]label
+msgid "Custom CSS URL for your blog"
+msgstr ""
+
+#: [general]legend
+msgid "General Informations"
+msgstr "Informació general"
+
+#: [general]name [chatrooms]name
+msgid "Name"
+msgstr "Nom "
+
+#: [general]date_of_birth
+msgid "Date of Birth"
+msgstr "Data de naixement"
+
+#: [general]gender
+msgid "Gender"
+msgstr "Sexe"
+
+#: [general]marital
+msgid "Marital Status"
+msgstr "Estat civil"
+
+#: [general]email
+msgid "Email"
+msgstr "Correu electrònic"
+
+#: [general]website
+msgid "Website"
+msgstr "Pàgina web"
+
+#: [general]about
+msgid "About Me"
+msgstr "Sobre mi"
+
+#: [general]accounts
+msgid "Other Accounts"
+msgstr "Altres comptes"
+
+#: [general]tune
+msgid "Is Listening"
+msgstr "Està escoltant"
+
+#: [position]legend
+msgid "Geographic Position"
+msgstr "Posició geogràfica"
+
+#: [position]locality
+msgid "Locality"
+msgstr "Localitat"
+
+#: [position]country
+msgid "Country"
+msgstr "País"
+
+#: [mood]title
+msgid "Mood"
+msgstr "Estat d'ànim"
+
+#: [mood]im
+msgid "I'm "
+msgstr "Sóc"
+
+#: [listen]title
+msgid "Listening"
+msgstr "Escoltant"
+
+#: [last]title
+msgid "Last seen"
+msgstr "Última connexió"
+
+#: [client]title
+msgid "Client Informations"
+msgstr "Informació del client"
+
+#: [explore]last_registered
+msgid "Last registered"
+msgstr ""
+
+#: [explore]explore
+msgid "Find some new friends"
+msgstr "Busca alguns amics nous"
+
+#: [edit]title [button]edit
+msgid "Edit"
+msgstr "Edita"
+
+#: [edit]alias
+msgid "Alias"
+msgstr "Àlies"
+
+#: [edit]group
+msgid "Group"
+msgstr "Grup"
+
+#: [edit]updated [roster]updated
+msgid "Contact updated"
+msgstr "Contacte actualitzat"
+
+#: [delete]title
+msgid "Are you sure?"
+msgstr "N'estàs segur?"
+
+#: [delete]text
+msgid "You are going to delete one of your contacts, please confirm your action"
+msgstr "Esborraràs un dels teus contactes, siusplau confirma la teva acció"
+
+#: [age]years
+msgid "%s years"
+msgstr "%s anys"
+
+#: [blog]last
+msgid "Last public post"
+msgstr "Última publicació pública"
+
+#: [blog]visit
+msgid "Visit the blog to see all the public posts"
+msgstr "Visita el blog per veure totes les publicacions públiques"
+
+#: [subscription]to
+msgid "You can see this contact status"
+msgstr "Pots veure l'estat d'aquest contacte"
+
+#: [subscription]to_button
+msgid "Share my status"
+msgstr "Comparteix el meu estat"
+
+#: [subscription]to_text
+msgid "But this contact cannot see yours"
+msgstr "Però aquest contacte no pot veure el teu"
+
+#: [subscription]from
+msgid "You are not subscribed to this contact"
+msgstr "No estàs subscrit a aquest contacte"
+
+#: [subscription]from_button
+msgid "Ask to subscribe"
+msgstr "Demana per subscriure't"
+
+#: [subscription]from_text
+msgid "But this contact can still see if you are online"
+msgstr "Però aquest contacte encara pot veure si estas connectat"
+
+#: [subscription]nil
+msgid "No subscriptions"
+msgstr "No hi ha subscripcions"
+
+#: [subscription]nil_button
+msgid "Invite"
+msgstr "Convida"
+
+#: [subscription]nil_text
+msgid "This contact is in your contact list but there is no subscriptions between the two accounts"
+msgstr "Aquest contacte està rn la teva llista de contactes però no hi ha cap subscripció entre els dos comptes"
+
+#: [group]subscribe
+msgid "Subscribe"
+msgstr "Subscriu"
+
+#: [group]subscribed
+msgid "Subscribed"
+msgstr "Subscrit"
+
+#: [group]unsubscribe
+msgid "Unsubscribe"
+msgstr "Cancel·la la subscripció"
+
+#: [group]unsubscribe_text
+msgid "You are going to unsubscribe from this Group"
+msgstr "Cancel·laràs la teva subscripció a aquest grup"
+
+#: [group]unsubscribed
+msgid "Unsubscribed"
+msgstr "Has cancel·lat la teva subscripció"
+
+#: [group]share_label
+msgid "Make your membership to this group public to your friends"
+msgstr "Fes la teva afiliació a aquest grup pública per als teus amics"
+
+#: [group]label_label
+msgid "Give a label for this group"
+msgstr ""
+
+#: [group]sure
+msgid "Are you sure ?"
+msgstr "N'estàs segur?"
+
+#: [group]empty_text
+msgid "Discover, follow and share"
+msgstr "Descobreix, segueix i comparteix"
+
+#: [group]empty
+msgid "Something bad happened to this group"
+msgstr "Hi ha hagut un problema amb aquest grup"
+
+#: [group]config_saved
+msgid "Group configuration saved"
+msgstr "Configuració del grup guardada"
+
+#: [group]delete_title
+msgid "Delete the group"
+msgstr "Esborra el grup"
+
+#: [group]delete_text
+msgid "You are going to delete the following group. Please confirm your action."
+msgstr "Esborraràs el següent grup. Siusplau confirma la teva acció"
+
+#: [group]delete_clean_text
+msgid "It seems that this group doesn't exists anymore. Do you want to remove it from your subscriptions?"
+msgstr "Sembla que aquest grup ja no existeix. Vols esborrar-lo de les teves subscripcions?"
+
+#: [group]counter
+msgid "%s groups on this server"
+msgstr "%s grups en aquest servidor"
+
+#: [group]subscriptions [statistics]subscriptions
+msgid "Subscriptions"
+msgstr "Subscripcions"
+
+#: [group]servers
+msgid "Groups servers"
+msgstr ""
+
+#: [group]search_server
+msgid "Search for a new server"
+msgstr "Busca un nou servidor"
+
+#: [group]help_info1
+msgid "Groups are the perfect way to share posts about topics that you like with all the other Movim's users."
+msgstr "Els grups són la manera ideal per compartir publicacions de temes que t'agraden amb tots els altres usuaris de Movim"
+
+#: [group]help_info2
+msgid "Choose a server and a Group and subscribe to it using the %s button in the header. You can also create a new one using the %s button."
+msgstr "Tria un servidor i un grup i subscriu-te utilizant el %s botó a la capçalera. També pots crear un nou grup utilitzant aquest botó."
+
+#: [group]help_info3
+msgid "Done? You can now publish a new post in the Group by using the %s button."
+msgstr "Has acabat? Ara pot publicar en el grup utilitzanr el %s botó."
+
+#: [group]help_info4
+msgid "You will find a list of all your subscribed Groups in My Subscriptions and receive instantly all the new incoming posts in the %sNews%s page."
+msgstr "Trobaràs una llista amb tots els Grups que has subscrit a Les Meves Subscripcions i rebràs instantàniament totes les noves publicacsions a la pàgina de %sNotícies%s."
+
+#: [groups]empty_title
+msgid "Hello"
+msgstr "Hola"
+
+#: [groups]contact_post [menu]contact_post [hello]contact_post
+msgid "Contact post"
+msgstr ""
+
+#: [groups]empty_text1
+msgid "Here you will be able to manage all your subscriptions."
+msgstr "Aquí podràs gestionar totes les teves subscripcions."
+
+#: [groups]empty_text2
+msgid "You don't have any group subscriptions yet."
+msgstr "Encara no estàs subscrit a cap grup"
+
+#: [groups]subscriptions
+msgid "My Subscriptions"
+msgstr "Les Meves Subscripcions"
+
+#: [groups]add
+msgid "Create a new Group"
+msgstr "Crea un Grup nou"
+
+#: [groups]name
+msgid "Group name"
+msgstr "Nom del Grup"
+
+#: [groups]name_example
+msgid "My Little Pony - Fan Club"
+msgstr ""
+
+#: [groups]created
+msgid "Group created successfully"
+msgstr "Grup creat correctament"
+
+#: [groups]deleted
+msgid "Group deleted successfully"
+msgstr "Grup esborrat correctament"
+
+#: [groups]name_error
+msgid "Please provide a valid group name (4 characters minimum)"
+msgstr "Siusplau dona un nom de grup vàlid (4 caràcters mínim)"
+
+#: [groups]no_creation
+msgid "You cannot create a new Group on this server"
+msgstr "No pots crear un Grup en aquest servidor"
+
+#: [groups]sub
+msgid "%s subscribers"
+msgstr "%s subscriptors"
+
+#: [groups]num
+msgid "%s posts"
+msgstr "%s publicacions"
+
+#: [groups]disco_error
+msgid "This server doesn't exists"
+msgstr "Aquest servidor no existeix"
+
+#: [help]faq
+msgid "Frequently Asked Questions"
+msgstr ""
+
+#: [banner]title
+msgid "What do the little banners refer to ?"
+msgstr ""
+
+#: [banner]info1
+msgid "Thanks to these five little banners, you can quickly identitfy the level of confdentiality applied to the information you provide."
+msgstr ""
+
+#: [banner]white
+msgid "White, only you can see the information"
+msgstr ""
+
+#: [banner]green
+msgid "Green, you have chosen some contacts who can see your information"
+msgstr ""
+
+#: [banner]orange
+msgid "Orange, all your contact list can see your information"
+msgstr ""
+
+#: [banner]red
+msgid "Red, everybody in the XMPP network can see your information"
+msgstr ""
+
+#: [banner]black
+msgid "Black, the whole Internet can see your information"
+msgstr ""
+
+#: [wiki]question
+msgid "Looking for some documentation ?"
+msgstr ""
+
+#: [wiki]button
+msgid "Read the Wiki"
+msgstr ""
+
+#: [ml]question
+msgid "Talk with us by email ?"
+msgstr "Parla amb nosaltres per correu electrònic?"
+
+#: [ml]button
+msgid "Join the Mailing List"
+msgstr ""
+
+#: [chatroom]question
+msgid "Chat with the team ?"
+msgstr "Xateja amb l'equip?"
+
+#: [chatroom]button
+msgid "Add the chatroom"
+msgstr "Afegeix la sala de xat"
+
+#: [init]location
+msgid "Location node created"
+msgstr ""
+
+#: [init]bookmark
+msgid "Bookmark node created"
+msgstr ""
+
+#: [init]vcard4
+msgid "Profile node created"
+msgstr ""
+
+#: [init]avatar
+msgid "Avatar node created"
+msgstr ""
+
+#: [init]subscriptions
+msgid "Subscriptions node created"
+msgstr ""
+
+#: [init]microblog
+msgid "Microblog node created"
+msgstr ""
+
+#: [error]username
+msgid "Wrong username"
+msgstr ""
+
+#: [error]jid
+msgid "Invalid JID"
+msgstr ""
+
+#: [error]empty_challenge
+msgid "Empty Challenge from the server"
+msgstr ""
+
+#: [error]dns
+msgid "XMPP Domain error, your account is not a correct Jabber ID"
+msgstr ""
+
+#: [error]data_missings
+msgid "Some data are missing !"
+msgstr ""
+
+#: [error]wrong_password
+msgid "Wrong password"
+msgstr ""
+
+#: [error]internal
+msgid "Internal server error"
+msgstr ""
+
+#: [error]session
+msgid "Session error"
+msgstr ""
+
+#: [error]account_created
+msgid "Account successfully created"
+msgstr ""
+
+#: [error]xmpp_unauthorized
+msgctxt "[error]xmpp_unauthorized"
+msgid "Your XMPP server is unauthorized"
+msgstr ""
+
+#: [error]mec_error
+msgid "The server takes too much time to respond"
+msgstr ""
+
+#: [error]websocket
+msgid "Movim cannot talk with the server, please try again later (Websocket connection error)"
+msgstr ""
+
+#: [error]impossible
+msgid "Impossible login"
+msgstr ""
+
+#: [error]title
+msgid "Oops!"
+msgstr ""
+
+#: [error]default
+msgid "Unknown error"
+msgstr ""
+
+#: [error]login_format
+msgid "Invalid username format"
+msgstr ""
+
+#: [error]password_format
+msgid "Invalid password format"
+msgstr ""
+
+#: [error]unauthorized
+msgctxt "[error]unauthorized"
+msgid "Your XMPP server is unauthorized"
+msgstr ""
+
+#: [error]conflict
+msgid "A Movim session is already open on an other device"
+msgstr ""
+
+#: [error]wrong_account
+msgid "Movim failed to authenticate. You entered wrong data"
+msgstr ""
+
+#: [error]mechanism
+msgid "Authentication mechanism not supported by Movim"
+msgstr ""
+
+#: [error]fail_auth
+msgid "The XMPP authentification failed"
+msgstr ""
+
+#: [form]username
+msgid "My address"
+msgstr ""
+
+#: [form]create_one
+msgid "Create one !"
+msgstr ""
+
+#: [form]another_account
+msgid "Another account"
+msgstr ""
+
+#: [form]no_account
+msgid "No account yet ?"
+msgstr ""
+
+#: [form]whitelist.info
+msgid "You can login with accounts from theses servers"
+msgstr ""
+
+#: [form]connected
+msgid "Connected"
+msgstr ""
+
+#: [form]population
+msgid "Population"
+msgstr ""
+
+#: [login_anonymous]bad_username
+msgid "Bad nickname (between 4 and 40 characters)"
+msgstr ""
+
+#: [menu]empty_title
+msgid "No news yet..."
+msgstr ""
+
+#: [menu]empty
+msgid "Welcome on your news feed, here you will see all the posts published by your contacts and in the groups you have subscribed."
+msgstr ""
+
+#: [menu]refresh
+msgid "Refresh all the streams"
+msgstr ""
+
+#: [menu]public
+msgid "This post is public"
+msgstr ""
+
+#: [menu]all
+msgid "All"
+msgstr ""
+
+#: [menu]mine
+msgid "My publications"
+msgstr ""
+
+#: [menu]contacts [page]contacts
+msgid "Contacts"
+msgstr "Contactes"
+
+#: [menu]add_post
+msgid "Add a post"
+msgstr ""
+
+#: [notifs]title
+msgid "Pending Invitations"
+msgstr ""
+
+#: [notifs]wants_to_talk
+msgid "%s wants to talk with you"
+msgstr ""
+
+#: [post]news_feed
+msgid "News Feed"
+msgstr ""
+
+#: [post]placeholder
+msgid "Discover and register to the groups you are interested in"
+msgstr ""
+
+#: [post]content [post]content_label
+msgid "Content"
+msgstr ""
+
+#: [post]published
+msgid "Post published"
+msgstr ""
+
+#: [post]deleted
+msgid "Post deleted"
+msgstr ""
+
+#: [post]hot
+msgid "What's Hot"
+msgstr ""
+
+#: [post]hot_text
+msgid "Posts recently published in Groups that you are not subscribed (yet)"
+msgstr ""
+
+#: [post]new [publish]new
+msgid "New post"
+msgstr ""
+
+#: [post]repost
+msgid "This is a re-post from %s"
+msgstr ""
+
+#: [post]repost_profile
+msgid "See %s profile"
+msgstr ""
+
+#: [post]blog_last
+msgid "Public posts from users"
+msgstr ""
+
+#: [post]public
+msgid "Publish this post publicly?"
+msgstr ""
+
+#: [post]public_yes
+msgid "This post is now public"
+msgstr ""
+
+#: [post]public_no
+msgid "This post is now private"
+msgstr ""
+
+#: [post]public_url
+msgid "Public URL of this post"
+msgstr ""
+
+#: [post]delete_title [post]delete
+msgid "Delete this post"
+msgstr ""
+
+#: [post]delete_text
+msgid "You are going to delete this post, please confirm your action"
+msgstr ""
+
+#: [post]discover
+msgid "Discover more articles on the Groups page"
+msgstr ""
+
+#: [post]comments_disabled
+msgid "Comments disabled"
+msgstr ""
+
+#: [post]comment_published
+msgid "Comment published"
+msgstr ""
+
+#: [hello]blog_title
+msgid "Visit your public blog"
+msgstr "Visits el teu blog públic"
+
+#: [hello]blog_text
+msgid "See your public posts and share them with all your contacts"
+msgstr "Mira les teves publicacions públiques i comparteix-les amb tots els teus contactes"
+
+#: [hello]share_title
+msgid "Universal share button"
+msgstr ""
+
+#: [hello]share_text
+msgid "Bookmark or drag and drop the following button in your toolbar and use it on all the pages you want to share on Movim"
+msgstr ""
+
+#: [hello]share_button
+msgid "Share on Movim"
+msgstr "Comparteix a Movim"
+
+#: [hello]enter_title
+msgid "Oh! Hello!"
+msgstr "Ei! Hola!"
+
+#: [hello]enter_paragraph
+msgid "It seems that you're new there! Welcome on Movim!"
+msgstr "Sembla que ets nou aquí! Benvingut a Movim!"
+
+#: [hello]menu_title
+msgid "Check the Menu"
+msgstr "Mira el Menú"
+
+#: [hello]menu_paragraph
+msgid "All the main Movim features are accessible there. Don't hesitate to navigate through the pages to discover more!"
+msgstr "Totes les característiques principals de Movim són accessibles aquí. No dubtis en navegar per les pàgines i descobreix més!"
+
+#: [status]disconnect
+msgid "Disconnect"
+msgstr ""
+
+#: [status]here
+msgid "Your status here !"
+msgstr ""
+
+#: [status]updated
+msgid "Status updated"
+msgstr ""
+
+#: [status]status
+msgid "Status"
+msgstr ""
+
+#: [status]presence
+msgid "Presence"
+msgstr ""
+
+#: [status]online
+msgid "Online with Movim"
+msgstr ""
+
+#: [post]preview
+msgid "Preview"
+msgstr ""
+
+#: [post]help [page]help
+msgid "Help"
+msgstr ""
+
+#: [post]help_more
+msgid "More help"
+msgstr ""
+
+#: [post]help_manual
+msgid "Markdown syntax manual"
+msgstr ""
+
+#: [post]content_text
+msgid "You can format your content using Markdown"
+msgstr ""
+
+#: [post]link
+msgid "Link"
+msgstr ""
+
+#: [post]tags
+msgid "Tags"
+msgstr ""
+
+#: [post]gallery
+msgid "This picture will be added to your gallery"
+msgstr ""
+
+#: [publish]valid_url
+msgid "Please enter a valid url"
+msgstr ""
+
+#: [publish]no_content_preview
+msgid "No content to preview"
+msgstr ""
+
+#: [publish]no_title
+msgid "Please provide a title"
+msgstr ""
+
+#: [publish]edit
+msgid "Edit post"
+msgstr ""
+
+#: [publish]title
+msgid "Publish"
+msgstr ""
+
+#: [publish]attach
+msgid "Add a file or a picture to your post"
+msgstr ""
+
+#: [publish]no_publication
+msgid "You cannot publish a post on this Group"
+msgstr ""
+
+#: [publish]form_filled
+msgid "Some fields have been filled in. Do you still want to go back and loose their content?"
+msgstr ""
+
+#: [publish]add_text
+msgid "Click here to add some text to your publication"
+msgstr ""
+
+#: [publish]add_text_label
+msgid "Add some text"
+msgstr ""
+
+#: [rooms]add
+msgid "Add a chatroom"
+msgstr ""
+
+#: [rooms]empty_text1
+msgid "You don't have any chatroom yet."
+msgstr ""
+
+#: [rooms]empty_text2
+msgid "Add one by clicking on the add button."
+msgstr ""
+
+#: [chatrooms]title
+msgid "Chatrooms"
+msgstr ""
+
+#: [chatrooms]name_placeholder
+msgid "My Favorite Room"
+msgstr ""
+
+#: [chatrooms]users
+msgid "Users in the room"
+msgstr ""
+
+#: [chatrooms]bad_nickname
+msgid "Please enter a correct nickname (2 to 40 characters)"
+msgstr ""
+
+#: [chatrooms]conflict
+msgid "Username already taken"
+msgstr ""
+
+#: [room]anonymous_title
+msgid "Public chatroom"
+msgstr ""
+
+#: [room]no_room
+msgid "Please provide a room address"
+msgstr ""
+
+#: [room]anonymous_text1
+msgid "You are currently logued as an anonymous user."
+msgstr ""
+
+#: [room]anonymous_text2
+msgid "You can join using your own account or create one on the login page by loging out using the cross in the top-right corner."
+msgstr ""
+
+#: [room]anonymous_login
+msgid "Login on %s"
+msgstr ""
+
+#: [room]nick
+msgid "Your nickname"
+msgstr ""
+
+#: [roster]ungrouped
+msgid "Ungrouped"
+msgstr ""
+
+#: [roster]show_disconnected
+msgid "Show disconnected contacts"
+msgstr ""
+
+#: [roster]hide_disconnected
+msgid "Hide disconnected contacts"
+msgstr ""
+
+#: [roster]show_group
+msgid "Show group %s"
+msgstr ""
+
+#: [roster]hide_group
+msgid "Hide group %s"
+msgstr ""
+
+#: [roster]jid_error
+msgid "Please enter a valid Jabber ID"
+msgstr ""
+
+#: [roster]no_contacts_title
+msgid "No contacts ?"
+msgstr ""
+
+#: [roster]no_contacts_text
+msgid "You can add one using the + button bellow"
+msgstr ""
+
+#: [roster]show_hide
+msgid "Show/Hide"
+msgstr ""
+
+#: [roster]add_contact_info1
+msgid "Enter the Jabber ID of your contact."
+msgstr ""
+
+#: [roster]add_contact_info2
+msgid "Press enter to validate."
+msgstr ""
+
+#: [roster]jid
+msgid "JID"
+msgstr ""
+
+#: [roster]results
+msgid "Results"
+msgstr ""
+
+#: [roster]added
+msgid "Contact added"
+msgstr ""
+
+#: [roster]deleted
+msgid "Contact deleted"
+msgstr ""
+
+#: [roster]search
+msgid "Search in your contacts"
+msgstr "Busca en els teus contactes"
+
+#: [roster]search_pod
+msgid "Search a contact"
+msgstr ""
+
+#: [share]error
+msgid "This is not a valid url"
+msgstr ""
+
+#: [share]success
+msgid "Sharing the URL"
+msgstr ""
+
+#: [statistics]title
+msgid "Statistics"
+msgstr ""
+
+#: [statistics]since
+msgid "Since"
+msgstr ""
+
+#: [statistics]sessions
+msgid "Sessions"
+msgstr ""
+
+#: [statistics]monthly_sub
+msgid "Monthly Subscriptions"
+msgstr ""
+
+#: [statistics]monthly_sub_cum
+msgid "Monthly Subscriptions Cumulated"
+msgstr ""
+
+#: [sticker]sent
+msgid "A sticker has been sent using Movim"
+msgstr ""
+
+#: [subscribe]info
+msgid "Movim is a decentralized social network, before creating a new account you need to choose a server to register."
+msgstr ""
+
+#: [subscribe]server_question
+msgid "Your server here ?"
+msgstr ""
+
+#: [subscribe]server_contact
+msgid "Contact us to add yours to the officially supported servers list"
+msgstr ""
+
+#: [feed]nope
+msgid "No public feed for this contact"
+msgstr ""
+
+#: [feed]nope_contact
+msgid "No contact specified"
+msgstr ""
+
+#: [upload]title
+msgid "Upload a file"
+msgstr ""
+
+#: [upload]choose
+msgid "Choose a file to upload"
+msgstr ""
+
+#: [vcard]title [page]profile
+msgid "Profile"
+msgstr ""
+
+#: [vcard]updated
+msgid "Profile Updated"
+msgstr ""
+
+#: [vcard]not_updated
+msgid "Profile Not Updated"
+msgstr ""
+
+#: [vcard]public
+msgid "Your profile is now public"
+msgstr ""
+
+#: [vcard]restricted
+msgid "Your profile is now restricted"
+msgstr ""
+
+#: [accounts]accounts_title
+msgid "Accounts"
+msgstr ""
+
+#: [accounts]twitter
+msgid "Twitter"
+msgstr ""
+
+#: [accounts]skype
+msgid "Skype"
+msgstr ""
+
+#: [accounts]yahoo
+msgid "Yahoo Account"
+msgstr ""
+
+#: [privacy]privacy_title
+msgid "Privacy Level"
+msgstr ""
+
+#: [privacy]privacy_question
+msgid "Is this profile public ?"
+msgstr ""
+
+#: [privacy]privacy_info
+msgid "Please pay attention ! By making your profile public, all the information listed bellow will be available for all the Movim users and on the whole Internet."
+msgstr ""
+
+#: [save]submit [button]submit
+msgid "Submit"
+msgstr ""
+
+#: [save]reset [button]reset
+msgid "Reset"
+msgstr ""
+
+#: [global]no_js
+msgid "You don't have javascript enabled.  Good luck with that."
+msgstr ""
+
+#: [global]description
+msgid "Movim is a kickass distributed social networking platform that protect your privacy an comes with a set of awesome features."
+msgstr ""
+
+#: [page]administration
+msgid "Administration"
+msgstr ""
+
+#: [page]home
+msgid "Home"
+msgstr ""
+
+#: [page]explore
+msgid "Explore"
+msgstr ""
+
+#: [page]account_creation
+msgid "Account Creation"
+msgstr ""
+
+#: [page]news
+msgid "News"
+msgstr "Notícies"
+
+#: [page]avatar
+msgid "Avatar"
+msgstr ""
+
+#: [page]chats
+msgid "Chats"
+msgstr ""
+
+#: [page]public_groups
+msgid "Public Groups"
+msgstr ""
+
+#: [page]blog
+msgid "Blog"
+msgstr ""
+
+#: [page]about
+msgid "About"
+msgstr ""
+
+#: [page]login
+msgid "Login"
+msgstr ""
+
+#: [page]feed
+msgid "Feed"
+msgstr ""
+
+#: [page]posts
+msgid "Posts"
+msgstr "Publicacions"
+
+#: [page]gallery
+msgid "Gallery"
+msgstr ""
+
+#: [page]visio
+msgid "Visio-conference"
+msgstr ""
+
+#: [page]pods
+msgid "Pods"
+msgstr ""
+
+#: [page]share
+msgid "Share"
+msgstr ""
+
+#: [page]room
+msgid "Room"
+msgstr ""
+
+#: [page]tag
+msgid "Tag"
+msgstr ""
+
+#: [error]error
+msgid "Error: %s"
+msgstr ""
+
+#: [error]cannot_load_file
+msgid "Cannot load file '%s'"
+msgstr ""
+
+#: [error]widget_load_error
+msgid "Requested widget '%s' doesn't exist."
+msgstr ""
+
+#: [error]widget_call_error
+msgid "Requested event '%s' not registered."
+msgstr ""
+
+#: [error]whoops
+msgid "Whoops!"
+msgstr ""
+
+#: [button]validate
+msgid "Validate"
+msgstr ""
+
+#: [button]refresh
+msgid "Refresh"
+msgstr ""
+
+#: [button]add
+msgid "Add"
+msgstr ""
+
+#: [button]delete
+msgid "Delete"
+msgstr ""
+
+#: [button]cancel
+msgid "Cancel"
+msgstr ""
+
+#: [button]close
+msgid "Close"
+msgstr ""
+
+#: [button]update
+msgid "Update"
+msgstr ""
+
+#: [button]updating
+msgid "Updating"
+msgstr ""
+
+#: [button]submitting
+msgid "Submitting"
+msgstr ""
+
+#: [button]register
+msgid "Register"
+msgstr ""
+
+#: [button]unregister
+msgid "Unregister"
+msgstr ""
+
+#: [button]save
+msgid "Save"
+msgstr ""
+
+#: [button]clear
+msgid "Clear"
+msgstr ""
+
+#: [button]upload
+msgid "Upload"
+msgstr ""
+
+#: [button]come_in
+msgid "Come in!"
+msgstr ""
+
+#: [button]connecting
+msgid "Connecting"
+msgstr ""
+
+#: [button]bool_yes
+msgid "Yes"
+msgstr ""
+
+#: [button]bool_no
+msgid "No"
+msgstr ""
+
+#: [button]return
+msgid "Return"
+msgstr ""
+
+#: [button]accept
+msgid "Accept"
+msgstr ""
+
+#: [button]refuse
+msgid "Refuse"
+msgstr ""
+
+#: [button]next
+msgid "Next"
+msgstr ""
+
+#: [button]previous
+msgid "Previous"
+msgstr ""
+
+#: [day]title
+msgid "Day"
+msgstr ""
+
+#: [day]monday
+msgid "Monday"
+msgstr ""
+
+#: [day]tuesday
+msgid "Tuesday"
+msgstr ""
+
+#: [day]wednesday
+msgid "Wednesday"
+msgstr ""
+
+#: [day]thursday
+msgid "Thursday"
+msgstr ""
+
+#: [day]friday
+msgid "Friday"
+msgstr ""
+
+#: [day]saturday
+msgid "Saturday"
+msgstr ""
+
+#: [day]sunday
+msgid "Sunday"
+msgstr ""
+
+#: [gender]nil
+msgctxt "[gender]nil"
+msgid "None"
+msgstr ""
+
+#: [gender]male
+msgid "Male"
+msgstr ""
+
+#: [gender]female
+msgid "Female"
+msgstr ""
+
+#: [gender]other
+msgid "Other"
+msgstr ""
+
+#: [client]bot
+msgid "Bot"
+msgstr ""
+
+#: [client]desktop
+msgid "Desktop"
+msgstr ""
+
+#: [client]phone
+msgid "Phone"
+msgstr ""
+
+#: [client]web
+msgid "Web"
+msgstr ""
+
+#: [client]registered
+msgid "Registered"
+msgstr ""
+
+#: [marital]nil
+msgctxt "[marital]nil"
+msgid "None"
+msgstr ""
+
+#: [marital]single
+msgid "Single"
+msgstr ""
+
+#: [marital]relationship
+msgid "In a relationship"
+msgstr ""
+
+#: [marital]married
+msgid "Married"
+msgstr ""
+
+#: [marital]divorced
+msgid "Divorced"
+msgstr ""
+
+#: [marital]widowed
+msgid "Widowed"
+msgstr ""
+
+#: [marital]cohabiting
+msgid "Cohabiting"
+msgstr ""
+
+#: [marital]union
+msgid "Civil Union"
+msgstr ""
+
+#: [flag]white
+msgid "Not shared"
+msgstr ""
+
+#: [flag]green
+msgid "Shared with one contact"
+msgstr ""
+
+#: [flag]orange
+msgid "Shared with all contacts"
+msgstr ""
+
+#: [flag]red
+msgid "Shared with the XMPP network"
+msgstr ""
+
+#: [flag]black
+msgid "Shared with the whole Internet"
+msgstr ""
+
+#: [presence]online
+msgid "Online"
+msgstr ""
+
+#: [presence]away
+msgid "Away"
+msgstr ""
+
+#: [presence]dnd
+msgid "Do Not Disturb"
+msgstr ""
+
+#: [presence]xa
+msgid "Extended Away"
+msgstr ""
+
+#: [presence]offline
+msgid "Offline"
+msgstr ""
+
+#: [presence]error
+msgid "Error"
+msgstr ""
+
+#: [mood]afraid
+msgid "afraid"
+msgstr ""
+
+#: [mood]amazed
+msgid "amazed"
+msgstr ""
+
+#: [mood]amorous
+msgid "amorous"
+msgstr ""
+
+#: [mood]angry
+msgid "angry"
+msgstr ""
+
+#: [mood]annoyed
+msgid "annoyed"
+msgstr ""
+
+#: [mood]anxious
+msgid "anxious"
+msgstr ""
+
+#: [mood]aroused
+msgid "aroused"
+msgstr ""
+
+#: [mood]ashamed
+msgid "ashamed"
+msgstr ""
+
+#: [mood]bored
+msgid "bored"
+msgstr ""
+
+#: [mood]brave
+msgid "brave"
+msgstr ""
+
+#: [mood]calm
+msgid "calm"
+msgstr ""
+
+#: [mood]cautious
+msgid "cautious"
+msgstr ""
+
+#: [mood]cold
+msgid "cold"
+msgstr ""
+
+#: [mood]confident
+msgid "confident"
+msgstr ""
+
+#: [mood]confused
+msgid "confused"
+msgstr ""
+
+#: [mood]contemplative
+msgid "contemplative"
+msgstr ""
+
+#: [mood]contented
+msgid "contented"
+msgstr ""
+
+#: [mood]cranky
+msgid "cranky"
+msgstr ""
+
+#: [mood]crazy
+msgid "crazy"
+msgstr ""
+
+#: [mood]creative
+msgid "creative"
+msgstr ""
+
+#: [mood]curious
+msgid "curious"
+msgstr ""
+
+#: [mood]dejected
+msgid "dejected"
+msgstr ""
+
+#: [mood]depressed
+msgid "depressed"
+msgstr ""
+
+#: [mood]disappointed
+msgid "disappointed"
+msgstr ""
+
+#: [mood]disgusted
+msgid "disgusted"
+msgstr ""
+
+#: [mood]dismayed
+msgid "dismayed"
+msgstr ""
+
+#: [mood]distracted
+msgid "distracted"
+msgstr ""
+
+#: [mood]embarrassed
+msgid "embarrassed"
+msgstr ""
+
+#: [mood]envious
+msgid "envious"
+msgstr ""
+
+#: [mood]excited
+msgid "excited"
+msgstr ""
+
+#: [mood]flirtatious
+msgid "flirtatious"
+msgstr ""
+
+#: [mood]frustated
+msgid "frustated"
+msgstr ""
+
+#: [mood]grateful
+msgid "grateful"
+msgstr ""
+
+#: [mood]grieving
+msgid "grieving"
+msgstr ""
+
+#: [mood]grumpy
+msgid "grumpy"
+msgstr ""
+
+#: [mood]guilty
+msgid "guilty"
+msgstr ""
+
+#: [mood]happy
+msgid "happy"
+msgstr ""
+
+#: [mood]hopeful
+msgid "hopeful"
+msgstr ""
+
+#: [mood]hot
+msgid "hot"
+msgstr ""
+
+#: [mood]humbled
+msgid "humbled"
+msgstr ""
+
+#: [mood]humiliated
+msgid "humiliated"
+msgstr ""
+
+#: [mood]hungry
+msgid "hungry"
+msgstr ""
+
+#: [mood]hurt
+msgid "hurt"
+msgstr ""
+
+#: [mood]impressed
+msgid "impressed"
+msgstr ""
+
+#: [mood]in_awe
+msgid "in awe"
+msgstr ""
+
+#: [mood]in_love
+msgid "in love"
+msgstr ""
+
+#: [mood]indignant
+msgid "indignant"
+msgstr ""
+
+#: [mood]interested
+msgid "interested"
+msgstr ""
+
+#: [mood]intoxicated
+msgid "intoxicated"
+msgstr ""
+
+#: [mood]invincible
+msgid "invincible"
+msgstr ""
+
+#: [mood]jealous
+msgid "jealous"
+msgstr ""
+
+#: [mood]lonely
+msgid "lonely"
+msgstr ""
+
+#: [mood]lost
+msgid "lost"
+msgstr ""
+
+#: [mood]lucky
+msgid "lucky"
+msgstr ""
+
+#: [mood]mean
+msgid "mean"
+msgstr ""
+
+#: [mood]moody
+msgid "moody"
+msgstr ""
+
+#: [mood]nervous
+msgid "nervous"
+msgstr ""
+
+#: [mood]neutral
+msgid "neutral"
+msgstr ""
+
+#: [mood]offended
+msgid "offended"
+msgstr ""
+
+#: [mood]outraged
+msgid "outraged"
+msgstr ""
+
+#: [mood]playful
+msgid "playful"
+msgstr ""
+
+#: [mood]proud
+msgid "proud"
+msgstr ""
+
+#: [mood]relaxed
+msgid "relaxed"
+msgstr ""
+
+#: [mood]relieved
+msgid "relieved"
+msgstr ""
+
+#: [mood]restless
+msgid "restless"
+msgstr ""
+
+#: [mood]sad
+msgid "sad"
+msgstr ""
+
+#: [mood]sarcastic
+msgid "sarcastic"
+msgstr ""
+
+#: [mood]satisfied
+msgid "satisfied"
+msgstr ""
+
+#: [mood]serious
+msgid "serious"
+msgstr ""
+
+#: [mood]shocked
+msgid "shocked"
+msgstr ""
+
+#: [mood]shy
+msgid "shy"
+msgstr ""
+
+#: [mood]sick
+msgid "sick"
+msgstr ""
+
+#: [mood]sleepy
+msgid "sleepy"
+msgstr ""
+
+#: [mood]spontaneous
+msgid "spontaneous"
+msgstr ""
+
+#: [mood]stressed
+msgid "stressed"
+msgstr ""
+
+#: [mood]strong
+msgid "strong"
+msgstr ""
+
+#: [mood]surprised
+msgid "surprised"
+msgstr ""
+
+#: [mood]thankful
+msgid "thankful"
+msgstr ""
+
+#: [mood]thirsty
+msgid "thirsty"
+msgstr ""
+
+#: [mood]tired
+msgid "tired"
+msgstr ""
+
+#: [mood]undefined
+msgid "undefined"
+msgstr ""
+
+#: [mood]weak
+msgid "weak"
+msgstr ""
+
+#: [mood]worried
+msgid "worried"
+msgstr ""
+
+#: [month]title
+msgid "Month"
+msgstr ""
+
+#: [month]january
+msgid "January"
+msgstr ""
+
+#: [month]february
+msgid "February"
+msgstr ""
+
+#: [month]march
+msgid "March"
+msgstr ""
+
+#: [month]april
+msgid "April"
+msgstr ""
+
+#: [month]may
+msgid "May"
+msgstr ""
+
+#: [month]june
+msgid "June"
+msgstr ""
+
+#: [month]july
+msgid "July"
+msgstr ""
+
+#: [month]august
+msgid "August"
+msgstr ""
+
+#: [month]september
+msgid "September"
+msgstr ""
+
+#: [month]october
+msgid "October"
+msgstr ""
+
+#: [month]november
+msgid "November"
+msgstr ""
+
+#: [month]december
+msgid "December"
+msgstr ""
+
+#: [year]title
+msgid "Year"
+msgstr ""
+
+#: [date]today
+msgid "Today"
+msgstr ""
+
+#: [date]tomorrow
+msgid "Tomorrow"
+msgstr ""
+
+#: [date]yesterday
+msgid "Yesterday"
+msgstr ""
+
+#: [date]ago
+msgid "%d days ago"
+msgstr ""
+
+#: [date]day
+msgid "day"
+msgstr ""
+
+#: [post]title
+msgid "Title"
+msgstr ""
+
+#: [post]whats_new
+msgid "What's new ?"
+msgstr ""
+
+#: [post]place
+msgid "Place"
+msgstr ""
+
+#: [post]by
+msgid "by"
+msgstr ""
+
+#: [post]geolocalisation
+msgid "Geolocalisation"
+msgstr ""
+
+#: [post]email
+msgid "email"
+msgstr ""
+
+#: [post]empty
+msgid "No content"
+msgstr ""
+
+#: [post]no_comments
+msgid "No comments yet"
+msgstr ""
+
+#: [post]no_comments_stream
+msgid "No comments stream"
+msgstr ""
+
+#: [post]no_load
+msgid "Your feed cannot be loaded."
+msgstr ""
+
+#: [post]older
+msgid "Get older posts"
+msgstr ""
+
+#: [post]new_items
+msgid "%s new items"
+msgstr ""
+
+#: [post]comment_error
+msgid "Comment publication error"
+msgstr ""
+
+#: [post]comments_older
+msgid "Show the older comments"
+msgstr ""
+
+#: [post]comments_loading
+msgid "Loading comments..."
+msgstr ""
+
+#: [post]comments_get
+msgid "Get the comments"
+msgstr ""
+
+#: [post]comment_add
+msgid "Add a comment"
+msgstr ""
+
+#: [post]share
+msgid "Share with"
+msgstr ""
+
+#: [post]share_everyone
+msgid "Everyone"
+msgstr ""
+
+#: [post]share_your_contacts
+msgid "Your contacts"
+msgstr ""
+
+#: [post]updated
+msgid "Updated"
+msgstr ""
+
+#: [post]content_not_found
+msgid "Content not found"
+msgstr ""
+
+#: [post]default_title
+msgid "Contact publication"
+msgstr ""
+
+#: [post]comments
+msgid "Comments"
+msgstr ""
+
+#: [api]error
+msgid "The API is not reachable, try again later"
+msgstr ""
+
+#: [field]type_here
+msgid "Type here"
+msgstr ""

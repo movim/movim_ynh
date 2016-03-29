@@ -21,7 +21,7 @@ use Moxl\Xec\Action\Storage\Get;
 use Moxl\Xec\Action\Roster\GetList;
 use Respect\Validation\Validator;
 
-class Login extends WidgetBase
+class Login extends \Movim\Widget\Base
 {
     function load()
     {
@@ -36,7 +36,7 @@ class Login extends WidgetBase
     function onStart($packet)
     {
         $pd = new \Modl\PresenceDAO();
-        $pd->clearPresence($this->user->getLogin());
+        $pd->clearPresence();
 
         $session = \Sessionx::start();
         $session->load();

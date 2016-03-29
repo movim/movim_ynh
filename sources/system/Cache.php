@@ -6,23 +6,6 @@ class Cache
 {
     private static $instance;
 
-    private $db;
-    private $log = true;
-    private $login;
-    private $ttl; // TODO
-
-    // Yes, another singleton...
-    private function __construct()
-    {
-        // Saving the user's login.
-        $user = new User();
-        $this->login = $user->getLogin();
-    }
-
-    function __destruct()
-    {
-    }
-
     public static function create()
     {
         if(!is_object(self::$instance)) {
@@ -75,7 +58,7 @@ class Cache
         }
         else {
             // Cutting a piece of the args.
-            $content = array_slice($argslist, 1);
+            $content = array_slice($arglist, 1);
             return $this->write_cache($key, $content);
         }
     }
@@ -88,14 +71,13 @@ class Cache
         $data = str_replace("'", "\\'", base64_encode(gzcompress(serialize($object))));
         $time = date(DATE_ISO8601, time());
 
-        $cd = new \modl\CacheDAO();        
+        $cd = new \modl\CacheDAO();
         $c = new \modl\Cache();
 
-        $c->session = $this->login;
         $c->data = $data;
         $c->name = $key;
         $c->timestamp = $time;
-        
+
         $cd->set($c);
     }
 
@@ -105,7 +87,7 @@ class Cache
     private function read_cache($key)
     {
         $cd = new \modl\CacheDAO();
-        $var = $cd->get($this->login, $key);
+        $var = $cd->get($key);
 
         if(isset($var)) {
             return unserialize(gzuncompress(base64_decode(str_replace("\\'", "'", $var->data))));

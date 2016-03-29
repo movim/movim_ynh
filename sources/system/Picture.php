@@ -1,11 +1,23 @@
 <?php
 
+
+use stojg\crop\CropEntropy;
+
 class Picture {
     private $_path = CACHE_PATH;
     private $_uri  = CACHE_URI;
     private $_key;
     private $_bin  = false;
     private $_formats = ['jpeg' => '.jpg', 'png' => '.png'];
+
+    /**
+     * @desc Load a bin picture from an URL
+     */
+    public function fromURL($url)
+    {
+        $bin = requestURL($url, 2);
+        if($bin) $this->_bin = $bin;
+    }
 
     /**
      * @desc Load a bin picture from a path
@@ -140,6 +152,9 @@ class Picture {
                     $im->setInterlaceScheme(Imagick::INTERLACE_PLANE);
                     $im->writeImage($path);
                     $im->clear();
+                    return true;
+                } else {
+                    return false;
                 }
             } catch (ImagickException $e) {
                 error_log($e->getMessage());
@@ -167,13 +182,18 @@ class Picture {
             $im = $im->flattenImages();
         }
 
+        $crop = new CropEntropy;
+        $crop->setImage($im);
+
         $geo = $im->getImageGeometry();
 
-        $im->cropThumbnailImage($width, $height);
+        //$im->cropThumbnailImage($width, $height);
         if($width > $geo['width']) {
             $factor = floor($width/$geo['width']);
             $im->blurImage($factor, 10);
         }
+
+        $im = $crop->resizeAndCrop($width, $height);
 
         $im->setImageCompressionQuality(85);
         $im->setInterlaceScheme(Imagick::INTERLACE_PLANE);

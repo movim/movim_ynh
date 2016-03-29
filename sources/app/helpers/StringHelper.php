@@ -21,7 +21,7 @@ class MovimEmoji
         $this->_emoji = new Emoji(new EmojiIndex(), $this->getPath());
     }
 
-    public function replace($string, $large = false)
+    public function replace($string)
     {
         $this->_emoji->setAssetUrlFormat($this->getPath());
         $string = $this->_emoji->replaceEmojiWithImages($string);
@@ -30,7 +30,7 @@ class MovimEmoji
         return $string;
     }
 
-    private function getPath($large = false)
+    private function getPath()
     {
         return BASE_URI . 'themes/' . $this->_theme . '/img/emojis/svg/%s.svg';
     }
@@ -99,48 +99,7 @@ function prepareString($string, $large = false, $preview = false) {
     $string = addUrls($string, $preview);
 
     // We add some smileys...
-    $emoji = MovimEmoji::getInstance();
-    $string = $emoji->replace($string, $large);
-
-    return trim($string);
-}
-
-
-/**
- * Fix self-closing tags
- */
-function fixSelfClosing($string) {
-    return preg_replace_callback('/<([^\s<]+)\/>/',
-        function($match) {
-            return '<'.$match[1].'></'.$match[1].'>';
-        }
-        , $string);
-}
-
-/**
- * @desc Escape the unescaped ampersand
- */
-function escapeAmpersands($string) {
-    return preg_replace(
-        '/&[^; ]{0,6}.?/e',
-        "((substr('\\0',-1) == ';') ? '\\0' : '&amp;'.substr('\\0',1))",
-        $string);
-}
-
-/**
- * Remove the content, body and html tags
- */
-function cleanHTMLTags($string) {
-    return str_replace(
-        array(
-            '<content type="html">',
-            '<html xmlns="http://jabber.org/protocol/xhtml-im">',
-            '<body xmlns="http://www.w3.org/1999/xhtml">',
-            '</body>',
-            '</html>',
-            '</content>'),
-        '',
-        $string);
+    return trim((string)requestURL('http://localhost:1560/emojis/', 2, ['string' => $string]));
 }
 
 /**
@@ -319,35 +278,7 @@ function stripTags($string)
  */
 function purifyHTML($string)
 {
-    $config = \HTMLPurifier_Config::createDefault();
-    $config->set('HTML.Doctype', 'XHTML 1.1');
-    $config->set('Cache.SerializerPath', '/tmp');
-    $config->set('HTML.DefinitionID', 'html5-definitions');
-    $config->set('HTML.DefinitionRev', 1);
-    if ($def = $config->maybeGetRawHTMLDefinition()) {
-        $def->addElement('video', 'Block', 'Optional: (source, Flow) | (Flow, source) | Flow', 'Common', array(
-          'src' => 'URI',
-          'type' => 'Text',
-          'width' => 'Length',
-          'height' => 'Length',
-          'poster' => 'URI',
-          'preload' => 'Enum#auto,metadata,none',
-          'controls' => 'Bool',
-        ));
-        $def->addElement('audio', 'Block', 'Optional: (source, Flow) | (Flow, source) | Flow', 'Common', array(
-          'src' => 'URI',
-          'preload' => 'Enum#auto,metadata,none',
-          'muted' => 'Bool',
-          'controls' => 'Bool',
-        ));
-        $def->addElement('source', 'Block', 'Flow', 'Common', array(
-          'src' => 'URI',
-          'type' => 'Text',
-        ));
-    }
-
-    $purifier = new \HTMLPurifier($config);
-    return $purifier->purify($string);
+    return (string)requestURL('http://localhost:1560/purify/', 2, ['html' => urlencode($string)]);
 }
 
 /**

@@ -16,7 +16,6 @@
  */
 class User {
     public  $username = '';
-    private $password = '';
     private $config = array();
 
     public $caps;
@@ -68,62 +67,13 @@ class User {
     }
 
     /**
-     * Get the current size in bytes of the user directory
-     */
-    function dirSize()
-    {
-        $sum = 0;
-
-        foreach($this->getDir() as $s)
-            $sum = $sum + filesize($this->userdir.$s);
-
-        return $sum;
-    }
-
-    /**
-     * Get a list of the files in the user dir with uri, dir and thumbs
-     */
-    function getDir()
-    {
-        $dir = array();
-        if(is_dir($this->userdir))
-            foreach(scandir($this->userdir) as $s) {
-                if(
-                    $s != '.' &&
-                    $s != '..' &&
-                    $s != 'index.html') {
-
-                    array_push($dir, $s);
-                }
-            }
-
-        return $dir;
-    }
-
-    /**
      * Checks if the user has an open session.
      */
     function isLogged()
     {
-        // User is not logged in if both the session vars and the members are unset.
+        // We check if the session exists in the daemon
         $session = \Sessionx::start();
-
-        if($session->active)
-            return $session->active;
-        else
-            return false;
-    }
-
-    function desauth()
-    {
-        $pd = new modl\PresenceDAO();
-        $pd->clearPresence($this->username);
-
-        $s = \Sessionx::start();
-        $s->destroy();
-
-        $sess = Session::start();
-        Session::dispose();
+        return (bool)requestURL('http://localhost:1560/exists/', 2, ['sid' => $session->sessionid]);
     }
 
     function createDir()
@@ -150,11 +100,6 @@ class User {
     {
         $exp = explodeJid($this->username);
         return $exp['username'];
-    }
-
-    function getPass()
-    {
-        return $this->password;
     }
 
     function setConfig(array $config)

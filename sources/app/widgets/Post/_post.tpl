@@ -133,9 +133,11 @@
             <content>
                 {if="$post->isShort() && isset($attachements.pictures)"}
                     {loop="$attachements.pictures"}
+                        {if="$value.type != 'picture'"}
                         <a href="{$value.href}" class="alternate" target="_blank">
                             <img class="big_picture" type="{$value.type}" src="{$value.href|urldecode}"/>
                         </a>
+                        {/if}
                     {/loop}
                 {elseif="$post->getYoutube()"}
                     <div class="video_embed">
@@ -199,6 +201,7 @@
             {if="!$post->isShort() && isset($attachements.pictures)"}
                 <ul class="list flex middle">
                 {loop="$attachements.pictures"}
+                    {if="$value.type != 'picture'"}
                     <li class="block pic">
                         <span class="primary icon gray">
                             <i class="zmdi zmdi-image"></i>
@@ -207,6 +210,7 @@
                             <img type="{$value.type}" src="{$value.href|urldecode}"/>
                         </a>
                     </li>
+                    {/if}
                 {/loop}
                 </ul>
             {/if}

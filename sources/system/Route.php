@@ -1,5 +1,7 @@
 <?php
-class Route extends \BaseController {
+use Movim\Controller\Base;
+
+class Route extends Base {
     public $_routes;
     private $_page;
 
@@ -16,16 +18,13 @@ class Route extends \BaseController {
                 'contact'       => array('f'),
                 'disconnect'    => array('err'),
                 'feed'          => array('s', 'n'),
+                'main'          => false,
                 'node'          => array('s', 'n', 'i'),
                 'group'         => array('s', 'n', 'i'),
                 'help'          => false,
                 'infos'         => false,
                 'login'         => array('err'),
-                'main'          => false,
-                'media'         => array('f'),
                 'news'          => array('n'),
-                'pods'          => false,
-                'profile'       => false,
                 'room'          => array('r'),
                 'share'         => array('url'),
                 'visio'         => false
@@ -55,7 +54,7 @@ class Route extends \BaseController {
             }
         }
 
-        if(empty($this->_page))
+        if(empty($this->_page) || $this->_page == 'main')
             $this->_page = 'news';
 
         if(!isset($this->_routes[$this->_page]))

@@ -14,7 +14,7 @@ use Moxl\Xec\Action\Pubsub\Delete;
 
 use Respect\Validation\Validator;
 
-class Group extends WidgetBase
+class Group extends \Movim\Widget\Base
 {
     private $_paging = 15;
     private $_role = null;
@@ -88,10 +88,12 @@ class Group extends WidgetBase
         list($server, $node) = array_values($packet->content);
         Notification::append(false, $this->__('group.empty'));
 
-        $this->ajaxDelete($server, $node, true);
-        $this->ajaxGetAffiliations($server, $node);
-        // Display an error message
-        RPC::call('Group.clearLoad');
+        if($node != 'urn:xmpp:microblog:0') {
+            $this->ajaxDelete($server, $node, true);
+            $this->ajaxGetAffiliations($server, $node);
+            // Display an error message
+            RPC::call('Group.clearLoad');
+        }
     }
 
     function onAffiliations($packet)
@@ -389,8 +391,13 @@ class Group extends WidgetBase
 
     private function prepareHeader($server, $node)
     {
-        $pd = new \Modl\ItemDAO;
-        $item = $pd->getItem($server, $node);
+        $id = new \Modl\ItemDAO;
+        $item = $id->getItem($server, $node);
+
+        if($item && !$item->logo) {
+            $item->setPicture();
+            $id->set($item);
+        }
 
         $pd = new \Modl\SubscriptionDAO;
         $subscription = $pd->get($server, $node);
@@ -406,7 +413,7 @@ class Group extends WidgetBase
 
     private function prepareGroup($server, $node, $page = 0)
     {
-        $pd = new \Modl\PostnDAO();
+        $pd = new \Modl\PostnDAO;
         $posts = $pd->getNodeUnfiltered($server, $node, $page*$this->_paging, $this->_paging);
 
         $view = $this->tpl();

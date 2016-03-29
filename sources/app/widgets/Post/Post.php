@@ -20,6 +20,7 @@
 
 use Moxl\Xec\Action\Pubsub\PostPublish;
 use Moxl\Xec\Action\Pubsub\PostDelete;
+use Moxl\Xec\Action\Pubsub\Delete;
 use Moxl\Xec\Action\Pubsub\GetItem;
 use Moxl\Xec\Action\Microblog\CommentsGet;
 use Moxl\Xec\Action\Microblog\CommentCreateNode;
@@ -27,7 +28,7 @@ use Moxl\Xec\Action\Microblog\CommentPublish;
 use \Michelf\Markdown;
 use Respect\Validation\Validator;
 
-class Post extends WidgetBase
+class Post extends \Movim\Widget\Base
 {
     function load()
     {
@@ -130,6 +131,11 @@ class Post extends WidgetBase
           ->setNode($node)
           ->setId($id)
           ->request();
+
+        $p = new Delete;
+        $p->setTo($to)
+          ->setNode('urn:xmpp:microblog:0:comments/'.$id)
+          ->request();
     }
 
     function ajaxGetComments($jid, $id)
@@ -213,9 +219,6 @@ class Post extends WidgetBase
 
         if(!$validate->validate($id))
             return;
-
-        $pd = new \Modl\PrivacyDAO();
-        $p = $pd->get($id);
 
         $pd = new \Modl\PostnDAO;
         $po  = $pd->getItem($id);

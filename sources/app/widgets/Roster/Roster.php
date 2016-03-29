@@ -6,10 +6,8 @@ use Moxl\Xec\Action\Roster\RemoveItem;
 use Moxl\Xec\Action\Presence\Subscribe;
 use Moxl\Xec\Action\Presence\Unsubscribe;
 
-class Roster extends WidgetBase
+class Roster extends \Movim\Widget\Base
 {
-    private $grouphtml;
-
     function load()
     {
         $this->addcss('roster.css');
@@ -186,7 +184,8 @@ class Roster extends WidgetBase
      * @param
      * @returns $result: a json for the contacts and one for the groups
      */
-    function prepareRoster(){
+    function prepareRoster()
+    {
         //Contacts
         $contactdao = new \Modl\ContactDAO();
         $contacts = $contactdao->getRoster();
@@ -275,10 +274,8 @@ class Roster extends WidgetBase
      *          $caps: an array of capabilities
      * @returns
      */
-    function prepareContact(&$c, $oc, $caps){
-        $arr = array();
-        $jid = false;
-
+    function prepareContact(&$c, $oc, $caps)
+    {
         $presencestxt = getPresencesTxt();
 
         // We add some basic information

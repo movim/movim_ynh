@@ -2,13 +2,13 @@
 require __DIR__ . '/vendor/autoload.php';
 
 define('DOCUMENT_ROOT', dirname(__FILE__));
-require_once(DOCUMENT_ROOT.'/bootstrap.php');
 
 gc_enable();
 
+use Movim\Bootstrap;
 //memprof_enable();
 
-$bootstrap = new Bootstrap();
+$bootstrap = new Bootstrap;
 $booted = $bootstrap->boot();
 
 $loop = React\EventLoop\Factory::create();
@@ -19,7 +19,7 @@ $stdin = new React\Stream\Stream(STDIN, $loop);
 fwrite(STDERR, colorize(getenv('sid'), 'yellow')." widgets before : ".\sizeToCleanSize(memory_get_usage())."\n");
 
 // We load and register all the widgets
-$wrapper = WidgetWrapper::getInstance();
+$wrapper = \Movim\Widget\Wrapper::getInstance();
 $wrapper->registerAll($bootstrap->getWidgets());
 
 fwrite(STDERR, colorize(getenv('sid'), 'yellow')." widgets : ".\sizeToCleanSize(memory_get_usage())."\n");
@@ -56,6 +56,12 @@ $stdin_behaviour = function ($data) use (&$conn, $loop, &$buffer, &$connector, &
             if(isset($msg)) {
                 if($msg->func == 'message' && $msg->body != '') {
                     $msg = $msg->body;
+                } elseif($msg->func == 'down') {
+                    $evt = new Event;
+                    $evt->runEvent('session_down');
+                } elseif($msg->func == 'up') {
+                    $evt = new Event;
+                    $evt->runEvent('session_up');
                 } elseif($msg->func == 'unregister') {
                     \Moxl\Stanza\Stream::end();
                 } elseif($msg->func == 'register') {
@@ -113,10 +119,12 @@ $xmpp_behaviour = function (React\Stream\Stream $stream) use (&$conn, $loop, &$s
     $stdin->on('data', $stdin_behaviour);
 
     // We define a huge buffer to prevent issues with SSL streams, see https://bugs.php.net/bug.php?id=65137
-    $conn->bufferSize = 1024*32;
+    //$conn->bufferSize = 1024*32;
     $conn->on('data', function($message) use (&$conn, $loop, $parser, &$timestamp) {
         if(!empty($message)) {
             $restart = false;
+
+            #fwrite(STDERR, colorize($message, 'yellow')." : ".colorize('received', 'green')."\n");
 
             if($message == '</stream:stream>') {
                 $conn->close();
@@ -134,7 +142,6 @@ $xmpp_behaviour = function (React\Stream\Stream $stream) use (&$conn, $loop, &$s
                 set_error_handler('handleSSLErrors');
                 $out = stream_socket_enable_crypto($conn->stream, 1, STREAM_CRYPTO_METHOD_TLS_CLIENT);
                 restore_error_handler();
-
                 if($out !== true) {
                     $loop->stop();
                     return;
@@ -145,7 +152,6 @@ $xmpp_behaviour = function (React\Stream\Stream $stream) use (&$conn, $loop, &$s
                 $restart = true;
             }
 
-            #fwrite(STDERR, colorize($message, 'yellow')." : ".colorize('received', 'green')."\n");
             #fwrite(STDERR, colorize(getenv('sid'), 'yellow')." widgets : ".\sizeToCleanSize(memory_get_usage())."\n");
 
             \Moxl\API::clear();
