@@ -23,6 +23,7 @@
                 <div>
                     <input type="email" name="login" id="login" autofocus required disabled
                         placeholder="username@server.com"/>
+                    <input type="text" id="complete" tabindex="-1"/>
                     <label for="login">{$c->__('form.username')}</label>
                 </div>
                 <div>
@@ -69,7 +70,7 @@
                 <li>
                     <p class="normal center">
                         {$c->__('form.no_account')}
-                        <a class="button flat" href="{$c->route('account')}">
+                        <a class="button color" href="{$c->route('account')}">
                             {$c->__('form.create_one')}
                         </a>
                     </p>
