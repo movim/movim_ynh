@@ -224,7 +224,9 @@ class Chat extends \Movim\Widget\Base
      * @return void
      */
     function ajaxSendMessage($to, $message, $muc = false, $resource = false, $replace = false) {
-        if($message == '')
+        $body = trim(rawurldecode($message));
+
+        if($body == '' || $body == '/me')
             return;
 
         $m = new \Modl\Message();
@@ -243,25 +245,18 @@ class Chat extends \Movim\Widget\Base
             $m->published = gmdate('Y-m-d H:i:s');
         }
 
-        $session    = \Sessionx::start();
+        $session    = \Session::start();
 
         $m->type    = 'chat';
-        $m->resource = $session->resource;
+        $m->resource = $session->get('resource');
 
         if($muc) {
             $m->type        = 'groupchat';
-
-            $s = Session::start();
-            $m->resource = $s->get('username');
-
-            if($m->resource == null) {
-                $m->resource = $session->user;
-            }
-
+            $m->resource = $session->get('username');
             $m->jidfrom     = $to;
         }
 
-        $m->body      = trim(rawurldecode($message));
+        $m->body      = $body;
         //$m->html      = prepareString($m->body, false, true);
 
         if($resource != false) {
@@ -290,7 +285,7 @@ class Chat extends \Movim\Widget\Base
         /* Is it really clean ? */
         if(!$p->getMuc()) {
             if(!preg_match('#^\?OTR#', $m->body)) {
-                $md = new \Modl\MessageDAO();
+                $md = new \Modl\MessageDAO;
                 $md->set($m);
             }
 
@@ -368,7 +363,7 @@ class Chat extends \Movim\Widget\Base
     {
         if(!$this->validateJid($jid)) return;
 
-        $md = new \Modl\MessageDAO();
+        $md = new \Modl\MessageDAO;
         $messages = $md->getHistory(echapJid($jid), date(DATE_ISO8601, strtotime($date)), $this->_pagination);
 
         if(count($messages) > 0) {
@@ -524,7 +519,7 @@ class Chat extends \Movim\Widget\Base
     {
         if(!$this->validateJid($jid)) return;
 
-        $md = new \Modl\MessageDAO();
+        $md = new \Modl\MessageDAO;
         $messages = $md->getContact(echapJid($jid), 0, $this->_pagination);
 
         if(is_array($messages)) {

@@ -6,7 +6,7 @@
         </li>
     </ul>
 
-    <ul class="list thick active flex card">
+    <ul class="list card shadow active flex">
         {loop="$servers"}
         <li
             class="block"
@@ -30,9 +30,9 @@
             </p>
             <p>
                 {$value->description}<br />
-                <a target="_blank" href="{$value->url}">
+                <!--<a target="_blank" href="{$value->url}">
                     {$value->url}
-                </a>
+                </a>-->
             </p>
         </li>
         {/loop}

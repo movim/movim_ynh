@@ -139,7 +139,8 @@
                         </a>
                         {/if}
                     {/loop}
-                {elseif="$post->getYoutube()"}
+                {/if}
+                {if="$post->getYoutube()"}
                     <div class="video_embed">
                         <iframe src="https://www.youtube.com/embed/{$post->getYoutube()}" frameborder="0" allowfullscreen></iframe>
                     </div>
@@ -165,18 +166,16 @@
             <ul class="list middle divided spaced">
                 {if="isset($attachements.links)"}
                     {loop="$attachements.links"}
-                        {if="substr($value.href, 0, 5) != 'xmpp:' && filter_var($value.href, FILTER_VALIDATE_URL)"}
-                            <li>
-                                <span class="primary icon">
-                                    <img src="https://icons.duckduckgo.com/ip2/{$value.url.host}.ico"/>
-                                </span>
-                                <p class="normal line">
-                                    <a href="{$value.href}" class="alternate" target="_blank">
-                                        {$value.href|urldecode}
-                                    </a>
-                                </p>
-                            </li>
-                        {/if}
+                        <li>
+                            <span class="primary icon">
+                                <img src="https://icons.duckduckgo.com/ip2/{$value.url.host}.ico"/>
+                            </span>
+                            <p class="normal line">
+                                <a href="{$value.href}" class="alternate" target="_blank">
+                                    {$value.href|urldecode}
+                                </a>
+                            </p>
+                        </li>
                     {/loop}
                 {/if}
                 {if="isset($attachements.files)"}
@@ -189,7 +188,9 @@
                                 <a
                                     href="{$value.href}"
                                     class="enclosure"
-                                    type="{$value.type}"
+                                    {if="isset($value.type)"}
+                                        type="{$value.type}"
+                                    {/if}
                                     target="_blank">
                                 {$value.href|urldecode}
                                 </a>
@@ -214,36 +215,14 @@
                 {/loop}
                 </ul>
             {/if}
-            {if="$post->isMine() && !$public"}
-                <ul class="list middle">
+            {if="$post->isPublic() && !$public"}
+                <ul class="list thick">
                     <li>
                         <span class="primary icon gray">
                             <i class="zmdi zmdi-portable-wifi"></i>
                         </span>
-                        <span class="control">
-                            <form>
-                                <div class="action">
-                                    <div class="checkbox">
-                                        <input
-                                            type="checkbox"
-                                            id="privacy_{$post->nodeid}"
-                                            name="privacy_{$post->nodeid}"
-                                            {if="$post->privacy"}
-                                                checked
-                                            {/if}
-                                            {if="$external"}
-                                                onclick="Group_ajaxTogglePrivacy('{$post->nodeid}')"
-                                            {else}
-                                                onclick="Post_ajaxTogglePrivacy('{$post->nodeid}')"
-                                            {/if}
-                                        >
-                                        <label for="privacy_{$post->nodeid}"></label>
-                                    </div>
-                                </div>
-                            </form>
-                        </span>
                         <p class="line normal">
-                            {$c->__('post.public')}
+                            {$c->__('post.public_yes')}
                         </p>
                         <p>
                             <a target="_blank" href="{$post->getPublicUrl()}">

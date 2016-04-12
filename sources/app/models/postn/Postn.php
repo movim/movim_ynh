@@ -20,6 +20,8 @@ class Postn extends Model {
 
     public $commentplace;
 
+    public $open;
+
     public $published;      //
     public $updated;        //
     public $delay;          //
@@ -31,11 +33,10 @@ class Postn extends Model {
 
     public $links;
 
-    public $privacy;
-
     public $hash;
 
     private $youtube;
+    private $openlink;
 
     public function __construct() {
         $this->hash = md5(openssl_random_pseudo_bytes(5));
@@ -64,6 +65,9 @@ class Postn extends Model {
                 {"type":"text" },
             "commentplace" :
                 {"type":"string", "size":128 },
+
+            "open" :
+                {"type":"bool"},
 
             "published" :
                 {"type":"date" },
@@ -256,8 +260,10 @@ class Postn extends Model {
         return in_array($type, array('picture', 'image/jpeg', 'image/png', 'image/jpg', 'image/gif'));
     }
 
-    private function typeIsLink($type) {
-        return $type == 'text/html';
+    private function typeIsLink($link) {
+        return (isset($link['type'])
+        && $link['type'] == 'text/html'
+        && Validator::url()->validate($link['href']));
     }
 
     private function setAttachements($links, $extra = false) {
@@ -273,6 +279,9 @@ class Postn extends Model {
             && $this->typeIsPicture($enc['type'])) {
                 $this->picture = true;
             }
+
+            if($enc['rel'] == 'alternate'
+            && Validator::url()->validate($enc['href'])) $this->open = true;
 
             if((string)$attachment->attributes()->title == 'comments') {
                 $substr = explode('?',substr((string)$attachment->attributes()->href, 5));
@@ -292,27 +301,38 @@ class Postn extends Model {
     {
         $attachements = null;
         $this->picture = null;
+        $this->openlink = null;
 
         if(isset($this->links)) {
-            $attachements = array('pictures' => array(), 'files' => array(), 'links' => array());
+            $attachements = array(
+                'pictures' => array(),
+                'files' => array(),
+                'links' => array()
+            );
 
             $links = unserialize($this->links);
+
             foreach($links as $l) {
                 if(isset($l['type']) && $this->typeIsPicture($l['type'])) {
                     if($this->picture == null) {
                         $this->picture = $l['href'];
                     }
+
                     array_push($attachements['pictures'], $l);
-                } elseif((isset($l['type']) && $this->typeIsLink($l['type'])
-                || in_array($l['rel'], array('related', 'alternate')))
-                && Validator::url()->validate($l['href'])) {
+                } elseif($this->typeIsLink($l)) {
                     if($this->youtube == null
                     && preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $l['href'], $match)) {
                         $this->youtube = $match[1];
                     }
 
-                    array_push($attachements['links'], array('href' => $l['href'], 'url' => parse_url($l['href'])));
-                } elseif(isset($l['rel']) && $l['rel'] == 'enclosure') {
+                    if($l['rel'] == 'alternate') {
+                        $this->openlink = $l['href'];
+                        if(!$this->isMicroblog()) {
+                            array_push($attachements['links'], array('href' => $l['href'], 'url' => parse_url($l['href'])));
+                        }
+                    }
+                } elseif(isset($l['rel'])
+                && $l['rel'] == 'enclosure') {
                     array_push($attachements['files'], $l);
                 }
             }
@@ -389,11 +409,7 @@ class Postn extends Model {
 
     public function getPublicUrl()
     {
-        if($this->isMicroblog()) {
-            return \Route::urlize('blog', array($this->origin, $this->nodeid));
-        } else {
-            return \Route::urlize('node', array($this->origin, $this->node, $this->nodeid));
-        }
+        return $this->openlink;
     }
 
     public function getTags()
@@ -414,7 +430,7 @@ class Postn extends Model {
     }
 
     public function isPublic() {
-        return (isset($this->privacy) && $this->privacy);
+        return ($this->open);
     }
 }
 

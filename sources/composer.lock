@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b54958b944f29089f98f8ba4280c604b",
-    "content-hash": "a8f2cba127179fc763654ce07480f16c",
+    "hash": "959957c08a6e0a7b09d5b3bccf6f6979",
+    "content-hash": "958b7ab7a85b3465f8038d6848504ff1",
     "packages": [
         {
             "name": "cboden/ratchet",
@@ -537,52 +537,6 @@
             "time": "2015-06-06 08:55:07"
         },
         {
-            "name": "libchart/libchart",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/astehlik/libchart.git",
-                "reference": "408d6729f59c3d1641af4c5fee39bb3bcb7fd575"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/astehlik/libchart/zipball/408d6729f59c3d1641af4c5fee39bb3bcb7fd575",
-                "reference": "408d6729f59c3d1641af4c5fee39bb3bcb7fd575",
-                "shasum": ""
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Libchart\\": "libchart/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-3.0"
-            ],
-            "authors": [
-                {
-                    "name": "Jean-Marc Trémeaux",
-                    "homepage": "http://naku.dohcrew.com/",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Alexander Stehlik",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Simple PHP chart drawing library",
-            "homepage": "http://naku.dohcrew.com/libchart/pages/introduction/",
-            "keywords": [
-                "bar charts",
-                "chart",
-                "charts",
-                "line charts",
-                "pie charts"
-            ],
-            "time": "2013-10-19 22:30:10"
-        },
-        {
             "name": "michelf/php-markdown",
             "version": "dev-lib",
             "source": {
@@ -751,12 +705,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/movim/moxl.git",
-                "reference": "bc73793d532eb9c2e9af1ffd5a42d31341347dd0"
+                "reference": "497a2111872660f3ebbeb1ad71ec8425c0be9d43"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/movim/moxl/zipball/bc73793d532eb9c2e9af1ffd5a42d31341347dd0",
-                "reference": "bc73793d532eb9c2e9af1ffd5a42d31341347dd0",
+                "url": "https://api.github.com/repos/movim/moxl/zipball/497a2111872660f3ebbeb1ad71ec8425c0be9d43",
+                "reference": "497a2111872660f3ebbeb1ad71ec8425c0be9d43",
                 "shasum": ""
             },
             "require": {
@@ -791,7 +745,7 @@
                 "php",
                 "xmpp"
             ],
-            "time": "2016-03-26 20:56:59"
+            "time": "2016-04-10 08:19:13"
         },
         {
             "name": "movim/sasl2",
@@ -846,16 +800,16 @@
         },
         {
             "name": "paragonie/random_compat",
-            "version": "v2.0.1",
+            "version": "v2.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/paragonie/random_compat.git",
-                "reference": "76e90f747b769b347fe584e8015a014549107d35"
+                "reference": "088c04e2f261c33bed6ca5245491cfca69195ccf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/76e90f747b769b347fe584e8015a014549107d35",
-                "reference": "76e90f747b769b347fe584e8015a014549107d35",
+                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/088c04e2f261c33bed6ca5245491cfca69195ccf",
+                "reference": "088c04e2f261c33bed6ca5245491cfca69195ccf",
                 "shasum": ""
             },
             "require": {
@@ -890,7 +844,7 @@
                 "pseudorandom",
                 "random"
             ],
-            "time": "2016-03-18 20:36:13"
+            "time": "2016-04-03 06:00:07"
         },
         {
             "name": "pear/net_dns2",
@@ -1351,16 +1305,16 @@
         },
         {
             "name": "react/promise",
-            "version": "v2.3.0",
+            "version": "v2.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/reactphp/promise.git",
-                "reference": "8ffacee1171e33a1c129f424bf1ec36e062eba82"
+                "reference": "f942da7b505d1a294284ab343d05df42d02ad6d9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/reactphp/promise/zipball/8ffacee1171e33a1c129f424bf1ec36e062eba82",
-                "reference": "8ffacee1171e33a1c129f424bf1ec36e062eba82",
+                "url": "https://api.github.com/repos/reactphp/promise/zipball/f942da7b505d1a294284ab343d05df42d02ad6d9",
+                "reference": "f942da7b505d1a294284ab343d05df42d02ad6d9",
                 "shasum": ""
             },
             "require": {
@@ -1391,7 +1345,7 @@
                 }
             ],
             "description": "A lightweight implementation of CommonJS Promises/A for PHP",
-            "time": "2016-03-24 21:20:22"
+            "time": "2016-03-31 13:10:33"
         },
         {
             "name": "react/promise-timer",
@@ -1574,16 +1528,16 @@
         },
         {
             "name": "respect/validation",
-            "version": "1.0.4",
+            "version": "1.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Respect/Validation.git",
-                "reference": "4b2f15920627b93a0a4302e1e6e7db1bab1946e2"
+                "reference": "294368294f9cd207f81474bab27d99875a19ac55"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Respect/Validation/zipball/4b2f15920627b93a0a4302e1e6e7db1bab1946e2",
-                "reference": "4b2f15920627b93a0a4302e1e6e7db1bab1946e2",
+                "url": "https://api.github.com/repos/Respect/Validation/zipball/294368294f9cd207f81474bab27d99875a19ac55",
+                "reference": "294368294f9cd207f81474bab27d99875a19ac55",
                 "shasum": ""
             },
             "require": {
@@ -1634,7 +1588,7 @@
                 "validation",
                 "validator"
             ],
-            "time": "2016-02-26 15:21:26"
+            "time": "2016-03-31 17:39:15"
         },
         {
             "name": "stojg/crop",
@@ -1684,16 +1638,16 @@
         },
         {
             "name": "symfony/event-dispatcher",
-            "version": "v3.0.3",
+            "version": "v3.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/event-dispatcher.git",
-                "reference": "4dd5df31a28c0f82b41cb1e1599b74b5dcdbdafa"
+                "reference": "9002dcf018d884d294b1ef20a6f968efc1128f39"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/4dd5df31a28c0f82b41cb1e1599b74b5dcdbdafa",
-                "reference": "4dd5df31a28c0f82b41cb1e1599b74b5dcdbdafa",
+                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/9002dcf018d884d294b1ef20a6f968efc1128f39",
+                "reference": "9002dcf018d884d294b1ef20a6f968efc1128f39",
                 "shasum": ""
             },
             "require": {
@@ -1740,24 +1694,25 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "https://symfony.com",
-            "time": "2016-01-27 05:14:46"
+            "time": "2016-03-10 10:34:12"
         },
         {
             "name": "symfony/http-foundation",
-            "version": "v3.0.3",
+            "version": "v3.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-foundation.git",
-                "reference": "52065702c71743c05d415a8facfcad6d4257e8d7"
+                "reference": "99f38445a874e7becb8afc4b4a79ee181cf6ec3f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/52065702c71743c05d415a8facfcad6d4257e8d7",
-                "reference": "52065702c71743c05d415a8facfcad6d4257e8d7",
+                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/99f38445a874e7becb8afc4b4a79ee181cf6ec3f",
+                "reference": "99f38445a874e7becb8afc4b4a79ee181cf6ec3f",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.5.9"
+                "php": ">=5.5.9",
+                "symfony/polyfill-mbstring": "~1.1"
             },
             "require-dev": {
                 "symfony/expression-language": "~2.8|~3.0"
@@ -1792,20 +1747,79 @@
             ],
             "description": "Symfony HttpFoundation Component",
             "homepage": "https://symfony.com",
-            "time": "2016-02-28 16:24:34"
+            "time": "2016-03-27 14:50:32"
         },
         {
-            "name": "symfony/routing",
-            "version": "v3.0.3",
+            "name": "symfony/polyfill-mbstring",
+            "version": "v1.1.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/symfony/routing.git",
-                "reference": "fa1e9a8173cf0077dd995205da453eacd758fdf6"
+                "url": "https://github.com/symfony/polyfill-mbstring.git",
+                "reference": "1289d16209491b584839022f29257ad859b8532d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/routing/zipball/fa1e9a8173cf0077dd995205da453eacd758fdf6",
-                "reference": "fa1e9a8173cf0077dd995205da453eacd758fdf6",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/1289d16209491b584839022f29257ad859b8532d",
+                "reference": "1289d16209491b584839022f29257ad859b8532d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "suggest": {
+                "ext-mbstring": "For best performance"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Polyfill\\Mbstring\\": ""
+                },
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony polyfill for the Mbstring extension",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "mbstring",
+                "polyfill",
+                "portable",
+                "shim"
+            ],
+            "time": "2016-01-20 09:13:37"
+        },
+        {
+            "name": "symfony/routing",
+            "version": "v3.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/routing.git",
+                "reference": "d061b609f2d0769494c381ec92f5c5cc5e4a20aa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/routing/zipball/d061b609f2d0769494c381ec92f5c5cc5e4a20aa",
+                "reference": "d061b609f2d0769494c381ec92f5c5cc5e4a20aa",
                 "shasum": ""
             },
             "require": {
@@ -1867,14 +1881,13 @@
                 "uri",
                 "url"
             ],
-            "time": "2016-02-04 13:53:13"
+            "time": "2016-03-23 13:23:25"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "libchart/libchart": 20,
         "rain/raintpl": 20,
         "michelf/php-markdown": 20,
         "movim/modl": 20,

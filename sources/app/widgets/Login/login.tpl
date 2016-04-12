@@ -21,9 +21,9 @@
                 data-action="{$submit}"
                 name="login">
                 <div>
+                    <input type="text" id="complete" tabindex="-1"/>
                     <input type="email" name="login" id="login" autofocus required disabled
                         placeholder="username@server.com"/>
-                    <input type="text" id="complete" tabindex="-1"/>
                     <label for="login">{$c->__('form.username')}</label>
                 </div>
                 <div>
@@ -53,7 +53,8 @@
             {if="isset($info) && $info != ''"}
             <ul class="list thin card">
                 <li class="info">
-                    <p class="normal">{$info}</p>
+                    <p></p>
+                    <p class="center normal">{$info}</p>
                 </li>
             </ul>
             {/if}

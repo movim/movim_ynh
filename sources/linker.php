@@ -38,10 +38,22 @@ function handleSSLErrors($errno, $errstr) {
 
 // Temporary linker killer
 $loop->addPeriodicTimer(5, function() use(&$conn, &$timestamp) {
-    if($timestamp < time() - 3600*2) {
+    if($timestamp < time() - 3600*6) {
         $conn->close();
     }
 });
+
+// One connected ping each 5 mins
+/*$loop->addPeriodicTimer(5*60, function() use (&$conn) {
+    if(isset($conn)
+    && is_resource($conn->stream)) {
+        $ping = new \Moxl\Xec\Action\Ping\Server;
+        $ping->request();
+
+        $conn->write(trim(\Moxl\API::commit()));
+        \Moxl\API::clear();
+    }
+});*/
 
 $stdin_behaviour = function ($data) use (&$conn, $loop, &$buffer, &$connector, &$xmpp_behaviour, &$parser, &$timestamp) {
     if(substr($data, -1) == "") {
@@ -91,7 +103,6 @@ $stdin_behaviour = function ($data) use (&$conn, $loop, &$buffer, &$connector, &
             \RPC::clear();
 
             if(!empty($msg)) {
-                //echo json_encode($msg)."";
                 echo base64_encode(gzcompress(json_encode($msg), 9))."";
                 //fwrite(STDERR, colorize(json_encode($msg), 'yellow')." : ".colorize('sent to the browser', 'green')."\n");
             }
@@ -100,7 +111,6 @@ $stdin_behaviour = function ($data) use (&$conn, $loop, &$buffer, &$connector, &
             \Moxl\API::clear();
 
             if(!empty($xml) && $conn) {
-                //$timestamp = time();
                 $conn->write(trim($xml));
                 #fwrite(STDERR, colorize(trim($xml), 'yellow')." : ".colorize('sent to XMPP', 'green')."\n");
             }
@@ -119,7 +129,7 @@ $xmpp_behaviour = function (React\Stream\Stream $stream) use (&$conn, $loop, &$s
     $stdin->on('data', $stdin_behaviour);
 
     // We define a huge buffer to prevent issues with SSL streams, see https://bugs.php.net/bug.php?id=65137
-    //$conn->bufferSize = 1024*32;
+    $conn->bufferSize = 1024*32;
     $conn->on('data', function($message) use (&$conn, $loop, $parser, &$timestamp) {
         if(!empty($message)) {
             $restart = false;
@@ -131,10 +141,10 @@ $xmpp_behaviour = function (React\Stream\Stream $stream) use (&$conn, $loop, &$s
                 $loop->stop();
             } elseif($message == "<proceed xmlns='urn:ietf:params:xml:ns:xmpp-tls'/>"
                   || $message == '<proceed xmlns="urn:ietf:params:xml:ns:xmpp-tls"/>') {
-                $session = \Sessionx::start();
+                $session = \Session::start();
                 stream_set_blocking($conn->stream, 1);
                 stream_context_set_option($conn->stream, 'ssl', 'SNI_enabled', false);
-                stream_context_set_option($conn->stream, 'ssl', 'peer_name', $session->host);
+                stream_context_set_option($conn->stream, 'ssl', 'peer_name', $session->get('host'));
                 stream_context_set_option($conn->stream, 'ssl', 'allow_self_signed', true);
                 #stream_context_set_option($conn->stream, 'ssl', 'verify_peer_name', false);
                 #stream_context_set_option($conn->stream, 'ssl', 'verify_peer', false);
@@ -164,8 +174,8 @@ $xmpp_behaviour = function (React\Stream\Stream $stream) use (&$conn, $loop, &$s
             }
 
             if($restart) {
-                $session = \Sessionx::start();
-                \Moxl\Stanza\Stream::init($session->host);
+                $session = \Session::start();
+                \Moxl\Stanza\Stream::init($session->get('host'));
                 stream_set_blocking($conn->stream, 0);
                 $restart = false;
             }
@@ -173,7 +183,6 @@ $xmpp_behaviour = function (React\Stream\Stream $stream) use (&$conn, $loop, &$s
             $msg = \RPC::commit();
 
             if(!empty($msg)) {
-                //echo json_encode($msg)."";
                 echo base64_encode(gzcompress(json_encode($msg), 9))."";
                 //fwrite(STDERR, colorize(json_encode($msg).' '.strlen($msg), 'yellow')." : ".colorize('sent to browser', 'green')."\n");
             }
@@ -183,7 +192,6 @@ $xmpp_behaviour = function (React\Stream\Stream $stream) use (&$conn, $loop, &$s
             $xml = \Moxl\API::commit();
 
             if(!empty($xml)) {
-                //$timestamp = time();
                 $conn->write(trim($xml));
                 #fwrite(STDERR, colorize(trim($xml), 'yellow')." : ".colorize('sent to XMPP', 'green')."\n");
             }

@@ -38,10 +38,9 @@ class Login extends \Movim\Widget\Base
         $pd = new \Modl\PresenceDAO();
         $pd->clearPresence();
 
-        $session = \Sessionx::start();
-        $session->load();
+        $session = \Session::start();
 
-        if($session->mechanism != 'ANONYMOUS') {
+        if($session->get('mechanism') != 'ANONYMOUS') {
             // http://xmpp.org/extensions/xep-0280.html
             \Moxl\Stanza\Carbons::enable();
 
@@ -84,12 +83,7 @@ class Login extends \Movim\Widget\Base
                 $pop++;
 
         $this->view->assign('pop', $pop-2);
-
-        $sd = new \Modl\SessionxDAO();
-        $connected = $sd->getConnected();
-
-        $this->view->assign('connected', $connected);
-
+        $this->view->assign('connected', (int)requestURL('http://localhost:1560/started/', 2));
         $this->view->assign('error', $this->prepareError());
 
         if(isset($_SERVER['PHP_AUTH_USER'])
@@ -202,11 +196,14 @@ class Login extends \Movim\Widget\Base
         $here = $sd->getHash(sha1($username.$password.$host));
 
         if($here) {
+        //if($s->get('hash') == sha1($username.$password.$host)) {
             RPC::call('Login.setCookie', $here->session);
             RPC::call('movim_redirect', Route::urlize('main'));
             $this->showErrorBlock('conflict');
             return;
         }
+
+        $s = Session::start();
 
         // We try to get the domain
         $domain = \Moxl\Utils::getDomain($host);
@@ -215,6 +212,13 @@ class Login extends \Movim\Widget\Base
         RPC::call('register', $host);
 
         // We create a new session or clear the old one
+        $s->set('password', $password);
+        $s->set('username', $username);
+        $s->set('host', $host);
+        $s->set('domain', $domain);
+        $s->set('jid', $login);
+        $s->set('hash', sha1($username.$password.$host));
+
         $s = Sessionx::start();
         $s->init($username, $password, $host, $domain);
 
