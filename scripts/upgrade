@@ -39,7 +39,7 @@ sudo su -c "cd $final_path && php composer.phar install -n" movim
 sudo sed -i "s@/ws/@$path/ws/@g" $final_path/app/assets/js/movim_websocket.js
 
 # Upgrade db if necessary
-sudo su -c "cd $final_path && php mud.php db set" movim
+sudo su -c "cd $final_path && php mud.php db --set" movim
 
 # Reset SSO parameters
 sudo yunohost app setting movim protected_uris -d
