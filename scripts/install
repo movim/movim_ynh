@@ -91,7 +91,6 @@ sudo sed -i "s@/ws/@$path/ws/@g" $final_path/app/assets/js/movim_websocket.js
 sudo su -c "cd $final_path && php mud.php db set" movim
 sudo su -c "cd $final_path && php mud.php config locale:$language" movim
 sudo su -c "cd $final_path && php mud.php config loglevel:1" movim
-sudo su -c "cd $final_path && php mud.php config environment:production" movim
 sudo su -c "cd $final_path && php mud.php config timezone:$timezone" movim
 sudo su -c "cd $final_path && php mud.php config username:$admin" movim
 sudo su -c "cd $final_path && php mud.php config password:`echo -n $password | sha1sum | awk '{print $1}'`" movim
