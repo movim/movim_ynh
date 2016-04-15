@@ -62,7 +62,7 @@ if [ $ssoenabled = "No" ];
 then
         sudo yunohost app setting movim skipped_uris -v "/"
         sudo yunohost app ssowatconf
-        sudo su -c "cd $final_path && php mud.php config xmppwhitelist:$domain" movim
+        sudo su -c "cd $final_path && php mud.php config --xmppwhitelist=$domain" movim
 else
         sudo yunohost app setting movim unprotected_uris -v "/"
         # Next line is to avoid SSO to auto-connect just after disconnect

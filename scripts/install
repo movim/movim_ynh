@@ -89,11 +89,11 @@ sudo sed -i "s@'username'    => 'username'@'username'    => '$db_user'@g" $final
 sudo sed -i "s@'password'    => 'password'@'password'    => '$db_pwd'@g" $final_path/config/db.inc.php
 sudo sed -i "s@/ws/@$path/ws/@g" $final_path/app/assets/js/movim_websocket.js
 sudo su -c "cd $final_path && php mud.php db set" movim
-sudo su -c "cd $final_path && php mud.php config locale:$language" movim
-sudo su -c "cd $final_path && php mud.php config loglevel:1" movim
-sudo su -c "cd $final_path && php mud.php config timezone:$timezone" movim
-sudo su -c "cd $final_path && php mud.php config username:$admin" movim
-sudo su -c "cd $final_path && php mud.php config password:`echo -n $password | sha1sum | awk '{print $1}'`" movim
+sudo su -c "cd $final_path && php mud.php config --locale=$language" movim
+sudo su -c "cd $final_path && php mud.php config --loglevel=1" movim
+sudo su -c "cd $final_path && php mud.php config --timezone=$timezone" movim
+sudo su -c "cd $final_path && php mud.php config --username=$admin" movim
+sudo su -c "cd $final_path && php mud.php config --password=`echo -n $password | sha1sum | awk '{print $1}'`" movim
 
 # Copy init script or systemd service
 sudo sed -i "s@YHURL@$domain$path@g" ../conf/movim.{service,init}
@@ -128,7 +128,7 @@ if [ $ssoenabled = "No" ];
 then
 	sudo yunohost app setting movim skipped_uris -v "/"  
 	sudo yunohost app ssowatconf
-	sudo su -c "cd $final_path && php mud.php config xmppwhitelist:$domain" movim
+	sudo su -c "cd $final_path && php mud.php config --xmppwhitelist=$domain" movim
 else
 	sudo yunohost app setting movim unprotected_uris -v "/"
         # Next line is to avoid SSO to auto-connect just after disconnect
