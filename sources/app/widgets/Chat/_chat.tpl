@@ -14,14 +14,15 @@
                 <i class="zmdi zmdi-more-vert"></i>
             </span>
 
+            <span class="control icon active" onclick="Rooms_ajaxExit('{$room}'); MovimTpl.hidePanel(); {if="$anon"}Presence_ajaxLogout(){/if}">
+                <i class="zmdi zmdi-close"></i>
+            </span>
+
             {if="$c->supported('upload')"}
                 <span class="control icon active" onclick="Upload_ajaxRequest()">
                     <i class="zmdi zmdi-attachment-alt"></i>
                 </span>
             {/if}
-            <span class="control icon active" onclick="Rooms_ajaxExit('{$room}'); MovimTpl.hidePanel(); {if="$anon"}Presence_ajaxLogout(){/if}">
-                <i class="zmdi zmdi-close"></i>
-            </span>
 
             {if="$conference != null && $conference->name"}
                 <p class="line" title="{$room}">{$conference->name}</p>
@@ -103,6 +104,14 @@
                         rows="1"
                         id="chat_textarea"
                         data-jid="{$jid}"
+                        onkeydown="
+                            if(event.keyCode == 38 && this.value == '') {
+                                Chat_ajaxLast(this.dataset.jid);
+                            } else if(event.keyCode == 40
+                            && (this.value == '' || Chat.edit == true)) {
+                                Chat.clearReplace();
+                            }
+                        "
                         onkeypress="
                             if(event.keyCode == 13) {
                                 if(event.shiftKey) {
@@ -111,11 +120,6 @@
                                 state = 0;
                                 Chat.sendMessage(this.dataset.jid, {if="$muc"}true{else}false{/if});
                                 return false;
-                            } else if(event.keyCode == 38 && this.value == '') {
-                                Chat_ajaxLast(this.dataset.jid);
-                            } else if(event.keyCode == 40
-                            && (this.value == '' || Chat.edit == true)) {
-                                Chat.clearReplace();
                             } else {
                                 {if="!$muc"}
                                 if(state == 0 || state == 2) {
@@ -145,3 +149,4 @@
         </li>
     </ul>
 </div>
+

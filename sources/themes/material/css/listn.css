@@ -3,6 +3,10 @@ ul.list {
     padding: 0;
 }
 
+ul.list li:not(.subheader) {
+    padding: 0.25rem 0;
+}
+
 ul.list.middle li:not(.subheader) {
     padding: 0.75rem 0;
 }
@@ -23,7 +27,6 @@ ul.list li > *:not(p) {
 
 /* Active list */
 
-
 ul.list.active li:hover:not(.subheader),
 ul.list.active.all li:hover,
 ul.list.active li.active:not(.subheader) {
@@ -33,31 +36,32 @@ ul.list.active li.active:not(.subheader) {
 
 /* Main elements */
 
-ul.list li > .control,
-ul.list li > .primary {
+ul.list li .control,
+ul.list li .primary {
     width: 5rem;
     height: 5rem;
     top: 50%;
     margin-top: -2.5rem;
     position: absolute;
+    line-height: 5rem;
 }
-ul.list li > .control.active,
-ul.list li > .primary.active {
-    width: 7rem;
-    height: 7rem;
+
+ul.list li .control:not(.bubble):not(.thumb),
+ul.list li .primary:not(.bubble):not(.thumb) {
+    margin-top: -3rem;
+    padding: 0.5rem;
+}
+
+ul.list.middle li .control:not(.bubble):not(.thumb),
+ul.list.middle li .primary:not(.bubble):not(.thumb) {
     margin-top: -3.5rem;
-    line-height: 7rem;
+    padding: 1rem 0.5rem;
 }
 
-ul.list li > .primary.active {
-    left: 0;
-}
-
-ul.list li > .control.small,
-ul.list li > .primary.small {
-    width: 3rem;
-    height: 3rem;
-    margin-top: -1.5rem;
+ul.list.thick li .control:not(.bubble):not(.thumb),
+ul.list.thick li .primary:not(.bubble):not(.thumb) {
+    margin-top: -4.25rem;
+    padding: 1.75rem 0.5rem;
 }
 
 ul.list > li > *:not(img):not(.counter):not(span):not(.bubble):not(.button),
@@ -151,8 +155,11 @@ ul.list li.subheader > p {
 
 /* If we have a primary control */
 
-
 ul.list li > .primary {
+    left: 1.5rem;
+}
+
+ul.list li > .primary.bubble {
     left: 2rem;
 }
 
@@ -167,39 +174,37 @@ ul.list li > .control {
 }
 
 ul.list li > .control ~ .control {
-    right: 5rem;
+    right: 6rem;
 }
 
 ul.list li > .control ~ .control ~ .control {
-    right: 10rem;
+    right: 12rem;
 }
 
 /* Limit the size of the main content */
 
 ul.list li > .control ~ *:not(.control):not(.bubble):not(.counter) {
-    width: calc(100% - 5rem);
+    width: calc(100% - 6rem);
 }
 
 ul.list li > .control ~ .control ~ *:not(.control):not(.bubble):not(.counter) {
-    width: calc(100% - 10rem);
+    width: calc(100% - 12rem);
 }
 
 ul.list li > .control ~ .control ~ .control ~ *:not(.control):not(.bubble):not(.counter) {
-    width: calc(100% - 15rem);
-}
-
-/* Place the other controls */
-
-header > ul.list li > .control ~ .control {
-    right: 7rem;
-}
-
-header > ul.list li > .control ~ .control ~ .control {
-    right: 14rem;
+    width: calc(100% - 18rem);
 }
 
 /* Limit the size of the main content */
 
+header > ul.list li .primary {
+    left: 0;
+}
+
+header > ul.list li > .primary ~ :not(.primary):not(.counter):not(.bubble):not(.control) {
+    padding-left: 9rem;
+}
+/*
 header > ul.list li > .control ~ *:not(.control):not(.bubble):not(.counter) {
     width: calc(100% - 7rem);
 }
@@ -211,7 +216,7 @@ header > ul.list li > .control ~ .control ~ *:not(.control):not(.bubble):not(.co
 header > ul.list li > .control ~ .control ~ .control ~ *:not(.control):not(.bubble):not(.counter) {
     width: calc(100% - 21rem);
 }
-
+*/
 /* Tabs */
 
 ul.tabs {
@@ -386,5 +391,23 @@ ul.context_menu {
 
 ul.context_menu.shown {
     display: block;
+}
+
+/* Divided */
+
+*.divided:not(.spaced) > *:not(:last-child),
+*.divided.spaced > *:not(:last-child).subheader,
+*.divided.spaced > *:not(:last-child):not(.subheader):after {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+}
+
+*.divided.spaced > *:not(:last-child):after {
+    position: absolute;
+    right: 0;
+    bottom: 0rem;
+    content: "";
+    display: block;
+    width: calc(100% - 9rem);
 }
 

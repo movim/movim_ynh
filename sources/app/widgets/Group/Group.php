@@ -13,10 +13,11 @@ use Moxl\Xec\Action\Pubsub\SetConfig;
 use Moxl\Xec\Action\Pubsub\Delete;
 
 use Respect\Validation\Validator;
+use Cocur\Slugify\Slugify;
 
 class Group extends \Movim\Widget\Base
 {
-    private $_paging = 15;
+    private $_paging = 10;
     private $_role = null;
 
     function load()
@@ -26,6 +27,7 @@ class Group extends \Movim\Widget\Base
         $this->registerEvent('pubsub_getitemsid_handle', 'onItems', 'groups');
         $this->registerEvent('pubsub_getitems_error', 'onItemsError', 'groups');
         $this->registerEvent('pubsub_getitemsid_error', 'onItemsError', 'groups');
+        $this->registerEvent('pubsub_getmetadata_handle', 'onMetadata', 'groups');
 
         $this->registerEvent('pubsub_subscribe_handle', 'onSubscribed');
         $this->registerEvent('pubsub_unsubscribe_handle', 'onUnsubscribed');
@@ -69,7 +71,9 @@ class Group extends \Movim\Widget\Base
 
         $html = $view->draw('_group_ticker', true);
 
-        RPC::call('MovimTpl.fill', '#group_widget.'.stringToUri($server.'_'.$node), $html);
+        $slugify = new Slugify();
+
+        RPC::call('MovimTpl.fill', '#group_widget.'.$slugify->slugify($server.'_'.$node), $html);
         RPC::call('Group.clearLoad');
         RPC::call('MovimTpl.showPanel');
     }
@@ -96,6 +100,13 @@ class Group extends \Movim\Widget\Base
         }
     }
 
+    function onMetadata($packet)
+    {
+        list($server, $node) = $packet->content;
+
+        RPC::call('MovimTpl.fill', '#group_widget > header', $this->prepareHeader($server, $node));
+    }
+
     function onAffiliations($packet)
     {
         list($affiliations, $server, $node) = array_values($packet->content);
@@ -105,7 +116,7 @@ class Group extends \Movim\Widget\Base
                 $this->_role = (string)$r[1];
         }
 
-        Header::fill($this->prepareHeader($server, $node));
+        RPC::call('MovimTpl.fill', '#group_widget > header', $this->prepareHeader($server, $node));
 
         //if(isset($this->_role)
         //&& ($this->_role == 'owner' || $this->_role == 'publisher')) {
@@ -198,7 +209,9 @@ class Group extends \Movim\Widget\Base
         $view->assign('node', $node);
         $html .= $view->draw('_group_publish', true);
 
-        RPC::call('MovimTpl.fill', '#group_widget.'.stringToUri($server.'_'.$node), $html);
+        $slugify = new Slugify();
+
+        RPC::call('MovimTpl.fill', '#group_widget.'.$slugify->slugify($server.'_'.$node).' > div.card', $html);
         RPC::call('Group.enableVideos');
         unset($html);
     }
@@ -257,7 +270,9 @@ class Group extends \Movim\Widget\Base
     {
         if(!$this->validateServerNode($server, $node)) return;
 
-        RPC::call('Group.addLoad', stringToUri($server.'_'.$node));
+        $slugify = new Slugify();
+
+        RPC::call('Group.addLoad', $slugify->slugify($server.'_'.$node));
 
         $r = new GetItemsId;
         $r->setTo($server)
@@ -269,7 +284,7 @@ class Group extends \Movim\Widget\Base
     function ajaxGetHistory($server, $node, $page)
     {
         $html = $this->prepareGroup($server, $node, $page);
-        RPC::call('movim_append', 'group_widget', $html);
+        RPC::call('MovimTpl.append', '#group_widget > div', $html);
         RPC::call('Group.enableVideos');
     }
 
@@ -365,7 +380,8 @@ class Group extends \Movim\Widget\Base
     function ajaxClear()
     {
         $html = $this->prepareEmpty();
-        RPC::call('movim_fill', 'group_widget', $html);
+        RPC::call('MovimTpl.fill', '#group_widget header', '');
+        RPC::call('MovimTpl.fill', '#group_widget > div', $html);
     }
 
     function prepareEmpty()
@@ -417,6 +433,7 @@ class Group extends \Movim\Widget\Base
         $view->assign('page', $page);
         $view->assign('posts', $posts);
         $view->assign('paging', $this->_paging);
+
         $html = $view->draw('_group_posts', true);
 
         return $html;

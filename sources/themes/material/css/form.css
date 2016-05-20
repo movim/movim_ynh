@@ -1,7 +1,7 @@
 /* Form */
 
 form > div:not(.clear):not(.control) {
-    min-height: 9.5rem;
+    min-height: 9rem;
     position: relative;
     box-sizing: border-box;
 }
@@ -12,7 +12,6 @@ form > div.compact:not(.clear):not(.control) {
 
 li > form > div:not(.control) { /* If we put the form in a list */
     min-height: 0;
-    line-height: 3rem;
     padding-top: 0rem;
     top: -1.5rem;
 }
@@ -30,12 +29,7 @@ form > div > label {
 form > div.icon {
     padding-left: 9rem;
 }
-/*
-form > div > input:focus + label,
-form > div > textarea:focus + label {
-    display: block;
-}
-*/
+
 form > div > textarea,
 #hiddendiv {
     border: none;
@@ -45,26 +39,30 @@ form > div > textarea,
     box-sizing: border-box;
 }
 
-form > div > .select {
-    position: relative;
-}
-
 form > div > .select:after {
     font-family: "Material-Design-Iconic-Font";
     content: "\f2f2";
     display: block;
     font-size: 4rem;
-    color: #B8B8B8;
+    color: #999;
     position: absolute;
     right: 1.25rem;
     bottom: 0.25rem;
     pointer-events: none;
 }
 
+form > div > .select:hover:after {
+    color: #555;
+}
+
 form > div > .select select {
-    width: calc(100% + 3rem);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
     background-color: transparent;
     background-image: none;
+    padding: 1rem 0;
 }
 
 main > header form > div:not(.clear):not(.control) {
@@ -92,10 +90,19 @@ main > header form > div:not(.clear):not(.control) > .select select {
 }
 
 /* Placeholders to mimic FF */
+
 ::-webkit-input-placeholder, /* WebKit browsers */
 :-ms-input-placeholder { /* Internet Explorer 10+ */
-    color:    #fff;
+    color: #fff;
     opacity: 0.5;
+}
+
+/* Webkit weird CSS, sic */
+
+form > div > .select select,
+form > div > input:not([type=submit]),
+form > div > textarea {
+    outline-width: 0;
 }
 
 form > div > .select,
@@ -103,15 +110,19 @@ form > div > input:not([type=submit]),
 form > div > textarea {
     display: block;
     padding: 1rem 0;
-    padding-top: 5rem;
+    padding-top: 4.5rem;
     width: 100%;
     background-color: transparent;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
     margin-bottom: 1rem;
 
     overflow: hidden; /* Fixme */
+    box-shadow:0px 1px 0px rgba(0, 0, 0, 0.12);
+}
 
-    box-shadow: none; /* Firefox weird CSS */
+form > div > .select {
+    position: relative;
+    padding-top: 4rem;
+    padding-bottom: 0;
 }
 
 form > div.compact > .select,
@@ -125,19 +136,8 @@ form > div > input:not([type=submit]):-webkit-autofill {
     -webkit-box-shadow: 0 0 0 50px white inset;
 }
 form > div > input:not([type=submit]):-webkit-autofill:focus {
-    -webkit-box-shadow: 0;
+    box-shadow: 0;
     -webkit-text-fill-color: #333;
-}
-
-form > div > input:focus,
-form > div > textarea:focus {
-    border-bottom-width: 2px;
-    margin-bottom: calc(1rem - 1px);
-}
-
-form > div > input:invalid,
-form > div > input:required {
-    box-shadow: none;
 }
 
 /* Checkbox element */
@@ -247,6 +247,7 @@ form > div > input:disabled + label {
     float: right;
 }
 
+.button:disabled,
 .button.inactive {
     opacity: 0.5;
     pointer-events:none;
@@ -358,7 +359,7 @@ header.big ~ .button.action {
 
 @media screen and (min-width: 1025px) {
     main > section > div:first-child:nth-last-child(2) .button.action {
-        right: calc(65% + 3rem);
+        right: calc(70% + 3rem);
     }
 }
 
@@ -367,6 +368,7 @@ header.big ~ .button.action {
     bottom: 7rem;
     left: 0;
     padding: 0;
+    pointer-events: none;
 }
 
 .button.action .actions li {
@@ -381,6 +383,10 @@ header.big ~ .button.action {
     opacity: 0;
     transition: all 0.3s ease 0s;
     pointer-events: none;
+}
+
+.button.action.active .actions {
+    pointer-events: auto;
 }
 
 .button.action.active .actions li {
@@ -413,3 +419,4 @@ header.big ~ .button.action {
     word-wrap: break-word;
     overflow-wrap: break-word; /* future version of deprecated 'word-wrap' */
 }
+

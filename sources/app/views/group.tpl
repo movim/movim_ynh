@@ -1,3 +1,4 @@
+<?php $this->widget('Search');?>
 <?php $this->widget('Upload'); ?>
 
 <nav class="color dark">
@@ -6,7 +7,6 @@
 </nav>
 
 <main>
-    <?php $this->widget('Header'); ?>
     <section>
         <?php $this->widget('Groups'); ?>
         <?php $this->widget('Group'); ?>

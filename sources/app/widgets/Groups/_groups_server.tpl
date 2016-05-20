@@ -1,8 +1,24 @@
+<header>
+    <ul class="list middle">
+        <li>
+            <span class="primary icon icon gray active" onclick="Groups_ajaxSubscriptions()">
+                <i class="zmdi zmdi-arrow-back"></i>
+            </span>
+            {if="count($nodes) > 0"}
+                <span class="control icon gray">
+                    {$nodes|count}
+                </span>
+            {/if}
+            <p class="center">{$c->__('page.groups')}</p>
+            <p class="center line">{$server}</p>
+        </li>
+    </ul>
+</header>
 <ul class="list middle divided spaced active all">
-    <li class="subheader" onclick="Groups_ajaxSubscriptions()">
+    <!--<li class="subheader" >
         <span class="primary icon"><i class="zmdi zmdi-arrow-back"></i></span>
-        <p class="normal"><span class="info">{$nodes|count}</span>{$server}</p>
-    </li>
+        <p class="normal">{$server}</p>
+    </li>-->
     {loop="$nodes"}
         <li
             class="
