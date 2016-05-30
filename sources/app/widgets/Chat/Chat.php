@@ -177,12 +177,11 @@ class Chat extends \Movim\Widget\Base
         if($jid == null) {
             RPC::call('movim_fill', 'chat_widget', $this->prepareEmpty());
         } else {
-            $n = new Notification;
-            $n->ajaxCurrent('chat|'.$jid);
-            $n->ajaxClear('chat|'.$jid);
-
             $chats = new Chats;
             $chats->ajaxGetHistory($jid);
+
+            $notif = new Notification;
+            $notif->ajaxClear('chat|'.$jid);
 
             $html = $this->prepareChat($jid);
 
