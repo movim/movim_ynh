@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# Exit on command errors and treat unset variables as an error
+set -eu
+
+app="movim"
+db_user=$app
+db_name=$app
+
+# Source YunoHost helpers
+source /usr/share/yunohost/helpers
+
+# Retrieve app settings
+domain=$(ynh_app_setting_get "$app" domain)
+path=$(ynh_app_setting_get "$app" path)
+db_pwd=$(ynh_app_setting_get "$app" mysqlpwd)
+
+# Copy the app files
+DESTDIR="/var/www/$app"
+ynh_backup "$DESTDIR" "sources"
+
+# Copy the conf files
+ynh_backup "/etc/nginx/conf.d/${domain}.d/${app}.conf" "nginx.conf"
+ynh_backup "/etc/php5/fpm/pool.d/${app}.conf" "php-fpm.conf"
+
+# Copy the service file
+[[ -d /run/systemd/system ]] \
+  && ynh_backup "/etc/systemd/system/movim.service" "movim.service" \
+  || ynh_backup "/etc/init.d/movim" "movim.init"
+
+# Dump the database
+mysqldump -u "$db_user" -p"$db_pwd" --no-create-db "$db_name" > ./dump.sql

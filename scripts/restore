@@ -1,0 +1,71 @@
+#!/bin/bash
+
+# Exit on command errors and treat unset variables as an error
+set -eu
+
+app="movim"
+db_name=$app
+db_user=$app
+
+# Source YunoHost helpers
+source /usr/share/yunohost/helpers
+
+# Retrieve old app settings
+domain=$(ynh_app_setting_get "$app" domain)
+path=$(ynh_app_setting_get "$app" path)
+db_pwd=$(ynh_app_setting_get "$app" mysqlpwd)
+
+# Check domain/path availability
+sudo yunohost app checkurl "${domain}${path}" -a "$app" \
+  || exit 1
+
+# Check destination directory
+DESTDIR="/var/www/$app"
+[[ -d $DESTDIR ]] && ynh_die \
+"The destination directory '$DESTDIR' already exists.\
+ You should safely delete it before restoring this app."
+
+# Check configuration files
+nginx_conf="/etc/nginx/conf.d/${domain}.d/${app}.conf"
+[[ -f $nginx_conf ]] && ynh_die \
+"The NGINX configuration already exists at '${nginx_conf}'.
+ You should safely delete it before restoring this app."
+phpfpm_conf="/etc/php5/fpm/pool.d/${app}.conf"
+[[ -f $phpfpm_conf ]] && ynh_die \
+"The PHP FPM configuration already exists at '${phpfpm_conf}'.
+ You should safely delete it before restoring this app."
+
+# Restore the app source code
+sudo cp -a ./sources "$DESTDIR"
+
+# Create movim system user and set permissions
+sudo useradd -d /var/www/movim -s /bin/sh movim
+sudo chown -R movim:www-data "$DESTDIR"
+sudo find "${DESTDIR}/" -type f -print0 | sudo xargs -0 chmod 0644
+sudo find "${DESTDIR}/" -type d -print0 | sudo xargs -0 chmod 0755
+sudo chmod 400 "${DESTDIR}/config/db.inc.php"
+
+# Create and restore the database
+ynh_mysql_create_db "$db_name" "$db_user" "$db_pwd"
+ynh_mysql_connect_as "$db_user" "$db_pwd" "$db_name" < ./dump.sql
+
+# Restore configuration files
+sudo cp -a ./nginx.conf   "$nginx_conf"
+sudo cp -a ./php-fpm.conf "$phpfpm_conf"
+
+# Restore service file
+if [ -f ./movim.service ]; then
+    sudo cp ./movim.service /etc/systemd/system/
+    sudo systemctl --quiet daemon-reload
+    sudo systemctl --quiet enable movim.service
+    sudo systemctl --quiet start movim.service
+else
+    sudo cp ./movim.init /etc/init.d/movim
+    sudo chmod 755 /etc/init.d/movim
+    sudo update-rc.d movim defaults
+    sudo /etc/init.d/movim start
+fi
+
+# Reload services
+sudo service php5-fpm restart || true
+sudo service nginx reload || true
