@@ -1,9 +1,13 @@
 #!/bin/bash
-#
+
+# Exit on command errors and treat unset variables as an error
+set -eu
+
+app="movim"
 
 # Retrieve arguments
 domain=$1
-path=$2
+path=${2:-/}
 admin=$3
 password=$4
 language=$5
@@ -11,73 +15,60 @@ ssoenabled=$6
 port=$7
 timezone=`cat /etc/timezone`
 
+# Source YunoHost helpers
+source /usr/share/yunohost/helpers
+
 # Check domain/path availability
-sudo yunohost app checkurl $domain$path -a movim
-if [[ ! $? -eq 0 ]]; then
-   exit 1
-fi
+sudo yunohost app checkurl "${domain}${path}" -a "$app" \
+  || exit 1
 
 # Check port availability
-sudo yunohost app checkport $port
-if [[ ! $? -eq 0 ]]; then
-   exit 1
-fi
+sudo yunohost app checkport "$port" \
+  || exit 1
 
 # Check user availability
-sudo yunohost user info $admin
-if [[ ! $? -eq 0 ]]; then
-exit 1
-fi
+ynh_user_exists "$admin" \
+  || ynh_die "The chosen admin user does not exist."
 
 # Check password not empty
-if [[ -z "$password" ]]; then
-printf "Error empty admin password, installation aborted"
-   exit 1
-fi
+[[ -n "$password" ]] \
+  || ynh_die "You must set an admin password."
 
 # Check timezone
-if [[ -z "$timezone" ]]; then
-printf "Could not detect Timezone, please check /etc/timezone. Installation aborted"
-  exit 1
-else
-printf "Detected Timezone $timezone \n"
-fi
+[[ -n "$timezone" ]] \
+  || ynh_die "Could not detect timezone, please check /etc/timezone." \
+  && echo "Detected timezone: $timezone"
 
-# Check path not empty
-if [[ -z "$path" ]]; then
-printf "Error path is empty, installation aborted"
-   exit 1
-fi
+# Save app settings
+ynh_app_setting_set "$app" admin "$admin"
+ynh_app_setting_set "$app" ssoenabled "$ssoenabled"
+ynh_app_setting_set "$app" port "$port"
+ynh_app_setting_set "$app" path "$path"
 
-# Save parameters
-sudo yunohost app setting movim admin -v $admin
-sudo yunohost app setting movim ssoenabled -v $ssoenabled
-sudo yunohost app setting movim port -v $port
-sudo yunohost app setting movim path -v $path
-
-# Generate random password
-db_pwd=$(dd if=/dev/urandom bs=1 count=30 2> /dev/null | tr -c -d '[[:alnum:]]')
+# Generate and save random MySQL password
+db_pwd=$(ynh_string_random 12)
+ynh_app_setting_set "$app" mysqlpwd "$db_pwd"
 
 # Use 'movim' as database name and user
 db_user=movim
+db_name=movim
 
-# Initialize database and store mysql password for upgrade
-sudo yunohost app initdb $db_user -p $db_pwd
-sudo yunohost app setting movim mysqlpwd -v $db_pwd
+# Create MySQL database
+ynh_mysql_create_db "$db_name" "$db_user" "$db_pwd"
 
 # Install packages
-sudo apt-get install php5-gd php5-curl php5-imagick php5-cli -y
+ynh_package_install php5-gd php5-curl php5-imagick php5-cli
 
-# Install Movim files
+# Copy Movim source files
 final_path=/var/www/movim
-sudo mkdir -p $final_path
-sudo cp -a ../sources/* $final_path
-sudo cp $final_path/config/db.example.inc.php $final_path/config/db.inc.php
+sudo cp -a ../sources "$final_path"
+sudo cp "${final_path}/config/"{db.example.inc.php,db.inc.php}
 
 # Create movim system user and set permissions
 sudo useradd -d /var/www/movim -s /bin/sh movim
-sudo chown -R movim:www-data $final_path
-sudo chmod -R 750 $final_path
+sudo chown -R movim:www-data "$final_path"
+sudo find "${final_path}/" -type f -print0 | sudo xargs -0 chmod 0640
+sudo find "${final_path}/" -type d -print0 | sudo xargs -0 chmod 0750
 
 # Install PHP dependencies
 sudo su -c "curl -sS https://getcomposer.org/installer | php -- --install-dir=$final_path" movim
@@ -126,14 +117,12 @@ sudo cp ../conf/nginx.conf /etc/nginx/conf.d/$domain.d/movim.conf
 # SSOwat Configuration
 if [ $ssoenabled = "No" ];
 then
-	sudo yunohost app setting movim skipped_uris -v "/"  
-	sudo yunohost app ssowatconf
+	ynh_app_setting_set "$app" skipped_uris "/"
 	sudo su -c "cd $final_path && php mud.php config --xmppwhitelist=$domain" movim
 else
-	sudo yunohost app setting movim unprotected_uris -v "/"
+	ynh_app_setting_set "$app" unprotected_uris "/"
         # Next line is to avoid SSO to auto-connect just after disconnect
         sudo sed -i "s@redirect('login')@redirect('')@g" $final_path/app/controllers/DisconnectController.php
-	sudo yunohost app ssowatconf
 fi
 
 # Start Movim

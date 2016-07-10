@@ -1,35 +1,36 @@
 #!/bin/bash
-#
 
-# Retrieve arguments
-path=$(sudo yunohost app setting movim path)
-domain=$(sudo yunohost app setting movim domain)
-port=$(sudo yunohost app setting movim port)
-public_site=$(sudo yunohost app setting movim public_site)
-ssoenabled=$(sudo yunohost app setting movim ssoenabled)
+# Exit on command errors and treat unset variables as an error
+set -eu
+
+app="movim"
+
+# Source YunoHost helpers
+source /usr/share/yunohost/helpers
+
+# Retrieve app settings
+domain=$(ynh_app_setting_get "$app" domain)
+path=$(ynh_app_setting_get "$app" path)
+port=$(ynh_app_setting_get "$app" port)
+ssoenabled=$(ynh_app_setting_get "$app" ssoenabled)
+public_site=$(ynh_app_setting_get "$app" public_site)
 timezone=`cat /etc/timezone`
 
 # Check timezone
-if [[ -z "$timezone" ]]; then
-printf "Could not detect Timezone, please check /etc/timezone. Installation aborted"
-  exit 1
-else
-printf "Detected Timezone $timezone \n"
-fi
+[[ -n "$timezone" ]] \
+  || ynh_die "Could not detect timezone, please check /etc/timezone." \
+  && echo "Detected timezone: $timezone"
 
-# Install Movim files
+# Copy Movim source files
 final_path=/var/www/movim
-sudo cp -a ../sources/* $final_path
+sudo cp -a ../sources "$final_path"
 
 # Create movim user if not exists and set permissions
-if grep -q movim /etc/passwd; then
-	sudo chown -R movim:www-data $final_path
-	sudo chmod -R 750 $final_path
-else
-	sudo useradd -s /bin/sh -d $final_path movim
-	sudo chown -R movim:www-data $final_path
-	sudo chmod -R 750 $final_path
-fi
+ynh_system_user_exists movim \
+  || sudo useradd -d /var/www/movim -s /bin/sh movim
+sudo chown -R movim:www-data "$final_path"
+sudo find "${final_path}/" -type f -print0 | sudo xargs -0 chmod 0640
+sudo find "${final_path}/" -type d -print0 | sudo xargs -0 chmod 0750
 
 # Update PHP dependencies
 sudo su -c "cd $final_path && php composer.phar config --global discard-changes true" movim
@@ -42,32 +43,30 @@ sudo sed -i "s@/ws/@$path/ws/@g" $final_path/app/assets/js/movim_websocket.js
 sudo su -c "cd $final_path && php mud.php db --set" movim
 
 # Reset SSO parameters
-sudo yunohost app setting movim protected_uris -d
-sudo yunohost app setting movim skipped_uris -d
+ynh_app_setting_delete "$app" protected_uris
+ynh_app_setting_delete "$app" skipped_uris
 sudo yunohost app clearaccess movim
 
 # Replace old public_site variable (if exists) by ssoenabled
 if [ ! -z "$public_site" ] && [ $public_site = "Yes" ];
 then
-        sudo yunohost app setting movim public_site -d
-        sudo yunohost app setting movim ssoenabled -v "No"
+        ynh_app_setting_delete "$app" public_site
+        ynh_app_setting_set "$app" ssoenabled "No"
 elif [ ! -z "$public_site" ] && [ $public_site = "No" ];
 then
-        sudo yunohost app setting movim public_site -d
-        sudo yunohost app setting movim ssoenabled -v "Yes"
+        ynh_app_setting_delete "$app" public_site
+        ynh_app_setting_set "$app" ssoenabled "Yes"
 fi
 
 # SSOwat Configuration
 if [ $ssoenabled = "No" ];
 then
-        sudo yunohost app setting movim skipped_uris -v "/"
-        sudo yunohost app ssowatconf
+	ynh_app_setting_set "$app" skipped_uris "/"
         sudo su -c "cd $final_path && php mud.php config --xmppwhitelist=$domain" movim
 else
-        sudo yunohost app setting movim unprotected_uris -v "/"
+	ynh_app_setting_set "$app" unprotected_uris "/"
         # Next line is to avoid SSO to auto-connect just after disconnect
         sudo sed -i "s@redirect('login')@redirect('')@g" $final_path/app/controllers/DisconnectController.php
-        sudo yunohost app ssowatconf
 fi
 
 # Update init scripts

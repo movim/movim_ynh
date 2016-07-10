@@ -17,6 +17,9 @@
         "mysql",
         "metronome"
     ],
+    "requirements": {
+        "yunohost": ">= 2.4.0"
+    },
     "multi_instance": "false",
     "arguments": {
         "install" : [

@@ -1,10 +1,14 @@
 #!/bin/bash
 
-db_user=movim
-db_name=movim
-root_pwd=$(sudo cat /etc/yunohost/mysql)
+app="movim"
 
-#Stop service and remove init
+# Source YunoHost helpers
+source /usr/share/yunohost/helpers
+
+# Retrieve app settings
+domain=$(ynh_app_setting_get "$app" domain)
+
+# Stop service and remove init
 sudo service php5-fpm stop
 sudo /etc/init.d/movim stop
 sudo systemctl stop movim.service
@@ -13,13 +17,20 @@ sudo update-rc.d -f movim remove
 sudo rm -f /etc/init.d/movim
 sudo rm -f /lib/systemd/system/movim.service
 
-#Drop database, movim files and user.
-mysql -u root -p$root_pwd -e "DROP DATABASE $db_name ; DROP USER $db_user@localhost ;"
-sudo userdel movim
+# Drop MySQL database and user
+db_user=movim
+db_name=movim
+ynh_mysql_drop_db "$db_name" || true
+ynh_mysql_drop_user "$db_user" || true
+
+# Remove Movim files and user
+ynh_system_user_exists movim \
+  && sudo userdel movim
 sudo rm -rf /var/www/movim
-domain=$(sudo yunohost app setting movim domain)
+
+# Remove nginx and php-fpm configuration files
 sudo rm -f /etc/nginx/conf.d/$domain.d/movim.conf
-sudo rm /etc/php5/fpm/pool.d/movim.conf
+sudo rm -f /etc/php5/fpm/pool.d/movim.conf
 
 # Restarting services
 sudo service nginx reload
