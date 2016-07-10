@@ -91,7 +91,7 @@ sudo chmod 400 "${DESTDIR}/config/db.inc.php"
 (curl -sS https://getcomposer.org/installer \
      | exec_cmd php -- --quiet --install-dir="$DESTDIR" \
  && exec_cmd php composer.phar config --global discard-changes true \
- && exec_cmd php composer.phar install -n) \
+ && exec_cmd php composer.phar install --quiet --no-interaction) \
   || ynh_die "Unable to install Movim dependencies."
 
 # Set Movim database and configuration

@@ -40,7 +40,7 @@ sudo chmod 400 "${DESTDIR}/config/db.inc.php"
 
 # Update PHP dependencies using composer
 (exec_cmd php composer.phar config --global discard-changes true \
- && exec_cmd php composer.phar install -n) \
+ && exec_cmd php composer.phar install --quiet --no-interaction) \
   || ynh_die "Unable to update Movim dependencies."
 
 # Upgrade Movim database as needed
