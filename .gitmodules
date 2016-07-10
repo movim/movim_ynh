@@ -1,0 +1,3 @@
+[submodule "sources"]
+	path = sources
+	url = git@github.com:movim/movim.git
