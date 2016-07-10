@@ -8,6 +8,14 @@ source /usr/share/yunohost/helpers
 # Retrieve app settings
 domain=$(ynh_app_setting_get "$app" domain)
 
+# Remove nginx and php-fpm configuration files
+sudo rm -f "/etc/nginx/conf.d/${domain}.d/movim.conf"
+sudo rm -f "/etc/php5/fpm/pool.d/movim.conf"
+
+# Reload services
+sudo service nginx reload
+sudo service php5-fpm restart
+
 # Stop service and remove it
 sudo service movim stop
 if [ -d /run/systemd/system ]; then
@@ -26,14 +34,6 @@ ynh_mysql_drop_db "$db_name" || true
 ynh_mysql_drop_user "$db_user" || true
 
 # Remove Movim files and user
+sudo rm -rf /var/www/movim
 ynh_system_user_exists movim \
   && sudo userdel movim
-sudo rm -rf /var/www/movim
-
-# Remove nginx and php-fpm configuration files
-sudo rm -f /etc/nginx/conf.d/$domain.d/movim.conf
-sudo rm -f /etc/php5/fpm/pool.d/movim.conf
-
-# Reload services
-sudo service nginx reload
-sudo service php5-fpm restart
