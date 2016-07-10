@@ -22,6 +22,27 @@ timezone=`cat /etc/timezone`
   || ynh_die "Could not detect timezone, please check /etc/timezone." \
   && echo "Detected timezone: $timezone"
 
+# Init git repository as needed
+if [ ! -d "${DESTDIR}/.git" ]; then
+    tmp_path=/tmp/movim-git
+    sudo rm -rf "$tmp_path"
+
+    # Download Movim source code
+    (git clone --quiet "$GIT_REPO" "$tmp_path" \
+       && cd "$tmp_path" && git checkout --quiet "$HEAD_COMMIT") \
+      || ynh_die "Unable to download Movim source code."
+    sudo cp "${DESTDIR}/config/db.inc.php" "${tmp_path}/config/db.inc.php"
+
+    # Replace current source code
+    sudo rm -rf "$DESTDIR"
+    sudo mv "$tmp_path" "$DESTDIR"
+    sudo chown -R movim:www-data "$DESTDIR"
+
+    # Install composer for PHP dependencies
+    curl -sS https://getcomposer.org/installer \
+        | exec_cmd php -- --quiet --install-dir="$DESTDIR"
+fi
+
 # Update Movim source code
 (exec_cmd git fetch --quiet origin \
    && exec_cmd git reset --quiet --hard "$HEAD_COMMIT") \
