@@ -8,14 +8,16 @@ source /usr/share/yunohost/helpers
 # Retrieve app settings
 domain=$(ynh_app_setting_get "$app" domain)
 
-# Stop service and remove init
-sudo service php5-fpm stop
-sudo /etc/init.d/movim stop
-sudo systemctl stop movim.service
-sudo systemctl disable movim.service
-sudo update-rc.d -f movim remove
-sudo rm -f /etc/init.d/movim
-sudo rm -f /lib/systemd/system/movim.service
+# Stop service and remove it
+sudo service movim stop
+if [ -d /run/systemd/system ]; then
+    sudo systemctl --quiet disable movim.service
+    sudo rm -f /lib/systemd/system/movim.service
+    sudo systemctl --quiet daemon-reload
+else
+    sudo update-rc.d -f movim remove
+    sudo rm -f /etc/init.d/movim
+fi
 
 # Drop MySQL database and user
 db_user=movim
@@ -32,6 +34,6 @@ sudo rm -rf /var/www/movim
 sudo rm -f /etc/nginx/conf.d/$domain.d/movim.conf
 sudo rm -f /etc/php5/fpm/pool.d/movim.conf
 
-# Restarting services
+# Reload services
 sudo service nginx reload
-sudo service php5-fpm start
+sudo service php5-fpm restart

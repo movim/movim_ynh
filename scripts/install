@@ -101,20 +101,19 @@ exec_cmd php mud.php config --loglevel=1 \
     --username="$admin" --password="$password"
 
 # Copy init script or systemd service
-sudo sed -i "s@YHURL@$domain$path@g" ../conf/movim.{service,init}
-sudo sed -i "s@YHDIR@$DESTDIR@g" ../conf/movim.{service,init}
-sudo sed -i "s@YHPORT@$port@g" ../conf/movim.{service,init}
-initcheck=`pgrep -ox systemd`
-if [ "$initcheck" = "1" ];
-then
-	sudo cp ../conf/movim.service /etc/systemd/system/
-	sudo systemctl enable movim.service
-	sudo systemctl start movim.service
+sudo sed -i "s@YHURL@${domain}${path}@g" ../conf/movim.{service,init}
+sudo sed -i "s@YHDIR@${DESTDIR}@g" ../conf/movim.{service,init}
+sudo sed -i "s@YHPORT@${port}@g" ../conf/movim.{service,init}
+if [ -d /run/systemd/system ]; then
+    sudo cp ../conf/movim.service /etc/systemd/system/
+    sudo systemctl --quiet daemon-reload
+    sudo systemctl --quiet enable movim.service
+    sudo systemctl --quiet start movim.service
 else
-	sudo cp ../conf/movim.init /etc/init.d/movim
-	sudo chmod 755 /etc/init.d/movim
-	sudo update-rc.d movim defaults
-	sudo /etc/init.d/movim start
+    sudo cp ../conf/movim.init /etc/init.d/movim
+    sudo chmod 755 /etc/init.d/movim
+    sudo update-rc.d movim defaults
+    sudo /etc/init.d/movim start
 fi
 
 # php-fpm configuration
@@ -137,6 +136,6 @@ else
     apply_sso_patch
 fi
 
-# Start Movim
+# Reload services
 sudo service php5-fpm restart
 sudo service nginx reload

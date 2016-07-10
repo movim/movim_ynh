@@ -70,21 +70,19 @@ else
 fi
 
 # Update init scripts
-sudo sed -i "s@YHURL@$domain$path@g" ../conf/movim.{service,init}
-sudo sed -i "s@YHDIR@$DESTDIR@g" ../conf/movim.{service,init}
-sudo sed -i "s@YHPORT@$port@g" ../conf/movim.{service,init}
-initcheck=`pgrep -ox systemd`
-if [ "$initcheck" = "1" ];
-then
-	sudo rm -f /lib/systemd/system/movim.service
-	sudo cp ../conf/movim.service /etc/systemd/system/
-	sudo systemctl daemon-reload
+sudo sed -i "s@YHURL@${domain}${path}@g" ../conf/movim.{service,init}
+sudo sed -i "s@YHDIR@${DESTDIR}@g" ../conf/movim.{service,init}
+sudo sed -i "s@YHPORT@${port}@g" ../conf/movim.{service,init}
+if [ -d /run/systemd/system ]; then
+    sudo rm -f /lib/systemd/system/movim.service
+    sudo cp ../conf/movim.service /etc/systemd/system/
+    sudo systemctl --quiet daemon-reload
 else
-	sudo /etc/init.d/movim stop
-	sudo cp ../conf/movim.init /etc/init.d/movim
-	sudo chmod 755 /etc/init.d/movim
-	sudo update-rc.d movim defaults
-	sudo /etc/init.d/movim start
+    sudo /etc/init.d/movim stop
+    sudo cp ../conf/movim.init /etc/init.d/movim
+    sudo chmod 755 /etc/init.d/movim
+    sudo update-rc.d movim defaults
+    sudo /etc/init.d/movim start
 fi
 
 # Update php-fpm configuration
@@ -98,7 +96,7 @@ sed -i "s@YHPORT@$port@g" ../conf/nginx.conf
 sed -i "s@//ws/@/ws/@g" ../conf/nginx.conf # Avoid duplicate /
 sudo cp ../conf/nginx.conf /etc/nginx/conf.d/$domain.d/movim.conf
 
-# Reload
+# Reload services
 sudo service movim restart
 sudo service php5-fpm restart
 sudo service nginx reload
