@@ -66,8 +66,7 @@ if [[ "$ssoenabled" =~ ^0|No$ ]]; then
     exec_cmd php mud.php config --xmppwhitelist=$domain
 else
     ynh_app_setting_set "$app" unprotected_uris "/"
-    # Next line is to avoid SSO to auto-connect just after disconnect
-    sudo sed -i "s@redirect('login')@redirect('')@g" $DESTDIR/app/controllers/DisconnectController.php
+    apply_sso_patch
 fi
 
 # Update init scripts

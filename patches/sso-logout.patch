@@ -1,0 +1,13 @@
+diff --git a/app/controllers/DisconnectController.php b/app/controllers/DisconnectController.php
+index 7af0d4b..74f0c61 100644
+--- a/app/controllers/DisconnectController.php
++++ b/app/controllers/DisconnectController.php
+@@ -13,6 +13,7 @@ class DisconnectController extends Base
+ 
+         Session::dispose();
+ 
+-        $this->redirect('login');
++        $main_domain = exec('cat /etc/yunohost/current_host');
++        header('Location: https://' . $main_domain . '/yunohost/sso/?action=logout');
+     }
+ }

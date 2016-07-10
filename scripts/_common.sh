@@ -11,6 +11,9 @@ HEAD_COMMIT="512523576b03c2c8952305e70681ed31172b9fd2"
 # Source code destination directory
 DESTDIR="/var/www/movim"
 
+# App package root directory should be the parent folder
+PKGDIR=$(cd ../; pwd)
+
 #
 # Common helpers
 #
@@ -20,4 +23,13 @@ DESTDIR="/var/www/movim"
 exec_cmd() {
   (cd "$DESTDIR" \
    && sudo sudo -u movim "$@")
+}
+
+# Apply the SSO patch to Movim source code
+# usage: apply_sso_patch
+apply_sso_patch() {
+  local patch_path="/tmp/sso-logout.patch"
+  cp -f "${PKGDIR}/patches/sso-logout.patch" "$patch_path"
+  exec_cmd git apply "$patch_path"
+  rm -f "$patch_path"
 }
