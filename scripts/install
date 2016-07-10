@@ -128,15 +128,14 @@ sed -i "s@YHPORT@$port@g" ../conf/nginx.conf
 sed -i "s@//ws/@/ws/@g" ../conf/nginx.conf # Avoid duplicate /
 sudo cp ../conf/nginx.conf /etc/nginx/conf.d/$domain.d/movim.conf
 
-# SSOwat Configuration
-if [ $ssoenabled = "No" ];
-then
-	ynh_app_setting_set "$app" skipped_uris "/"
-	exec_cmd php mud.php config --xmppwhitelist=$domain
+# SSOwat configuration
+if [[ "$ssoenabled" = "0" ]]; then
+    ynh_app_setting_set "$app" skipped_uris "/"
+    exec_cmd php mud.php config --xmppwhitelist="$domain"
 else
-	ynh_app_setting_set "$app" unprotected_uris "/"
-        # Next line is to avoid SSO to auto-connect just after disconnect
-        sudo sed -i "s@redirect('login')@redirect('')@g" $DESTDIR/app/controllers/DisconnectController.php
+    ynh_app_setting_set "$app" unprotected_uris "/"
+    # Next line is to avoid SSO to auto-connect just after disconnect
+    sudo sed -i "s@redirect('login')@redirect('')@g" $DESTDIR/app/controllers/DisconnectController.php
 fi
 
 # Start Movim

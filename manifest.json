@@ -20,24 +20,24 @@
     "requirements": {
         "yunohost": ">= 2.4.0"
     },
-    "multi_instance": "false",
+    "multi_instance": false,
     "arguments": {
         "install" : [
             {
                 "name": "domain",
 		"type": "domain",
                 "ask": {
-                    "en": "Pod domain",
+                    "en": "Domain of the pod",
 		    "fr": "Domaine du pod"
                 },
                 "example": "domain.org"
-            },           
- 		{
+            },
+            {
                 "name": "path",
 		"type": "path",
                 "ask": {
-                    "en": "Path",
-		    "fr": "Chemin du pod"
+                    "en": "Path to the pod",
+		    "fr": "Chemin vers le pod"
                 },
                 "example": "/movim",
                 "default": "/movim"
@@ -71,18 +71,18 @@
             },
             {
                 "name": "ssoenabled",
+                "type": "boolean",
                 "ask": {
-                    "en": "Enable SSO (autologin) ?",
-		    "fr": "Activer le SSO (connexin auto) ?"
+                    "en": "Enable SSO support (autologin)?",
+		    "fr": "Activer le support du SSO (connexion auto) ?"
                 },
-                "choices": ["Yes", "No"],
-                "default": "Yes"
+                "default": true
             },
 	    {
                 "name": "port",
                 "ask": {
-                    "en": "Movim daemon port ? (internal only)",
-		    "fr": "Port privé pour Movim ? (interne uniquement)"
+                    "en": "Movim daemon port (internal only)",
+		    "fr": "Port du daemon Movim (interne uniquement)"
                 },
                 "default": "9537"
             }
