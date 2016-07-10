@@ -5,8 +5,9 @@ set -eu
 
 app="movim"
 
-# Source YunoHost helpers
+# Source YunoHost and local helpers
 source /usr/share/yunohost/helpers
+source ./_common.sh
 
 # Retrieve app settings
 domain=$(ynh_app_setting_get "$app" domain)
@@ -21,26 +22,29 @@ timezone=`cat /etc/timezone`
   || ynh_die "Could not detect timezone, please check /etc/timezone." \
   && echo "Detected timezone: $timezone"
 
-# Copy Movim source files
-final_path=/var/www/movim
-sudo cp -a ../sources "$final_path"
+# Update Movim source code
+(exec_cmd git fetch --quiet origin \
+   && exec_cmd git reset --quiet --hard "$HEAD_COMMIT") \
+  || ynh_die "Unable to download Movim source code."
+## FIXME: consider installation in a subpath
+exec_cmd sed -i "s@'/ws/'@'${path%/}/ws/'@g" \
+    "${DESTDIR}/app/assets/js/movim_websocket.js"
 
 # Create movim user if not exists and set permissions
 ynh_system_user_exists movim \
   || sudo useradd -d /var/www/movim -s /bin/sh movim
-sudo chown -R movim:www-data "$final_path"
-sudo find "${final_path}/" -type f -print0 | sudo xargs -0 chmod 0640
-sudo find "${final_path}/" -type d -print0 | sudo xargs -0 chmod 0750
+sudo chown -R movim:www-data "$DESTDIR"
+sudo find "${DESTDIR}/" -type f -print0 | sudo xargs -0 chmod 0644
+sudo find "${DESTDIR}/" -type d -print0 | sudo xargs -0 chmod 0755
+sudo chmod 400 "${DESTDIR}/config/db.inc.php"
 
-# Update PHP dependencies
-sudo su -c "cd $final_path && php composer.phar config --global discard-changes true" movim
-sudo su -c "cd $final_path && php composer.phar install -n" movim
+# Update PHP dependencies using composer
+(exec_cmd php composer.phar config --global discard-changes true \
+ && exec_cmd php composer.phar install -n) \
+  || ynh_die "Unable to update Movim dependencies."
 
-# Movim configuration
-sudo sed -i "s@/ws/@$path/ws/@g" $final_path/app/assets/js/movim_websocket.js
-
-# Upgrade db if necessary
-sudo su -c "cd $final_path && php mud.php db --set" movim
+# Upgrade Movim database as needed
+exec_cmd php mud.php db --set
 
 # Reset SSO parameters
 ynh_app_setting_delete "$app" protected_uris
@@ -62,16 +66,16 @@ fi
 if [ $ssoenabled = "No" ];
 then
 	ynh_app_setting_set "$app" skipped_uris "/"
-        sudo su -c "cd $final_path && php mud.php config --xmppwhitelist=$domain" movim
+	exec_cmd php mud.php config --xmppwhitelist=$domain
 else
 	ynh_app_setting_set "$app" unprotected_uris "/"
         # Next line is to avoid SSO to auto-connect just after disconnect
-        sudo sed -i "s@redirect('login')@redirect('')@g" $final_path/app/controllers/DisconnectController.php
+        sudo sed -i "s@redirect('login')@redirect('')@g" $DESTDIR/app/controllers/DisconnectController.php
 fi
 
 # Update init scripts
 sudo sed -i "s@YHURL@$domain$path@g" ../conf/movim.{service,init}
-sudo sed -i "s@YHDIR@$final_path@g" ../conf/movim.{service,init}
+sudo sed -i "s@YHDIR@$DESTDIR@g" ../conf/movim.{service,init}
 sudo sed -i "s@YHPORT@$port@g" ../conf/movim.{service,init}
 initcheck=`pgrep -ox systemd`
 if [ "$initcheck" = "1" ];
@@ -93,7 +97,7 @@ sudo cp ../conf/php-fpm.conf /etc/php5/fpm/pool.d/movim.conf
 
 # Nginx configuration
 sed -i "s@PATHTOCHANGE@$path@g" ../conf/nginx.conf
-sed -i "s@ALIASTOCHANGE@$final_path/@g" ../conf/nginx.conf
+sed -i "s@ALIASTOCHANGE@$DESTDIR/@g" ../conf/nginx.conf
 sed -i "s@YHPORT@$port@g" ../conf/nginx.conf
 sed -i "s@//ws/@/ws/@g" ../conf/nginx.conf # Avoid duplicate /
 sudo cp ../conf/nginx.conf /etc/nginx/conf.d/$domain.d/movim.conf
