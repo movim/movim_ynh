@@ -7,7 +7,7 @@ source ./_common.sh
 
 # Source YunoHost helpers if exists.
 # If not, source backported helpers from file.
-if [ -d "/usr/share/yunohost/helpers" ]; then
+if [ -a "/usr/share/yunohost/helpers" ]; then
   source /usr/share/yunohost/helpers
 else
   source ./_helpers.sh
