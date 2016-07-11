@@ -17,9 +17,6 @@
         "mysql",
         "metronome"
     ],
-    "requirements": {
-        "yunohost": ">= 2.4.0"
-    },
     "multi_instance": false,
     "arguments": {
         "install" : [
@@ -71,12 +68,12 @@
             },
             {
                 "name": "ssoenabled",
-                "type": "boolean",
                 "ask": {
-                    "en": "Enable SSO support (autologin)?",
-		    "fr": "Activer le support du SSO (connexion auto) ?"
+                    "en": "Enable SSO support (autologin) ?",
+		    "fr": "Activer le support SSO (connexin auto) ?"
                 },
-                "default": true
+                "choices": ["Yes", "No"],
+		"default": "Yes"
             },
 	    {
                 "name": "port",

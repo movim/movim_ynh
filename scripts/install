@@ -15,9 +15,16 @@ ssoenabled=$6
 port=$7
 timezone=`cat /etc/timezone`
 
-# Source YunoHost and local helpers
-source /usr/share/yunohost/helpers
+# Source local helpers
 source ./_common.sh
+
+# Source YunoHost helpers if exists.
+# If not, source backported helpers from file.
+if [ -d "/usr/share/yunohost/helpers" ]; then
+  source /usr/share/yunohost/helpers
+else
+  source ./_helpers.sh
+fi
 
 # Check domain/path availability
 sudo yunohost app checkurl "${domain}${path}" -a "$app" \
@@ -63,8 +70,8 @@ ynh_package_install php5-gd php5-curl php5-imagick php5-cli
 # Download Movim source code
 tmp_path=/tmp/movim-git
 sudo rm -rf "$tmp_path"
-(git clone --quiet "$GIT_REPO" "$tmp_path" \
-   && cd "$tmp_path" && git checkout --quiet "$HEAD_COMMIT") \
+(git clone "$GIT_REPO" "$tmp_path" \
+   && cd "$tmp_path" && git checkout "$HEAD_COMMIT") \
   || ynh_die "Unable to download Movim source code."
 
 # Set database configuration
@@ -89,9 +96,9 @@ sudo chmod 400 "${DESTDIR}/config/db.inc.php"
 
 # Install PHP dependencies using composer
 (curl -sS https://getcomposer.org/installer \
-     | exec_cmd php -- --quiet --install-dir="$DESTDIR" \
+     | exec_cmd php -- --install-dir="$DESTDIR" \
  && exec_cmd php composer.phar config --global discard-changes true \
- && exec_cmd php composer.phar install --quiet --no-interaction) \
+ && exec_cmd php composer.phar install --no-interaction) \
   || ynh_die "Unable to install Movim dependencies."
 
 # Set Movim database and configuration
@@ -106,9 +113,9 @@ sudo sed -i "s@YHDIR@${DESTDIR}@g" ../conf/movim.{service,init}
 sudo sed -i "s@YHPORT@${port}@g" ../conf/movim.{service,init}
 if [ -d /run/systemd/system ]; then
     sudo cp ../conf/movim.service /etc/systemd/system/
-    sudo systemctl --quiet daemon-reload
-    sudo systemctl --quiet enable movim.service
-    sudo systemctl --quiet start movim.service
+    sudo systemctl daemon-reload
+    sudo systemctl enable movim.service
+    sudo systemctl start movim.service
 else
     sudo cp ../conf/movim.init /etc/init.d/movim
     sudo chmod 755 /etc/init.d/movim
@@ -128,7 +135,7 @@ sed -i "s@//ws/@/ws/@g" ../conf/nginx.conf # Avoid duplicate /
 sudo cp ../conf/nginx.conf /etc/nginx/conf.d/$domain.d/movim.conf
 
 # SSOwat configuration
-if [[ "$ssoenabled" = "0" ]]; then
+if [[ "$ssoenabled" = "No" ]]; then
     ynh_app_setting_set "$app" skipped_uris "/"
     exec_cmd php mud.php config --xmppwhitelist="$domain"
 else

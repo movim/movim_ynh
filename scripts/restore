@@ -7,8 +7,16 @@ app="movim"
 db_name=$app
 db_user=$app
 
-# Source YunoHost helpers
-source /usr/share/yunohost/helpers
+# Source local helpers
+source ./_common.sh
+
+# Source YunoHost helpers if exists.
+# If not, source backported helpers from file.
+if [ -d "/usr/share/yunohost/helpers" ]; then
+  source /usr/share/yunohost/helpers
+else
+  source ./_helpers.sh
+fi
 
 # Retrieve old app settings
 domain=$(ynh_app_setting_get "$app" domain)

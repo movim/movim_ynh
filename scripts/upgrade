@@ -5,9 +5,16 @@ set -eu
 
 app="movim"
 
-# Source YunoHost and local helpers
-source /usr/share/yunohost/helpers
+# Source local helpers
 source ./_common.sh
+
+# Source YunoHost helpers if exists.
+# If not, source backported helpers from file.
+if [ -d "/usr/share/yunohost/helpers" ]; then
+  source /usr/share/yunohost/helpers
+else
+  source ./_helpers.sh
+fi
 
 # Retrieve app settings
 domain=$(ynh_app_setting_get "$app" domain)
@@ -28,8 +35,8 @@ if [ ! -d "${DESTDIR}/.git" ]; then
     sudo rm -rf "$tmp_path"
 
     # Download Movim source code
-    (git clone --quiet "$GIT_REPO" "$tmp_path" \
-       && cd "$tmp_path" && git checkout --quiet "$HEAD_COMMIT") \
+    (git clone "$GIT_REPO" "$tmp_path" \
+       && cd "$tmp_path" && git checkout "$HEAD_COMMIT") \
       || ynh_die "Unable to download Movim source code."
     sudo cp "${DESTDIR}/config/db.inc.php" "${tmp_path}/config/db.inc.php"
 
@@ -40,12 +47,12 @@ if [ ! -d "${DESTDIR}/.git" ]; then
 
     # Install composer for PHP dependencies
     curl -sS https://getcomposer.org/installer \
-        | exec_cmd php -- --quiet --install-dir="$DESTDIR"
+        | exec_cmd php -- --install-dir="$DESTDIR"
 fi
 
 # Update Movim source code
-(exec_cmd git fetch --quiet origin \
-   && exec_cmd git reset --quiet --hard "$HEAD_COMMIT") \
+(exec_cmd git fetch origin \
+   && exec_cmd git reset --hard "$HEAD_COMMIT") \
   || ynh_die "Unable to download Movim source code."
 ## FIXME: consider installation in a subpath
 exec_cmd sed -i "s@'/ws/'@'${path%/}/ws/'@g" \
@@ -61,7 +68,7 @@ sudo chmod 400 "${DESTDIR}/config/db.inc.php"
 
 # Update PHP dependencies using composer
 (exec_cmd php composer.phar config --global discard-changes true \
- && exec_cmd php composer.phar install --quiet --no-interaction) \
+ && exec_cmd php composer.phar install --no-interaction) \
   || ynh_die "Unable to update Movim dependencies."
 
 # Upgrade Movim database as needed
@@ -75,16 +82,17 @@ sudo yunohost app clearaccess movim
 # Replace old public_site variable (if exists) by ssoenabled
 if [ ! -z "$public_site" ]; then
     [[ $public_site = "Yes" ]] \
-      && ssoenabled=0 \
-      || ssoenabled=1
+      && ssoenabled="No" \
+      || ssoenabled="Yes"
     ynh_app_setting_delete "$app" public_site
     ynh_app_setting_set "$app" ssoenabled "$ssoenabled"
 fi
 
 # SSOwat configuration
-if [[ "$ssoenabled" =~ ^0|No$ ]]; then
+if [[ "$ssoenabled" = "No" ]]; then
     ynh_app_setting_set "$app" skipped_uris "/"
     exec_cmd php mud.php config --xmppwhitelist=$domain
+    sudo yunohost app ssowatconf
 else
     ynh_app_setting_set "$app" unprotected_uris "/"
     apply_sso_patch
@@ -97,7 +105,7 @@ sudo sed -i "s@YHPORT@${port}@g" ../conf/movim.{service,init}
 if [ -d /run/systemd/system ]; then
     sudo rm -f /lib/systemd/system/movim.service
     sudo cp ../conf/movim.service /etc/systemd/system/
-    sudo systemctl --quiet daemon-reload
+    sudo systemctl daemon-reload
 else
     sudo /etc/init.d/movim stop
     sudo cp ../conf/movim.init /etc/init.d/movim

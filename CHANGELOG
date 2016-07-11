@@ -1,7 +1,13 @@
 **Changelog**
 
-1.8.1 2016-05-30
-- Update to movim 0.9 git2016-05-30
+2.0 2016?
+- Major code improvement thanks to @jeromelebleu, #28 :
+ - Download and update source code using git (fixed HEAD COMMIT though)
+ - Make use of new YunoHost helpers coming with the 2.4 version
+ - Add backup and restore scripts
+ - Redirect to the SSO on logging out
+- YunoHost 2.4 helpers backport if 2.2 detected (_helpers.sh)
+- Update to movim 0.9 git 2016-07-10
 
 1.8 2016-04-15
 - Update to movim 0.9 git2016-04-15
