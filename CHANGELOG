@@ -1,6 +1,6 @@
 **Changelog**
 
-2.0 2016?
+2.0 2016-07-12
 - Major code improvement thanks to @jeromelebleu, #28 :
  - Download and update source code using git (fixed HEAD COMMIT though)
  - Make use of new YunoHost helpers coming with the 2.4 version
