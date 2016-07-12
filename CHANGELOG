@@ -6,7 +6,7 @@
  - Make use of new YunoHost helpers coming with the 2.4 version
  - Redirect to the SSO on logging out
 - YunoHost 2.4 helpers backport if 2.2 detected (_helpers.sh)
-- Update to movim 0.9 git 2016-07-10
+- Update to movim 0.9 git 2016-07-12
 
 1.8 2016-04-15
 - Update to movim 0.9 git2016-04-15
