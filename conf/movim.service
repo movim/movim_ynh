@@ -5,7 +5,7 @@ After=nginx.service network.target local-fs.target mysql.service
 [Service]
 User=movim
 Type=simple
-ExecStart=/usr/bin/php daemon.php https://YHURL YHPORT
+ExecStart=/usr/bin/php daemon.php start --url=https://YHURL --port=YHPORT
 WorkingDirectory=YHDIR
 StandardOutput=syslog
 SyslogIdentifier=movim

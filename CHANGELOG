@@ -1,5 +1,9 @@
 **Changelog**
 
+2.0.3 2016-11-16
+- Update to movim 0.10 git2016-11-16
+- Use start, --url and --port options for Movim daemon
+
 2.0.2 2016-10-06
 - Update to movim 0.10 git2016-10-06
 

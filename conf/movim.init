@@ -10,7 +10,7 @@
 ### END INIT INFO
 
 dir="YHDIR"
-cmd="php daemon.php https://YHURL YHPORT"
+cmd="php daemon.php start --url=https://YHURL --port=YHPORT"
 user="movim"
 
 name=`basename $0`
