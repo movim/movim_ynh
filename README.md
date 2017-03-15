@@ -20,12 +20,12 @@ Please read CHANGELOG.
 **Options**
 
 * domain : Your domain name.
-* path : Path for you Movim pod (https://example.com/path).
-* admin : Who can access /?admin (pod options).
+* path : Path to the Movim pod.
+* admin : Allowed acces to /?admin (pod advanced options), must exist in Yunohost.
 * password : Password to access /?admin.
-* language : Pod language, currently en or fr.
-* enable sso : automatic login.
-* port : Port for Movim daemon. Default is 9537, a check is performed before installation.
+* language : Pod language.
+* enable sso : Automatic login.
+* port : Local port for Movim daemon (no firewall configuration needed).
 
 **Pod advanced configuration**
 
