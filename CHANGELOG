@@ -1,5 +1,8 @@
 **Changelog**
 
+2.0.6 2017-04-05
+- Update to movim 0.11 git2017-04-05
+
 2.0.5 2017-03-15
 - Update to movim 0.11alpha1 git2017-03-15
 - Access to /?infos is now forbidden.
