@@ -6,7 +6,7 @@
 GIT_REPO="https://github.com/movim/movim"
 
 # Commit to checkout
-HEAD_COMMIT="b7347ca7f1e95192a89fb4d922603b8daf4f8e5a"
+HEAD_COMMIT="542e58e424f84022cd08e3caa8ce5de841a94899"
 
 # Source code destination directory
 DESTDIR="/var/www/movim"
