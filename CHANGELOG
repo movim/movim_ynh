@@ -1,5 +1,8 @@
 **Changelog**
 
+3.0.0 2017-10-20
+- movim_ynh now fetch movim HEAD
+
 2.0.8 2017-08-24
 - Update to movim 0.11 git2017-08-24
 
