@@ -1,5 +1,8 @@
 **Changelog**
 
+3.0.1 2017-11-02
+- Backup to fixed movim release due to issues
+
 3.0.0 2017-10-20
 - movim_ynh now fetch movim HEAD
 
