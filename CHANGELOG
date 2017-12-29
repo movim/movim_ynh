@@ -1,5 +1,9 @@
 **Changelog**
 
+3.0.2 2017-12-29
+- Update to movim 0.13
+- Added php5-zmq
+
 3.0.1 2017-11-02
 - Backup to fixed movim release due to issues
 

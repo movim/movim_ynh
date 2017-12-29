@@ -65,7 +65,7 @@ db_name=movim
 ynh_mysql_create_db "$db_name" "$db_user" "$db_pwd"
 
 # Install packages
-ynh_package_install php5-gd php5-curl php5-imagick php5-cli
+ynh_package_install php5-gd php5-curl php5-imagick php5-cli php5-zmq
 
 # Download Movim source code
 tmp_path=/tmp/movim-git
